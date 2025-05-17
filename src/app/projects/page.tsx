@@ -1,3 +1,4 @@
+
 import { ProjectSummaryCard } from '@/components/projects/project-summary-card';
 import { PROJECTS_DETAILS_DATA } from '@/lib/constants';
 import { SectionTitle } from '@/components/shared/section-title';
@@ -5,13 +6,13 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Projects | Focus-In',
-  description: 'Explore innovative projects by Focus-In, including Focus.Ai, Focus Axis, Focus CaseX, Focus Share, and Focus Gen.',
+  title: 'Our Optometry Projects | Focus-IN',
+  description: 'Explore innovative optometry projects by Focus-IN, including AI diagnostic tools like Focus.Ai, measurement tools like Focus Axis, educational platforms like Focus CaseX, and generative AI like Focus Gen.',
 };
 
 export default function ProjectsOverviewPage() {
   return (
-    <div className="space-y-12">
+    <div className="container mx-auto container-padding py-12 md:py-16">
       <SectionTitle
         title="Our Innovative Projects"
         subtitle="Discover the cutting-edge projects we're developing to advance the field of optometry."

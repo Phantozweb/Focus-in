@@ -1,4 +1,5 @@
 
+import Image from 'next/image';
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
@@ -79,11 +80,37 @@ export default function HomePage() {
         <div className="space-y-16 md:space-y-24">
           <AnimatedSection animationType="slide-up" delay={100}>
             <section className="py-12 md:py-16 text-center">
+                <h2 className="text-3xl font-bold text-foreground mb-4">About Focus-IN</h2>
                 <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
                   Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
                 </p>
             </section>
           </AnimatedSection>
+
+          <AnimatedSection animationType="slide-up" delay={200}>
+            <section className="py-12 md:py-16">
+              <SectionTitle title="Meet the Founder" />
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-1 flex justify-center">
+                  <Image 
+                    src="/founder-janarthan.jpg" // REMEMBER to place founder-janarthan.jpg in your /public folder
+                    alt="Janarthan Veeramani, Founder of Focus-IN" 
+                    width={300} 
+                    height={300} 
+                    className="rounded-full shadow-xl object-cover aspect-square"
+                    data-ai-hint="founder portrait"
+                  />
+                </div>
+                <div className="md:col-span-2 space-y-4">
+                  <h3 className="text-2xl font-semibold text-primary">Janarthan Veeramani - Founder of Focus-IN</h3>
+                  <p className="text-lg text-muted-foreground">
+                    Focus-IN was founded by Janarthan Veeramani, with the goal of innovating in the field of optometry through technology. His vision is to create accessible and powerful tools that empower vision care professionals, particularly in regions like India, by leveraging modern advancements in AI, data management, and digital simulations.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </AnimatedSection>
+
 
           <section>
             <SectionTitle
@@ -95,7 +122,7 @@ export default function HomePage() {
 
           <AnimatedSection animationType="slide-up">
             <section className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border">
-              <div className="px-4"> {/* Removed container mx-auto from here as parent has it */}
+              <div className="px-4">
                 <SectionTitle
                   title="Our Projects"
                   subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."

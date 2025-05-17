@@ -1,3 +1,4 @@
+
 import { ResourceCard } from '@/components/resources/resource-card';
 import { RESOURCES_DATA } from '@/lib/constants';
 import { SectionTitle } from '@/components/shared/section-title';
@@ -5,13 +6,13 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Learning Resources | Focus-In',
-  description: 'Curated educational resources, articles, and courses for optometry students and professionals.',
+  title: 'Optometry Learning Resources | Focus-IN',
+  description: 'Access curated educational resources, articles, and courses designed for optometry students and professionals to enhance their knowledge and skills. Powered by Focus-IN.',
 };
 
 export default function ResourcesPage() {
   return (
-    <div className="space-y-12">
+    <div className="container mx-auto container-padding py-12 md:py-16">
       <SectionTitle
         title="Learning Resources"
         subtitle="Explore our curated list of educational materials to support your optometry journey."

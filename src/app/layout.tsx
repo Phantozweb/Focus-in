@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Focus-IN | Optometry Excellence',
-  description: 'Optometry tools, learning resources, and innovative projects for students and professionals.',
+  title: 'Focus-IN | Innovative Optometry Tools & Resources',
+  description: 'Focus-IN offers cutting-edge AI-powered web tools, learning resources, and innovative projects for optometry students and vision care professionals. Explore tools like Focus.Ai, Focus Axis, and Focus Gen.',
   icons: {
     icon: '/favicon.ico', 
   },

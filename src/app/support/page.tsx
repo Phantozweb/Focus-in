@@ -1,3 +1,4 @@
+
 import { SupportForm } from '@/components/support/support-form';
 import { SectionTitle } from '@/components/shared/section-title';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,13 +6,13 @@ import { Phone, Clock, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Support | Focus-In',
-  description: 'Contact Focus-In for support, inquiries, or feedback. We are here to help.',
+  title: 'Contact Support | Focus-IN Optometry Solutions',
+  description: 'Get support for Focus-IN optometry tools and projects. Contact us for inquiries, feedback, or assistance with our innovative vision care solutions.',
 };
 
 export default function SupportPage() {
   return (
-    <div className="space-y-12">
+    <div className="container mx-auto container-padding py-12 md:py-16">
       <SectionTitle
         title="Contact Support"
         subtitle="We're here to help with any questions or issues you may have."

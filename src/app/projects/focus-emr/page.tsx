@@ -7,11 +7,11 @@ import type { Metadata } from 'next';
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focus-emr');
   if (!project) {
-    return { title: 'Project Not Found | Focus' }
+    return { title: 'Project Not Found | Focus-IN' }
   }
   return {
-    title: `${project.title} | Focus Projects`,
-    description: project.tagline,
+    title: `${project.title} - Optometry EMR System | Focus-IN Projects`,
+    description: project.description,
   };
 }
 
@@ -22,5 +22,9 @@ export default function FocusEmrPage() {
     notFound();
   }
 
-  return <ProjectDetailsDisplay project={project} />;
+  return (
+    <div className="container mx-auto container-padding py-12 md:py-16">
+      <ProjectDetailsDisplay project={project} />
+    </div>
+  );
 }
