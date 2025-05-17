@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight, Heart, Gift, TrendingUp, ShieldCheck, Package, PackageCheck, PackageSearch, IndianRupee, UserCheck, Signal, Share2, Lightbulb, ClipboardList, Activity, Store, CheckCircle, Eye, Crown } from 'lucide-react';
+import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight, Heart, Gift, TrendingUp, ShieldCheck, Package, PackageCheck, PackageSearch, IndianRupee, UserCheck, Signal, Share2, Lightbulb, ClipboardList, Activity, Store, CheckCircle, Eye, Crown, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -36,18 +36,15 @@ const coreFeatures = [
 ];
 
 const projectHighlights = [
-    { icon: Brain, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance.', link: '/projects/focus-ai', linkText: 'Learn More' },
-    { icon: Scaling, title: 'Focus Axis', description: 'Advanced ocular measurement tools.', link: '/projects/focus-axis', linkText: 'Learn More' },
-    { icon: Briefcase, title: 'Focus CaseX', description: 'Interactive case studies platform.', link: '/projects/focus-casex', linkText: 'Learn More' },
+    { icon: Brain, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance. Currently available.', link: '/projects/focus-ai', linkText: 'Learn More' },
+    { icon: Scaling, title: 'Focus Axis', description: 'Advanced ocular measurement tools. Currently available.', link: '/projects/focus-axis', linkText: 'Learn More' },
+    { icon: Bot, title: 'Focus Gen', description: 'Generative AI for study material creation. Currently available.', link: '/projects/focus-gen', linkText: 'Learn More' },
 ];
 
 const impactStats = [
   { icon: Users, value: "75", label: "Focus AI Users", hint: "active users" },
   { icon: Bot, value: "128", label: "Focus Gen Uses", hint: "content generations" },
   { icon: UserCheck, value: "23", label: "Focus EMR Beta Testers", hint: "early adopters" },
-  // { icon: Signal, value: "Live", label: "Focus Axis Status", hint: "operational", badgeVariant: "default" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
-  // { icon: PackageSearch, value: "Upcoming", label: "Focus Notes Marketplace", hint: "coming soon", badgeVariant: "secondary" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
-  // { icon: Share2, value: "Upcoming", label: "Focus Share Platform", hint: "launching soon", badgeVariant: "secondary" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
 ];
 
 const topDonors = [
@@ -82,8 +79,8 @@ export default function HomePage() {
 
       <section className="container mx-auto px-4">
         <SectionTitle
-          title="Empowering Optometry Professionals"
-          subtitle="Discover projects, resources, and innovative solutions to enhance your skills and knowledge."
+          title="What We Offer" 
+          subtitle="Practical tools and resources to simplify complex tasks and enhance learning in optometry."
         />
         <FeatureGrid features={coreFeatures} />
       </section>
@@ -92,14 +89,14 @@ export default function HomePage() {
         <section className="bg-muted/50 py-16 md:py-24">
           <div className="container mx-auto px-4">
             <SectionTitle
-              title="Our Innovative Projects"
-              subtitle="Pioneering the future of optometry with cutting-edge technology and platforms."
+              title="Our Projects"
+              subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Click on a project link below to learn more about it on its dedicated page. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
             />
             <FeatureGrid features={projectHighlights} />
             <div className="mt-12 text-center">
                 <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
-                    <Link href="/projects/focus-share">
-                        Explore Focus Share & Focus Gen <ArrowRight className="ml-2 h-5 w-5" /> 
+                    <Link href="/projects">
+                        View All Our Projects <ArrowRight className="ml-2 h-5 w-5" /> 
                     </Link>
                 </Button>
             </div>
@@ -109,7 +106,7 @@ export default function HomePage() {
 
       <AnimatedSection animationType="slide-up">
         <section className="container mx-auto px-4 py-16 md:py-24 space-y-12">
-          <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
+          <SectionTitle title="Our Impact" subtitle="See how Focus is being used across the optometry community:" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {impactStats.map((stat, index) => (
@@ -135,10 +132,10 @@ export default function HomePage() {
               <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-pulse" />
               <h3 className="text-3xl font-bold text-foreground mb-2">A Heartfelt Thank You to Our Donors</h3>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                We extend our sincere gratitude to the generous individuals from across India who have supported Focus-In through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
+                We extend our sincere gratitude to the generous individuals from across India who have supported Focus through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
               </p>
               <Button size="lg" variant="default" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
-                <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-In
+                <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus
               </Button>
             </div>
 
@@ -162,7 +159,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <h4 className="text-2xl font-semibold text-primary text-center">And Many More Generous Hearts</h4>
               <Card className="shadow-lg overflow-hidden">
-                <CardContent> 
+                <CardContent className="pt-0"> {/* Adjusted padding to pt-0 for better alignment with header if no title */}
                   <Table>
                     <TableHeader>
                       <TableRow>
@@ -205,7 +202,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Focus-In is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us.
+                Focus is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us.
               </p>
               <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
                 <Link href="/support">

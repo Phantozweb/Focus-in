@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 
 export interface NavItem {
@@ -11,9 +12,6 @@ export interface ProjectNavItem extends NavItem {
   description: string;
 }
 
-// Removed Tool interface as it's no longer used for physical tools.
-// Project details are covered by ProjectDetails.
-
 export interface Resource {
   id: string;
   title: string;
@@ -26,7 +24,7 @@ export interface Resource {
 export interface ProjectFeature {
   title: string;
   description: string;
-  iconName?: string;
+  iconName?: string; // Make sure IconRenderer supports these names
 }
 
 export interface ProjectDetails {
@@ -36,5 +34,5 @@ export interface ProjectDetails {
   description: string;
   longDescription?: string;
   features: ProjectFeature[];
-  iconName: string;
+  iconName: string; // Make sure IconRenderer supports these names
 }

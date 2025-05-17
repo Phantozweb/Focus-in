@@ -1,7 +1,6 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Layers, BookOpen } from 'lucide-react';
@@ -9,34 +8,6 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import { cn } from '@/lib/utils';
 
 export function HeroSection() {
-  const [isInExpanded, setIsInExpanded] = useState(false);
-  const [displayedText, setDisplayedText] = useState('');
-  const targetText = "INNOVATE"; // Changed from "INTERCONNECTED"
-
-  const toggleInText = () => {
-    setIsInExpanded(!isInExpanded);
-  };
-
-  useEffect(() => {
-    if (isInExpanded) {
-      setDisplayedText(''); // Reset before typing
-      let index = 0;
-      const intervalId = setInterval(() => {
-        if (index < targetText.length) {
-          setDisplayedText((prev) => prev + (targetText[index] || ''));
-          index++;
-        } else {
-          clearInterval(intervalId);
-        }
-      }, 100); // Adjust typing speed as needed
-
-      return () => clearInterval(intervalId);
-    } else {
-      // When collapsing, immediately set to "IN" or clear
-      setDisplayedText('');
-    }
-  }, [isInExpanded, targetText]);
-
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
       <div
@@ -44,25 +15,16 @@ export function HeroSection() {
       />
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
-          <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            FOCUS-
-            <span
-              onClick={toggleInText}
-              className={cn(
-                "text-primary cursor-pointer inline-block",
-                !isInExpanded && "animate-subtle-bounce hover:underline transition-all duration-300 ease-in-out",
-                isInExpanded && "whitespace-nowrap" 
-              )}
-              title={isInExpanded ? "Click to shorten" : "Click to expand"}
-              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} // Prevent layout shift for "IN"
-            >
-              {isInExpanded ? displayedText : 'IN'}
-            </span>
+          <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
+            Focus
           </h1>
+          <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
+            Empowering Vision Care Professionals with Innovative Tools
+          </h2>
         </AnimatedSection>
         <AnimatedSection delay={200} animationType="slide-up">
           <p className="mb-10 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-            Your premier destination for optometry tools, learning resources, and innovative projects designed for aspiring and practicing optometrists.
+            Welcome to Focus! Focus began as a simple idea: to leverage technology to build practical, accessible tools for the optometry community, especially in places like India. We aim to provide resources that simplify complex tasks, enhance learning, and make daily practice more efficient for students and professionals alike.
           </p>
         </AnimatedSection>
         <AnimatedSection delay={400} animationType="slide-up">
@@ -83,4 +45,3 @@ export function HeroSection() {
     </section>
   );
 }
-
