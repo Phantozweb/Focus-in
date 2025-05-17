@@ -32,7 +32,7 @@ export function FeatureGrid({ features }: FeatureGridProps) {
               <CardDescription>{feature.description}</CardDescription>
             </CardContent>
             <div className="p-6 pt-0">
-              <Button asChild variant="outline" className="shadow-md hover:shadow-lg transition-shadow">
+              <Button asChild variant="default" className="shadow-md hover:shadow-lg transition-shadow">
                 <Link href={feature.link}>
                   {feature.linkText} <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>

@@ -19,23 +19,22 @@ export function HeroSection() {
 
   useEffect(() => {
     if (isInExpanded) {
-      setDisplayedText(''); // Reset before starting animation
+      setDisplayedText(''); 
       let index = 0;
       const intervalId = setInterval(() => {
         if (index < targetText.length) {
-          // Safeguard: append char or empty string if char is undefined
           setDisplayedText((prev) => prev + (targetText[index] || ''));
           index++;
         } else {
           clearInterval(intervalId);
         }
-      }, 80); // Adjust typing speed (milliseconds per letter)
+      }, 80); 
 
-      return () => clearInterval(intervalId); // Cleanup on unmount or if isInExpanded changes
+      return () => clearInterval(intervalId); 
     } else {
-      setDisplayedText(''); // Clear if contracting back to "IN"
+      setDisplayedText(''); 
     }
-  }, [isInExpanded, targetText]); // Ensure targetText is in dependency array
+  }, [isInExpanded, targetText]); 
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
@@ -51,10 +50,9 @@ export function HeroSection() {
               className={cn(
                 "text-primary cursor-pointer transition-all duration-300 ease-in-out inline-block",
                 !isInExpanded && "animate-subtle-bounce hover:underline"
-                // When isInExpanded is true, no hover:underline is applied here
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
-              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} // Prevents layout shift for "IN"
+              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} 
             >
               {isInExpanded ? displayedText : 'IN'}
             </span>
@@ -67,12 +65,12 @@ export function HeroSection() {
         </AnimatedSection>
         <AnimatedSection delay={400} animationType="slide-up">
           <div className="flex flex-col gap-4 sm:flex-row justify-center">
-            <Button asChild size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary/30">
+            <Button asChild size="lg" variant="default" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary/30">
               <Link href="/projects">
                 <Layers className="mr-2 h-5 w-5" /> Explore Our Projects
               </Link>
             </Button>
-            <Button asChild variant="secondary" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30">
+            <Button asChild variant="default" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30">
               <Link href="/resources">
                 <BookOpen className="mr-2 h-5 w-5" /> Learning Hub
               </Link>

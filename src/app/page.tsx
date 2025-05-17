@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight, Heart, Gift, TrendingUp, ShieldCheck, Package, PackageCheck, PackageSearch, IndianRupee, UserCheck, Signal, Share2, Lightbulb, ClipboardList, Activity, Store, CheckCircle, Eye } from 'lucide-react';
+import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight, Heart, Gift, TrendingUp, ShieldCheck, Package, PackageCheck, PackageSearch, IndianRupee, UserCheck, Signal, Share2, Lightbulb, ClipboardList, Activity, Store, CheckCircle, Eye, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -45,15 +45,15 @@ const impactStats = [
   { icon: Users, value: "75", label: "Focus AI Users", hint: "active users" },
   { icon: Bot, value: "128", label: "Focus Gen Uses", hint: "content generations" },
   { icon: UserCheck, value: "23", label: "Focus EMR Beta Testers", hint: "early adopters" },
-  { icon: Signal, value: "Live", label: "Focus Axis Status", hint: "operational", badgeVariant: "default" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
-  { icon: PackageSearch, value: "Upcoming", label: "Focus Notes Marketplace", hint: "coming soon", badgeVariant: "secondary" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
-  { icon: Share2, value: "Upcoming", label: "Focus Share Platform", hint: "launching soon", badgeVariant: "secondary" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
+  // { icon: Signal, value: "Live", label: "Focus Axis Status", hint: "operational", badgeVariant: "default" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
+  // { icon: PackageSearch, value: "Upcoming", label: "Focus Notes Marketplace", hint: "coming soon", badgeVariant: "secondary" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
+  // { icon: Share2, value: "Upcoming", label: "Focus Share Platform", hint: "launching soon", badgeVariant: "secondary" as "default" | "secondary" | "destructive" | "outline" | null | undefined },
 ];
 
 const topDonors = [
-  { name: "K. Barathan", amount: 1500, avatarUrl: "https://placehold.co/64x64.png", dataAiHint: "profile avatar" },
-  { name: "Atchaya", amount: 750, avatarUrl: "https://placehold.co/64x64.png", dataAiHint: "profile avatar" },
-  { name: "Manovarama", amount: 500, avatarUrl: "https://placehold.co/64x64.png", dataAiHint: "profile avatar" },
+  { name: "K. Barathan", amount: 1500 },
+  { name: "Atchaya", amount: 750 },
+  { name: "Manovarama", amount: 500 },
 ];
 
 const otherDonors = [
@@ -97,7 +97,7 @@ export default function HomePage() {
             />
             <FeatureGrid features={projectHighlights} />
             <div className="mt-12 text-center">
-                <Button asChild size="lg" className="shadow-md hover:shadow-lg transition-shadow">
+                <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
                     <Link href="/projects/focus-share">
                         Explore Focus Share & Focus Gen <ArrowRight className="ml-2 h-5 w-5" /> 
                     </Link>
@@ -109,7 +109,7 @@ export default function HomePage() {
 
       <AnimatedSection animationType="slide-up">
         <section className="container mx-auto px-4 py-16 md:py-24 space-y-12">
-          <SectionTitle title="Our Impact & Support" subtitle="Powering the next generation of optometry with community-driven innovation." />
+          <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {impactStats.map((stat, index) => (
@@ -137,7 +137,7 @@ export default function HomePage() {
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 We extend our sincere gratitude to the generous individuals from across India who have supported Focus-In through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
               </p>
-              <Button size="lg" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
+              <Button size="lg" variant="default" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
                 <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-In
               </Button>
             </div>
@@ -148,10 +148,7 @@ export default function HomePage() {
                 {topDonors.map((donor, index) => (
                   <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow">
                     <CardContent className="pt-6 flex flex-col items-center">
-                      <Avatar className="h-20 w-20 mb-4 border-2 border-primary">
-                        <AvatarImage src={donor.avatarUrl} alt={donor.name} data-ai-hint={donor.dataAiHint} />
-                        <AvatarFallback>{donor.name.substring(0,1)}</AvatarFallback>
-                      </Avatar>
+                      <Crown className="h-16 w-16 mb-4 text-yellow-500" /> 
                       <p className="text-lg font-semibold text-foreground">{donor.name}</p>
                       <p className="text-2xl font-bold text-primary flex items-center justify-center">
                         <IndianRupee className="h-6 w-6 mr-1" />{donor.amount.toLocaleString()}
@@ -165,7 +162,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <h4 className="text-2xl font-semibold text-primary text-center">And Many More Generous Hearts</h4>
               <Card className="shadow-lg overflow-hidden">
-                <CardContent> {/* Added CardContent to wrap the Table */}
+                <CardContent> 
                   <Table>
                     <TableHeader>
                       <TableRow>
@@ -186,8 +183,8 @@ export default function HomePage() {
                       ))}
                     </TableBody>
                   </Table>
-                </CardContent> {/* Correctly closed CardContent */}
-              </Card> {/* Correctly closed Card */}
+                </CardContent> 
+              </Card> 
             </div>
 
             <div className="text-center pt-8">
@@ -210,7 +207,7 @@ export default function HomePage() {
               <p className="text-lg text-muted-foreground mb-6">
                 Focus-In is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us.
               </p>
-              <Button asChild size="lg" variant="outline" className="shadow-md hover:shadow-lg transition-shadow">
+              <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
                 <Link href="/support">
                   Contact Us
                 </Link>

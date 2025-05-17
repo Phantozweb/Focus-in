@@ -1,3 +1,4 @@
+
 import type { ProjectDetails } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -22,7 +23,7 @@ export function ProjectSummaryCard({ project }: ProjectSummaryCardProps) {
         <CardDescription>{project.tagline}</CardDescription>
       </CardContent>
       <CardFooter>
-        <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
+        <Button asChild variant="default" size="sm" className="shadow-sm hover:shadow-md transition-shadow">
           <Link href={`/projects/${project.slug}`}>
             Learn More <ArrowRight className="ml-1 h-4 w-4" />
           </Link>
