@@ -1,5 +1,4 @@
 import type { Resource } from '@/types';
-import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -16,12 +15,8 @@ export function ResourceCard({ resource }: ResourceCardProps) {
     <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/50">
       {resource.imageUrl && (
         <div className="relative h-48 w-full">
-          <Image
-            src={resource.imageUrl}
-            alt={resource.title}
-            layout="fill"
-            objectFit="cover"
-            data-ai-hint={resource.dataAiHint || "education learning"}
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
           />
         </div>
       )}

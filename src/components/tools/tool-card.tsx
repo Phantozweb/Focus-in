@@ -1,5 +1,4 @@
 import type { Tool } from '@/types';
-import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -15,12 +14,8 @@ export function ToolCard({ tool }: ToolCardProps) {
   return (
     <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/50">
       <div className="relative h-48 w-full">
-        <Image
-          src={tool.imageUrl}
-          alt={tool.name}
-          layout="fill"
-          objectFit="cover"
-          data-ai-hint={tool.dataAiHint || "medical equipment"}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))]"
         />
       </div>
       <CardHeader>

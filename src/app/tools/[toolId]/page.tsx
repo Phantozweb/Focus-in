@@ -1,6 +1,5 @@
 import { TOOLS_DATA } from '@/lib/constants';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -46,12 +45,8 @@ export default function ToolDetailPage({ params }: { params: { toolId: string } 
         <Card className="overflow-hidden shadow-xl">
             <div className="grid md:grid-cols-2">
                 <div className="relative h-96 md:h-auto min-h-[300px]">
-                    <Image
-                    src={tool.imageUrl}
-                    alt={tool.name}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={tool.dataAiHint || "medical equipment detail"}
+                    <div
+                    className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))]"
                     />
                 </div>
                 <div className="p-6 md:p-8 flex flex-col">

@@ -1,10 +1,9 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Wrench, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight } from 'lucide-react';
+import { Wrench, BookOpen, Users, Brain, Briefcase, Scaling, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 const coreFeatures = [
@@ -62,7 +61,7 @@ export default function HomePage() {
             <div className="mt-12 text-center">
                 <Button asChild size="lg" className="shadow-md hover:shadow-lg transition-shadow">
                     <Link href="/projects/focus-share">
-                        Explore Focus Share & Focus Gen <ArrowRight className="ml-2 h-5 w-5" />
+                        Explore Focus Share & Focus Gen <Bot className="ml-2 h-5 w-5" />
                     </Link>
                 </Button>
             </div>
@@ -85,13 +84,8 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="relative h-80 w-full">
-               <Image 
-                src="https://placehold.co/600x400.png" 
-                alt="Community of optometrists"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-xl"
-                data-ai-hint="medical students community"
+               <div 
+                className="absolute inset-0 rounded-lg shadow-xl bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--secondary))] to-[hsl(var(--accent))]"
               />
             </div>
           </div>

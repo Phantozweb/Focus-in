@@ -1,5 +1,4 @@
 import type { ProjectDetails } from '@/types';
-import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle } from 'lucide-react';
@@ -16,13 +15,8 @@ export function ProjectDetailsDisplay({ project }: ProjectDetailsDisplayProps) {
       {/* Banner Image */}
       {project.bannerImageUrl && (
         <div className="relative h-72 w-full overflow-hidden rounded-lg shadow-xl md:h-96">
-          <Image
-            src={project.bannerImageUrl}
-            alt={`${project.title} Banner`}
-            layout="fill"
-            objectFit="cover"
-            data-ai-hint={project.bannerDataAiHint || project.dataAiHint || "technology abstract"}
-            priority
+          <div
+            className="absolute inset-0 rounded-lg bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--accent))]"
           />
            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
            <div className="absolute bottom-0 left-0 p-6 md:p-10">
@@ -59,13 +53,8 @@ export function ProjectDetailsDisplay({ project }: ProjectDetailsDisplayProps) {
               )}
             </div>
             <div className="lg:col-span-2 flex items-center justify-center">
-               <Image
-                src={project.imageUrl}
-                alt={project.title}
-                width={400}
-                height={300}
-                className="rounded-lg object-cover shadow-md aspect-video w-full max-w-md"
-                data-ai-hint={project.dataAiHint || "technology product"}
+               <div
+                className="rounded-lg shadow-md aspect-video w-full max-w-md bg-gradient-to-tl from-[hsl(var(--secondary))] to-[hsl(var(--accent))]"
               />
             </div>
           </div>

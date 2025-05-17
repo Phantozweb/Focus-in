@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Wrench, BookOpen } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -9,14 +8,8 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 export function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden flex items-center justify-center py-16 md:py-24">
-      <Image
-        src="https://placehold.co/1920x1080.png"
-        alt="Optometry background"
-        layout="fill"
-        objectFit="cover"
-        className="z-0 opacity-20 dark:opacity-10"
-        priority
-        data-ai-hint="optometry clinic technology"
+      <div
+        className="absolute inset-0 z-0 opacity-20 dark:opacity-10 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--background))]"
       />
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
