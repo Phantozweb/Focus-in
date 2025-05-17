@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
@@ -9,7 +10,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      "rounded-xl border bg-card text-card-foreground shadow-md hover:shadow-lg transition-shadow duration-300", // Updated rounding and shadow
       className
     )}
     {...props}
@@ -30,13 +31,13 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = "CardHeader"
 
 const CardTitle = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLDivElement, // Corrected: Should be HTMLHeadingElement or similar if used as h-tag
+  React.HTMLAttributes<HTMLHeadingElement> // Corrected
 >(({ className, ...props }, ref) => (
-  <div
+  <h3 // Changed to h3 for better semantics, can be adjusted
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
+      "text-xl font-semibold leading-none tracking-tight", // Adjusted size
       className
     )}
     {...props}
@@ -45,10 +46,10 @@ const CardTitle = React.forwardRef<
 CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLParagraphElement, // Corrected
+  React.HTMLAttributes<HTMLParagraphElement> // Corrected
 >(({ className, ...props }, ref) => (
-  <div
+  <p // Changed to p for better semantics
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
     {...props}

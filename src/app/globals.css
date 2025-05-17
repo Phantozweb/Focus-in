@@ -1,99 +1,100 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 96%; /* Off-white #F5F5F5 */
-    --foreground: 210 30% 20%; /* Darker blue for text on off-white */
+    --background: 220 20% 97%; /* Lighter, slightly cool off-white */
+    --foreground: 220 25% 15%; /* Dark, slightly desaturated blue-black */
 
-    --card: 0 0% 100%; /* White cards */
-    --card-foreground: 210 30% 20%;
+    --card: 0 0% 100%; /* Clean white cards */
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 30% 20%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 202 96% 74%; /* Sky blue #7ECEFD */
-    --primary-foreground: 210 30% 15%; /* Dark blue for text on primary */
+    --primary: 210 90% 55%; /* Vibrant, professional blue */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 188 50% 80%; /* Slightly lighter/softer version of accent for secondary buttons/elements */
-    --secondary-foreground: 210 30% 15%;
+    --secondary: 220 15% 90%; /* Lighter grey for secondary elements */
+    --secondary-foreground: 220 25% 25%; /* Darker text on secondary */
 
-    --muted: 0 0% 90%; /* Slightly darker than background */
-    --muted-foreground: 0 0% 40%; /* Greyish text */
+    --muted: 220 15% 94%; /* Very light grey, close to background */
+    --muted-foreground: 220 10% 45%; /* Softer grey text */
 
-    --accent: 188 50% 73%; /* Light turquoise #A0DDE6 */
-    --accent-foreground: 210 30% 15%; /* Dark blue for text on accent */
+    --accent: 200 80% 60%; /* A softer, complementary sky blue */
+    --accent-foreground: 220 25% 15%; /* Dark text on accent */
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 88%; /* Lighter border */
-    --input: 0 0% 92%; /* Slightly off-white input background */
-    --ring: 202 96% 65%; /* Slightly darker primary for ring */
+    --border: 220 15% 88%; /* Softer border color */
+    --input: 220 15% 92%; /* Input background slightly off-white */
+    --ring: 210 90% 50%; /* Ring color matching primary */
     --radius: 0.5rem;
 
-    /* Sidebar specific, can be same as main or slightly different */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 210 30% 20%;
-    --sidebar-primary: 202 96% 74%;
-    --sidebar-primary-foreground: 210 30% 15%;
-    --sidebar-accent: 188 50% 73%;
-    --sidebar-accent-foreground: 210 30% 15%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 202 96% 65%;
+    /* Sidebar specific */
+    --sidebar-background: 220 20% 98%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 210 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 80% 60%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 210 90% 50%;
 
-    --chart-1: 202 96% 74%;
-    --chart-2: 188 50% 73%;
-    --chart-3: 210 30% 50%;
-    --chart-4: 202 80% 60%;
-    --chart-5: 188 40% 60%;
+    --chart-1: 210 90% 55%;
+    --chart-2: 200 80% 60%;
+    --chart-3: 220 50% 65%;
+    --chart-4: 210 70% 70%;
+    --chart-5: 200 60% 75%;
   }
 
   .dark {
-    --background: 210 30% 12%; /* Dark blue background */
-    --foreground: 0 0% 96%; /* Off-white text */
+    --background: 220 25% 10%; /* Deep, dark blue */
+    --foreground: 220 15% 90%; /* Light grey/off-white text */
 
-    --card: 210 30% 16%; /* Slightly lighter dark blue for cards */
-    --card-foreground: 0 0% 96%;
+    --card: 220 25% 14%; /* Slightly lighter dark blue for cards */
+    --card-foreground: 220 15% 90%;
 
-    --popover: 210 30% 10%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 220 15% 90%;
 
-    --primary: 202 96% 65%; /* Slightly desaturated/darker primary for dark mode */
-    --primary-foreground: 210 30% 10%; /* Very dark blue/black for text on primary */
+    --primary: 210 80% 65%; /* Brighter blue for dark mode primary */
+    --primary-foreground: 220 25% 10%; /* Very dark text on primary */
 
-    --secondary: 188 50% 55%; /* Darker accent for secondary */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 220 20% 20%; /* Darker grey for secondary */
+    --secondary-foreground: 220 15% 85%;
 
-    --muted: 210 30% 20%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 188 50% 63%; /* Slightly darker accent */
-    --accent-foreground: 210 30% 10%;
+    --accent: 200 70% 55%; /* Slightly darker accent for dark mode */
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 30% 25%;
-    --input: 210 30% 22%;
-    --ring: 202 96% 55%;
+    --border: 220 20% 25%;
+    --input: 220 20% 22%;
+    --ring: 210 80% 60%;
 
     /* Sidebar specific for dark mode */
-    --sidebar-background: 210 30% 10%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 202 96% 65%;
-    --sidebar-primary-foreground: 210 30% 10%;
-    --sidebar-accent: 188 50% 55%;
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 220 15% 90%;
+    --sidebar-primary: 210 80% 65%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 200 70% 55%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 210 30% 20%;
-    --sidebar-ring: 202 96% 55%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 210 80% 60%;
     
-    --chart-1: 202 96% 65%;
-    --chart-2: 188 50% 63%;
-    --chart-3: 210 30% 40%;
-    --chart-4: 202 80% 50%;
-    --chart-5: 188 40% 50%;
+    --chart-1: 210 80% 65%;
+    --chart-2: 200 70% 55%;
+    --chart-3: 220 50% 55%;
+    --chart-4: 210 60% 60%;
+    --chart-5: 200 50% 65%;
   }
 }
 
@@ -109,6 +110,16 @@
     @apply font-semibold tracking-tight;
   }
 }
+
+@layer components {
+  .section-padding {
+    @apply py-12 md:py-20;
+  }
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
 
 @layer utilities {
   @keyframes subtle-bounce {

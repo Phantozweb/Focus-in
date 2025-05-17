@@ -6,17 +6,74 @@ import Link from 'next/link';
 import { Layers, BookOpen } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { cn } from '@/lib/utils';
+import { useState, useEffect } from 'react';
+
+const TARGET_TEXT_NORMAL = "IN";
+const TARGET_TEXT_EXPANDED = "INTEGRATED NETWORK"; // Corrected spelling
+const TYPING_SPEED_MS = 100;
 
 export function HeroSection() {
+  const [isInExpanded, setIsInExpanded] = useState(false);
+  const [displayedText, setDisplayedText] = useState(TARGET_TEXT_NORMAL);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    let typingTimeout: NodeJS.Timeout;
+    let charIndex = 0;
+
+    if (isAnimating && isInExpanded) {
+      setDisplayedText(''); // Clear before typing
+      const typeLetter = () => {
+        if (charIndex < TARGET_TEXT_EXPANDED.length) {
+          setDisplayedText((prev) => prev + (TARGET_TEXT_EXPANDED[charIndex] || ''));
+          charIndex++;
+          typingTimeout = setTimeout(typeLetter, TYPING_SPEED_MS);
+        } else {
+          setIsAnimating(false); // Animation finished
+        }
+      };
+      typingTimeout = setTimeout(typeLetter, TYPING_SPEED_MS / 2); // Start slightly faster
+    } else if (!isInExpanded) {
+      setDisplayedText(TARGET_TEXT_NORMAL);
+      setIsAnimating(false);
+    }
+
+    return () => {
+      clearTimeout(typingTimeout);
+    };
+  }, [isInExpanded, isAnimating]);
+
+  const handleInClick = () => {
+    if (!isAnimating) {
+      setIsInExpanded(!isInExpanded);
+      if (!isInExpanded) { // If about to expand
+        setIsAnimating(true);
+      }
+    }
+  };
+
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
       <div
-        className="absolute inset-0 z-0 opacity-25 dark:opacity-15 bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
+        className="absolute inset-0 z-0 opacity-20 dark:opacity-10 bg-gradient-to-tr from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
       />
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            Focus
+            FOCUS
+            <span
+              onClick={handleInClick}
+              title={isInExpanded ? "Click to shorten" : "Click to expand"}
+              className={cn(
+                "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block whitespace-nowrap",
+                !isInExpanded ? "animate-subtle-bounce hover:underline" : "",
+                isInExpanded && !isAnimating ? "" : "", // No special class needed when fully expanded and not animating
+                isAnimating ? "opacity-75" : "opacity-100" // Slightly fade during animation
+              )}
+              style={{ minWidth: !isInExpanded ? '3rem' : 'auto' }} // Prevent layout shift
+            >
+              -{displayedText}
+            </span>
           </h1>
           <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
             Empowering Vision Care Professionals with Innovative Tools

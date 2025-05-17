@@ -2,13 +2,12 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight, Heart, Gift, TrendingUp, ShieldCheck, Package, PackageCheck, PackageSearch, IndianRupee, UserCheck, Signal, Share2, Lightbulb, ClipboardList, Activity, Store, CheckCircle, Eye, Crown, FileText } from 'lucide-react';
+import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
 const coreFeatures = [
@@ -42,9 +41,9 @@ const projectHighlights = [
 ];
 
 const impactStats = [
-  { icon: Users, value: "75", label: "Focus AI Users", hint: "active users" },
-  { icon: Bot, value: "128", label: "Focus Gen Uses", hint: "content generations" },
-  { icon: UserCheck, value: "23", label: "Focus EMR Beta Testers", hint: "early adopters" },
+  { icon: Users, value: "75+", label: "Focus AI Users", hint: "active users" },
+  { icon: Bot, value: "120+", label: "Focus Gen Uses", hint: "content generations" },
+  { icon: UserCheck, value: "20+", label: "Focus EMR Beta Testers", hint: "early adopters" },
 ];
 
 const topDonors = [
@@ -77,7 +76,7 @@ export default function HomePage() {
     <div className="space-y-16 md:space-y-24">
       <HeroSection />
 
-      <section className="container mx-auto px-4">
+      <section>
         <SectionTitle
           title="What We Offer" 
           subtitle="Practical tools and resources to simplify complex tasks and enhance learning in optometry."
@@ -86,11 +85,11 @@ export default function HomePage() {
       </section>
 
       <AnimatedSection animationType="slide-up">
-        <section className="bg-muted/50 py-16 md:py-24">
+        <section className="bg-muted/30 py-16 md:py-24 rounded-lg">
           <div className="container mx-auto px-4">
             <SectionTitle
               title="Our Projects"
-              subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Click on a project link below to learn more about it on its dedicated page. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
+              subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
             />
             <FeatureGrid features={projectHighlights} />
             <div className="mt-12 text-center">
@@ -105,29 +104,27 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection animationType="slide-up">
-        <section className="container mx-auto px-4 py-16 md:py-24 space-y-12">
+        <section className="py-16 md:py-24 space-y-12">
           <SectionTitle title="Our Impact" subtitle="See how Focus is being used across the optometry community:" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {impactStats.map((stat, index) => (
-              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow flex flex-col">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-base font-medium">{stat.label}</CardTitle>
-                  <stat.icon className="h-5 w-5 text-muted-foreground" />
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow flex flex-col text-center group bg-card hover:border-primary/30">
+                <CardHeader className="items-center pb-2">
+                   <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                     <stat.icon className="h-8 w-8 text-primary" />
+                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  {stat.badgeVariant ? (
-                     <Badge variant={stat.badgeVariant} className={stat.badgeVariant === 'default' ? 'bg-green-500 text-white' : ''}>{stat.value}</Badge>
-                  ) : (
-                    <div className="text-3xl font-bold text-primary">{stat.value}</div>
-                  )}
-                  <p className="text-xs text-muted-foreground pt-1">{stat.hint}</p>
+                  <div className="text-4xl font-bold text-primary">{stat.value}</div>
+                  <p className="text-lg font-medium text-foreground mt-1">{stat.label}</p>
+                  <p className="text-sm text-muted-foreground pt-1">{stat.hint}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="mt-16 md:mt-20 space-y-10 bg-card p-6 md:p-10 rounded-lg shadow-xl">
+          <div className="mt-16 md:mt-20 space-y-10 bg-card p-6 md:p-10 rounded-lg shadow-xl border">
             <div className="text-center">
               <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-pulse" />
               <h3 className="text-3xl font-bold text-foreground mb-2">A Heartfelt Thank You to Our Donors</h3>
@@ -143,10 +140,10 @@ export default function HomePage() {
               <h4 className="text-2xl font-semibold text-primary text-center">Our Top Supporters</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {topDonors.map((donor, index) => (
-                  <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow">
+                  <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow border hover:border-primary/30">
                     <CardContent className="pt-6 flex flex-col items-center">
                       <Crown className="h-16 w-16 mb-4 text-yellow-500" /> 
-                      <p className="text-lg font-semibold text-foreground">{donor.name}</p>
+                      <p className="text-xl font-semibold text-foreground">{donor.name}</p>
                       <p className="text-2xl font-bold text-primary flex items-center justify-center">
                         <IndianRupee className="h-6 w-6 mr-1" />{donor.amount.toLocaleString()}
                       </p>
@@ -158,19 +155,19 @@ export default function HomePage() {
             
             <div className="space-y-6">
               <h4 className="text-2xl font-semibold text-primary text-center">And Many More Generous Hearts</h4>
-              <Card className="shadow-lg overflow-hidden">
-                <CardContent className="pt-0"> {/* Adjusted padding to pt-0 for better alignment with header if no title */}
+              <Card className="shadow-lg overflow-hidden border">
+                <CardContent className="p-0"> 
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead className="w-[80px] text-center">Rank</TableHead>
-                        <TableHead>Donor Name</TableHead>
-                        <TableHead className="text-right">Amount Donated</TableHead>
+                        <TableHead className="w-[80px] text-center font-semibold">Rank</TableHead>
+                        <TableHead className="font-semibold">Donor Name</TableHead>
+                        <TableHead className="text-right font-semibold">Amount Donated</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {otherDonors.map((donor) => (
-                        <TableRow key={donor.rank}>
+                        <TableRow key={donor.rank} className="hover:bg-muted/50">
                           <TableCell className="font-medium text-center">#{donor.rank}</TableCell>
                           <TableCell>{donor.name}</TableCell>
                           <TableCell className="text-right flex items-center justify-end">
@@ -188,7 +185,7 @@ export default function HomePage() {
               <p className="text-3xl font-extrabold text-foreground">
                 Total Funds Collected: 
                 <span className="text-primary ml-2 flex items-center justify-center text-4xl">
-                  <IndianRupee className="h-8 w-8 mr-1" />5,642
+                  <IndianRupee className="h-8 w-8 mr-1" />{otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0)).toLocaleString()}
                 </span>
               </p>
             </div>
@@ -197,8 +194,8 @@ export default function HomePage() {
       </AnimatedSection>
       
       <AnimatedSection animationType="slide-up">
-        <section className="container mx-auto px-4 py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <section className="py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -210,7 +207,10 @@ export default function HomePage() {
                 </Link>
               </Button>
             </div>
-            <div className="relative h-80 w-full rounded-lg shadow-xl bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--secondary))] to-[hsl(var(--accent))]">
+            <div className="relative h-80 w-full rounded-lg shadow-xl bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]">
+               <div className="absolute inset-0 flex items-center justify-center">
+                 <Eye className="h-32 w-32 text-white/30" />
+               </div>
             </div>
           </div>
         </section>

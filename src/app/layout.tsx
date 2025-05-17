@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   title: 'Focus-In | Optometry Excellence',
   description: 'Optometry tools, learning resources, and innovative projects for students and professionals.',
   icons: {
-    icon: '/favicon.ico', // Assuming a favicon might be added later
+    icon: '/favicon.ico', 
   },
 };
 
@@ -32,7 +33,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}>
         <Navbar />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow container mx-auto container-padding section-padding">
           {children}
         </main>
         <Footer />
