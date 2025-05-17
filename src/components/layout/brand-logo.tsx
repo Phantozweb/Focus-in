@@ -17,8 +17,9 @@ export function BrandLogo({ className, iconSize = 28, textSize = "text-2xl", onC
   return (
     <Link href="/" className={cn("flex items-center gap-2 text-primary hover:opacity-80 transition-opacity", className)} onClick={onClick}>
       <Eye size={iconSize} strokeWidth={2.5} />
-      <span className={cn("font-bold", textSize, "tracking-tight text-foreground")}>
-        Focus
+      <span className={cn("font-bold", textSize, "tracking-tight")}>
+        <span className="text-foreground">Focus-</span>
+        <span className="text-primary">IN</span>
       </span>
     </Link>
   );
