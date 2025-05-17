@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Layers, BookOpen } from 'lucide-react';
@@ -10,10 +10,31 @@ import { cn } from '@/lib/utils';
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
+  const targetText = "INTEGRATED NETWORK";
 
   const toggleInText = () => {
     setIsInExpanded(!isInExpanded);
   };
+
+  useEffect(() => {
+    if (isInExpanded) {
+      setDisplayedText(''); // Reset before starting animation
+      let index = 0;
+      const intervalId = setInterval(() => {
+        if (index < targetText.length) {
+          setDisplayedText((prev) => prev + targetText[index]);
+          index++;
+        } else {
+          clearInterval(intervalId);
+        }
+      }, 80); // Adjust typing speed (milliseconds per letter)
+
+      return () => clearInterval(intervalId); // Cleanup on unmount or if isInExpanded changes
+    } else {
+      setDisplayedText(''); // Clear if contracting back to "IN"
+    }
+  }, [isInExpanded]);
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
@@ -29,11 +50,12 @@ export function HeroSection() {
               className={cn(
                 "text-primary cursor-pointer transition-all duration-300 ease-in-out inline-block",
                 !isInExpanded && "animate-subtle-bounce hover:underline",
-                isInExpanded && "animate-popup"
+                // No animate-popup here, letter-by-letter is the effect
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
+              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} // Prevents layout shift for "IN"
             >
-              {isInExpanded ? 'INTEGRATED NETWORK' : 'IN'}
+              {isInExpanded ? displayedText : 'IN'}
             </span>
           </h1>
         </AnimatedSection>
