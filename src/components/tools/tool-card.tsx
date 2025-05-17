@@ -4,13 +4,13 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
+import { IconRenderer } from '@/components/shared/icon-renderer';
 
 interface ToolCardProps {
   tool: Tool;
 }
 
 export function ToolCard({ tool }: ToolCardProps) {
-  const IconComponent = tool.icon;
   return (
     <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/50">
       <div className="relative h-48 w-full">
@@ -21,7 +21,7 @@ export function ToolCard({ tool }: ToolCardProps) {
       <CardHeader>
         <div className="flex items-center justify-between">
             <CardTitle className="text-xl">{tool.name}</CardTitle>
-            {IconComponent && <IconComponent className="h-6 w-6 text-primary" />}
+            <IconRenderer iconName={tool.iconName} className="h-6 w-6 text-primary" />
         </div>
         <Badge variant="secondary" className="w-fit">{tool.category}</Badge>
       </CardHeader>
@@ -30,7 +30,6 @@ export function ToolCard({ tool }: ToolCardProps) {
       </CardContent>
       <CardFooter>
         <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
-          {/* Link to a detailed tool page if available, otherwise '#' */}
           <Link href={`/tools/${tool.id}`}> 
             Learn More <ArrowRight className="ml-1 h-4 w-4" />
           </Link>

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { ArrowLeft, Package, Tag, Info } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { Tool } from '@/types';
+import { IconRenderer } from '@/components/shared/icon-renderer';
 
 type Props = {
   params: { toolId: string };
@@ -32,8 +33,6 @@ export default function ToolDetailPage({ params }: { params: { toolId: string } 
     notFound();
   }
 
-  const IconComponent = tool.icon;
-
   return (
     <div className="space-y-8">
         <Button variant="outline" asChild className="mb-8">
@@ -53,7 +52,7 @@ export default function ToolDetailPage({ params }: { params: { toolId: string } 
                     <CardHeader className="p-0 mb-4">
                         <div className="flex items-start justify-between">
                             <CardTitle className="text-3xl font-bold">{tool.name}</CardTitle>
-                            {IconComponent && <IconComponent className="h-8 w-8 text-primary flex-shrink-0" />}
+                            <IconRenderer iconName={tool.iconName} className="h-8 w-8 text-primary flex-shrink-0" />
                         </div>
                     </CardHeader>
                     <CardDescription className="text-lg text-muted-foreground mb-6 flex-grow">

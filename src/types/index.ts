@@ -15,10 +15,8 @@ export interface Tool {
   id: string;
   name: string;
   description: string;
-  imageUrl: string;
   category: string;
-  icon?: LucideIcon;
-  dataAiHint?: string;
+  iconName?: string; // Changed from icon
 }
 
 export interface Resource {
@@ -27,9 +25,13 @@ export interface Resource {
   summary: string;
   link: string;
   type: 'article' | 'video' | 'course' | 'website';
-  imageUrl?: string;
-  icon?: LucideIcon;
-  dataAiHint?: string;
+  iconName?: string; // Changed from icon
+}
+
+export interface ProjectFeature {
+  title: string;
+  description: string;
+  iconName?: string; // Changed from icon
 }
 
 export interface ProjectDetails {
@@ -38,10 +40,10 @@ export interface ProjectDetails {
   tagline: string;
   description: string;
   longDescription?: string;
-  imageUrl: string;
-  features: { title: string, description: string, icon?: LucideIcon }[];
-  icon: LucideIcon; // Icon for the project itself
-  dataAiHint?: string;
-  bannerImageUrl?: string;
-  bannerDataAiHint?: string;
+  // imageUrl: string; // Removed as per gradient change
+  features: ProjectFeature[];
+  iconName: string; // Changed from icon
+  // dataAiHint?: string; // Removed
+  // bannerImageUrl?: string; // Removed
+  // bannerDataAiHint?: string; // Removed
 }
