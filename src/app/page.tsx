@@ -73,159 +73,159 @@ const otherDonors = [
 
 export default function HomePage() {
   return (
-    <div className="space-y-16 md:space-y-24">
+    <>
       <HeroSection />
+      <div className="container mx-auto container-padding">
+        <div className="space-y-16 md:space-y-24">
+          <AnimatedSection animationType="slide-up" delay={100}>
+            <section className="py-12 md:py-16 text-center">
+                <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
+                  Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
+                </p>
+            </section>
+          </AnimatedSection>
 
-      <AnimatedSection animationType="slide-up" delay={100}>
-        <section className="py-12 md:py-16 text-center">
-          <div className="container mx-auto container-padding">
-            <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-              Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
-            </p>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      <section>
-        <SectionTitle
-          title="What We Offer" 
-          subtitle="Innovative web tools and AI solutions to enhance learning and practice in optometry."
-        />
-        <FeatureGrid features={coreFeatures} />
-      </section>
-
-      <AnimatedSection animationType="slide-up">
-        <section className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border">
-          <div className="container mx-auto px-4">
+          <section>
             <SectionTitle
-              title="Our Projects"
-              subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
+              title="What We Offer" 
+              subtitle="Innovative web tools and AI solutions to enhance learning and practice in optometry."
             />
-            <FeatureGrid features={projectHighlights} />
-            <div className="mt-12 text-center">
-                <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
-                    <Link href="/projects">
-                        View All Our Projects <ArrowRight className="ml-2 h-5 w-5" /> 
-                    </Link>
-                </Button>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
+            <FeatureGrid features={coreFeatures} />
+          </section>
 
-      <AnimatedSection animationType="slide-up">
-        <section className="py-16 md:py-24 space-y-12">
-          <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
+          <AnimatedSection animationType="slide-up">
+            <section className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border">
+              <div className="px-4"> {/* Removed container mx-auto from here as parent has it */}
+                <SectionTitle
+                  title="Our Projects"
+                  subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
+                />
+                <FeatureGrid features={projectHighlights} />
+                <div className="mt-12 text-center">
+                    <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
+                        <Link href="/projects">
+                            View All Our Projects <ArrowRight className="ml-2 h-5 w-5" /> 
+                        </Link>
+                    </Button>
+                </div>
+              </div>
+            </section>
+          </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {impactStats.map((stat, index) => (
-              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow flex flex-col text-center group bg-card hover:border-primary/30">
-                <CardHeader className="items-center pb-2">
-                   <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                     <stat.icon className="h-8 w-8 text-primary" />
-                   </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="text-4xl font-bold text-primary">{stat.value}</div>
-                  <p className="text-lg font-medium text-foreground mt-1">{stat.label}</p>
-                  <p className="text-sm text-muted-foreground pt-1">{stat.hint}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <AnimatedSection animationType="slide-up">
+            <section className="py-16 md:py-24 space-y-12">
+              <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
 
-          <div className="mt-16 md:mt-20 space-y-10 bg-card p-6 md:p-10 rounded-2xl shadow-xl border">
-            <div className="text-center">
-              <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-pulse" />
-              <h3 className="text-3xl font-bold text-foreground mb-2">A Heartfelt Thank You to Our Donors</h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                We extend our sincere gratitude to the generous individuals from across India who have supported Focus-IN through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
-              </p>
-              <Button size="lg" variant="default" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
-                <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-IN
-              </Button>
-            </div>
-
-            <div className="space-y-8">
-              <h4 className="text-2xl font-semibold text-primary text-center">Our Top Supporters</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {topDonors.map((donor, index) => (
-                  <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow border hover:border-primary/30">
-                    <CardContent className="pt-6 flex flex-col items-center">
-                      <Crown className="h-16 w-16 mb-4 text-yellow-500" /> 
-                      <p className="text-xl font-semibold text-foreground">{donor.name}</p>
-                      <p className="text-2xl font-bold text-primary flex items-center justify-center">
-                        <IndianRupee className="h-6 w-6 mr-1" />{donor.amount.toLocaleString()}
-                      </p>
+                {impactStats.map((stat, index) => (
+                  <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow flex flex-col text-center group bg-card hover:border-primary/30">
+                    <CardHeader className="items-center pb-2">
+                       <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                         <stat.icon className="h-8 w-8 text-primary" />
+                       </div>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <div className="text-4xl font-bold text-primary">{stat.value}</div>
+                      <p className="text-lg font-medium text-foreground mt-1">{stat.label}</p>
+                      <p className="text-sm text-muted-foreground pt-1">{stat.hint}</p>
                     </CardContent>
                   </Card>
                 ))}
               </div>
-            </div>
-            
-            <div className="space-y-6">
-              <h4 className="text-2xl font-semibold text-primary text-center">And Many More Generous Hearts</h4>
-              <Card className="shadow-lg overflow-hidden border">
-                <CardContent className="p-0"> 
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="w-[80px] text-center font-semibold">Rank</TableHead>
-                        <TableHead className="font-semibold">Donor Name</TableHead>
-                        <TableHead className="text-right font-semibold">Amount Donated</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {otherDonors.map((donor) => (
-                        <TableRow key={donor.rank} className="hover:bg-muted/50">
-                          <TableCell className="font-medium text-center">#{donor.rank}</TableCell>
-                          <TableCell>{donor.name}</TableCell>
-                          <TableCell className="text-right flex items-center justify-end">
-                            <IndianRupee className="h-4 w-4 mr-1 text-muted-foreground" />{donor.amount.toLocaleString()}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </CardContent> 
-              </Card> 
-            </div>
 
-            <div className="text-center pt-8">
-              <p className="text-3xl font-extrabold text-foreground">
-                Total Funds Collected: 
-                <span className="text-primary ml-2 flex items-center justify-center text-4xl">
-                  <IndianRupee className="h-8 w-8 mr-1" />{otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0)).toLocaleString()}
-                </span>
-              </p>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-      
-      <AnimatedSection animationType="slide-up">
-        <section className="py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Focus-IN is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us.
-              </p>
-              <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
-                <Link href="/support">
-                  Contact Us
-                </Link>
-              </Button>
-            </div>
-            <div className="relative h-80 w-full rounded-2xl shadow-xl bg-gradient-to-br from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]">
-               <div className="absolute inset-0 flex items-center justify-center">
-                 <Eye className="h-32 w-32 text-white/30 opacity-70" />
-               </div>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
+              <div className="mt-16 md:mt-20 space-y-10 bg-card p-6 md:p-10 rounded-2xl shadow-xl border">
+                <div className="text-center">
+                  <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-pulse" />
+                  <h3 className="text-3xl font-bold text-foreground mb-2">A Heartfelt Thank You to Our Donors</h3>
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    We extend our sincere gratitude to the generous individuals from across India who have supported Focus-IN through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
+                  </p>
+                  <Button size="lg" variant="default" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
+                    <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-IN
+                  </Button>
+                </div>
 
-    </div>
+                <div className="space-y-8">
+                  <h4 className="text-2xl font-semibold text-primary text-center">Our Top Supporters</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {topDonors.map((donor, index) => (
+                      <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow border hover:border-primary/30">
+                        <CardContent className="pt-6 flex flex-col items-center">
+                          <Crown className="h-16 w-16 mb-4 text-yellow-500" /> 
+                          <p className="text-xl font-semibold text-foreground">{donor.name}</p>
+                          <p className="text-2xl font-bold text-primary flex items-center justify-center">
+                            <IndianRupee className="h-6 w-6 mr-1" />{donor.amount.toLocaleString()}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <h4 className="text-2xl font-semibold text-primary text-center">And Many More Generous Hearts</h4>
+                  <Card className="shadow-lg overflow-hidden border">
+                    <CardContent className="p-0"> 
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead className="w-[80px] text-center font-semibold">Rank</TableHead>
+                            <TableHead className="font-semibold">Donor Name</TableHead>
+                            <TableHead className="text-right font-semibold">Amount Donated</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {otherDonors.map((donor) => (
+                            <TableRow key={donor.rank} className="hover:bg-muted/50">
+                              <TableCell className="font-medium text-center">#{donor.rank}</TableCell>
+                              <TableCell>{donor.name}</TableCell>
+                              <TableCell className="text-right flex items-center justify-end">
+                                <IndianRupee className="h-4 w-4 mr-1 text-muted-foreground" />{donor.amount.toLocaleString()}
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </CardContent> 
+                  </Card> 
+                </div>
+
+                <div className="text-center pt-8">
+                  <p className="text-3xl font-extrabold text-foreground">
+                    Total Funds Collected: 
+                    <span className="text-primary ml-2 flex items-center justify-center text-4xl">
+                      <IndianRupee className="h-8 w-8 mr-1" />{otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0)).toLocaleString()}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </section>
+          </AnimatedSection>
+          
+          <AnimatedSection animationType="slide-up">
+            <section className="py-16 md:py-24">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Focus-IN is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us.
+                  </p>
+                  <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
+                    <Link href="/support">
+                      Contact Us
+                    </Link>
+                  </Button>
+                </div>
+                <div className="relative h-80 w-full rounded-2xl shadow-xl bg-gradient-to-br from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]">
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <Eye className="h-32 w-32 text-white/30 opacity-70" />
+                   </div>
+                </div>
+              </div>
+            </section>
+          </AnimatedSection>
+        </div>
+      </div>
+    </>
   );
 }

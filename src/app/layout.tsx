@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}>
         <AnnouncementBar />
         <Navbar />
-        <main className="flex-grow container mx-auto container-padding">
+        <main className="flex-grow">
           {children}
         </main>
         <Footer />
