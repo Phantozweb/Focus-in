@@ -1,18 +1,18 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Wrench, BookOpen, Users, Brain, Briefcase, Scaling, Bot } from 'lucide-react';
+import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight } from 'lucide-react'; // Wrench removed, Layers added
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 const coreFeatures = [
   {
-    icon: Wrench,
-    title: 'Comprehensive Tool Directory',
-    description: 'Explore a wide range of optometry tools, from diagnostic equipment to optical supplies. Detailed information and specifications at your fingertips.',
-    link: '/tools',
-    linkText: 'Discover Tools',
+    icon: Layers, // Changed from Wrench
+    title: 'Explore Our Projects', // Changed title
+    description: 'Discover our innovative projects like Focus.Ai, Focus Axis, and more, designed to advance optometry.', // Changed description
+    link: '/projects', // Changed link
+    linkText: 'View Projects', // Changed linkText
   },
   {
     icon: BookOpen,
@@ -45,7 +45,7 @@ export default function HomePage() {
       <section className="container mx-auto px-4">
         <SectionTitle
           title="Empowering Optometry Professionals"
-          subtitle="Discover tools, resources, and innovative projects to enhance your skills and knowledge."
+          subtitle="Discover projects, resources, and innovative solutions to enhance your skills and knowledge." // Subtitle updated
         />
         <FeatureGrid features={coreFeatures} />
       </section>
@@ -61,7 +61,7 @@ export default function HomePage() {
             <div className="mt-12 text-center">
                 <Button asChild size="lg" className="shadow-md hover:shadow-lg transition-shadow">
                     <Link href="/projects/focus-share">
-                        Explore Focus Share & Focus Gen <Bot className="ml-2 h-5 w-5" />
+                        Explore Focus Share & Focus Gen <ArrowRight className="ml-2 h-5 w-5" /> 
                     </Link>
                 </Button>
             </div>

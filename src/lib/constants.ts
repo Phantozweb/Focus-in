@@ -1,12 +1,12 @@
 
 import React from 'react';
 import type { SVGProps } from 'react';
-import type { NavItem, ProjectNavItem, Tool, Resource, ProjectDetails } from '@/types';
-import { Home, Wrench, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Eye, Lightbulb, Microscope, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers as LucideLayers, ArrowRight } from 'lucide-react';
+import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
+import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Eye, Lightbulb, Microscope, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers } from 'lucide-react'; // Added Layers
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
-  { href: '/tools', label: 'Tools', icon: Wrench },
+  { href: '/projects', label: 'Our Projects', icon: Layers }, // Changed from Tools to Our Projects
   { href: '/resources', label: 'Resources', icon: BookOpen },
   { href: '/support', label: 'Support', icon: Mail },
 ];
@@ -19,14 +19,8 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: Bot, description: "Generative AI for study material creation." },
 ];
 
-export const TOOLS_DATA: Tool[] = [
-  { id: '1', name: 'Digital Phoropter', description: 'Advanced digital phoropter for precise refraction.', category: 'Diagnostic', iconName: 'Eye' },
-  { id: '2', name: 'Slit Lamp', description: 'High-magnification slit lamp for detailed eye examination.', category: 'Diagnostic', iconName: 'Microscope' },
-  { id: '3', name: 'Lensmeter', description: 'Automated lensmeter for accurate lens measurement.', category: 'Optical', iconName: 'Wrench' },
-  { id: '4', name: 'Retinal Camera', description: 'Fundus camera for capturing high-resolution retinal images.', category: 'Imaging', iconName: 'LucideCamera' },
-  { id: '5', name: 'OCT Machine', description: 'Optical Coherence Tomography for cross-sectional imaging.', category: 'Imaging', iconName: 'LucideScanSearch' },
-  { id: '6', name: 'Visual Field Analyzer', description: 'Perimeter for assessing visual field defects.', category: 'Diagnostic', iconName: 'LucideSquareActivity' },
-];
+// TOOLS_DATA removed as physical tools are no longer the focus of this section.
+// Project data is available in PROJECTS_DETAILS_DATA.
 
 export const RESOURCES_DATA: Resource[] = [
   { id: '1', title: 'Clinical Optics Guide', summary: 'A comprehensive guide to understanding clinical optics.', link: '#', type: 'article', iconName: 'FileText' },
@@ -98,7 +92,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     iconName: 'Bot',
     features: [
       { title: 'Custom Quiz Generation', description: 'Create quizzes from textbooks or lecture notes.', iconName: 'LucideFileQuestion' },
-      { title: 'Automated Summarization', description: 'Condense lengthy articles into key takeaways.', iconName: 'FileText' }, 
+      { title: 'Automated Summarization', description: 'Condense lengthy articles into key takeaways.', iconName: 'FileText' },
       { title: 'Flashcard Creation', description: 'Generate flashcards for quick review of important concepts.', iconName: 'LucideLayers' },
     ],
   },
@@ -124,9 +118,8 @@ const MessageSquarePlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (
 const Share2Placeholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 const UserCheckPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 const FileQuestionPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const FileTextIconPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props)); // Renamed from FileText to avoid conflict
+const FileTextIconPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props)); 
 const LayersPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 
-// Note: The project data (PROJECTS_DETAILS_DATA, TOOLS_DATA, RESOURCES_DATA) has been updated to use `iconName: string`
+// Note: The project data (PROJECTS_DETAILS_DATA, RESOURCES_DATA) has been updated to use `iconName: string`
 // and will be rendered using the `IconRenderer` component on the client-side.
-// Placeholder functions below are kept for reference or if direct SVG rendering without Lucide is needed elsewhere.
