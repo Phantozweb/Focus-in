@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
-  const targetText = "INNOVATE"; // Changed from INTEGRATED NETWORK
+  const targetText = "INTEGRATED NETWORK"; // Changed back from INNOVATE
 
   const toggleInText = () => {
     setIsInExpanded(!isInExpanded);
