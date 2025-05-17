@@ -28,14 +28,14 @@ export function HeroSection() {
         } else {
           clearInterval(intervalId);
         }
-      }, 80); // Adjust typing speed as needed
+      }, 100); // Adjust typing speed as needed
 
       return () => clearInterval(intervalId);
     } else {
       // When collapsing, immediately set to "IN" or clear
-      setDisplayedText(''); // Or setDisplayedText("IN") if you want "IN" to remain until next expand
+      setDisplayedText('');
     }
-  }, [isInExpanded, targetText]); // Added targetText to dependency array
+  }, [isInExpanded, targetText]);
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
@@ -50,7 +50,8 @@ export function HeroSection() {
               onClick={toggleInText}
               className={cn(
                 "text-primary cursor-pointer transition-all duration-300 ease-in-out inline-block",
-                !isInExpanded && "animate-subtle-bounce hover:underline"
+                !isInExpanded && "animate-subtle-bounce hover:underline",
+                isInExpanded && "whitespace-nowrap" // Prevent wrapping for "INTEGRATED NETWORK"
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
               style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} // Prevent layout shift for "IN"
@@ -82,3 +83,4 @@ export function HeroSection() {
     </section>
   );
 }
+
