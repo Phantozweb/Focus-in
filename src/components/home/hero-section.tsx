@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
-  const targetText = "INTEGRATED NETWORK"; // Corrected spelling
+  const targetText = "INNOVATE"; // Changed from INTEGRATED NETWORK
 
   const toggleInText = () => {
     setIsInExpanded(!isInExpanded);
@@ -35,7 +35,7 @@ export function HeroSection() {
       // When collapsing, immediately set to "IN" or clear
       setDisplayedText('');
     }
-  }, [isInExpanded, targetText]); // Added targetText to dependency array
+  }, [isInExpanded, targetText]);
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
@@ -51,7 +51,7 @@ export function HeroSection() {
               className={cn(
                 "text-primary cursor-pointer transition-all duration-300 ease-in-out inline-block",
                 !isInExpanded && "animate-subtle-bounce hover:underline",
-                isInExpanded && "whitespace-nowrap" // Prevent wrapping for "INTEGRATED NETWORK"
+                isInExpanded && "whitespace-nowrap" 
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
               style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} // Prevent layout shift for "IN"
@@ -83,3 +83,4 @@ export function HeroSection() {
     </section>
   );
 }
+
