@@ -35,7 +35,7 @@ export function HeroSection() {
       // When collapsing, immediately set to "IN" or clear
       setDisplayedText(''); // Or setDisplayedText("IN") if you want "IN" to remain until next expand
     }
-  }, [isInExpanded, targetText]);
+  }, [isInExpanded, targetText]); // Added targetText to dependency array
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
