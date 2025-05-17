@@ -1,3 +1,103 @@
-export default function Home() {
-  return <></>;
+import { HeroSection } from '@/components/home/hero-section';
+import { FeatureGrid } from '@/components/home/feature-grid';
+import { SectionTitle } from '@/components/shared/section-title';
+import { Wrench, BookOpen, Users, Brain, Briefcase, Scaling, Bot } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
+import { AnimatedSection } from '@/components/shared/animated-section';
+
+const coreFeatures = [
+  {
+    icon: Wrench,
+    title: 'Comprehensive Tool Directory',
+    description: 'Explore a wide range of optometry tools, from diagnostic equipment to optical supplies. Detailed information and specifications at your fingertips.',
+    link: '/tools',
+    linkText: 'Discover Tools',
+  },
+  {
+    icon: BookOpen,
+    title: 'Curated Learning Resources',
+    description: 'Access a rich collection of articles, videos, and courses designed to support your optometry education and professional development.',
+    link: '/resources',
+    linkText: 'Browse Resources',
+  },
+  {
+    icon: Users,
+    title: 'Student & Professional Support',
+    description: 'Connect with us for inquiries, support, or guidance. We are here to help you navigate your optometry journey.',
+    link: '/support',
+    linkText: 'Get Support',
+  },
+];
+
+const projectHighlights = [
+    { icon: Brain, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance.', link: '/projects/focus-ai', linkText: 'Learn More' },
+    { icon: Scaling, title: 'Focus Axis', description: 'Advanced ocular measurement tools.', link: '/projects/focus-axis', linkText: 'Learn More' },
+    { icon: Briefcase, title: 'Focus CaseX', description: 'Interactive case studies platform.', link: '/projects/focus-casex', linkText: 'Learn More' },
+];
+
+
+export default function HomePage() {
+  return (
+    <div className="space-y-16 md:space-y-24">
+      <HeroSection />
+
+      <section className="container mx-auto px-4">
+        <SectionTitle
+          title="Empowering Optometry Professionals"
+          subtitle="Discover tools, resources, and innovative projects to enhance your skills and knowledge."
+        />
+        <FeatureGrid features={coreFeatures} />
+      </section>
+
+      <AnimatedSection animationType="slide-up">
+        <section className="bg-muted/50 py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <SectionTitle
+              title="Our Innovative Projects"
+              subtitle="Pioneering the future of optometry with cutting-edge technology and platforms."
+            />
+            <FeatureGrid features={projectHighlights} />
+            <div className="mt-12 text-center">
+                <Button asChild size="lg" className="shadow-md hover:shadow-lg transition-shadow">
+                    <Link href="/projects/focus-share">
+                        Explore Focus Share & Focus Gen <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                </Button>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+      
+      <AnimatedSection animationType="slide-up">
+        <section className="container mx-auto px-4 py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Focus-In is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us.
+              </p>
+              <Button asChild size="lg" variant="outline" className="shadow-md hover:shadow-lg transition-shadow">
+                <Link href="/support">
+                  Contact Us
+                </Link>
+              </Button>
+            </div>
+            <div className="relative h-80 w-full">
+               <Image 
+                src="https://placehold.co/600x400.png" 
+                alt="Community of optometrists"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg shadow-xl"
+                data-ai-hint="medical students community"
+              />
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+    </div>
+  );
 }
