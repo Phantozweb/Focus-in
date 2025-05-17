@@ -93,7 +93,7 @@ export default function HomePage() {
               <div className="grid md:grid-cols-3 gap-8 items-center">
                 <div className="md:col-span-1 flex justify-center">
                   <Image 
-                    src="/founder-janarthan.jpg" // REMEMBER to place founder-janarthan.jpg in your /public folder
+                    src="https://cdn.discordapp.com/attachments/1361686038950711516/1366784455011864677/1745925246585.png?ex=6829efb7&is=68289e37&hm=ef70e7c6845b70abb28246545f3c7ed95d3ed0e542409538872940388787fb85&" 
                     alt="Janarthan Veeramani, Founder of Focus-IN" 
                     width={300} 
                     height={300} 
