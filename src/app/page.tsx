@@ -1,18 +1,19 @@
+
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight } from 'lucide-react'; // Wrench removed, Layers added
+import { Layers, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 const coreFeatures = [
   {
-    icon: Layers, // Changed from Wrench
-    title: 'Explore Our Projects', // Changed title
-    description: 'Discover our innovative projects like Focus.Ai, Focus Axis, and more, designed to advance optometry.', // Changed description
-    link: '/projects', // Changed link
-    linkText: 'View Projects', // Changed linkText
+    icon: Layers,
+    title: 'Explore Our Projects',
+    description: 'Discover our innovative projects like Focus.Ai, Focus Axis, and more, designed to advance optometry.',
+    link: '/projects',
+    linkText: 'View Projects',
   },
   {
     icon: BookOpen,
@@ -45,7 +46,7 @@ export default function HomePage() {
       <section className="container mx-auto px-4">
         <SectionTitle
           title="Empowering Optometry Professionals"
-          subtitle="Discover projects, resources, and innovative solutions to enhance your skills and knowledge." // Subtitle updated
+          subtitle="Discover projects, resources, and innovative solutions to enhance your skills and knowledge."
         />
         <FeatureGrid features={coreFeatures} />
       </section>

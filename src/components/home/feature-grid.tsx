@@ -1,3 +1,4 @@
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
@@ -31,7 +32,7 @@ export function FeatureGrid({ features }: FeatureGridProps) {
               <CardDescription>{feature.description}</CardDescription>
             </CardContent>
             <div className="p-6 pt-0">
-              <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
+              <Button asChild variant="outline" className="shadow-md hover:shadow-lg transition-shadow">
                 <Link href={feature.link}>
                   {feature.linkText} <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
