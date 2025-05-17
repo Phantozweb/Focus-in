@@ -1,12 +1,19 @@
 
 "use client";
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, Layers, BookOpen } from 'lucide-react'; // Wrench removed, Layers added
+import { ArrowRight, Layers, BookOpen } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 export function HeroSection() {
+  const [isInExpanded, setIsInExpanded] = useState(false);
+
+  const toggleInText = () => {
+    setIsInExpanded(!isInExpanded);
+  };
+
   return (
     <section className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden flex items-center justify-center py-16 md:py-24">
       <div
@@ -15,7 +22,14 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            Welcome to <span className="text-primary">Focus-In</span>
+            Welcome to FOCUS-
+            <span
+              onClick={toggleInText}
+              className="text-primary cursor-pointer hover:underline transition-all duration-300 ease-in-out"
+              title={isInExpanded ? "Click to shorten" : "Click to expand"}
+            >
+              {isInExpanded ? 'INTEGRATED NETWORK' : 'IN'}
+            </span>
           </h1>
         </AnimatedSection>
         <AnimatedSection delay={200} animationType="slide-up">
