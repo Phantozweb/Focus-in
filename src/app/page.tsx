@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling } from 'lucide-react';
+import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -95,9 +95,9 @@ export default function HomePage() {
                   <Image 
                     src="https://cdn.discordapp.com/attachments/1361686038950711516/1366784455011864677/1745925246585.png?ex=6829efb7&is=68289e37&hm=ef70e7c6845b70abb28246545f3c7ed95d3ed0e542409538872940388787fb85&" 
                     alt="Janarthan Veeramani, Founder of Focus-IN" 
-                    width={300} 
-                    height={300} 
-                    className="rounded-xl shadow-lg object-cover aspect-square"
+                    width={200} 
+                    height={250} 
+                    className="rounded-xl shadow-lg object-cover"
                     data-ai-hint="founder portrait"
                   />
                 </div>
