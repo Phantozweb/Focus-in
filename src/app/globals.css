@@ -155,4 +155,20 @@
   .animate-eye-pulse-glow {
     animation: eye-pulse-glow 2.5s ease-in-out infinite;
   }
+
+  @keyframes underline-draw {
+    0% {
+      width: 0px;
+      opacity: 0;
+    }
+    100% {
+      width: 50px; /* Adjust width as needed */
+      opacity: 1;
+    }
+  }
+  .animate-underline-draw {
+    animation: underline-draw 0.5s ease-out forwards;
+    animation-delay: 0.3s; /* Delay to start after section reveal if needed */
+  }
 }
+
