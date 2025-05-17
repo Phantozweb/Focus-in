@@ -19,11 +19,11 @@ const coreFeatures = [
     linkText: 'View Projects',
   },
   {
-    icon: Brain, // Changed from BookOpen
-    title: 'AI-Powered Learning Tools', // Changed title
-    description: 'Leverage our suite of AI-driven web tools designed to help you excel in your optometry studies and practice more effectively.', // Changed description
-    link: '/projects', // Changed link to /projects
-    linkText: 'Discover Tools', // Changed linkText
+    icon: Brain, 
+    title: 'AI-Powered Learning Tools', 
+    description: 'Leverage our suite of AI-driven web tools designed to help you excel in your optometry studies and practice more effectively.', 
+    link: '/projects', 
+    linkText: 'Discover Tools', 
   },
   {
     icon: Users,
@@ -76,10 +76,20 @@ export default function HomePage() {
     <div className="space-y-16 md:space-y-24">
       <HeroSection />
 
+      <AnimatedSection animationType="slide-up" delay={100}>
+        <section className="py-12 md:py-16 text-center">
+          <div className="container mx-auto container-padding">
+            <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
+              Welcome to Focus! Focus began as a simple idea: to leverage technology to build practical, accessible tools for the optometry community, especially in places like India. We aim to provide resources that simplify complex tasks, enhance learning, and make daily practice more efficient for students and professionals alike.
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
       <section>
         <SectionTitle
           title="What We Offer" 
-          subtitle="Innovative web tools and AI solutions to enhance learning and practice in optometry." // Updated subtitle
+          subtitle="Innovative web tools and AI solutions to enhance learning and practice in optometry."
         />
         <FeatureGrid features={coreFeatures} />
       </section>
@@ -89,7 +99,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <SectionTitle
               title="Our Projects"
-              subtitle="Explore the suite of tools we are developing at Focus-IN. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
+              subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
             />
             <FeatureGrid features={projectHighlights} />
             <div className="mt-12 text-center">
@@ -105,7 +115,7 @@ export default function HomePage() {
 
       <AnimatedSection animationType="slide-up">
         <section className="py-16 md:py-24 space-y-12">
-          <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
+          <SectionTitle title="Our Impact" subtitle="See how Focus is being used across the optometry community:" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {impactStats.map((stat, index) => (
@@ -129,10 +139,10 @@ export default function HomePage() {
               <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-pulse" />
               <h3 className="text-3xl font-bold text-foreground mb-2">A Heartfelt Thank You to Our Donors</h3>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                We extend our sincere gratitude to the generous individuals from across India who have supported Focus-IN through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
+                We extend our sincere gratitude to the generous individuals from across India who have supported Focus through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
               </p>
               <Button size="lg" variant="default" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
-                <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-IN
+                <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus
               </Button>
             </div>
 
@@ -207,7 +217,7 @@ export default function HomePage() {
                 </Link>
               </Button>
             </div>
-            <div className="relative h-80 w-full rounded-2xl shadow-xl bg-gradient-to-br from-primary via-accent to-secondary">
+            <div className="relative h-80 w-full rounded-2xl shadow-xl bg-gradient-to-br from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]">
                <div className="absolute inset-0 flex items-center justify-center">
                  <Eye className="h-32 w-32 text-white/30 opacity-70" />
                </div>

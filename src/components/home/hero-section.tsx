@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INOVATE";
+const TARGET_TEXT_EXPANDED = "INOVATE"; // Or "INTEGRATED NETWORK" if preferred
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -21,19 +21,19 @@ export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
       <div
-        className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
+        className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]"
       />
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
             FOCUS-
             <span
-              key={isInExpanded ? 'expanded' : 'normal'} // Key change to re-trigger animation
+              key={isInExpanded ? 'expanded' : 'normal'}
               onClick={handleInClick}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
               className={cn(
-                "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block",
-                isInExpanded ? "animate-popup whitespace-nowrap" : "animate-subtle-bounce hover:underline"
+                "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block whitespace-nowrap",
+                isInExpanded ? "animate-popup" : "animate-subtle-bounce hover:underline"
               )}
               style={{ minWidth: !isInExpanded ? '3rem' : 'auto' }} 
             >
@@ -44,11 +44,7 @@ export function HeroSection() {
             Empowering Vision Care Professionals with Innovative Tools
           </h2>
         </AnimatedSection>
-        <AnimatedSection delay={200} animationType="slide-up">
-          <p className="mb-10 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-            Welcome to Focus-IN! Focus-IN began as a simple idea: to leverage technology to build practical, accessible tools for the optometry community, especially in places like India. We aim to provide resources that simplify complex tasks, enhance learning, and make daily practice more efficient for students and professionals alike.
-          </p>
-        </AnimatedSection>
+        
         <AnimatedSection delay={400} animationType="slide-up">
           <div className="flex flex-col gap-4 sm:flex-row justify-center">
             <Button asChild size="lg" variant="default" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary/30">
