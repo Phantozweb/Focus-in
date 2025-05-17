@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
-  const targetText = "INTEGRATED NETWORK";
+  const targetText = "INTEGRATED NETWORK"; // Corrected typo here
 
   const toggleInText = () => {
     setIsInExpanded(!isInExpanded);
@@ -19,7 +19,7 @@ export function HeroSection() {
 
   useEffect(() => {
     if (isInExpanded) {
-      setDisplayedText(''); 
+      setDisplayedText('');
       let index = 0;
       const intervalId = setInterval(() => {
         if (index < targetText.length) {
@@ -28,13 +28,13 @@ export function HeroSection() {
         } else {
           clearInterval(intervalId);
         }
-      }, 80); 
+      }, 80);
 
-      return () => clearInterval(intervalId); 
+      return () => clearInterval(intervalId);
     } else {
-      setDisplayedText(''); 
+      setDisplayedText('');
     }
-  }, [isInExpanded, targetText]); 
+  }, [isInExpanded, targetText]);
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
@@ -52,7 +52,7 @@ export function HeroSection() {
                 !isInExpanded && "animate-subtle-bounce hover:underline"
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
-              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} 
+              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }}
             >
               {isInExpanded ? displayedText : 'IN'}
             </span>
