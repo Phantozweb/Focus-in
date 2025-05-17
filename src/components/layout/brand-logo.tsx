@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Eye } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
+import type { SVGProps } from 'react';
 
 interface BrandLogoProps {
   className?: string;
@@ -31,7 +32,8 @@ export function BrandLogo({ className, iconSize = 28, textSize = "text-2xl", onC
       let charIndex = 0;
       typingInterval = setInterval(() => {
         if (charIndex < expansionTargetText.length) {
-          setAnimatedText((prev) => prev + expansionTargetText[charIndex]);
+          // Safeguard: append char or empty string if char is undefined
+          setAnimatedText((prev) => prev + (expansionTargetText[charIndex] || ''));
           charIndex++;
         } else {
           clearInterval(typingInterval);
@@ -68,3 +70,4 @@ export function BrandLogo({ className, iconSize = 28, textSize = "text-2xl", onC
     </Link>
   );
 }
+
