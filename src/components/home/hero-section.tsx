@@ -16,7 +16,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden flex items-center justify-center py-16 md:py-24">
+    <section className="relative min-h-[65vh] w-full overflow-hidden flex items-center justify-center py-16 md:py-20">
       <div
         className="absolute inset-0 z-0 opacity-25 dark:opacity-15 bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
       />
@@ -27,8 +27,8 @@ export function HeroSection() {
             <span
               onClick={toggleInText}
               className={cn(
-                "text-primary cursor-pointer hover:underline transition-all duration-300 ease-in-out inline-block",
-                !isInExpanded && "animate-subtle-bounce",
+                "text-primary cursor-pointer transition-all duration-300 ease-in-out inline-block",
+                !isInExpanded && "animate-subtle-bounce hover:underline",
                 isInExpanded && "animate-popup"
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
