@@ -10,6 +10,7 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 const coreFeatures = [
   {
@@ -86,7 +87,7 @@ export default function HomePage() {
                 </p>
             </section>
           </AnimatedSection>
-
+          
           <AnimatedSection animationType="slide-up" delay={200}>
             <section className="py-12 md:py-16">
               <SectionTitle title="Meet the Founder" />
@@ -110,7 +111,8 @@ export default function HomePage() {
               </div>
             </section>
           </AnimatedSection>
-
+          
+          <Separator className="my-8 md:my-12" />
 
           <section>
             <SectionTitle
@@ -119,6 +121,8 @@ export default function HomePage() {
             />
             <FeatureGrid features={coreFeatures} />
           </section>
+
+          <Separator className="my-8 md:my-12" />
 
           <AnimatedSection animationType="slide-up">
             <section className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border">
@@ -138,6 +142,8 @@ export default function HomePage() {
               </div>
             </section>
           </AnimatedSection>
+
+          <Separator className="my-8 md:my-12" />
 
           <AnimatedSection animationType="slide-up">
             <section className="py-16 md:py-24 space-y-12">
@@ -229,6 +235,8 @@ export default function HomePage() {
             </section>
           </AnimatedSection>
           
+          <Separator className="my-8 md:my-12" />
+
           <AnimatedSection animationType="slide-up">
             <section className="py-16 md:py-24">
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -256,3 +264,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
