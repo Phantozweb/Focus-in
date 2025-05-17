@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
-  const targetText = "INTEGRATED NETWORK"; // Corrected typo here
+  const targetText = "INTEGRATED NETWORK"; // Corrected spelling
 
   const toggleInText = () => {
     setIsInExpanded(!isInExpanded);
@@ -19,7 +19,7 @@ export function HeroSection() {
 
   useEffect(() => {
     if (isInExpanded) {
-      setDisplayedText('');
+      setDisplayedText(''); // Reset before typing
       let index = 0;
       const intervalId = setInterval(() => {
         if (index < targetText.length) {
@@ -28,11 +28,12 @@ export function HeroSection() {
         } else {
           clearInterval(intervalId);
         }
-      }, 80);
+      }, 80); // Adjust typing speed as needed
 
       return () => clearInterval(intervalId);
     } else {
-      setDisplayedText('');
+      // When collapsing, immediately set to "IN" or clear
+      setDisplayedText(''); // Or setDisplayedText("IN") if you want "IN" to remain until next expand
     }
   }, [isInExpanded, targetText]);
 
@@ -52,7 +53,7 @@ export function HeroSection() {
                 !isInExpanded && "animate-subtle-bounce hover:underline"
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
-              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }}
+              style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} // Prevent layout shift for "IN"
             >
               {isInExpanded ? displayedText : 'IN'}
             </span>
