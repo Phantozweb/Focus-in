@@ -3,7 +3,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Layers, BookOpen, Eye } from 'lucide-react';
+import { Layers, BookOpen } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
@@ -29,9 +29,7 @@ export function HeroSection() {
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
-          <div className="mb-6">
-            <Eye className="h-20 w-20 md:h-28 md:w-28 mx-auto text-primary animate-eye-pulse-glow" />
-          </div>
+          
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
             FOCUS-
             <span
