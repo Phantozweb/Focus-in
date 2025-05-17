@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INOVATE"; // Or "INTEGRATED NETWORK" if preferred
+const TARGET_TEXT_EXPANDED = "INOVATE"; 
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -41,7 +41,7 @@ export function HeroSection() {
             </span>
           </h1>
           <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
-            Empowering Vision Care Professionals with Innovative Tools
+            Your Lens on Optometric Innovation.
           </h2>
         </AnimatedSection>
         
