@@ -23,7 +23,8 @@ export function HeroSection() {
       let index = 0;
       const intervalId = setInterval(() => {
         if (index < targetText.length) {
-          setDisplayedText((prev) => prev + targetText[index]);
+          // Safeguard: append char or empty string if char is undefined
+          setDisplayedText((prev) => prev + (targetText[index] || ''));
           index++;
         } else {
           clearInterval(intervalId);
@@ -34,7 +35,7 @@ export function HeroSection() {
     } else {
       setDisplayedText(''); // Clear if contracting back to "IN"
     }
-  }, [isInExpanded]);
+  }, [isInExpanded, targetText]); // Ensure targetText is in dependency array
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
@@ -49,8 +50,8 @@ export function HeroSection() {
               onClick={toggleInText}
               className={cn(
                 "text-primary cursor-pointer transition-all duration-300 ease-in-out inline-block",
-                !isInExpanded && "animate-subtle-bounce hover:underline",
-                // No animate-popup here, letter-by-letter is the effect
+                !isInExpanded && "animate-subtle-bounce hover:underline"
+                // When isInExpanded is true, no hover:underline is applied here
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
               style={{ minWidth: isInExpanded ? 'auto' : '2ch' }} // Prevents layout shift for "IN"
