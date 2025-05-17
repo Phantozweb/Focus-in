@@ -16,7 +16,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[65vh] w-full overflow-hidden flex items-center justify-center py-16 md:py-20">
+    <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
       <div
         className="absolute inset-0 z-0 opacity-25 dark:opacity-15 bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
       />
