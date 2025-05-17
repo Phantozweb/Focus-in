@@ -10,70 +10,34 @@ import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
 const TARGET_TEXT_EXPANDED = "INOVATE"; // Changed from INNOVATE to INOVATE
-const TYPING_SPEED_MS = 100;
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
-  const [displayedText, setDisplayedText] = useState(TARGET_TEXT_NORMAL);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    let typingTimeout: NodeJS.Timeout;
-    let charIndex = 0;
-
-    if (isAnimating && isInExpanded) {
-      setDisplayedText(''); // Clear before typing
-      const typeLetter = () => {
-        if (charIndex < TARGET_TEXT_EXPANDED.length) {
-          setDisplayedText((prev) => prev + (TARGET_TEXT_EXPANDED[charIndex] || ''));
-          charIndex++;
-          typingTimeout = setTimeout(typeLetter, TYPING_SPEED_MS);
-        } else {
-          setIsAnimating(false); // Animation finished
-        }
-      };
-      // Start typing after a very brief delay to ensure state updates are processed
-      typingTimeout = setTimeout(typeLetter, TYPING_SPEED_MS / 2); 
-    } else if (!isInExpanded) {
-      setDisplayedText(TARGET_TEXT_NORMAL);
-      setIsAnimating(false);
-    }
-
-    return () => {
-      clearTimeout(typingTimeout);
-    };
-  }, [isInExpanded, isAnimating]);
 
   const handleInClick = () => {
-    if (!isAnimating) {
-      setIsInExpanded(!isInExpanded);
-      if (!isInExpanded) { // If about to expand
-        setIsAnimating(true);
-      }
-    }
+    setIsInExpanded(!isInExpanded);
   };
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
       <div
-        className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-primary via-accent to-secondary"
+        className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
       />
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
             FOCUS
             <span
+              key={isInExpanded ? 'expanded' : 'normal'} // Key change to re-trigger animation
               onClick={handleInClick}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
               className={cn(
-                "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block whitespace-nowrap",
-                !isInExpanded && !isAnimating ? "animate-subtle-bounce hover:underline" : "",
-                isAnimating ? "opacity-75" : "opacity-100",
-                isInExpanded ? "whitespace-nowrap" : "" 
+                "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block",
+                isInExpanded ? "animate-popup whitespace-nowrap" : "animate-subtle-bounce hover:underline"
               )}
               style={{ minWidth: !isInExpanded ? '3rem' : 'auto' }} 
             >
-              -{displayedText}
+              {isInExpanded ? TARGET_TEXT_EXPANDED : TARGET_TEXT_NORMAL}
             </span>
           </h1>
           <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
