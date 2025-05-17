@@ -95,6 +95,8 @@ export default function HomePage() {
             </section>
           </AnimatedSection>
           
+          <Separator className="my-8 md:my-12" />
+
           <AnimatedSection animationType="slide-up" delay={200}>
             <section className="py-12 md:py-16">
               <SectionTitle title="Meet the Founder" />
@@ -112,7 +114,7 @@ export default function HomePage() {
                 <div className="md:col-span-2 space-y-4">
                   <h3 className="text-2xl font-semibold text-primary">Janarthan Veeramani - Founder of Focus-IN</h3>
                   <p className="text-lg text-muted-foreground">
-                    Focus-IN was founded by Janarthan Veeramani, with the goal of innovating in the field of optometry through technology. His vision is to create accessible and powerful tools that empower vision care professionals, particularly in regions like India, by leveraging modern advancements in AI, data management, and digital simulations.
+                    Janarthan Veeramani founded Focus-IN with a clear mission: to innovate optometry through technology. He envisions a future where accessible, powerful digital tools empower vision care students and professionals across India and beyond, leveraging the latest in AI, data science, and simulation.
                   </p>
                 </div>
               </div>
@@ -136,7 +138,7 @@ export default function HomePage() {
               <div className="px-4">
                 <SectionTitle
                   title="Our Projects"
-                  subtitle="Explore the suite of tools we are developing at Focus. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
+                  subtitle="Explore the suite of tools we are developing at Focus-IN. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
                 />
                 <FeatureGrid features={projectHighlights} />
                 <div className="mt-12 text-center">
@@ -271,5 +273,7 @@ export default function HomePage() {
     </>
   );
 }
+
+    
 
     
