@@ -41,9 +41,9 @@ const projectHighlights = [
 ];
 
 const impactStats = [
-  { icon: Users, value: "75+", label: "Focus AI Users", hint: "active users" },
+  { icon: UserCheck, value: "75+", label: "Focus AI Users", hint: "active users" },
   { icon: Bot, value: "120+", label: "Focus Gen Uses", hint: "content generations" },
-  { icon: UserCheck, value: "20+", label: "Focus EMR Beta Testers", hint: "early adopters" },
+  { icon: ClipboardList, value: "20+", label: "Focus EMR Beta Testers", hint: "early adopters" },
 ];
 
 const topDonors = [
@@ -80,7 +80,7 @@ export default function HomePage() {
         <section className="py-12 md:py-16 text-center">
           <div className="container mx-auto container-padding">
             <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-              Welcome to Focus! Focus began as a simple idea: to leverage technology to build practical, accessible tools for the optometry community, especially in places like India. We aim to provide resources that simplify complex tasks, enhance learning, and make daily practice more efficient for students and professionals alike.
+              Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
             </p>
           </div>
         </section>
@@ -115,7 +115,7 @@ export default function HomePage() {
 
       <AnimatedSection animationType="slide-up">
         <section className="py-16 md:py-24 space-y-12">
-          <SectionTitle title="Our Impact" subtitle="See how Focus is being used across the optometry community:" />
+          <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {impactStats.map((stat, index) => (
@@ -139,10 +139,10 @@ export default function HomePage() {
               <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-pulse" />
               <h3 className="text-3xl font-bold text-foreground mb-2">A Heartfelt Thank You to Our Donors</h3>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                We extend our sincere gratitude to the generous individuals from across India who have supported Focus through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
+                We extend our sincere gratitude to the generous individuals from across India who have supported Focus-IN through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
               </p>
               <Button size="lg" variant="default" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
-                <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus
+                <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-IN
               </Button>
             </div>
 
