@@ -49,8 +49,8 @@ export function HeroSection() {
             <span
               onClick={toggleInText}
               className={cn(
-                "text-primary cursor-pointer transition-all duration-300 ease-in-out inline-block",
-                !isInExpanded && "animate-subtle-bounce hover:underline",
+                "text-primary cursor-pointer inline-block",
+                !isInExpanded && "animate-subtle-bounce hover:underline transition-all duration-300 ease-in-out",
                 isInExpanded && "whitespace-nowrap" 
               )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
@@ -83,3 +83,4 @@ export function HeroSection() {
     </section>
   );
 }
+
