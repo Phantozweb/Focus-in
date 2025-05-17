@@ -20,9 +20,13 @@ export function HeroSection() {
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
+      {/* Gradient Background */}
       <div
         className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]"
       />
+      {/* Fade to page background overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[1]" />
+      
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
@@ -35,7 +39,7 @@ export function HeroSection() {
                 "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block whitespace-nowrap",
                 isInExpanded ? "animate-popup" : "animate-subtle-bounce hover:underline"
               )}
-              style={{ minWidth: !isInExpanded ? '3rem' : 'auto' }} 
+              style={{ minWidth: !isInExpanded ? '3.5rem' : 'auto' }} 
             >
               {isInExpanded ? TARGET_TEXT_EXPANDED : TARGET_TEXT_NORMAL}
             </span>
@@ -63,3 +67,4 @@ export function HeroSection() {
     </section>
   );
 }
+
