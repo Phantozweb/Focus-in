@@ -97,7 +97,7 @@ export default function HomePage() {
                     alt="Janarthan Veeramani, Founder of Focus-IN" 
                     width={300} 
                     height={300} 
-                    className="rounded-full shadow-xl object-cover aspect-square"
+                    className="rounded-xl shadow-lg object-cover aspect-square"
                     data-ai-hint="founder portrait"
                   />
                 </div>
