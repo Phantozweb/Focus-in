@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INTEGRATED NETWORK"; // Corrected spelling
+const TARGET_TEXT_EXPANDED = "INNOVATE"; // Changed from INTEGRATED NETWORK
 const TYPING_SPEED_MS = 100;
 
 export function HeroSection() {
@@ -55,7 +55,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
       <div
-        className="absolute inset-0 z-0 opacity-20 dark:opacity-10 bg-gradient-to-tr from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))]"
+        className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-primary via-accent to-secondary"
       />
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
@@ -66,11 +66,11 @@ export function HeroSection() {
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
               className={cn(
                 "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block whitespace-nowrap",
-                !isInExpanded ? "animate-subtle-bounce hover:underline" : "",
-                isInExpanded && !isAnimating ? "" : "", // No special class needed when fully expanded and not animating
-                isAnimating ? "opacity-75" : "opacity-100" // Slightly fade during animation
+                !isInExpanded && !isAnimating ? "animate-subtle-bounce hover:underline" : "",
+                isAnimating ? "opacity-75" : "opacity-100",
+                isInExpanded ? "whitespace-nowrap" : "" 
               )}
-              style={{ minWidth: !isInExpanded ? '3rem' : 'auto' }} // Prevent layout shift
+              style={{ minWidth: !isInExpanded ? '3rem' : 'auto' }} 
             >
               -{displayedText}
             </span>
@@ -81,7 +81,7 @@ export function HeroSection() {
         </AnimatedSection>
         <AnimatedSection delay={200} animationType="slide-up">
           <p className="mb-10 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-            Welcome to Focus! Focus began as a simple idea: to leverage technology to build practical, accessible tools for the optometry community, especially in places like India. We aim to provide resources that simplify complex tasks, enhance learning, and make daily practice more efficient for students and professionals alike.
+            Welcome to Focus-IN! Focus-IN began as a simple idea: to leverage technology to build practical, accessible tools for the optometry community, especially in places like India. We aim to provide resources that simplify complex tasks, enhance learning, and make daily practice more efficient for students and professionals alike.
           </p>
         </AnimatedSection>
         <AnimatedSection delay={400} animationType="slide-up">
