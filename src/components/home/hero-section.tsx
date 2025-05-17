@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INNOVATE"; // Changed from INTEGRATED NETWORK
+const TARGET_TEXT_EXPANDED = "INOVATE"; // Changed from INNOVATE to INOVATE
 const TYPING_SPEED_MS = 100;
 
 export function HeroSection() {
@@ -32,7 +32,8 @@ export function HeroSection() {
           setIsAnimating(false); // Animation finished
         }
       };
-      typingTimeout = setTimeout(typeLetter, TYPING_SPEED_MS / 2); // Start slightly faster
+      // Start typing after a very brief delay to ensure state updates are processed
+      typingTimeout = setTimeout(typeLetter, TYPING_SPEED_MS / 2); 
     } else if (!isInExpanded) {
       setDisplayedText(TARGET_TEXT_NORMAL);
       setIsAnimating(false);
