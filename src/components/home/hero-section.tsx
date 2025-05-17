@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INOVATE"; // Changed from INNOVATE to INOVATE
+const TARGET_TEXT_EXPANDED = "INOVATE";
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -26,7 +26,7 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            FOCUS
+            FOCUS-
             <span
               key={isInExpanded ? 'expanded' : 'normal'} // Key change to re-trigger animation
               onClick={handleInClick}
