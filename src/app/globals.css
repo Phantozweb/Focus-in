@@ -139,4 +139,20 @@
     animation: popup 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
     display: inline-block; /* Necessary for transform to work as expected */
   }
+
+  @keyframes eye-pulse-glow {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
+      filter: drop-shadow(0 0 6px hsl(var(--primary)/0.4)) drop-shadow(0 0 12px hsl(var(--primary)/0.2));
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 10px hsl(var(--primary)/0.6)) drop-shadow(0 0 20px hsl(var(--primary)/0.3));
+    }
+  }
+  .animate-eye-pulse-glow {
+    animation: eye-pulse-glow 2.5s ease-in-out infinite;
+  }
 }

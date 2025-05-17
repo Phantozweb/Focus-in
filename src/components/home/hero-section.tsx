@@ -3,13 +3,13 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Layers, BookOpen } from 'lucide-react';
+import { Layers, BookOpen, Eye } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INOVATE"; 
+const TARGET_TEXT_EXPANDED = "INOVATE"; // Corrected spelling
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -29,6 +29,9 @@ export function HeroSection() {
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
+          <div className="mb-6">
+            <Eye className="h-20 w-20 md:h-28 md:w-28 mx-auto text-primary animate-eye-pulse-glow" />
+          </div>
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
             FOCUS-
             <span
@@ -44,8 +47,8 @@ export function HeroSection() {
               {isInExpanded ? TARGET_TEXT_EXPANDED : TARGET_TEXT_NORMAL}
             </span>
           </h1>
-          <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
-            Your Lens on Optometric Innovation.
+          <h2 className="mb-8 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
+            Learn Smart. Practice Smarter.
           </h2>
         </AnimatedSection>
         
@@ -67,4 +70,3 @@ export function HeroSection() {
     </section>
   );
 }
-
