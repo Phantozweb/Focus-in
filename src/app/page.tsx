@@ -1,7 +1,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Wrench, BookOpen, Users, Brain, Briefcase, Scaling, Bot } from 'lucide-react';
+import { Wrench, BookOpen, Users, Brain, Briefcase, Scaling, Bot, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
