@@ -4,8 +4,9 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, Layers, BookOpen } from 'lucide-react';
+import { Layers, BookOpen } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
+import { cn } from '@/lib/utils';
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -22,10 +23,14 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            Welcome to FOCUS-
+            FOCUS-
             <span
               onClick={toggleInText}
-              className="text-primary cursor-pointer hover:underline transition-all duration-300 ease-in-out"
+              className={cn(
+                "text-primary cursor-pointer hover:underline transition-all duration-300 ease-in-out inline-block",
+                !isInExpanded && "animate-subtle-bounce",
+                isInExpanded && "animate-popup"
+              )}
               title={isInExpanded ? "Click to shorten" : "Click to expand"}
             >
               {isInExpanded ? 'INTEGRATED NETWORK' : 'IN'}
