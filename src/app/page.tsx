@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator } from 'lucide-react';
+import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -25,8 +25,8 @@ const whyWeStartedFeatures = [
     icon: Users,
     title: 'Empowering Our Community',
     description: 'We saw a crucial need for modern, tech-driven solutions to support optometry students and professionals, aiming to make advanced tools universally accessible.',
-    link: '#', // Link can be internal page or external
-    linkText: '', // Text for the button/link e.g. "Learn More"
+    link: '#', 
+    linkText: '', 
   },
   {
     icon: Brain,
@@ -69,7 +69,7 @@ const otherDonors = [
   { rank: 7, name: "Fazil Mohd", amount: 400 },
   { rank: 8, name: "Deepak", amount: 250 },
   { rank: 9, name: "K Anusha Mohan", amount: 250 },
-  { rank: 10, name: "Mohammad Khan", amount: 250 }, // Corrected this based on your previous input, might need to re-rank if this was an error
+  { rank: 10, name: "Mohammad Khan", amount: 250 }, 
   { rank: 11, name: "Mohd Harsad", amount: 250 },
   { rank: 12, name: "Shreya", amount: 222 },
   { rank: 13, name: "Aishwarya Suresh", amount: 200 },
@@ -244,13 +244,20 @@ export default function HomePage() {
                 <div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
                   <p className="text-lg text-muted-foreground mb-6">
-                    Focus-IN is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us.
+                    Focus-IN is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us on our social platforms.
                   </p>
-                  <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
-                    <Link href="/support">
-                      Contact Us
-                    </Link>
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
+                        <a href="https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu" target="_blank" rel="noopener noreferrer">
+                            <Instagram className="mr-2 h-5 w-5" /> Follow on Instagram
+                        </a>
+                    </Button>
+                    <Button asChild size="lg" variant="secondary" className="shadow-md hover:shadow-lg transition-shadow bg-[#0077B5] hover:bg-[#005E8E] text-white">
+                        <a href="https://www.linkedin.com/company/focusprojects/" target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="mr-2 h-5 w-5" /> Connect on LinkedIn
+                        </a>
+                    </Button>
+                  </div>
                 </div>
                 <div className="relative h-80 w-full rounded-2xl shadow-xl bg-gradient-to-br from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]">
                    <div className="absolute inset-0 flex items-center justify-center">
@@ -264,5 +271,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    

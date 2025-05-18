@@ -157,7 +157,34 @@ export default function FocusAiPage() {
     <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
       <ProjectDetailsDisplay project={project} />
       <Separator />
+
+      <AnimatedSection animationType="slide-up" delay={100}>
+        <Card className="shadow-lg border-primary/20">
+            <CardHeader>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                    <Rocket className="h-7 w-7 text-primary" />
+                    Availability & Future Development
+                </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-muted-foreground">
+                <p>
+                    A free version of Focus AI is currently available, offering core AI assistance features like the chat and basic quizzes. We are actively developing a paid version which will include more advanced capabilities, deeper integration, the case study generator, and expanded analytical tools.
+                </p>
+            </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
+                 <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
+                    <a href="https://focusai.netlify.app" target="_blank" rel="noopener noreferrer">
+                        <Sparkles className="mr-2 h-5 w-5" /> Access AI
+                    </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
+                  <Link href="/support">Support This Project</Link>
+                </Button>
+            </CardFooter>
+        </Card>
+      </AnimatedSection>
       
+      <Separator />
       <AnimatedSection animationType="slide-up" delay={200}>
         <SectionTitle title="What Our Users Say" subtitle="Feedback from optometry students using Focus AI." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

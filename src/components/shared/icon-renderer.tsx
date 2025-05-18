@@ -11,7 +11,8 @@ import {
   FileQuestion as LucideFileQuestion, Layers as LucideLayers, HelpCircle, ClipboardList,
   StickyNote, CalendarDays, Info, Aperture, Palette, TestTubeDiagonal, 
   Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
-  Monitor, FilePenLine, Home, Mail, Heart, Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle // Added Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle
+  Monitor, FilePenLine, Home, Mail, Heart, Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle,
+  Instagram, Linkedin, Search, ListFilter, Tag
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -26,7 +27,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   LucideScanSearch,
   LucideSquareActivity,
   FileText,
-  BookOpen, // Still used in constants.ts for some project features
+  BookOpen, 
   Video,
   LinkIcon,
   Brain,
@@ -75,6 +76,11 @@ const iconMap: { [key: string]: React.ElementType } = {
   IndianRupee,
   Gift,
   CheckCircle,
+  Instagram,
+  Linkedin,
+  Search,
+  ListFilter,
+  Tag,
   // Add other icons as needed by their string name
 };
 

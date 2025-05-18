@@ -55,8 +55,10 @@ export default function FocusAxisPage() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
-              <Sparkles className="mr-2 h-5 w-5" /> Access Simulator (Coming Soon)
+            <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
+                <a href="https://focusaxis.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <Sparkles className="mr-2 h-5 w-5" /> Access Simulator
+                </a>
             </Button>
             <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
               <Link href="/support">Provide Feedback</Link>
