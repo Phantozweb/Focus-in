@@ -67,19 +67,44 @@ const focusAiChangelogData: ChangelogData = {
     },
     {
       version: "1.0",
-      releaseDate: "2024-10-01", // Example past date
-      summary: "Initial release of Focus.AI with core AI diagnostic assistance and study material generation.",
+      releaseDate: "2023-04-16",
+      summary: "Initial release with basic AI assistant and learning tools.",
       keyHighlights: [
-        "AI-powered diagnostic suggestions",
-        "Generative AI for creating study summaries",
-        "Basic quiz generation feature"
+        "Text-based AI assistant for optometry questions",
+        "Simple quiz system with basic question types",
+        "Case study generator with virtual patient scenarios",
+        "Basic note-saving functionality (browser-based)"
       ],
       detailedChanges: [
          {
-          title: "Core AI Engine",
-          date: "2024-10-01",
+          title: "Initial AI Assistant Release",
+          date: "2023-04-16",
           type: "New Feature",
-          description: "Launched with foundational AI capabilities for text-based analysis."
+          description: "Basic AI assistant providing text-based responses to optometry questions."
+        },
+        {
+          title: "Quiz System Launch",
+          date: "2023-04-16",
+          type: "New Feature",
+          description: "First version of the quiz system with basic question types and functionality."
+        },
+        {
+          title: "Case Study Generator",
+          date: "2023-04-16",
+          type: "New Feature",
+          description: "Tool to generate virtual case studies and suggested questions (without answers)."
+        },
+        {
+          title: "Basic Notes Feature",
+          date: "2023-04-16",
+          type: "New Feature",
+          description: "Simple note-saving functionality with browser-based storage."
+        },
+        {
+          title: "Known Issues at Launch",
+          date: "2023-04-16",
+          type: "Bug Fix", // Using 'Bug Fix' type for consistency, description clarifies it's about known issues.
+          description: "Initial release had known issues including: notes saving problems, lack of robust organization, and mobile compatibility problems with the quiz section."
         }
       ]
     }
