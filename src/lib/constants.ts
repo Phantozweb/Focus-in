@@ -28,14 +28,14 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     title: 'Focus.Ai',
     tagline: 'AI-Powered Optometry Assistance, Learning, and Practice Tools',
     description: 'Focus AI is your smart, AI-powered assistant for optometry studies. It simplifies complex theories, helps interpret clinical cases, and aids in preparing for exams, making your learning journey more efficient and confident.',
-    longDescription: 'Focus.Ai aims to reduce diagnostic errors and improve patient outcomes by integrating with existing diagnostic tools and offering a second layer of analysis powered by machine learning algorithms. With recent upgrades like OCT image analysis and an intuitive interface, Focus AI bridges textbook learning and real-world clinical skills seamlessly.',
+    longDescription: "Focus.Ai serves as an advanced learning aid, helping students understand how to interpret complex clinical information, such as OCT reports and other ophthalmological data. While it utilizes AI to break down cases and highlight potential areas of interest, it is designed to support the educational process, not to provide definitive diagnoses or replace professional clinical judgment. The interpretations offered are for learning purposes and may vary based on individual case conditions and complexities; it is not 100% accurate and should be used as a supplementary study tool.",
     iconName: 'Bot',
     features: [
       { title: 'Optometry AI Chat', description: 'Ask questions to an AI specially trained on optometry knowledge for instant assistance.', iconName: 'MessageSquare' },
       { title: 'Learning Aid', description: 'Utilize AI-powered explanations and summaries to deepen understanding of complex optometric concepts.', iconName: 'Lightbulb' },
       { title: 'Practice Quiz Section', description: 'Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.', iconName: 'FileQuestion' },
       { title: 'Case Study Generator', description: 'Create realistic case studies for practice, training, and educational purposes.', iconName: 'Briefcase' },
-      { title: 'Streamlined Patient Management', description: 'Aids in managing patient information and workflows, enhancing practice efficiency.', iconName: 'ClipboardList' },
+      { title: 'Clinical Case Interpretation Support', description: 'Assists students in learning to analyze and interpret various clinical findings and reports.', iconName: 'ClipboardList' },
     ],
   },
   {
@@ -132,17 +132,19 @@ export const RESOURCES_DATA: Resource[] = [
     slug: 'focus-ai-v2-launch',
     title: 'Focus.AI Version 2.0: Now with Image Analysis!',
     summary: 'Discover the exciting new features in Focus.AI v2.0, including advanced image analysis capabilities for OCT reports, a redesigned UI, and much more.',
-    link: '/resources/focus-ai-v2-launch', 
+    link: '/resources/focus-ai-v2-launch',
     type: 'project-spotlight',
     iconName: 'Bot',
     date: '2025-05-13',
     tags: ['Focus.AI', 'New Feature', 'Update'],
     fullContent: `We are thrilled to announce the launch of Focus.AI Version 2.0! This major update brings a host of new features and improvements designed to further empower optometry students and professionals.
-    
+
 Key highlights include the integration of advanced image analysis for OCT and ophthalmological reports, allowing for deeper insights and learning opportunities. We've also completely redesigned the user interface for a more intuitive and streamlined experience.
-    
+
+Focus.AI's image analysis capability is primarily a learning tool. It helps students understand how to interpret such reports by highlighting key features and patterns. It is not intended as a standalone diagnostic tool and all interpretations should be validated by qualified professionals. Accuracy can vary based on image quality and case complexity.
+
 Additionally, the study notes organization system has been significantly enhanced, and the AI Assistant now benefits from chat history. Explore new quick format modes like "simplify," "student-friendly," and "clinical focus" to tailor AI responses to your needs.
-    
+
 Read more about the journey and the technical details on the main Focus.AI project page.`
   },
   {
@@ -156,9 +158,9 @@ Read more about the journey and the technical details on the main Focus.AI proje
     date: '2024-07-01',
     tags: ['Focus Axis', 'Launch', 'Beta', 'Training Tool'],
     fullContent: `Focus Axis, our JCC (Jackson Cross Cylinder) simulator, has officially launched in beta! This tool is designed to help optometry students and practitioners master lens flipping and other critical refraction techniques through a virtual, gamified learning experience.
-    
+
 The current beta includes core simulation features and initial training modules. We are actively seeking feedback from users like you to refine and expand its capabilities. Your input will be invaluable as we work towards a full release.
-    
+
 Try it out and let us know what you think!`
   },
   {
@@ -172,7 +174,7 @@ Try it out and let us know what you think!`
     date: '2024-06-15',
     tags: ['Focus Gen', 'Launch', 'Student Tool'],
     fullContent: `We're excited to introduce Focus Gen, a dedicated tool for mastering optical transposition. Understanding and performing transpositions accurately is a fundamental skill in optometry, and Focus Gen is designed to make practice more accessible and effective.
-    
+
 With Focus Gen, you can:
 - Generate a wide variety of transposition sums.
 - Practice at your own pace.
@@ -191,7 +193,7 @@ This tool is perfect for students preparing for exams or anyone looking to refre
     date: '2024-08-01',
     tags: ['Focus CaseX', 'Development', 'Upcoming', 'AI Learning'],
     fullContent: `Development of Focus CaseX, our AI-powered interactive clinical learning platform, is well underway! We envision CaseX as a dynamic learning environment where optometry students can:
-    
+
 - Log their real clinical cases with detailed information.
 - Ask specific questions about logged cases and receive AI-driven assistance and interpretations.
 - Get AI-generated summaries of their case data to reinforce learning.
@@ -211,9 +213,9 @@ Our team is focused on building a comprehensive and user-friendly platform that 
     date: '2024-09-01',
     tags: ['Focus EMR', 'Beta', 'Practice Management'],
     fullContent: `The beta program for Focus EMR is now open! We're looking for optometry practices and professionals to help us test and refine our new Electronic Medical Records system.
-    
+
 Focus EMR aims to provide a streamlined, intuitive, and cost-effective solution for managing patient records, appointments, and prescriptions. Your feedback during this beta phase will be crucial in shaping the final product.
-    
+
 If you're interested in participating, please visit the Focus EMR project page or contact us through the support page.`
   },
 ];
@@ -222,6 +224,5 @@ If you're interested in participating, please visit the Focus EMR project page o
 export const getResourceBySlug = (slug: string): Resource | undefined => {
   return RESOURCES_DATA.find(r => r.slug === slug);
 };
-
 
     
