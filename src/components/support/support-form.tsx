@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Mail, User, MessageSquare, Loader2 } from "lucide-react";
+import { Mail, User, MessageSquare, Loader2, Send } from "lucide-react"; // Added Send
 import { useState } from "react";
 
 const supportFormSchema = z.object({
@@ -31,7 +32,7 @@ type SupportFormValues = z.infer<typeof supportFormSchema>;
 
 export function SupportForm() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // Keep for button state
 
   const form = useForm<SupportFormValues>({
     resolver: zodResolver(supportFormSchema),
@@ -45,17 +46,27 @@ export function SupportForm() {
 
   async function onSubmit(data: SupportFormValues) {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
 
-    console.log("Support form submitted:", data);
+    const mailtoSubject = `Support Request: ${data.subject}`;
+    const mailtoBody = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+    const mailtoLink = `mailto:focus.in.eco@gmail.com?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
+
+    // Attempt to open mail client
+    if (typeof window !== "undefined") {
+      window.location.href = mailtoLink;
+    }
+    
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you shortly.",
+      title: "Redirecting to Email Client",
+      description: "Please complete sending your message using your email application.",
       variant: "default", 
     });
-    form.reset();
+
+    // Reset form and button state after a short delay to allow redirection
+    setTimeout(() => {
+        form.reset();
+        setIsSubmitting(false);
+    }, 2000); // Adjust delay as needed
   }
 
   return (
@@ -63,10 +74,10 @@ export function SupportForm() {
       <CardHeader>
         <CardTitle className="text-2xl flex items-center gap-2">
           <Mail className="h-7 w-7 text-primary" />
-          Get In Touch
+          Send Us a Message
         </CardTitle>
         <CardDescription>
-          Have questions or need support? Fill out the form below, and our team will assist you.
+          Fill out the form below. Submitting will open your email client with a pre-filled message to focus.in.eco@gmail.com.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -90,7 +101,7 @@ export function SupportForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2"><Mail className="h-4 w-4 text-muted-foreground" />Email Address</FormLabel>
+                  <FormLabel className="flex items-center gap-2"><Mail className="h-4 w-4 text-muted-foreground" />Your Email Address</FormLabel>
                   <FormControl>
                     <Input type="email" placeholder="john.doe@example.com" {...field} className="h-12 text-base" />
                   </FormControl>
@@ -135,10 +146,13 @@ export function SupportForm() {
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Sending...
+                  Preparing Email...
                 </>
               ) : (
-                "Send Message"
+                <>
+                  <Send className="mr-2 h-4 w-4" />
+                  Open in Email Client
+                </>
               )}
             </Button>
           </form>

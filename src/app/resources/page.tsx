@@ -6,16 +6,16 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Project Spotlights | Focus-IN',
-  description: 'Explore in-depth insights into our innovative optometry tools and platforms, including AI diagnostic tools, simulation software, and more. Powered by Focus-IN.',
+  title: 'Project Spotlights & Updates | Focus-IN',
+  description: 'Stay updated with the latest news, feature releases, and insights about Focus-IN projects. Explore spotlights on our innovative optometry tools and platforms.',
 };
 
 export default function ProjectSpotlightsPage() {
   return (
     <div className="container mx-auto container-padding py-12 md:py-16">
       <SectionTitle
-        title="Project Spotlights"
-        subtitle="Explore in-depth insights into our innovative optometry tools and platforms."
+        title="Project Spotlights & Updates"
+        subtitle="Explore in-depth insights and the latest news on our innovative optometry tools and platforms."
       />
       {RESOURCES_DATA.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

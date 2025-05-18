@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INOVATE"; // Corrected spelling
+const TARGET_TEXT_EXPANDED = "INOVATE";
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -29,7 +29,6 @@ export function HeroSection() {
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
-          
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
             FOCUS-
             <span
@@ -46,7 +45,7 @@ export function HeroSection() {
             </span>
           </h1>
           <h2 className="mb-8 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
-            Learn Smart. Practice Smarter.
+            Focus-IN: Your Lens on Optometric Innovation.
           </h2>
         </AnimatedSection>
         
@@ -59,7 +58,7 @@ export function HeroSection() {
             </Button>
             <Button asChild variant="default" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30">
               <Link href="/resources">
-                <BookOpen className="mr-2 h-5 w-5" /> Learning Hub
+                <BookOpen className="mr-2 h-5 w-5" /> Project Spotlights
               </Link>
             </Button>
           </div>

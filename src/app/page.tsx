@@ -93,19 +93,10 @@ export default function HomePage() {
     <>
       <HeroSection />
       <div className="container mx-auto container-padding">
-        <AnimatedSection animationType="slide-up" delay={0}>
-          <section className="py-12 md:py-16 text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">About Focus-IN</h2>
-            <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-              Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
-            </p>
-          </section>
-        </AnimatedSection>
-
-        <Separator className="my-8 md:my-12" />
+        {/* About section removed from homepage, now on /about page */}
         
         <AnimatedSection animationType="slide-up" delay={100}>
-          <section>
+          <section className="py-12 md:py-16">
               <SectionTitle
                 title="Why We Started" 
                 subtitle="Our journey began with a vision to transform optometry education and practice."
@@ -165,8 +156,15 @@ export default function HomePage() {
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                     We extend our sincere gratitude to the generous individuals from across India who have supported Focus-IN through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
                   </p>
-                  <Button size="lg" variant="default" className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
-                    <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-IN
+                  <Button 
+                    size="lg" 
+                    variant="default" 
+                    className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105"
+                    asChild
+                  >
+                    <a href="upi://pay?pa=iamsirenjeev@oksbi&pn=Focus-IN&am=&cu=INR&tn=Support%20Focus-IN" target="_blank" rel="noopener noreferrer">
+                      <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-IN
+                    </a>
                   </Button>
                 </div>
 
@@ -256,5 +254,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    

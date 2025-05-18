@@ -1,12 +1,12 @@
 
 import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart } from 'lucide-react';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About Us', icon: Info },
   { href: '/projects', label: 'Our Projects', icon: Layers },
-  { href: '/resources', label: 'Project Spotlights', icon: BookMarked },
+  { href: '/resources', label: 'Project Spotlights', icon: BookMarked }, // Changed from Resources
   { href: '/support', label: 'Support', icon: Mail },
 ];
 
@@ -14,10 +14,10 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-ai', label: 'Focus.Ai', icon: Bot, description: "AI-powered diagnostic assistance." },
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: MousePointerClick, description: "JCC Simulator & Gamified Training." },
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
-  { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
   { href: '/projects/focus-emr', label: 'Focus EMR', icon: Monitor, description: "Electronic Medical Records (Beta)." },
   { href: '/projects/focus-notes', label: 'Focus Notes', icon: StickyNote, description: "Smart note-taking for students (Upcoming)." },
+  { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
 ];
 
 
@@ -123,11 +123,56 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
 
-export const RESOURCES_DATA: Resource[] = PROJECTS_DETAILS_DATA.map(project => ({
-  id: project.slug,
-  title: `Project Spotlight: ${project.title}`,
-  summary: `Learn more about ${project.title} - ${project.tagline}. Click to explore its features and development status.`,
-  link: `/projects/${project.slug}`,
-  type: 'project-spotlight',
-  iconName: project.iconName,
-}));
+// Updated RESOURCES_DATA for "Project Spotlights" / Blog-like entries
+export const RESOURCES_DATA: Resource[] = [
+  {
+    id: 'focus-ai-v2-launch',
+    title: 'Focus.AI Version 2.0: Now with Image Analysis!',
+    summary: 'Discover the exciting new features in Focus.AI v2.0, including advanced image analysis capabilities for OCT reports, a redesigned UI, and much more. Read on to see how we\'re enhancing your learning experience.',
+    link: '/projects/focus-ai', // Links to the project page
+    type: 'project-spotlight',
+    iconName: 'Bot',
+    date: '2025-05-13',
+    tags: ['Focus.AI', 'New Feature', 'Update'],
+  },
+  {
+    id: 'focus-axis-ga',
+    title: 'Focus Axis JCC Simulator: Now Live!',
+    summary: 'Master the Jackson Cross Cylinder technique with our interactive and gamified simulator. Focus Axis is now available for all aspiring and practicing optometrists.',
+    link: '/projects/focus-axis',
+    type: 'project-spotlight',
+    iconName: 'MousePointerClick',
+    date: '2024-07-01', // Example date
+    tags: ['Focus Axis', 'Launch', 'Training Tool'],
+  },
+  {
+    id: 'focus-gen-intro',
+    title: 'Introducing Focus Gen: Your Transposition Practice Partner',
+    summary: 'Struggling with transposition sums? Focus Gen is here to help! Generate unlimited practice questions and sharpen your optical calculation skills.',
+    link: '/projects/focus-gen',
+    type: 'project-spotlight',
+    iconName: 'LucideCalculator',
+    date: '2024-06-15', // Example date
+    tags: ['Focus Gen', 'Launch', 'Student Tool'],
+  },
+  {
+    id: 'focus-casex-dev-update',
+    title: 'Development Update: Focus CaseX is Taking Shape!',
+    summary: 'Get a sneak peek into Focus CaseX, our upcoming interactive case study platform. We\'re working hard to bring you a new way to log cases, simulate vivas, and enhance your clinical reasoning.',
+    link: '/projects/focus-casex',
+    type: 'project-spotlight',
+    iconName: 'FilePenLine',
+    date: '2024-08-01', // Example date
+    tags: ['Focus CaseX', 'Development', 'Upcoming'],
+  },
+  {
+    id: 'focus-emr-beta',
+    title: 'Focus EMR Beta Program: Join Us!',
+    summary: 'We are excited to announce the beta program for Focus EMR. Help us refine our electronic medical records system designed specifically for optometry practices.',
+    link: '/projects/focus-emr',
+    type: 'project-spotlight',
+    iconName: 'Monitor',
+    date: '2024-09-01', // Example date
+    tags: ['Focus EMR', 'Beta', 'Practice Management'],
+  },
+];
