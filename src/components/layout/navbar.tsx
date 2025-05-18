@@ -8,7 +8,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { NAV_ITEMS, PROJECT_NAV_ITEMS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'; // Removed SheetClose from here as it's not directly used.
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'; // Added SheetTitle
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -93,9 +93,9 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6">
-              <div className="mb-6 flex items-center"> {/* Removed justify-between as the explicit close button is gone */}
+              <SheetTitle className="sr-only">Menu</SheetTitle> {/* Added visually hidden title for accessibility */}
+              <div className="mb-6 flex items-center">
                 <BrandLogo onClick={() => setIsMobileMenuOpen(false)} />
-                {/* The explicit SheetClose button was here and has been removed */}
               </div>
               <nav className="flex flex-col gap-2">
                 {NAV_ITEMS.map((item) => (
