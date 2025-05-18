@@ -235,7 +235,7 @@ export default function HomePage() {
                 <div className="text-center pt-8">
                   <p className="text-3xl font-extrabold text-foreground">
                     Total Funds Collected: 
-                    <span className="text-primary ml-2 flex items-center justify-center text-4xl">
+                    <span className="text-primary ml-2 flex items-center justify-center text-4xl animate-pulse">
                       <IndianRupee className="h-8 w-8 mr-1" />{otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0)).toLocaleString()}
                     </span>
                   </p>
@@ -273,7 +273,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    
-
-    

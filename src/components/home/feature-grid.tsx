@@ -1,9 +1,6 @@
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import type { LucideIcon } from "lucide-react";
-import Link from "next/link";
-import { Button } from "../ui/button";
-import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "../shared/animated-section";
 
 interface FeatureItem {
@@ -30,16 +27,11 @@ export function FeatureGrid({ features }: FeatureGridProps) {
               </div>
               <CardTitle className="text-xl mt-1">{feature.title}</CardTitle>
             </CardHeader>
-            <CardContent className="flex-grow">
+            <CardContent className="flex-grow pb-6"> {/* Added pb-6 to ensure consistent padding if buttons are removed */}
               <CardDescription>{feature.description}</CardDescription>
             </CardContent>
-            <div className="p-6 pt-0">
-              <Button asChild variant="default" className="shadow-md hover:shadow-lg transition-shadow group-hover:bg-primary/90">
-                <Link href={feature.link}>
-                  {feature.linkText} <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
+            {/* Buttons removed as per request for "What we offer" section. 
+                If needed conditionally, this component would require further modification. */}
           </Card>
         </AnimatedSection>
       ))}
