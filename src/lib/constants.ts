@@ -2,10 +2,11 @@
 import React from 'react';
 import type { SVGProps } from 'react';
 import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Eye, Lightbulb, Microscope, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers, ClipboardList, StickyNote } from 'lucide-react';
+import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Eye, Lightbulb, Microscope, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers, ClipboardList, StickyNote, Info, BookMarked, CalendarDays } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
+  { href: '/about', label: 'About Us', icon: Info },
   { href: '/projects', label: 'Our Projects', icon: Layers },
   { href: '/resources', label: 'Resources', icon: BookOpen },
   { href: '/support', label: 'Support', icon: Mail },
@@ -105,7 +106,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     iconName: 'ClipboardList',
     features: [
       { title: 'Patient Records', description: 'Comprehensive and secure patient data management.', iconName: 'Users'},
-      { title: 'Appointment Scheduling', description: 'Easy-to-use calendar and booking system.', iconName: 'CalendarDays' }, // Assuming CalendarDays is available or similar
+      { title: 'Appointment Scheduling', description: 'Easy-to-use calendar and booking system.', iconName: 'CalendarDays' },
       { title: 'Prescription Management', description: 'Generate and track patient prescriptions.', iconName: 'FileText' },
     ],
   },
@@ -115,9 +116,9 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     tagline: 'Smart Note-Taking for Optometry Students (Upcoming)',
     description: 'Focus Notes is an upcoming tool to help optometry students organize their study notes, integrate them with resources, and collaborate effectively.',
     longDescription: 'More details coming soon! Focus Notes will feature smart organization, linking capabilities to other Focus resources, and collaborative features. (Launching Soon)',
-    iconName: 'FileText', // Or StickyNote if available and preferred
+    iconName: 'StickyNote',
     features: [
-      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'BookMarked' }, // Assuming BookMarked or similar
+      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'BookMarked' },
       { title: 'Resource Integration', description: 'Link notes to articles, videos, and case studies.', iconName: 'LinkIcon' },
       { title: 'Collaborative Study', description: 'Share notes and study with peers.', iconName: 'Share2' },
     ],
@@ -140,7 +141,7 @@ const LibraryPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.
 const MousePointerClickPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 const BarChartPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 const MessageSquarePlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const Share2PlaceholderIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props)); // Renamed to avoid conflict
+const Share2PlaceholderIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 const UserCheckPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 const FileQuestionPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
 const FileTextIconPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props)); 

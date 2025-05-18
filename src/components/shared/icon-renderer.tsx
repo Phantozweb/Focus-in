@@ -9,7 +9,7 @@ import {
   MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, 
   MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, 
   FileQuestion as LucideFileQuestion, Layers as LucideLayers, HelpCircle, ClipboardList,
-  StickyNote, CalendarDays, BookMarked
+  StickyNote, CalendarDays, BookMarked, Info
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -48,6 +48,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   StickyNote,
   CalendarDays,
   BookMarked,
+  Info,
   // Add other icons as needed by their string name
 };
 
