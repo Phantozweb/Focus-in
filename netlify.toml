@@ -2,8 +2,7 @@
   command = "next build"
   publish = ".next"
 
-# The Essential Next.js Build Plugin is usually automatically detected
-# by Netlify for Next.js projects. If you encounter issues, you
-# might explicitly add it, but try without it first.
-# [[plugins]]
-#  package = "@netlify/plugin-nextjs"
+# The Essential Next.js Build Plugin is crucial for Next.js projects.
+# Ensure it's installed as a devDependency in your project.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
