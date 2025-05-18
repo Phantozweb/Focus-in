@@ -13,10 +13,12 @@ export interface ProjectNavItem extends NavItem {
 }
 
 export interface Resource {
-  id: string;
+  id: string; // Unique identifier for the resource/post
+  slug: string; // URL-friendly slug
   title: string;
-  summary: string;
-  link: string; // Link to the detailed project page or a specific blog post URL
+  summary: string; // Short summary for card display
+  fullContent: string; // Full content for the individual post page
+  link: string; // Link to the individual spotlight post page, e.g., /resources/post-slug
   type: 'article' | 'video' | 'course' | 'website' | 'project-spotlight';
   iconName?: string;
   date?: string; // e.g., "2023-10-26"

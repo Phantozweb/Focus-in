@@ -11,7 +11,7 @@ import {
   FileQuestion as LucideFileQuestion, Layers as LucideLayers, HelpCircle, ClipboardList,
   StickyNote, CalendarDays, BookMarked, Info, Aperture, Palette, TestTubeDiagonal, 
   Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
-  Monitor, FilePenLine, Home, Mail, Heart // Added Home, Mail, Heart here
+  Monitor, FilePenLine, Home, Mail, Heart, Search, Filter, ListFilter, Tag // Added Home, Mail, Heart, Search, Filter, ListFilter, Tag
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -36,7 +36,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   Bot,
   Lightbulb,
   LucideMap,
-  LucideCalculator, // Added
+  LucideCalculator,
   LucideActivity,
   LucideLibrary,
   LucideMousePointerClick,
@@ -49,7 +49,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   ClipboardList,
   StickyNote,
   CalendarDays,
-  BookMarked, // Added
+  BookMarked, 
   Info,
   Aperture,
   Palette,
@@ -66,9 +66,13 @@ const iconMap: { [key: string]: React.ElementType } = {
   AlertTriangle,
   Monitor,
   FilePenLine,
-  Home, // Added
-  Mail, // Added
-  Heart, // Added
+  Home, 
+  Mail, 
+  Heart, 
+  Search,
+  Filter,
+  ListFilter,
+  Tag,
   // Add other icons as needed by their string name
 };
 

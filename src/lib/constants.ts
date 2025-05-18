@@ -1,12 +1,13 @@
 
 import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck } from 'lucide-react';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Search, Filter } from 'lucide-react';
+import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About Us', icon: Info },
   { href: '/projects', label: 'Our Projects', icon: Layers },
-  { href: '/resources', label: 'Project Spotlights', icon: BookMarked }, // Changed from Resources
+  { href: '/resources', label: 'Project Spotlights', icon: BookMarked },
   { href: '/support', label: 'Support', icon: Mail },
 ];
 
@@ -41,8 +42,8 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     slug: 'focus-axis',
     title: 'Focus Axis',
     tagline: 'JCC Simulator: Master Lens Flipping',
-    description: 'Focus Axis offers a JCC (Jackson Cross Cylinder) simulator. Practice lens flipping and other techniques in a virtual, gamified learning experience.',
-    longDescription: 'Enhance your clinical skills with interactive exercises that mimic real-world scenarios, providing a safe and engaging way to master JCC techniques and improve your accuracy in refraction. (Currently Available)',
+    description: 'Focus Axis offers a JCC (Jackson Cross Cylinder) simulator. Practice lens flipping and other techniques in a virtual, gamified learning experience. Currently in Beta.',
+    longDescription: 'Enhance your clinical skills with interactive exercises that mimic real-world scenarios, providing a safe and engaging way to master JCC techniques and improve your accuracy in refraction.',
     iconName: 'MousePointerClick',
     features: [
       { title: 'JCC Simulation', description: 'Realistic simulation of Jackson Cross Cylinder tests.', iconName: 'MousePointerClick' },
@@ -53,7 +54,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-casex',
     title: 'Focus CaseX',
-    tagline: 'Interactive Case Studies & Clinical Learning Platform',
+    tagline: 'Interactive Case Studies & Clinical Learning Platform (In Development)',
     description: 'Focus CaseX is an educational platform where users can log clinical cases, ask questions, simulate viva sessions, and more. It\'s designed to enhance diagnostic and clinical reasoning skills. (Currently in development).',
     longDescription: 'Engage with realistic patient scenarios, make diagnostic decisions, and receive immediate feedback. CaseX aims to cover a wide range of ocular conditions and patient demographics, fostering a deeper understanding of clinical practice.',
     iconName: 'FilePenLine',
@@ -126,53 +127,96 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
 // Updated RESOURCES_DATA for "Project Spotlights" / Blog-like entries
 export const RESOURCES_DATA: Resource[] = [
   {
-    id: 'focus-ai-v2-launch',
+    id: 'focus-ai-v2-launch-spotlight',
+    slug: 'focus-ai-v2-launch',
     title: 'Focus.AI Version 2.0: Now with Image Analysis!',
-    summary: 'Discover the exciting new features in Focus.AI v2.0, including advanced image analysis capabilities for OCT reports, a redesigned UI, and much more. Read on to see how we\'re enhancing your learning experience.',
-    link: '/projects/focus-ai', // Links to the project page
+    summary: 'Discover the exciting new features in Focus.AI v2.0, including advanced image analysis capabilities for OCT reports, a redesigned UI, and much more.',
+    link: '/resources/focus-ai-v2-launch', 
     type: 'project-spotlight',
     iconName: 'Bot',
     date: '2025-05-13',
     tags: ['Focus.AI', 'New Feature', 'Update'],
+    fullContent: `We are thrilled to announce the launch of Focus.AI Version 2.0! This major update brings a host of new features and improvements designed to further empower optometry students and professionals.
+    
+Key highlights include the integration of advanced image analysis for OCT and ophthalmological reports, allowing for deeper insights and learning opportunities. We've also completely redesigned the user interface for a more intuitive and streamlined experience.
+    
+Additionally, the study notes organization system has been significantly enhanced, and the AI Assistant now benefits from chat history. Explore new quick format modes like "simplify," "student-friendly," and "clinical focus" to tailor AI responses to your needs.
+    
+Read more about the journey and the technical details on the main Focus.AI project page.`
   },
   {
-    id: 'focus-axis-ga',
-    title: 'Focus Axis JCC Simulator: Now Live!',
-    summary: 'Master the Jackson Cross Cylinder technique with our interactive and gamified simulator. Focus Axis is now available for all aspiring and practicing optometrists.',
-    link: '/projects/focus-axis',
+    id: 'focus-axis-ga-spotlight',
+    slug: 'focus-axis-ga',
+    title: 'Focus Axis JCC Simulator: Now Live (Beta)!',
+    summary: 'Master the Jackson Cross Cylinder technique with our interactive and gamified simulator. Focus Axis is now available for all aspiring and practicing optometrists in its beta version.',
+    link: '/resources/focus-axis-ga',
     type: 'project-spotlight',
     iconName: 'MousePointerClick',
-    date: '2024-07-01', // Example date
-    tags: ['Focus Axis', 'Launch', 'Training Tool'],
+    date: '2024-07-01',
+    tags: ['Focus Axis', 'Launch', 'Beta', 'Training Tool'],
+    fullContent: `Focus Axis, our JCC (Jackson Cross Cylinder) simulator, has officially launched in beta! This tool is designed to help optometry students and practitioners master lens flipping and other critical refraction techniques through a virtual, gamified learning experience.
+    
+The current beta includes core simulation features and initial training modules. We are actively seeking feedback from users like you to refine and expand its capabilities. Your input will be invaluable as we work towards a full release.
+    
+Try it out and let us know what you think!`
   },
   {
-    id: 'focus-gen-intro',
+    id: 'focus-gen-intro-spotlight',
+    slug: 'focus-gen-intro',
     title: 'Introducing Focus Gen: Your Transposition Practice Partner',
     summary: 'Struggling with transposition sums? Focus Gen is here to help! Generate unlimited practice questions and sharpen your optical calculation skills.',
-    link: '/projects/focus-gen',
+    link: '/resources/focus-gen-intro',
     type: 'project-spotlight',
     iconName: 'LucideCalculator',
-    date: '2024-06-15', // Example date
+    date: '2024-06-15',
     tags: ['Focus Gen', 'Launch', 'Student Tool'],
+    fullContent: `We're excited to introduce Focus Gen, a dedicated tool for mastering optical transposition. Understanding and performing transpositions accurately is a fundamental skill in optometry, and Focus Gen is designed to make practice more accessible and effective.
+    
+With Focus Gen, you can:
+- Generate a wide variety of transposition sums.
+- Practice at your own pace.
+- Improve your accuracy and speed in optical calculations.
+
+This tool is perfect for students preparing for exams or anyone looking to refresh their transposition skills. Check out the Focus Gen project page for more details.`
   },
   {
-    id: 'focus-casex-dev-update',
+    id: 'focus-casex-dev-update-spotlight',
+    slug: 'focus-casex-dev-update',
     title: 'Development Update: Focus CaseX is Taking Shape!',
     summary: 'Get a sneak peek into Focus CaseX, our upcoming interactive case study platform. We\'re working hard to bring you a new way to log cases, simulate vivas, and enhance your clinical reasoning.',
-    link: '/projects/focus-casex',
+    link: '/resources/focus-casex-dev-update',
     type: 'project-spotlight',
     iconName: 'FilePenLine',
-    date: '2024-08-01', // Example date
+    date: '2024-08-01',
     tags: ['Focus CaseX', 'Development', 'Upcoming'],
+    fullContent: `Development of Focus CaseX, our interactive clinical case study platform, is well underway! We envision CaseX as a dynamic learning environment where users can:
+    
+- Log and manage clinical cases.
+- Engage in Q&A sessions about specific cases.
+- Simulate viva examinations to prepare for real-world scenarios.
+- Track their learning progress and identify areas for improvement.
+
+Our team is focused on building a comprehensive and user-friendly platform. Stay tuned for more updates as we approach our beta release!`
   },
   {
-    id: 'focus-emr-beta',
+    id: 'focus-emr-beta-spotlight',
+    slug: 'focus-emr-beta',
     title: 'Focus EMR Beta Program: Join Us!',
     summary: 'We are excited to announce the beta program for Focus EMR. Help us refine our electronic medical records system designed specifically for optometry practices.',
-    link: '/projects/focus-emr',
+    link: '/resources/focus-emr-beta',
     type: 'project-spotlight',
     iconName: 'Monitor',
-    date: '2024-09-01', // Example date
+    date: '2024-09-01',
     tags: ['Focus EMR', 'Beta', 'Practice Management'],
+    fullContent: `The beta program for Focus EMR is now open! We're looking for optometry practices and professionals to help us test and refine our new Electronic Medical Records system.
+    
+Focus EMR aims to provide a streamlined, intuitive, and cost-effective solution for managing patient records, appointments, and prescriptions. Your feedback during this beta phase will be crucial in shaping the final product.
+    
+If you're interested in participating, please visit the Focus EMR project page or contact us through the support page.`
   },
 ];
+
+// Helper to get resource details by slug
+export const getResourceBySlug = (slug: string): Resource | undefined => {
+  return RESOURCES_DATA.find(r => r.slug === slug);
+};
