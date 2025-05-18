@@ -54,15 +54,16 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-casex',
     title: 'Focus CaseX',
-    tagline: 'Interactive Case Studies & Clinical Learning Platform (In Development)',
-    description: 'Focus CaseX is an educational platform where users can log clinical cases, ask questions, simulate viva sessions, and more. It\'s designed to enhance diagnostic and clinical reasoning skills. (Currently in development).',
-    longDescription: 'Engage with realistic patient scenarios, make diagnostic decisions, and receive immediate feedback. CaseX aims to cover a wide range of ocular conditions and patient demographics, fostering a deeper understanding of clinical practice.',
+    tagline: 'AI-Powered Clinical Learning & Case Logging (In Development)',
+    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs. (In Development)',
+    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students. You can log your real cases, ask questions about them, get summaries and interpretations, and practice viva sessions — all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics. (Currently in Development)",
     iconName: 'FilePenLine',
     features: [
-      { title: 'Case Logging & Management', description: 'Securely log and organize patient cases for review and discussion.', iconName: 'LucideLibrary' },
-      { title: 'Q&A and Discussion Forum', description: 'Ask questions about specific cases and engage in discussions with peers and mentors.', iconName: 'MessageSquare' },
-      { title: 'Viva Simulation', description: 'Practice for oral examinations with simulated viva sessions.', iconName: 'Brain' },
-      { title: 'Performance Analytics', description: 'Track your progress and identify areas for improvement.', iconName: 'LucideBarChart' },
+      { title: 'Real Case Logging', description: 'Log your clinical cases with detailed information.', iconName: 'FilePenLine' },
+      { title: 'AI-Powered Q&A', description: 'Ask specific questions about your logged cases and get AI assistance.', iconName: 'MessageSquare' },
+      { title: 'Case Summaries & Interpretation', description: 'Receive AI-generated summaries and interpretations of your case data.', iconName: 'Brain' },
+      { title: 'Viva Session Practice', description: 'Practice viva examinations based on your logged cases.', iconName: 'ClipboardList' },
+      { title: 'Privacy-Focused Design', description: 'No data is stored; all processing is done temporarily in your browser tab.', iconName: 'ShieldCheck' },
     ],
   },
   {
@@ -183,20 +184,21 @@ This tool is perfect for students preparing for exams or anyone looking to refre
     id: 'focus-casex-dev-update-spotlight',
     slug: 'focus-casex-dev-update',
     title: 'Development Update: Focus CaseX is Taking Shape!',
-    summary: 'Get a sneak peek into Focus CaseX, our upcoming interactive case study platform. We\'re working hard to bring you a new way to log cases, simulate vivas, and enhance your clinical reasoning.',
+    summary: 'Get a sneak peek into Focus CaseX, our upcoming AI-powered interactive case study and learning platform for optometry students.',
     link: '/resources/focus-casex-dev-update',
     type: 'project-spotlight',
     iconName: 'FilePenLine',
     date: '2024-08-01',
-    tags: ['Focus CaseX', 'Development', 'Upcoming'],
-    fullContent: `Development of Focus CaseX, our interactive clinical case study platform, is well underway! We envision CaseX as a dynamic learning environment where users can:
+    tags: ['Focus CaseX', 'Development', 'Upcoming', 'AI Learning'],
+    fullContent: `Development of Focus CaseX, our AI-powered interactive clinical learning platform, is well underway! We envision CaseX as a dynamic learning environment where optometry students can:
     
-- Log and manage clinical cases.
-- Engage in Q&A sessions about specific cases.
-- Simulate viva examinations to prepare for real-world scenarios.
-- Track their learning progress and identify areas for improvement.
+- Log their real clinical cases with detailed information.
+- Ask specific questions about logged cases and receive AI-driven assistance and interpretations.
+- Get AI-generated summaries of their case data to reinforce learning.
+- Practice viva examinations based on their own logged cases, with AI providing feedback and scenarios.
+- Benefit from a privacy-focused design where no data is stored permanently; all processing is done temporarily in the browser tab to ensure medical ethics and data privacy.
 
-Our team is focused on building a comprehensive and user-friendly platform. Stay tuned for more updates as we approach our beta release!`
+Our team is focused on building a comprehensive and user-friendly platform that truly enhances clinical reasoning and exam preparation. Stay tuned for more updates as we approach our beta release!`
   },
   {
     id: 'focus-emr-beta-spotlight',
@@ -220,3 +222,6 @@ If you're interested in participating, please visit the Focus EMR project page o
 export const getResourceBySlug = (slug: string): Resource | undefined => {
   return RESOURCES_DATA.find(r => r.slug === slug);
 };
+
+
+    

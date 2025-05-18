@@ -1,7 +1,10 @@
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"; // Added CardFooter
+import { Button } from "@/components/ui/button"; // Added Button
 import type { LucideIcon } from "lucide-react";
 import { AnimatedSection } from "../shared/animated-section";
+import Link from "next/link"; // Added Link
+import { ArrowRight } from "lucide-react"; // Added ArrowRight
 
 interface FeatureItem {
   icon: LucideIcon;
@@ -27,14 +30,29 @@ export function FeatureGrid({ features }: FeatureGridProps) {
               </div>
               <CardTitle className="text-xl mt-1">{feature.title}</CardTitle>
             </CardHeader>
-            <CardContent className="flex-grow pb-6"> {/* Added pb-6 to ensure consistent padding if buttons are removed */}
+            <CardContent className="flex-grow">
               <CardDescription>{feature.description}</CardDescription>
             </CardContent>
-            {/* Buttons removed as per request for "What we offer" section. 
-                If needed conditionally, this component would require further modification. */}
+            {feature.link && feature.linkText && (
+              <CardFooter>
+                <Button asChild variant="default" size="sm" className="shadow-sm hover:shadow-md transition-shadow w-full sm:w-auto">
+                  {feature.link.startsWith('http') ? (
+                    <a href={feature.link} target="_blank" rel="noopener noreferrer">
+                      {feature.linkText} <ArrowRight className="ml-1 h-4 w-4" />
+                    </a>
+                  ) : (
+                    <Link href={feature.link}>
+                      {feature.linkText} <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  )}
+                </Button>
+              </CardFooter>
+            )}
           </Card>
         </AnimatedSection>
       ))}
     </div>
   );
 }
+
+    

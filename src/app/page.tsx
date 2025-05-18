@@ -25,8 +25,8 @@ const whyWeStartedFeatures = [
     icon: Users,
     title: 'Empowering Our Community',
     description: 'We saw a crucial need for modern, tech-driven solutions to support optometry students and professionals, aiming to make advanced tools universally accessible.',
-    link: '#',
-    linkText: '',
+    link: '#', // Link can be internal page or external
+    linkText: '', // Text for the button/link e.g. "Learn More"
   },
   {
     icon: Brain,
@@ -45,7 +45,7 @@ const whyWeStartedFeatures = [
 ];
 
 const projectHighlights = [
-    { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: '/projects/focus-ai', linkText: 'Learn More' },
+    { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
     { icon: MousePointerClick, title: 'Focus Axis', description: 'JCC Simulator for virtual, gamified JCC training. Currently available.', link: '/projects/focus-axis', linkText: 'Learn More' },
     { icon: LucideCalculator, title: 'Focus Gen', description: 'Transposition Sums: Generate & Practice. Currently available.', link: '/projects/focus-gen', linkText: 'Learn More' },
 ];
@@ -69,7 +69,7 @@ const otherDonors = [
   { rank: 7, name: "Fazil Mohd", amount: 400 },
   { rank: 8, name: "Deepak", amount: 250 },
   { rank: 9, name: "K Anusha Mohan", amount: 250 },
-  { rank: 10, name: "Mohammad Khan", amount: 250 },
+  { rank: 10, name: "Mohammad Khan", amount: 250 }, // Corrected this based on your previous input, might need to re-rank if this was an error
   { rank: 11, name: "Mohd Harsad", amount: 250 },
   { rank: 12, name: "Shreya", amount: 222 },
   { rank: 13, name: "Aishwarya Suresh", amount: 200 },
@@ -85,6 +85,7 @@ const otherDonors = [
   { rank: 23, name: "Mehtab", amount: 100 },
   { rank: 24, name: "Punitha", amount: 100 },
 ];
+
 
 const totalFundsCollected = otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0));
 
@@ -263,3 +264,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
