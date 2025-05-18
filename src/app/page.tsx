@@ -58,29 +58,32 @@ const impactStats = [
 
 const topDonors = [
   { name: "K. Barathan", amount: 1500 },
+  { name: "Rishad C J", amount: 1000 },
   { name: "Atchaya", amount: 750 },
-  { name: "Manovarama", amount: 500 },
 ];
 
 const otherDonors = [
-  { rank: 4, name: "M. Priya", amount: 450 },
-  { rank: 5, name: "Deepak", amount: 250 },
-  { rank: 6, name: "K Anusha Mohan", amount: 250 },
-  { rank: 7, name: "Mohammad Khan", amount: 250 },
-  { rank: 8, name: "Mohd Harsad", amount: 250 },
-  { rank: 9, name: "Shreya", amount: 222 },
-  { rank: 10, name: "Aishwarya Suresh", amount: 200 },
-  { rank: 11, name: "Joshua", amount: 200 },
-  { rank: 12, name: "Ashok Raj", amount: 150 },
-  { rank: 13, name: "Kamlesh", amount: 150 },
-  { rank: 14, name: "P. Joshi", amount: 150 },
-  { rank: 15, name: "Preeti", amount: 150 },
-  { rank: 16, name: "Rajesh Kumar", amount: 150 },
-  { rank: 17, name: "S. Das", amount: 150 },
-  { rank: 18, name: "Sethu", amount: 150 },
-  { rank: 19, name: "Chandhru", amount: 100 },
-  { rank: 20, name: "Mehtab", amount: 100 },
-  { rank: 21, name: "Punitha", amount: 100 },
+  { rank: 4, name: "Manoj Kumar", amount: 500 },
+  { rank: 5, name: "Manovarama", amount: 500 },
+  { rank: 6, name: "M. Priya", amount: 450 },
+  { rank: 7, name: "Fazil Mohd", amount: 400 },
+  { rank: 8, name: "Deepak", amount: 250 },
+  { rank: 9, name: "K Anusha Mohan", amount: 250 },
+  { rank: 10, name: "Mohammad Khan", amount: 250 },
+  { rank: 11, name: "Mohd Harsad", amount: 250 },
+  { rank: 12, name: "Shreya", amount: 222 },
+  { rank: 13, name: "Aishwarya Suresh", amount: 200 },
+  { rank: 14, name: "Joshua", amount: 200 },
+  { rank: 15, name: "Ashok Raj", amount: 150 },
+  { rank: 16, name: "Kamlesh", amount: 150 },
+  { rank: 17, name: "P. Joshi", amount: 150 },
+  { rank: 18, name: "Preeti", amount: 150 },
+  { rank: 19, name: "Rajesh Kumar", amount: 150 },
+  { rank: 20, name: "S. Das", amount: 150 },
+  { rank: 21, name: "Sethu", amount: 150 },
+  { rank: 22, name: "Chandhru", amount: 100 },
+  { rank: 23, name: "Mehtab", amount: 100 },
+  { rank: 24, name: "Punitha", amount: 100 },
 ];
 
 const totalFundsCollected = otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0));
@@ -98,7 +101,7 @@ export default function HomePage() {
             </p>
           </section>
         </AnimatedSection>
-        
+
         <Separator className="my-8 md:my-12" />
         
         <AnimatedSection animationType="slide-up" delay={100}>
@@ -253,3 +256,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
