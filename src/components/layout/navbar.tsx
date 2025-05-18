@@ -93,7 +93,7 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6">
-              <SheetTitle className="sr-only">Menu</SheetTitle> {/* Added visually hidden title for accessibility */}
+              <SheetTitle className="sr-only">Menu</SheetTitle> 
               <div className="mb-6 flex items-center">
                 <BrandLogo onClick={() => setIsMobileMenuOpen(false)} />
               </div>
@@ -103,6 +103,7 @@ export function Navbar() {
                     {item.label}
                   </NavLink>
                 ))}
+                {/* Removed the individual project links section for mobile sidebar 
                 <div className="mt-2">
                   <h3 className="mb-2 px-3 text-sm font-semibold text-muted-foreground">Projects</h3>
                   {PROJECT_NAV_ITEMS.map((item) => (
@@ -123,6 +124,7 @@ export function Navbar() {
                       </Link>
                   ))}
                 </div>
+                */}
               </nav>
             </SheetContent>
           </Sheet>
