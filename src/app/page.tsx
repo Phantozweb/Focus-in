@@ -19,27 +19,27 @@ export const metadata: Metadata = {
 };
 
 
-const coreFeatures = [
-  {
-    icon: Layers,
-    title: 'Explore Our Projects',
-    description: 'Discover our innovative projects like Focus.Ai, Focus Axis, and more, designed to advance optometry.',
-    link: '/projects',
-    linkText: 'View Projects',
-  },
-  {
-    icon: Brain, 
-    title: 'AI-Powered Learning Tools', 
-    description: 'Leverage our suite of AI-driven web tools designed to help you excel in your optometry studies and practice more effectively.', 
-    link: '/projects', 
-    linkText: 'Discover Tools', 
-  },
+const whyWeStartedFeatures = [
   {
     icon: Users,
-    title: 'Student & Professional Support',
-    description: 'Connect with us for inquiries, support, or guidance. We are here to help you navigate your optometry journey.',
-    link: '/support',
-    linkText: 'Get Support',
+    title: 'Empowering Our Community',
+    description: 'We saw a crucial need for modern, tech-driven solutions to support optometry students and professionals, aiming to make advanced tools universally accessible.',
+    link: '#', // Not displayed by FeatureGrid as per previous changes
+    linkText: '', // Not displayed
+  },
+  {
+    icon: Brain,
+    title: 'Innovating with Technology',
+    description: 'Driven by a passion for technological advancement, we leverage AI, data science, and digital simulations to build tools that address real-world challenges in vision care.',
+    link: '#',
+    linkText: '',
+  },
+  {
+    icon: Heart,
+    title: 'Commitment to Tangible Impact',
+    description: 'Our core motivation is to make a significant difference by enhancing learning experiences and improving the efficiency of eye care practices through our innovative solutions.',
+    link: '#',
+    linkText: '',
   },
 ];
 
@@ -125,10 +125,10 @@ export default function HomePage() {
 
           <section>
             <SectionTitle
-              title="What We Offer" 
-              subtitle="Innovative web tools and AI solutions to enhance learning and practice in optometry."
+              title="Why We Started" 
+              subtitle="Our journey began with a vision to transform optometry education and practice."
             />
-            <FeatureGrid features={coreFeatures} />
+            <FeatureGrid features={whyWeStartedFeatures} />
           </section>
 
           <Separator className="my-8 md:my-12" />
@@ -273,3 +273,6 @@ export default function HomePage() {
     </>
   );
 }
+
+
+    
