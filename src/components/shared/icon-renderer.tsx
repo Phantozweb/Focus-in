@@ -11,7 +11,7 @@ import {
   FileQuestion as LucideFileQuestion, Layers as LucideLayers, HelpCircle, ClipboardList,
   StickyNote, CalendarDays, BookMarked, Info, Aperture, Palette, TestTubeDiagonal, 
   Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
-  Monitor, FilePenLine
+  Monitor, FilePenLine, Home, Mail, Heart // Added Home, Mail, Heart here
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -36,7 +36,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   Bot,
   Lightbulb,
   LucideMap,
-  LucideCalculator,
+  LucideCalculator, // Added
   LucideActivity,
   LucideLibrary,
   LucideMousePointerClick,
@@ -49,7 +49,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   ClipboardList,
   StickyNote,
   CalendarDays,
-  BookMarked,
+  BookMarked, // Added
   Info,
   Aperture,
   Palette,
@@ -66,6 +66,9 @@ const iconMap: { [key: string]: React.ElementType } = {
   AlertTriangle,
   Monitor,
   FilePenLine,
+  Home, // Added
+  Mail, // Added
+  Heart, // Added
   // Add other icons as needed by their string name
 };
 
@@ -80,4 +83,3 @@ export const IconRenderer: React.FC<IconRendererProps> = ({ iconName, ...props }
 
   return <IconComponent {...props} />;
 };
-

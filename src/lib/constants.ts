@@ -1,12 +1,12 @@
 
 import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Lightbulb, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers, ClipboardList, StickyNote, Info, BookMarked, CalendarDays, Aperture, Palette, TestTubeDiagonal, Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle, Monitor, FilePenLine } from 'lucide-react';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About Us', icon: Info },
   { href: '/projects', label: 'Our Projects', icon: Layers },
-  { href: '/resources', label: 'Resources', icon: BookOpen },
+  { href: '/resources', label: 'Project Spotlights', icon: BookMarked },
   { href: '/support', label: 'Support', icon: Mail },
 ];
 
@@ -15,17 +15,9 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: MousePointerClick, description: "JCC Simulator & Gamified Training." },
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
-  { href: '/projects/focus-gen', label: 'Focus Gen', icon: Bot, description: "Transposition Sums: Generate & Practice." },
+  { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
   { href: '/projects/focus-emr', label: 'Focus EMR', icon: Monitor, description: "Electronic Medical Records (Beta)." },
   { href: '/projects/focus-notes', label: 'Focus Notes', icon: StickyNote, description: "Smart note-taking for students (Upcoming)." },
-];
-
-
-export const RESOURCES_DATA: Resource[] = [
-  { id: '1', title: 'Clinical Optics Guide', summary: 'A comprehensive guide to understanding clinical optics.', link: '#', type: 'article', iconName: 'FileText' },
-  { id: '2', title: 'Anatomy of the Eye', summary: 'Interactive module on ocular anatomy.', link: '#', type: 'course', iconName: 'BookOpen' },
-  { id: '3', title: 'Refraction Techniques Video', summary: 'Video tutorial on mastering refraction techniques.', link: '#', type: 'video', iconName: 'Video' },
-  { id: '4', title: 'Optometry Journal Online', summary: 'Access to the latest research and articles in optometry.', link: '#', type: 'website', iconName: 'LinkIcon' },
 ];
 
 
@@ -53,7 +45,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     longDescription: 'Enhance your clinical skills with interactive exercises that mimic real-world scenarios, providing a safe and engaging way to master JCC techniques and improve your accuracy in refraction. (Currently Available)',
     iconName: 'MousePointerClick',
     features: [
-      { title: 'JCC Simulation', description: 'Realistic simulation of Jackson Cross Cylinder tests.', iconName: 'LucideMousePointerClick' },
+      { title: 'JCC Simulation', description: 'Realistic simulation of Jackson Cross Cylinder tests.', iconName: 'MousePointerClick' },
       { title: 'Gamified Learning Modules', description: 'Engaging training exercises with progress tracking.', iconName: 'LucideActivity' },
       { title: 'Skill Refinement', description: 'Practice and perfect lens flipping techniques.', iconName: 'Wrench' },
     ],
@@ -61,13 +53,14 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-casex',
     title: 'Focus CaseX',
-    tagline: 'Interactive Optometry Case Studies Platform',
-    description: 'Focus CaseX is an educational platform providing a rich library of interactive case studies for optometry students and professionals to hone their diagnostic and clinical reasoning skills.',
-    longDescription: 'Engage with realistic patient scenarios, make diagnostic decisions, and receive immediate feedback. CaseX covers a wide range of ocular conditions and patient demographics, fostering a deeper understanding of clinical practice.',
+    tagline: 'Interactive Case Studies & Clinical Learning Platform',
+    description: 'Focus CaseX is an educational platform where users can log clinical cases, ask questions, simulate viva sessions, and more. It\'s designed to enhance diagnostic and clinical reasoning skills. (Currently in development).',
+    longDescription: 'Engage with realistic patient scenarios, make diagnostic decisions, and receive immediate feedback. CaseX aims to cover a wide range of ocular conditions and patient demographics, fostering a deeper understanding of clinical practice.',
     iconName: 'FilePenLine',
     features: [
-      { title: 'Vast Case Library', description: 'Hundreds of curated cases across all optometric specialties.', iconName: 'LucideLibrary' },
-      { title: 'Interactive Decision Making', description: 'Simulate clinical workflows and choices.', iconName: 'LucideMousePointerClick' },
+      { title: 'Case Logging & Management', description: 'Securely log and organize patient cases for review and discussion.', iconName: 'LucideLibrary' },
+      { title: 'Q&A and Discussion Forum', description: 'Ask questions about specific cases and engage in discussions with peers and mentors.', iconName: 'MessageSquare' },
+      { title: 'Viva Simulation', description: 'Practice for oral examinations with simulated viva sessions.', iconName: 'Brain' },
       { title: 'Performance Analytics', description: 'Track your progress and identify areas for improvement.', iconName: 'LucideBarChart' },
     ],
   },
@@ -79,9 +72,9 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     longDescription: 'Create study groups, participate in forums, share resources, and network with peers and mentors from around the world. Focus Share aims to build a supportive and dynamic optometric community. (Upcoming)',
     iconName: 'Users',
     features: [
-      { title: 'Discussion Forums', description: 'Engage in specialty-specific discussions and Q&A.', iconName: 'LucideMessageSquare' },
-      { title: 'Resource Sharing', description: 'Upload and access study materials, articles, and presentations.', iconName: 'LucideShare2' },
-      { title: 'Mentorship Connections', description: 'Find mentors or offer guidance to junior members.', iconName: 'LucideUserCheck' },
+      { title: 'Discussion Forums', description: 'Engage in specialty-specific discussions and Q&A.', iconName: 'MessageSquare' },
+      { title: 'Resource Sharing', description: 'Upload and access study materials, articles, and presentations.', iconName: 'Share2' },
+      { title: 'Mentorship Connections', description: 'Find mentors or offer guidance to junior members.', iconName: 'UserCheck' },
     ],
   },
   {
@@ -90,7 +83,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     tagline: 'Transposition Sums: Generate & Practice',
     description: 'Focus Gen is a transposition sum generator. Create various types of transposition sums and practice them to sharpen your skills.',
     longDescription: 'This tool helps students master optical transposition by providing unlimited practice problems. Select parameters and generate sums for self-assessment and learning reinforcement. (Currently Available)',
-    iconName: 'Bot',
+    iconName: 'LucideCalculator',
     features: [
       { title: 'Custom Sum Generation', description: 'Generate transposition sums based on selected criteria.', iconName: 'Settings' },
       { title: 'Practice Mode', description: 'Work through generated sums and check your answers.', iconName: 'LucideCalculator' },
@@ -129,3 +122,12 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
 export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefined => {
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
+
+export const RESOURCES_DATA: Resource[] = PROJECTS_DETAILS_DATA.map(project => ({
+  id: project.slug,
+  title: `Project Spotlight: ${project.title}`,
+  summary: `Learn more about ${project.title} - ${project.tagline}. Click to explore its features and development status.`,
+  link: `/projects/${project.slug}`,
+  type: 'project-spotlight',
+  iconName: project.iconName,
+}));

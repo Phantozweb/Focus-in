@@ -17,7 +17,7 @@ export interface Resource {
   title: string;
   summary: string;
   link: string;
-  type: 'article' | 'video' | 'course' | 'website';
+  type: 'article' | 'video' | 'course' | 'website' | 'project-spotlight';
   iconName?: string;
 }
 

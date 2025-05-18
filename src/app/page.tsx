@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick } from 'lucide-react';
+import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -44,14 +44,14 @@ const whyWeStartedFeatures = [
 ];
 
 const projectHighlights = [
-    { icon: Brain, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: '/projects/focus-ai', linkText: 'Learn More' },
+    { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: '/projects/focus-ai', linkText: 'Learn More' },
     { icon: MousePointerClick, title: 'Focus Axis', description: 'JCC Simulator for virtual, gamified JCC training. Currently available.', link: '/projects/focus-axis', linkText: 'Learn More' },
-    { icon: Bot, title: 'Focus Gen', description: 'Transposition sum generator and practice tool. Currently available.', link: '/projects/focus-gen', linkText: 'Learn More' },
+    { icon: LucideCalculator, title: 'Focus Gen', description: 'Transposition sum generator and practice tool. Currently available.', link: '/projects/focus-gen', linkText: 'Learn More' },
 ];
 
 const impactStats = [
   { icon: UserCheck, value: "75+", label: "Focus AI Users", hint: "active users" },
-  { icon: Bot, value: "120+", label: "Focus Gen Uses", hint: "content generations" },
+  { icon: LucideCalculator, value: "120+", label: "Focus Gen Uses", hint: "content generations" },
   { icon: ClipboardList, value: "20+", label: "Focus EMR Beta Testers", hint: "early adopters" },
 ];
 
@@ -85,53 +85,24 @@ export default function HomePage() {
     <>
       <HeroSection />
       <div className="container mx-auto container-padding">
+        {/* Removed About Focus-IN paragraph and Meet the Founder section from here */}
+        {/* They are now on /about page */}
+
+        <Separator className="my-8 md:my-12" />
+        
         <AnimatedSection animationType="slide-up" delay={100}>
-            <section className="py-12 md:py-16 text-center">
-                <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-                Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
-                </p>
-            </section>
+          <section>
+              <SectionTitle
+                title="Why We Started" 
+                subtitle="Our journey began with a vision to transform optometry education and practice."
+              />
+              <FeatureGrid features={whyWeStartedFeatures} />
+          </section>
         </AnimatedSection>
 
         <Separator className="my-8 md:my-12" />
 
         <AnimatedSection animationType="slide-up" delay={200}>
-          <section className="py-12 md:py-16">
-            <SectionTitle title="Meet the Founder" />
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              <div className="md:col-span-1 flex justify-center">
-                <Image
-                  src="https://cdn.discordapp.com/attachments/1361686038950711516/1366784455011864677/1745925246585.png?ex=6829efb7&is=68289e37&hm=ef70e7c6845b70abb28246545f3c7ed95d3ed0e542409538872940388787fb85&"
-                  alt="Janarthan Veeramani, Founder of Focus-IN"
-                  width={200}
-                  height={250}
-                  className="rounded-xl shadow-lg object-cover"
-                  data-ai-hint="founder portrait"
-                />
-              </div>
-              <div className="md:col-span-2 space-y-4">
-                <h3 className="text-2xl font-semibold text-primary">Janarthan Veeramani - Founder of Focus-IN</h3>
-                <p className="text-lg text-muted-foreground">
-                  Janarthan Veeramani founded Focus-IN with a clear mission: to innovate optometry through technology. He envisions a future where accessible, powerful digital tools empower vision care students and professionals across India and beyond, leveraging the latest in AI, data science, and simulation.
-                </p>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-          
-        <Separator className="my-8 md:my-12" />
-
-        <section>
-            <SectionTitle
-              title="Why We Started" 
-              subtitle="Our journey began with a vision to transform optometry education and practice."
-            />
-            <FeatureGrid features={whyWeStartedFeatures} />
-        </section>
-
-        <Separator className="my-8 md:my-12" />
-
-        <AnimatedSection animationType="slide-up">
             <section className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border">
               <div className="px-4">
                 <SectionTitle
@@ -152,7 +123,7 @@ export default function HomePage() {
 
         <Separator className="my-8 md:my-12" />
 
-        <AnimatedSection animationType="slide-up">
+        <AnimatedSection animationType="slide-up" delay={300}>
             <section className="py-16 md:py-24 space-y-12">
               <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
 
@@ -244,7 +215,7 @@ export default function HomePage() {
           
         <Separator className="my-8 md:my-12" />
 
-        <AnimatedSection animationType="slide-up">
+        <AnimatedSection animationType="slide-up" delay={400}>
             <section className="py-16 md:py-24">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>

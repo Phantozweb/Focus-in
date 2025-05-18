@@ -6,16 +6,16 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Optometry Learning Resources | Focus-IN',
-  description: 'Access curated educational resources, articles, and courses designed for optometry students and professionals to enhance their knowledge and skills. Powered by Focus-IN.',
+  title: 'Project Spotlights | Focus-IN',
+  description: 'Explore in-depth insights into our innovative optometry tools and platforms, including AI diagnostic tools, simulation software, and more. Powered by Focus-IN.',
 };
 
-export default function ResourcesPage() {
+export default function ProjectSpotlightsPage() {
   return (
     <div className="container mx-auto container-padding py-12 md:py-16">
       <SectionTitle
-        title="Learning Resources"
-        subtitle="Explore our curated list of educational materials to support your optometry journey."
+        title="Project Spotlights"
+        subtitle="Explore in-depth insights into our innovative optometry tools and platforms."
       />
       {RESOURCES_DATA.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -26,7 +26,7 @@ export default function ResourcesPage() {
           ))}
         </div>
       ) : (
-        <p className="py-12 text-center text-lg text-muted-foreground">No resources available at the moment. Please check back later.</p>
+        <p className="py-12 text-center text-lg text-muted-foreground">No project spotlights available at the moment. Please check back later.</p>
       )}
     </div>
   );
