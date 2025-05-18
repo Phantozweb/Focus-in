@@ -1,8 +1,6 @@
 
-import React from 'react';
-import type { SVGProps } from 'react';
 import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Eye, Lightbulb, Microscope, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers, ClipboardList, StickyNote, Info, BookMarked, CalendarDays } from 'lucide-react';
+import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Lightbulb, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers, ClipboardList, StickyNote, Info, BookMarked, CalendarDays, Aperture, Palette, TestTubeDiagonal, Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
@@ -19,7 +17,7 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: Bot, description: "Generative AI for study material creation." },
   { href: '/projects/focus-emr', label: 'Focus EMR', icon: ClipboardList, description: "Electronic Medical Records (Beta)." },
-  { href: '/projects/focus-notes', label: 'Focus Notes', icon: FileText, description: "Smart note-taking for students (Upcoming)." },
+  { href: '/projects/focus-notes', label: 'Focus Notes', icon: StickyNote, description: "Smart note-taking for students (Upcoming)." },
 ];
 
 
@@ -35,14 +33,16 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-ai',
     title: 'Focus.Ai',
-    tagline: 'Intelligent Diagnostic Assistance for Optometrists',
-    description: 'Focus.Ai leverages artificial intelligence to provide decision support for optometrists, helping analyze diagnostic images and patient data for more accurate and efficient assessments.',
-    longDescription: 'Our platform integrates with existing diagnostic tools, offering a second layer of analysis powered by machine learning algorithms trained on vast datasets of ocular conditions. Focus.Ai aims to reduce diagnostic errors and improve patient outcomes. (Currently Available)',
+    tagline: 'AI-Powered Optometry Assistance, Learning, and Practice Tools',
+    description: 'Focus AI is an innovative tool leveraging Artificial Intelligence designed to significantly enhance the efficiency and accuracy of optometric diagnostics, patient management, and professional learning.',
+    longDescription: 'Focus.Ai aims to reduce diagnostic errors and improve patient outcomes by integrating with existing diagnostic tools and offering a second layer of analysis powered by machine learning algorithms.',
     iconName: 'Brain',
     features: [
-      { title: 'AI Image Analysis', description: 'Automated analysis of retinal scans, OCT images, and more.', iconName: 'LucideScanSearch' },
-      { title: 'Predictive Diagnostics', description: 'Early detection models for common eye diseases.', iconName: 'Lightbulb' },
-      { title: 'Personalized Patient Insights', description: 'Tailored risk assessments based on patient history and genetics.', iconName: 'Users' },
+      { title: 'Optometry AI Chat', description: 'Ask questions to an AI specially trained on optometry knowledge for instant assistance.', iconName: 'MessageSquare' },
+      { title: 'Learning Aid', description: 'Utilize AI-powered explanations and summaries to deepen understanding of complex optometric concepts.', iconName: 'Lightbulb' },
+      { title: 'Practice Quiz Section', description: 'Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.', iconName: 'FileQuestion' },
+      { title: 'Case Study Generator', description: 'Create realistic case studies for practice, training, and educational purposes.', iconName: 'Briefcase' },
+      { title: 'Streamlined Patient Management', description: 'Aids in managing patient information and workflows, enhancing practice efficiency.', iconName: 'ClipboardList' },
     ],
   },
   {
@@ -129,20 +129,3 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
 export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefined => {
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
-
-// Placeholder icon functions using React.createElement to avoid JSX parsing issues in .ts files
-const CameraPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const ScanSearchPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const SquareActivityPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const MapPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const CalculatorPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const ActivityPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const LibraryPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const MousePointerClickPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const BarChartPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const MessageSquarePlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const Share2PlaceholderIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const UserCheckPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const FileQuestionPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
-const FileTextIconPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props)); 
-const LayersPlaceholder: React.FC<SVGProps<SVGSVGElement>> = (props) => (React.createElement('svg', props));
