@@ -1,6 +1,6 @@
 
 import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Search, Filter } from 'lucide-react';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Search, ListFilter, Tag, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
@@ -27,8 +27,8 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     slug: 'focus-ai',
     title: 'Focus.Ai',
     tagline: 'AI-Powered Optometry Assistance, Learning, and Practice Tools',
-    description: 'Focus AI is an innovative tool leveraging Artificial Intelligence designed to significantly enhance the efficiency and accuracy of optometric diagnostics, patient management, and professional learning.',
-    longDescription: 'Focus.Ai aims to reduce diagnostic errors and improve patient outcomes by integrating with existing diagnostic tools and offering a second layer of analysis powered by machine learning algorithms.',
+    description: 'Focus AI is your smart, AI-powered assistant for optometry studies. It simplifies complex theories, helps interpret clinical cases, and aids in preparing for exams, making your learning journey more efficient and confident.',
+    longDescription: 'Focus.Ai aims to reduce diagnostic errors and improve patient outcomes by integrating with existing diagnostic tools and offering a second layer of analysis powered by machine learning algorithms. With recent upgrades like OCT image analysis and an intuitive interface, Focus AI bridges textbook learning and real-world clinical skills seamlessly.',
     iconName: 'Bot',
     features: [
       { title: 'Optometry AI Chat', description: 'Ask questions to an AI specially trained on optometry knowledge for instant assistance.', iconName: 'MessageSquare' },
@@ -42,7 +42,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     slug: 'focus-axis',
     title: 'Focus Axis',
     tagline: 'JCC Simulator: Master Lens Flipping',
-    description: 'Focus Axis offers a JCC (Jackson Cross Cylinder) simulator. Practice lens flipping and other techniques in a virtual, gamified learning experience. Currently in Beta.',
+    description: 'Focus Axis offers a JCC (Jackson Cross Cylinder) simulator. Practice lens flipping and other techniques in a virtual, gamified learning experience.',
     longDescription: 'Enhance your clinical skills with interactive exercises that mimic real-world scenarios, providing a safe and engaging way to master JCC techniques and improve your accuracy in refraction.',
     iconName: 'MousePointerClick',
     features: [
@@ -82,7 +82,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     slug: 'focus-gen',
     title: 'Focus Gen',
     tagline: 'Transposition Sums: Generate & Practice',
-    description: 'Focus Gen is a transposition sum generator. Create various types of transposition sums and practice them to sharpen your skills.',
+    description: 'Focus Gen is a transposition sum generator where you can create various types of transposition sums and practice them to sharpen your skills.',
     longDescription: 'This tool helps students master optical transposition by providing unlimited practice problems. Select parameters and generate sums for self-assessment and learning reinforcement. (Currently Available)',
     iconName: 'LucideCalculator',
     features: [
