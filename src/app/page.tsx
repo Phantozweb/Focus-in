@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import AnimatedNumber from '@/components/shared/animated-number';
 
 
 export const metadata: Metadata = {
@@ -46,13 +47,13 @@ const whyWeStartedFeatures = [
 const projectHighlights = [
     { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: '/projects/focus-ai', linkText: 'Learn More' },
     { icon: MousePointerClick, title: 'Focus Axis', description: 'JCC Simulator for virtual, gamified JCC training. Currently available.', link: '/projects/focus-axis', linkText: 'Learn More' },
-    { icon: LucideCalculator, title: 'Focus Gen', description: 'Transposition sum generator and practice tool. Currently available.', link: '/projects/focus-gen', linkText: 'Learn More' },
+    { icon: LucideCalculator, title: 'Focus Gen', description: 'Transposition Sums: Generate & Practice. Currently available.', link: '/projects/focus-gen', linkText: 'Learn More' },
 ];
 
 const impactStats = [
   { icon: UserCheck, value: "75+", label: "Focus AI Users", hint: "active users" },
-  { icon: LucideCalculator, value: "120+", label: "Focus Gen Uses", hint: "content generations" },
-  { icon: ClipboardList, value: "20+", label: "Focus EMR Beta Testers", hint: "early adopters" },
+  { icon: LucideCalculator, value: "128+", label: "Focus Gen Uses", hint: "content generations" },
+  { icon: ClipboardList, value: "23+", label: "Focus EMR Beta Testers", hint: "early adopters" },
 ];
 
 const topDonors = [
@@ -63,31 +64,41 @@ const topDonors = [
 
 const otherDonors = [
   { rank: 4, name: "M. Priya", amount: 450 },
-  { rank: 5, name: "Mohammad Khan", amount: 250 },
-  { rank: 6, name: "Shreya", amount: 222 },
-  { rank: 7, name: "Joshua", amount: 200 },
-  { rank: 8, name: "Aishwarya Suresh", amount: 200 },
-  { rank: 9, name: "Sethu", amount: 150 },
-  { rank: 10, name: "Ashok Raj", amount: 150 },
-  { rank: 11, name: "Rajesh Kumar", amount: 150 },
-  { rank: 12, name: "Preeti", amount: 150 },
-  { rank: 13, name: "S. Das", amount: 150 },
-  { rank: 14, name: "Kamlesh", amount: 150 },
-  { rank: 15, name: "P. Joshi", amount: 150 },
-  { rank: 16, name: "Mehtab", amount: 100 },
-  { rank: 17, name: "Chandhru", amount: 100 },
-  { rank: 18, name: "Punitha", amount: 100 },
+  { rank: 5, name: "Deepak", amount: 250 },
+  { rank: 6, name: "K Anusha Mohan", amount: 250 },
+  { rank: 7, name: "Mohammad Khan", amount: 250 },
+  { rank: 8, name: "Mohd Harsad", amount: 250 },
+  { rank: 9, name: "Shreya", amount: 222 },
+  { rank: 10, name: "Aishwarya Suresh", amount: 200 },
+  { rank: 11, name: "Joshua", amount: 200 },
+  { rank: 12, name: "Ashok Raj", amount: 150 },
+  { rank: 13, name: "Kamlesh", amount: 150 },
+  { rank: 14, name: "P. Joshi", amount: 150 },
+  { rank: 15, name: "Preeti", amount: 150 },
+  { rank: 16, name: "Rajesh Kumar", amount: 150 },
+  { rank: 17, name: "S. Das", amount: 150 },
+  { rank: 18, name: "Sethu", amount: 150 },
+  { rank: 19, name: "Chandhru", amount: 100 },
+  { rank: 20, name: "Mehtab", amount: 100 },
+  { rank: 21, name: "Punitha", amount: 100 },
 ];
 
+const totalFundsCollected = otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0));
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <div className="container mx-auto container-padding">
-        {/* Removed About Focus-IN paragraph and Meet the Founder section from here */}
-        {/* They are now on /about page */}
-
+        <AnimatedSection animationType="slide-up" delay={0}>
+          <section className="py-12 md:py-16 text-center">
+            <h2 className="text-3xl font-bold text-foreground mb-4">About Focus-IN</h2>
+            <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
+              Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
+            </p>
+          </section>
+        </AnimatedSection>
+        
         <Separator className="my-8 md:my-12" />
         
         <AnimatedSection animationType="slide-up" delay={100}>
@@ -204,8 +215,9 @@ export default function HomePage() {
                 <div className="text-center pt-8">
                   <p className="text-3xl font-extrabold text-foreground">
                     Total Funds Collected: 
-                    <span className="text-primary ml-2 flex items-center justify-center text-4xl animate-pulse">
-                      <IndianRupee className="h-8 w-8 mr-1" />{otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0)).toLocaleString()}
+                    <span className="text-primary ml-2 flex items-center justify-center text-4xl">
+                      <IndianRupee className="h-8 w-8 mr-1" />
+                      <AnimatedNumber targetValue={totalFundsCollected} duration={1000} />
                     </span>
                   </p>
                 </div>
