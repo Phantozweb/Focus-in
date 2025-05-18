@@ -1,6 +1,6 @@
 
 import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Lightbulb, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers, ClipboardList, StickyNote, Info, BookMarked, CalendarDays, Aperture, Palette, TestTubeDiagonal, Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote } from 'lucide-react';
+import { Home, BookOpen, Mail, Brain, Scaling, Briefcase, Users, Bot, Lightbulb, CheckCircle, Video, Link as LinkIcon, FileText, Camera as LucideCamera, ScanSearch as LucideScanSearch, SquareActivity as LucideSquareActivity, Map as LucideMap, Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, FileQuestion as LucideFileQuestion, Layers, ClipboardList, StickyNote, Info, BookMarked, CalendarDays, Aperture, Palette, TestTubeDiagonal, Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle, Monitor, FilePenLine } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
@@ -11,12 +11,12 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
-  { href: '/projects/focus-ai', label: 'Focus.Ai', icon: Brain, description: "AI-powered diagnostic assistance." },
+  { href: '/projects/focus-ai', label: 'Focus.Ai', icon: Bot, description: "AI-powered diagnostic assistance." },
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: Scaling, description: "Advanced ocular measurement tools." },
-  { href: '/projects/focus-casex', label: 'Focus CaseX', icon: Briefcase, description: "Interactive case studies platform." },
+  { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: Bot, description: "Generative AI for study material creation." },
-  { href: '/projects/focus-emr', label: 'Focus EMR', icon: ClipboardList, description: "Electronic Medical Records (Beta)." },
+  { href: '/projects/focus-emr', label: 'Focus EMR', icon: Monitor, description: "Electronic Medical Records (Beta)." },
   { href: '/projects/focus-notes', label: 'Focus Notes', icon: StickyNote, description: "Smart note-taking for students (Upcoming)." },
 ];
 
@@ -36,12 +36,12 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     tagline: 'AI-Powered Optometry Assistance, Learning, and Practice Tools',
     description: 'Focus AI is an innovative tool leveraging Artificial Intelligence designed to significantly enhance the efficiency and accuracy of optometric diagnostics, patient management, and professional learning.',
     longDescription: 'Focus.Ai aims to reduce diagnostic errors and improve patient outcomes by integrating with existing diagnostic tools and offering a second layer of analysis powered by machine learning algorithms.',
-    iconName: 'Brain',
+    iconName: 'Bot', // Changed from Brain
     features: [
       { title: 'Optometry AI Chat', description: 'Ask questions to an AI specially trained on optometry knowledge for instant assistance.', iconName: 'MessageSquare' },
       { title: 'Learning Aid', description: 'Utilize AI-powered explanations and summaries to deepen understanding of complex optometric concepts.', iconName: 'Lightbulb' },
       { title: 'Practice Quiz Section', description: 'Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.', iconName: 'FileQuestion' },
-      { title: 'Case Study Generator', description: 'Create realistic case studies for practice, training, and educational purposes.', iconName: 'Briefcase' },
+      { title: 'Case Study Generator', description: 'Create realistic case studies for practice, training, and educational purposes.', iconName: 'Briefcase' }, // Keeping Briefcase for Case Study feature
       { title: 'Streamlined Patient Management', description: 'Aids in managing patient information and workflows, enhancing practice efficiency.', iconName: 'ClipboardList' },
     ],
   },
@@ -64,7 +64,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     tagline: 'Interactive Optometry Case Studies Platform',
     description: 'Focus CaseX is an educational platform providing a rich library of interactive case studies for optometry students and professionals to hone their diagnostic and clinical reasoning skills.',
     longDescription: 'Engage with realistic patient scenarios, make diagnostic decisions, and receive immediate feedback. CaseX covers a wide range of ocular conditions and patient demographics, fostering a deeper understanding of clinical practice.',
-    iconName: 'Briefcase',
+    iconName: 'FilePenLine', // Changed from Briefcase
     features: [
       { title: 'Vast Case Library', description: 'Hundreds of curated cases across all optometric specialties.', iconName: 'LucideLibrary' },
       { title: 'Interactive Decision Making', description: 'Simulate clinical workflows and choices.', iconName: 'LucideMousePointerClick' },
@@ -103,7 +103,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     tagline: 'Streamlined Electronic Medical Records (Beta)',
     description: 'Focus EMR is designed to simplify patient record management for optometry practices, offering an intuitive interface and essential features for efficient clinical workflows.',
     longDescription: 'Currently in beta, Focus EMR aims to provide a cost-effective and user-friendly solution for managing patient data, appointments, and prescriptions. (Beta Program Ongoing)',
-    iconName: 'ClipboardList',
+    iconName: 'Monitor', // Changed from ClipboardList
     features: [
       { title: 'Patient Records', description: 'Comprehensive and secure patient data management.', iconName: 'Users'},
       { title: 'Appointment Scheduling', description: 'Easy-to-use calendar and booking system.', iconName: 'CalendarDays' },
@@ -129,3 +129,4 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
 export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefined => {
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
+

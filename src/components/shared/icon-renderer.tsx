@@ -10,7 +10,8 @@ import {
   MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, 
   FileQuestion as LucideFileQuestion, Layers as LucideLayers, HelpCircle, ClipboardList,
   StickyNote, CalendarDays, BookMarked, Info, Aperture, Palette, TestTubeDiagonal, 
-  Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle
+  Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
+  Monitor, FilePenLine
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -63,6 +64,8 @@ const iconMap: { [key: string]: React.ElementType } = {
   Rocket,
   Sparkles,
   AlertTriangle,
+  Monitor,
+  FilePenLine,
   // Add other icons as needed by their string name
 };
 
@@ -77,3 +80,4 @@ export const IconRenderer: React.FC<IconRendererProps> = ({ iconName, ...props }
 
   return <IconComponent {...props} />;
 };
+
