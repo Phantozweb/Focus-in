@@ -13,7 +13,7 @@ import { Separator } from '@/components/ui/separator';
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focus-casex');
   if (!project) {
-    return { title: 'Project Not Found | Focus-IN' }
+    return { title: 'Project Not Found | Focus-IN Projects' }
   }
   return {
     title: `${project.title} - Interactive Case Studies & AI Learning | Focus-IN Projects`,
@@ -48,7 +48,7 @@ export default function FocusCaseXPage() {
               <Info className="h-5 w-5 text-accent-foreground flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-semibold text-accent-foreground">Stay Tuned:</h4>
-                <p>We're excited about the potential of Focus CaseX to transform optometric learning. Follow our Project Spotlights for updates on its progress and upcoming beta opportunities!</p>
+                <p>We're excited about the potential of Focus CaseX to transform optometric learning. Follow our updates for news on its progress and upcoming beta opportunities!</p>
               </div>
             </div>
             <p className="font-semibold text-foreground">
@@ -59,14 +59,14 @@ export default function FocusCaseXPage() {
             <Button size="lg" variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow" disabled>
               <Sparkles className="mr-2 h-5 w-5" /> Access Platform (Coming Soon)
             </Button>
+            {/* Removed link to Project Spotlights as it's being replaced 
             <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
               <Link href="/resources">View Project Spotlights</Link>
             </Button>
+            */}
           </CardFooter>
         </Card>
       </AnimatedSection>
     </div>
   );
 }
-
-    

@@ -9,9 +9,9 @@ import {
   MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, 
   MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, 
   FileQuestion as LucideFileQuestion, Layers as LucideLayers, HelpCircle, ClipboardList,
-  StickyNote, CalendarDays, BookMarked, Info, Aperture, Palette, TestTubeDiagonal, 
+  StickyNote, CalendarDays, Info, Aperture, Palette, TestTubeDiagonal, 
   Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
-  Monitor, FilePenLine, Home, Mail, Heart, Search, Filter, ListFilter, Tag // Added Home, Mail, Heart, Search, Filter, ListFilter, Tag
+  Monitor, FilePenLine, Home, Mail, Heart, Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle // Added Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -26,7 +26,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   LucideScanSearch,
   LucideSquareActivity,
   FileText,
-  BookOpen,
+  BookOpen, // Still used in constants.ts for some project features
   Video,
   LinkIcon,
   Brain,
@@ -49,7 +49,6 @@ const iconMap: { [key: string]: React.ElementType } = {
   ClipboardList,
   StickyNote,
   CalendarDays,
-  BookMarked, 
   Info,
   Aperture,
   Palette,
@@ -68,11 +67,14 @@ const iconMap: { [key: string]: React.ElementType } = {
   FilePenLine,
   Home, 
   Mail, 
-  Heart, 
-  Search,
-  Filter,
-  ListFilter,
-  Tag,
+  Heart,
+  Target,
+  ShieldCheck,
+  Megaphone,
+  Crown,
+  IndianRupee,
+  Gift,
+  CheckCircle,
   // Add other icons as needed by their string name
 };
 

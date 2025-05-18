@@ -3,13 +3,13 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Layers, BookOpen } from 'lucide-react';
+import { Layers, Info } from 'lucide-react'; // Changed BookOpen to Info
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
 const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INOVATE";
+const TARGET_TEXT_EXPANDED = "INOVATE"; // Or your preferred word
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -29,6 +29,7 @@ export function HeroSection() {
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
+           {/* Removed Eye icon and its animation */}
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
             FOCUS-
             <span
@@ -57,8 +58,8 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button asChild variant="default" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30">
-              <Link href="/resources">
-                <BookOpen className="mr-2 h-5 w-5" /> Project Spotlights
+              <Link href="/about"> {/* Changed link to /about */}
+                <Info className="mr-2 h-5 w-5" /> Learn More About Us {/* Changed text and icon */}
               </Link>
             </Button>
           </div>

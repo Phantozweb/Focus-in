@@ -1,13 +1,13 @@
 
-import type { NavItem, ProjectNavItem, Resource, ProjectDetails } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, BookMarked, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Search, ListFilter, Tag, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays } from 'lucide-react';
+import type { NavItem, ProjectNavItem, ProjectDetails } from '@/types';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About Us', icon: Info },
   { href: '/projects', label: 'Our Projects', icon: Layers },
-  { href: '/resources', label: 'Project Spotlights', icon: BookMarked },
+  // { href: '/resources', label: 'Project Spotlights', icon: BookMarked }, // Removed
   { href: '/support', label: 'Support', icon: Mail },
 ];
 
@@ -56,7 +56,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     title: 'Focus CaseX',
     tagline: 'AI-Powered Clinical Learning & Case Logging (In Development)',
     description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs. (In Development)',
-    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students. You can log your real cases, ask questions about them, get summaries and interpretations, and practice viva sessions — all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics. (Currently in Development)",
+    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students 👁️‍🗨️📚. You can: Log your real cases 📝, Ask questions about them ❓, Get summaries and interpretations 🧠, Practice viva sessions — all based on your own logs 🎓. No data is stored — everything stays temporarily in your browser tab 🌐 to ensure privacy and medical ethics ✅.",
     iconName: 'FilePenLine',
     features: [
       { title: 'Real Case Logging', description: 'Log your clinical cases with detailed information.', iconName: 'FilePenLine' },
@@ -113,7 +113,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     longDescription: 'More details coming soon! Focus Notes will feature smart organization, linking capabilities to other Focus resources, and collaborative features. (Launching Soon)',
     iconName: 'StickyNote',
     features: [
-      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'BookMarked' },
+      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'BookMarked' }, // BookMarked is being removed, this can be StickyNote or FileText
       { title: 'Resource Integration', description: 'Link notes to articles, videos, and case studies.', iconName: 'LinkIcon' },
       { title: 'Collaborative Study', description: 'Share notes and study with peers.', iconName: 'Share2' },
     ],
@@ -124,105 +124,3 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
 export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefined => {
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
-
-// Updated RESOURCES_DATA for "Project Spotlights" / Blog-like entries
-export const RESOURCES_DATA: Resource[] = [
-  {
-    id: 'focus-ai-v2-launch-spotlight',
-    slug: 'focus-ai-v2-launch',
-    title: 'Focus.AI Version 2.0: Now with Image Analysis!',
-    summary: 'Discover the exciting new features in Focus.AI v2.0, including advanced image analysis capabilities for OCT reports, a redesigned UI, and much more.',
-    link: '/resources/focus-ai-v2-launch',
-    type: 'project-spotlight',
-    iconName: 'Bot',
-    date: '2025-05-13',
-    tags: ['Focus.AI', 'New Feature', 'Update'],
-    fullContent: `We are thrilled to announce the launch of Focus.AI Version 2.0! This major update brings a host of new features and improvements designed to further empower optometry students and professionals.
-
-Key highlights include the integration of advanced image analysis for OCT and ophthalmological reports, allowing for deeper insights and learning opportunities. We've also completely redesigned the user interface for a more intuitive and streamlined experience.
-
-Focus.AI's image analysis capability is primarily a learning tool. It helps students understand how to interpret such reports by highlighting key features and patterns. It is not intended as a standalone diagnostic tool and all interpretations should be validated by qualified professionals. Accuracy can vary based on image quality and case complexity.
-
-Additionally, the study notes organization system has been significantly enhanced, and the AI Assistant now benefits from chat history. Explore new quick format modes like "simplify," "student-friendly," and "clinical focus" to tailor AI responses to your needs.
-
-Read more about the journey and the technical details on the main Focus.AI project page.`
-  },
-  {
-    id: 'focus-axis-ga-spotlight',
-    slug: 'focus-axis-ga',
-    title: 'Focus Axis JCC Simulator: Now Live (Beta)!',
-    summary: 'Master the Jackson Cross Cylinder technique with our interactive and gamified simulator. Focus Axis is now available for all aspiring and practicing optometrists in its beta version.',
-    link: '/resources/focus-axis-ga',
-    type: 'project-spotlight',
-    iconName: 'MousePointerClick',
-    date: '2024-07-01',
-    tags: ['Focus Axis', 'Launch', 'Beta', 'Training Tool'],
-    fullContent: `Focus Axis, our JCC (Jackson Cross Cylinder) simulator, has officially launched in beta! This tool is designed to help optometry students and practitioners master lens flipping and other critical refraction techniques through a virtual, gamified learning experience.
-
-The current beta includes core simulation features and initial training modules. We are actively seeking feedback from users like you to refine and expand its capabilities. Your input will be invaluable as we work towards a full release.
-
-Try it out and let us know what you think!`
-  },
-  {
-    id: 'focus-gen-intro-spotlight',
-    slug: 'focus-gen-intro',
-    title: 'Introducing Focus Gen: Your Transposition Practice Partner',
-    summary: 'Struggling with transposition sums? Focus Gen is here to help! Generate unlimited practice questions and sharpen your optical calculation skills.',
-    link: '/resources/focus-gen-intro',
-    type: 'project-spotlight',
-    iconName: 'LucideCalculator',
-    date: '2024-06-15',
-    tags: ['Focus Gen', 'Launch', 'Student Tool'],
-    fullContent: `We're excited to introduce Focus Gen, a dedicated tool for mastering optical transposition. Understanding and performing transpositions accurately is a fundamental skill in optometry, and Focus Gen is designed to make practice more accessible and effective.
-
-With Focus Gen, you can:
-- Generate a wide variety of transposition sums.
-- Practice at your own pace.
-- Improve your accuracy and speed in optical calculations.
-
-This tool is perfect for students preparing for exams or anyone looking to refresh their transposition skills. Check out the Focus Gen project page for more details.`
-  },
-  {
-    id: 'focus-casex-dev-update-spotlight',
-    slug: 'focus-casex-dev-update',
-    title: 'Development Update: Focus CaseX is Taking Shape!',
-    summary: 'Get a sneak peek into Focus CaseX, our upcoming AI-powered interactive case study and learning platform for optometry students.',
-    link: '/resources/focus-casex-dev-update',
-    type: 'project-spotlight',
-    iconName: 'FilePenLine',
-    date: '2024-08-01',
-    tags: ['Focus CaseX', 'Development', 'Upcoming', 'AI Learning'],
-    fullContent: `Development of Focus CaseX, our AI-powered interactive clinical learning platform, is well underway! We envision CaseX as a dynamic learning environment where optometry students can:
-
-- Log their real clinical cases with detailed information.
-- Ask specific questions about logged cases and receive AI-driven assistance and interpretations.
-- Get AI-generated summaries of their case data to reinforce learning.
-- Practice viva examinations based on their own logged cases, with AI providing feedback and scenarios.
-- Benefit from a privacy-focused design where no data is stored permanently; all processing is done temporarily in the browser tab to ensure medical ethics and data privacy.
-
-Our team is focused on building a comprehensive and user-friendly platform that truly enhances clinical reasoning and exam preparation. Stay tuned for more updates as we approach our beta release!`
-  },
-  {
-    id: 'focus-emr-beta-spotlight',
-    slug: 'focus-emr-beta',
-    title: 'Focus EMR Beta Program: Join Us!',
-    summary: 'We are excited to announce the beta program for Focus EMR. Help us refine our electronic medical records system designed specifically for optometry practices.',
-    link: '/resources/focus-emr-beta',
-    type: 'project-spotlight',
-    iconName: 'Monitor',
-    date: '2024-09-01',
-    tags: ['Focus EMR', 'Beta', 'Practice Management'],
-    fullContent: `The beta program for Focus EMR is now open! We're looking for optometry practices and professionals to help us test and refine our new Electronic Medical Records system.
-
-Focus EMR aims to provide a streamlined, intuitive, and cost-effective solution for managing patient records, appointments, and prescriptions. Your feedback during this beta phase will be crucial in shaping the final product.
-
-If you're interested in participating, please visit the Focus EMR project page or contact us through the support page.`
-  },
-];
-
-// Helper to get resource details by slug
-export const getResourceBySlug = (slug: string): Resource | undefined => {
-  return RESOURCES_DATA.find(r => r.slug === slug);
-};
-
-    
