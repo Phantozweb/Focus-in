@@ -25,8 +25,8 @@ const whyWeStartedFeatures = [
     icon: Users,
     title: 'Empowering Our Community',
     description: 'We saw a crucial need for modern, tech-driven solutions to support optometry students and professionals, aiming to make advanced tools universally accessible.',
-    link: '#', 
-    linkText: '', 
+    link: '#',
+    linkText: '',
   },
   {
     icon: Brain,
@@ -51,9 +51,9 @@ const projectHighlights = [
 ];
 
 const impactStats = [
-  { icon: UserCheck, value: "75+", label: "Focus AI Users", hint: "active users" },
-  { icon: LucideCalculator, value: "128+", label: "Focus Gen Uses", hint: "content generations" },
-  { icon: ClipboardList, value: "23+", label: "Focus EMR Beta Testers", hint: "early adopters" },
+  { icon: UserCheck, value: "110+", label: "Focus AI Users", hint: "active users" },
+  { icon: LucideCalculator, value: "210+", label: "Focus Gen Uses", hint: "content generations" },
+  { icon: ClipboardList, value: "23+", label: "Beta Testers", hint: "early adopters" },
 ];
 
 const topDonors = [
@@ -93,7 +93,16 @@ export default function HomePage() {
     <>
       <HeroSection />
       <div className="container mx-auto container-padding">
-        {/* About section removed from homepage, now on /about page */}
+        
+        <AnimatedSection animationType="slide-up" delay={0}>
+          <section className="py-12 md:py-16 text-center">
+             <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
+              Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
+            </p>
+          </section>
+        </AnimatedSection>
+
+        <Separator className="my-8 md:my-12" />
         
         <AnimatedSection animationType="slide-up" delay={100}>
           <section className="py-12 md:py-16">
