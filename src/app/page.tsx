@@ -260,9 +260,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="relative h-80 w-full rounded-2xl shadow-xl bg-gradient-to-br from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]">
-                   <div className="absolute inset-0 flex items-center justify-center">
-                     <Eye className="h-32 w-32 text-white/30 opacity-70" />
-                   </div>
+                   {/* The Eye icon background was removed here */}
                 </div>
               </div>
             </section>
