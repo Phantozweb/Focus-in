@@ -6,14 +6,15 @@ import {
   SquareActivity as LucideSquareActivity, FileText, BookOpen, Video, Link as LinkIcon, 
   Brain, Scaling, Briefcase, Users, Bot, Lightbulb, Map as LucideMap, 
   Calculator as LucideCalculator, Activity as LucideActivity, Library as LucideLibrary, 
-  MousePointerClick as LucideMousePointerClick, BarChart2 as LucideBarChart, 
+  MousePointerClick as LucideMousePointerClick, 
+  BarChart2 as LucideBarChart, 
   MessageSquare as LucideMessageSquare, Share2 as LucideShare2, UserCheck as LucideUserCheck, 
   FileQuestion as LucideFileQuestion, Layers as LucideLayers, HelpCircle, ClipboardList,
   StickyNote, CalendarDays, Info, Aperture, Palette, TestTubeDiagonal, 
   Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
   Monitor, FilePenLine, Home, Mail, Heart, Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle,
   Instagram, Linkedin, Search, ListFilter, Tag,
-  Headphones, Timer, Voicemail, PlayCircle, Clock // Added Headphones, Timer, Voicemail, PlayCircle, Clock
+  Headphones, Timer, Voicemail, PlayCircle, Clock
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -41,13 +42,13 @@ const iconMap: { [key: string]: React.ElementType } = {
   LucideCalculator,
   LucideActivity,
   LucideLibrary,
-  MousePointerClick,
+  'MousePointerClick': LucideMousePointerClick,
   LucideBarChart,
   LucideMessageSquare,
   LucideShare2,
-  LucideUserCheck,
-  LucideFileQuestion,
-  LucideLayers,
+  UserCheck: LucideUserCheck,
+  FileQuestion: LucideFileQuestion,
+  Layers: LucideLayers,
   ClipboardList,
   StickyNote,
   CalendarDays,
@@ -101,3 +102,4 @@ export const IconRenderer: React.FC<IconRendererProps> = ({ iconName, ...props }
 
   return <IconComponent {...props} />;
 };
+

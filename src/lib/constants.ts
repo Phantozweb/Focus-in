@@ -1,6 +1,6 @@
 
-import type { NavItem, ProjectNavItem, ProjectDetails, Resource } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle } from 'lucide-react';
+import type { NavItem, ProjectNavItem, ProjectDetails } from '@/types';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick as LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, Calculator as LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion as LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck as LucideUserCheck, Link as LinkIcon, Activity as LucideActivity, Library as LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
@@ -13,7 +13,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-ai', label: 'Focus.Ai', icon: Bot, description: "AI-powered diagnostic assistance." },
-  { href: '/projects/focus-axis', label: 'Focus Axis', icon: MousePointerClick, description: "JCC Simulator & Gamified Training." },
+  { href: '/projects/focus-axis', label: 'Focus Axis', icon: LucideMousePointerClick, description: "JCC Simulator & Gamified Training." },
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
   { href: '/projects/focuscast', label: 'Focuscast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
@@ -34,7 +34,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     features: [
       { title: 'Optometry AI Chat', description: 'Ask questions to an AI specially trained on optometry knowledge for instant assistance.', iconName: 'MessageSquare' },
       { title: 'Learning Aid', description: 'Utilize AI-powered explanations and summaries to deepen understanding of complex optometric concepts.', iconName: 'Lightbulb' },
-      { title: 'Practice Quiz Section', description: 'Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.', iconName: 'FileQuestion' },
+      { title: 'Practice Quiz Section', description: 'Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.', iconName: 'LucideFileQuestion' },
       { title: 'Case Study Generator', description: 'Create realistic case studies for practice, training, and educational purposes.', iconName: 'Briefcase' },
       { title: 'Clinical Case Interpretation Support', description: 'Assists students in learning to analyze and interpret various clinical findings and reports.', iconName: 'ClipboardList' },
     ],
@@ -94,7 +94,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     features: [
       { title: 'Discussion Forums', description: 'Engage in specialty-specific discussions and Q&A.', iconName: 'MessageSquare' },
       { title: 'Resource Sharing', description: 'Upload and access study materials, articles, and presentations.', iconName: 'Share2' },
-      { title: 'Mentorship Connections', description: 'Find mentors or offer guidance to junior members.', iconName: 'UserCheck' },
+      { title: 'Mentorship Connections', description: 'Find mentors or offer guidance to junior members.', iconName: 'LucideUserCheck' },
     ],
   },
   {
@@ -143,11 +143,6 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
 
-// Helper to get resource by slug (though resources are now removed, keeping for potential future use or other data types)
-export const getResourceBySlug = (slug: string): Resource | undefined => {
-  return undefined; // RESOURCES_DATA has been removed
-};
-
 // Placeholder for Resource type if needed in the future, currently unused
 export type Resource = {
   id: string;
@@ -163,3 +158,8 @@ export type Resource = {
 };
 
 export const RESOURCES_DATA: Resource[] = []; // Removed old resource data
+
+// Helper to get resource by slug
+export const getResourceBySlug = (slug: string): Resource | undefined => {
+  return RESOURCES_DATA.find(r => r.slug === slug);
+};
