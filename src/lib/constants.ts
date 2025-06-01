@@ -1,6 +1,6 @@
 
-import type { NavItem, ProjectNavItem, ProjectDetails } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick as LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, Calculator as LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion as LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck as LucideUserCheck, Link as LinkIcon, Activity as LucideActivity, Library as LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle } from 'lucide-react';
+import type { NavItem, ProjectNavItem, ProjectDetails, Resource } from '@/types';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick as LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, Calculator as LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion as LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck as LucideUserCheck, Link as LinkIcon, Activity as LucideActivity, Library as LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Search, ListFilter, Tag, Clock } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
@@ -55,8 +55,8 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-casex',
     title: 'Focus CaseX',
-    tagline: 'Interactive Clinical Learning & Case Logging (In Development)',
-    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs.',
+    tagline: 'Interactive Clinical Learning & Case Logging',
+    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
     longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students. You can log your real cases, ask questions about them, get summaries and interpretations, and practice viva sessions — all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
     iconName: 'FilePenLine',
     features: [
@@ -69,7 +69,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   },
   {
     slug: 'focuscast',
-    title: 'Focuscast – Optometry Audio Learning, On the Go',
+    title: 'Focus Cast',
     tagline: 'Listen. Learn. Lead.',
     description: "Focuscast is your dedicated audio learning platform for optometry. Built for students, interns, and eye care professionals, it delivers bite-sized, high-yield episodes on clinical topics, exam prep, viva questions, interpretation skills, and more — all in a screen-free format. Whether you're walking, traveling, or resting your eyes, Focuscast helps you stay sharp without burning out.",
     longDescription: "Because sometimes, the best way to learn is to listen. No screens. No burnout. Just deep, focused learning — in your ears. Whether you're prepping for an exam, brushing up on a clinical topic, or just want to stay inspired in your optometry journey, Focuscast brings the classroom to your pocket. Start listening now at focuscast.netlify.app. No login needed. 100% free. Just plug in your earphones and press play.",
@@ -143,23 +143,106 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
 
-// Placeholder for Resource type if needed in the future, currently unused
-export type Resource = {
-  id: string;
-  title: string;
-  summary: string;
-  link: string;
-  type: 'article' | 'video' | 'tool' | 'project-spotlight';
-  iconName?: string;
-  slug?: string;
-  fullContent?: string;
-  date?: string;
-  tags?: string[];
-};
 
-export const RESOURCES_DATA: Resource[] = []; // Removed old resource data
+export const RESOURCES_DATA: Resource[] = [
+  {
+    id: 'focus-ai-v2-launch',
+    slug: 'focus-ai-v2-launch',
+    title: 'Focus.AI Version 2.0 is Here!',
+    summary: 'Explore the exciting new features in Focus.AI v2.0, including image analysis capabilities and a revamped UI, designed to take your optometry learning to the next level.',
+    link: '/resources/focus-ai-v2-launch', // Link to its own spotlight page
+    type: 'project-spotlight',
+    iconName: 'Bot',
+    date: '2024-05-15',
+    tags: ['Focus.AI', 'Update', 'New Features', 'AI'],
+    fullContent: `
+      <h2 class="text-2xl font-semibold mb-4">Announcing Focus.AI Version 2.0!</h2>
+      <p class="mb-4">We're thrilled to announce the launch of Focus.AI Version 2.0! This major update brings a host of powerful new features and improvements, further solidifying Focus.AI as an indispensable tool for optometry students.</p>
+      <h3 class="text-xl font-semibold mb-2">Key Highlights:</h3>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>Image Analysis:</strong> Focus.AI can now assist in interpreting OCT scans and other ophthalmological reports. (Learning Aid)</li>
+        <li><strong>Redesigned User Interface:</strong> A more intuitive and user-friendly experience.</li>
+        <li><strong>Enhanced Study Notes:</strong> Better organization and search for your study materials.</li>
+        <li><strong>Improved AI Assistant:</strong> Now with chat history and quick format modes (simplify, student-friendly, clinical focus).</li>
+      </ul>
+      <p class="mb-4">These enhancements are designed to bridge the gap between textbook knowledge and real-world clinical application, helping you study smarter and with greater confidence.</p>
+      <p>Dive in and explore the new Focus.AI! As always, your feedback is invaluable as we continue to innovate.</p>
+    `
+  },
+  {
+    id: 'focus-axis-beta',
+    slug: 'focus-axis-beta',
+    title: 'Focus Axis Enters Beta: Master JCC Simulation',
+    summary: 'Our JCC simulator, Focus Axis, is now in beta! Help us test and refine this gamified training tool for mastering lens flipping techniques.',
+    link: '/resources/focus-axis-beta',
+    type: 'project-spotlight',
+    iconName: 'MousePointerClick',
+    date: '2024-04-20',
+    tags: ['Focus Axis', 'Beta', 'Simulation', 'JCC'],
+    fullContent: `
+      <h2 class="text-2xl font-semibold mb-4">Focus Axis - JCC Simulator Now in Beta!</h2>
+      <p class="mb-4">We're excited to invite you to participate in the beta program for Focus Axis, our innovative Jackson Cross Cylinder (JCC) simulator! Focus Axis is designed to provide a gamified and interactive learning experience for optometry students to master essential refraction techniques.</p>
+      <h3 class="text-xl font-semibold mb-2">What to Expect:</h3>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li>Practice lens flipping and JCC procedures in a risk-free virtual environment.</li>
+        <li>Engage with different scenarios and difficulty levels.</li>
+        <li>Track your progress and identify areas for improvement.</li>
+      </ul>
+      <p class="mb-4">Your feedback during this beta phase is crucial for us to refine Focus Axis and make it the best possible learning tool. Visit the Focus Axis project page to access the beta and share your thoughts!</p>
+    `
+  },
+  {
+    id: 'focus-gen-live',
+    slug: 'focus-gen-live',
+    title: 'Focus Gen is Live: Generate & Practice Transposition Sums',
+    summary: 'Sharpen your optical calculation skills! Focus Gen, our transposition sum generator, is now live and ready for you to practice.',
+    link: '/resources/focus-gen-live',
+    type: 'project-spotlight',
+    iconName: 'LucideCalculator',
+    date: '2024-03-10',
+    tags: ['Focus Gen', 'Launch', 'Optics', 'Practice Tool'],
+    fullContent: `
+      <h2 class="text-2xl font-semibold mb-4">Practice Transposition with Focus Gen - Now Live!</h2>
+      <p class="mb-4">Struggling with transposition sums? Worry no more! Focus Gen, your personal transposition sum generator and practice tool, is now officially live.</p>
+      <p class="mb-4">Focus Gen allows you to:</p>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li>Generate unlimited transposition problems.</li>
+        <li>Practice at your own pace.</li>
+        <li>Improve accuracy and speed in optical calculations.</li>
+      </ul>
+      <p>Head over to the Focus Gen project page and start practicing today!</p>
+    `
+  },
+  {
+    id: 'upcoming-focus-casex',
+    slug: 'upcoming-focus-casex',
+    title: 'Coming Soon: Focus CaseX - Interactive AI Case Logging',
+    summary: 'Get ready for Focus CaseX! An AI-powered learning assistant for optometry students to log real cases, ask questions, get summaries, and practice viva sessions, all while ensuring privacy.',
+    link: '/resources/upcoming-focus-casex',
+    type: 'project-spotlight',
+    iconName: 'FilePenLine',
+    date: '2024-05-01',
+    tags: ['Focus CaseX', 'Upcoming', 'AI', 'Case Study', 'Privacy'],
+    fullContent: `
+      <h2 class="text-2xl font-semibold mb-4">Sneak Peek: Focus CaseX - Your AI Case Companion</h2>
+      <p class="mb-4">We're excited to give you a first look at Focus CaseX, an innovative AI-powered learning assistant currently in development for optometry students!</p>
+      <h3 class="text-xl font-semibold mb-2">With Focus CaseX, you'll be able to:</h3>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li>Log your real clinical cases with detailed information.</li>
+        <li>Ask the AI specific questions about your logged cases.</li>
+        <li>Receive AI-generated summaries and interpretations to aid understanding.</li>
+        <li>Practice viva examinations based on your own case logs.</li>
+      </ul>
+      <p class="font-semibold">Crucially, Focus CaseX is designed with privacy at its core: no data is stored on servers. Everything stays temporarily in your browser tab.</p>
+      <p>Stay tuned for more updates on Focus CaseX. We believe it will revolutionize how you learn from your clinical experiences!</p>
+    `
+  }
+];
+
 
 // Helper to get resource by slug
 export const getResourceBySlug = (slug: string): Resource | undefined => {
   return RESOURCES_DATA.find(r => r.slug === slug);
 };
+
+    
