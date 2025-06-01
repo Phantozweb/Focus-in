@@ -12,7 +12,8 @@ import {
   StickyNote, CalendarDays, Info, Aperture, Palette, TestTubeDiagonal, 
   Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
   Monitor, FilePenLine, Home, Mail, Heart, Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle,
-  Instagram, Linkedin, Search, ListFilter, Tag
+  Instagram, Linkedin, Search, ListFilter, Tag,
+  Headphones, Timer, Voicemail, PlayCircle, Clock // Added Headphones, Timer, Voicemail, PlayCircle, Clock
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -40,7 +41,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   LucideCalculator,
   LucideActivity,
   LucideLibrary,
-  LucideMousePointerClick,
+  MousePointerClick,
   LucideBarChart,
   LucideMessageSquare,
   LucideShare2,
@@ -81,6 +82,11 @@ const iconMap: { [key: string]: React.ElementType } = {
   Search,
   ListFilter,
   Tag,
+  Headphones,
+  Timer,
+  Voicemail,
+  PlayCircle,
+  Clock,
   // Add other icons as needed by their string name
 };
 

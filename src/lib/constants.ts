@@ -1,13 +1,13 @@
 
-import type { NavItem, ProjectNavItem, ProjectDetails } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays } from 'lucide-react';
+import type { NavItem, ProjectNavItem, ProjectDetails, Resource } from '@/types';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About Us', icon: Info },
   { href: '/projects', label: 'Our Projects', icon: Layers },
-  // { href: '/resources', label: 'Project Spotlights', icon: BookMarked }, // Removed
+  { href: '/origin-of-focus-in', label: 'Origin Story', icon: Lightbulb },
   { href: '/support', label: 'Support', icon: Mail },
 ];
 
@@ -16,6 +16,7 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: MousePointerClick, description: "JCC Simulator & Gamified Training." },
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
+  { href: '/projects/focuscast', label: 'Focuscast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
   { href: '/projects/focus-emr', label: 'Focus EMR', icon: Monitor, description: "Electronic Medical Records (Beta)." },
   { href: '/projects/focus-notes', label: 'Focus Notes', icon: StickyNote, description: "Smart note-taking for students (Upcoming)." },
   { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
@@ -54,9 +55,9 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-casex',
     title: 'Focus CaseX',
-    tagline: 'AI-Powered Clinical Learning & Case Logging (In Development)',
-    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs. (In Development)',
-    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students 👁️‍🗨️📚. You can: Log your real cases 📝, Ask questions about them ❓, Get summaries and interpretations 🧠, Practice viva sessions — all based on your own logs 🎓. No data is stored — everything stays temporarily in your browser tab 🌐 to ensure privacy and medical ethics ✅.",
+    tagline: 'Interactive Clinical Learning & Case Logging (In Development)',
+    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs.',
+    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students. You can log your real cases, ask questions about them, get summaries and interpretations, and practice viva sessions — all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
     iconName: 'FilePenLine',
     features: [
       { title: 'Real Case Logging', description: 'Log your clinical cases with detailed information.', iconName: 'FilePenLine' },
@@ -64,6 +65,23 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
       { title: 'Case Summaries & Interpretation', description: 'Receive AI-generated summaries and interpretations of your case data.', iconName: 'Brain' },
       { title: 'Viva Session Practice', description: 'Practice viva examinations based on your logged cases.', iconName: 'ClipboardList' },
       { title: 'Privacy-Focused Design', description: 'No data is stored; all processing is done temporarily in your browser tab.', iconName: 'ShieldCheck' },
+    ],
+  },
+  {
+    slug: 'focuscast',
+    title: 'Focuscast – Optometry Audio Learning, On the Go',
+    tagline: 'Listen. Learn. Lead.',
+    description: "Focuscast is your dedicated audio learning platform for optometry. Built for students, interns, and eye care professionals, it delivers bite-sized, high-yield episodes on clinical topics, exam prep, viva questions, interpretation skills, and more — all in a screen-free format. Whether you're walking, traveling, or resting your eyes, Focuscast helps you stay sharp without burning out.",
+    longDescription: "Because sometimes, the best way to learn is to listen. No screens. No burnout. Just deep, focused learning — in your ears. Whether you're prepping for an exam, brushing up on a clinical topic, or just want to stay inspired in your optometry journey, Focuscast brings the classroom to your pocket. Start listening now at focuscast.netlify.app. No login needed. 100% free. Just plug in your earphones and press play.",
+    iconName: 'Headphones',
+    features: [
+      { title: 'Short, High-Impact Episodes', description: 'Focused audio lessons (5–15 mins) for fast revision and deep understanding.', iconName: 'Timer' },
+      { title: 'Memory-Boost Audio Format', description: 'Includes mnemonics, rhythm-based cues, and repetition loops for enhanced retention.', iconName: 'Brain' },
+      { title: 'Comprehensive Topic Tracks', description: 'Covers Clinical Refraction, Instruments, Segment Disorders, Binocular Vision, Pharmacology, Career Guidance & Innovation.', iconName: 'LucideLibrary' },
+      { title: 'Expert Voices & Insights', description: 'Guest clips from optometry mentors, educators, and vision science thinkers.', iconName: 'Voicemail' },
+      { title: 'Weekly Episode Drops', description: 'Consistent content flow to help you revise smarter and stay on track.', iconName: 'CalendarDays' },
+      { title: 'Screen-Free Learning', description: 'Learn on the go, whether walking, traveling, or resting your eyes.', iconName: 'Headphones' },
+      { title: 'Free & Accessible', description: 'No login needed, 100% free. Just plug in and play.', iconName: 'PlayCircle' },
     ],
   },
   {
@@ -113,7 +131,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     longDescription: 'More details coming soon! Focus Notes will feature smart organization, linking capabilities to other Focus resources, and collaborative features. (Launching Soon)',
     iconName: 'StickyNote',
     features: [
-      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'BookMarked' }, // BookMarked is being removed, this can be StickyNote or FileText
+      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'FilePenLine' }, 
       { title: 'Resource Integration', description: 'Link notes to articles, videos, and case studies.', iconName: 'LinkIcon' },
       { title: 'Collaborative Study', description: 'Share notes and study with peers.', iconName: 'Share2' },
     ],
@@ -124,3 +142,24 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
 export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefined => {
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
 };
+
+// Helper to get resource by slug (though resources are now removed, keeping for potential future use or other data types)
+export const getResourceBySlug = (slug: string): Resource | undefined => {
+  return undefined; // RESOURCES_DATA has been removed
+};
+
+// Placeholder for Resource type if needed in the future, currently unused
+export type Resource = {
+  id: string;
+  title: string;
+  summary: string;
+  link: string;
+  type: 'article' | 'video' | 'tool' | 'project-spotlight';
+  iconName?: string;
+  slug?: string;
+  fullContent?: string;
+  date?: string;
+  tags?: string[];
+};
+
+export const RESOURCES_DATA: Resource[] = []; // Removed old resource data
