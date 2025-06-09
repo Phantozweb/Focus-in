@@ -1,12 +1,13 @@
 
-import type { NavItem, ProjectNavItem, ProjectDetails } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick as LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, Calculator as LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion as LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck as LucideUserCheck, Link as LinkIcon, Activity as LucideActivity, Library as LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Search, ListFilter, Tag, Clock } from 'lucide-react';
+import type { NavItem, ProjectNavItem, ProjectDetails, UpdatePost } from '@/types';
+import { Home, Info, Layers, Mail, Bot, MousePointerClick as LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, Calculator as LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion as LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck as LucideUserCheck, Link as LinkIcon, Activity as LucideActivity, Library as LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About Us', icon: Info },
   { href: '/projects', label: 'Our Projects', icon: Layers },
+  { href: '/updates', label: 'Updates', icon: Megaphone },
   { href: '/origin-of-focus-in', label: 'Origin Story', icon: Lightbulb },
   { href: '/support', label: 'Support', icon: Mail },
 ];
@@ -16,7 +17,7 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: LucideMousePointerClick, description: "JCC Simulator & Gamified Training." },
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
-  { href: '/projects/focuscast', label: 'Focuscast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
+  { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
   { href: '/projects/focus-emr', label: 'Focus EMR', icon: Monitor, description: "Electronic Medical Records (Beta)." },
   { href: '/projects/focus-notes', label: 'Focus Notes', icon: StickyNote, description: "Smart note-taking for students (Upcoming)." },
   { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
@@ -90,7 +91,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     longDescription: 'Create study groups, participate in forums, share resources, and network with peers and mentors from around the world. Focus Share aims to build a supportive and dynamic optometric community. (Upcoming)',
     iconName: 'Users',
     features: [
-      { title: 'Discussion Forums', description: 'Engage in specialty-specific discussions and Q&amp;A.', iconName: 'MessageSquare' },
+      { title: 'Discussion Forums', description: 'Engage in specialty-specific discussions and Q&A.', iconName: 'MessageSquare' },
       { title: 'Resource Sharing', description: 'Upload and access study materials, articles, and presentations.', iconName: 'Share2' },
       { title: 'Mentorship Connections', description: 'Find mentors or offer guidance to junior members.', iconName: 'LucideUserCheck' },
     ],
@@ -98,7 +99,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-gen',
     title: 'Focus Gen',
-    tagline: 'Transposition Sums: Generate &amp; Practice',
+    tagline: 'Transposition Sums: Generate & Practice',
     description: 'Focus Gen is a transposition sum generator where you can create various types of transposition sums and practice them to sharpen your skills.',
     longDescription: 'This tool helps students master optical transposition by providing unlimited practice problems. Select parameters and generate sums for self-assessment and learning reinforcement. (Currently Available)',
     iconName: 'LucideCalculator',
@@ -129,7 +130,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     longDescription: 'More details coming soon! Focus Notes will feature smart organization, linking capabilities to other Focus resources, and collaborative features. (Launching Soon)',
     iconName: 'StickyNote',
     features: [
-      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'FilePenLine' }, 
+      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'FilePenLine' },
       { title: 'Resource Integration', description: 'Link notes to articles, videos, and case studies.', iconName: 'LinkIcon' },
       { title: 'Collaborative Study', description: 'Share notes and study with peers.', iconName: 'Share2' },
     ],
@@ -139,4 +140,57 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
 // Helper to get project details by slug
 export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefined => {
   return PROJECTS_DETAILS_DATA.find(p => p.slug === slug);
+};
+
+// UPDATES DATA
+export const UPDATES_DATA: UpdatePost[] = [
+  {
+    slug: 'focus-cast-launch',
+    title: 'Focus Cast is Now Live!',
+    date: '2024-07-28', // Use a relevant date
+    excerpt: 'We are thrilled to announce the launch of Focus Cast, your new go-to audio learning platform for optometry. Listen to bite-sized episodes on the go!',
+    content: `
+<p>We are incredibly excited to officially launch <strong>Focus Cast</strong>, a dedicated audio learning platform designed specifically for optometry students, interns, and professionals.</p>
+<p>In today's fast-paced world, finding time to sit down and study can be challenging. That's why we created Focus Cast – to bring high-yield optometry knowledge directly to your ears, whether you're commuting, exercising, or just taking a break from screens.</p>
+<h3 class="text-xl font-semibold mt-4 mb-2">What to Expect:</h3>
+<ul class="list-disc list-inside space-y-1 text-muted-foreground">
+  <li><strong>Bite-Sized Episodes:</strong> Each episode is crafted to be between 5-15 minutes, perfect for quick learning sessions.</li>
+  <li><strong>Diverse Topics:</strong> We cover a wide range of subjects including Clinical Refraction, Optometric Instruments, Anterior & Posterior Segment Disorders, Binocular Vision, Pharmacology, and even Career Guidance.</li>
+  <li><strong>Screen-Free Learning:</strong> Give your eyes a rest and absorb information through our carefully curated audio content.</li>
+  <li><strong>Free & Accessible:</strong> Focus Cast is 100% free, and no login is required. Just head over to <a href="https://focuscast.netlify.app" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">focuscast.netlify.app</a> and start listening!</li>
+</ul>
+<p class="mt-4">We believe Focus Cast will be an invaluable tool in your optometry journey, helping you learn smarter and stay inspired. Tune in today and let us know what you think!</p>
+    `,
+    author: 'The Focus-IN Team',
+    tags: ['launch', 'focuscast', 'audio learning'],
+    projectSlug: 'focuscast',
+  },
+  {
+    slug: 'welcome-to-updates',
+    title: 'Welcome to Our New Updates Section!',
+    date: '2024-07-27', // Use a relevant date
+    excerpt: 'This is the first post in our new Updates section. We\'ll be sharing news about our projects, upcoming features, and insights from the Focus-IN team.',
+    content: `
+<p>Hello everyone, and welcome to the official Updates section of Focus-IN!</p>
+<p>We're excited to have this new space to share all the latest happenings with our projects, announce new features, and provide insights into what we're working on behind the scenes. Our goal is to keep you informed and engaged with the continuous development and improvement of our tools for the optometry community.</p>
+<p>Here’s what you can expect to find in this section:</p>
+<ul class="list-disc list-inside space-y-1 text-muted-foreground">
+  <li><strong>Project Milestones:</strong> Updates on major developments and releases for tools like Focus.Ai, Focus Axis, Focus Gen, and more.</li>
+  <li><strong>New Features:</strong> Detailed explanations of new functionalities added to our platforms.</li>
+  <li><strong>Community News:</strong> Highlights from our user community and ways to get involved.</li>
+  <li><strong>Behind-the-Scenes:</strong> Occasional posts about our development process and the vision driving Focus-IN.</li>
+</ul>
+<p class="mt-4">Stay tuned for more updates, and thank you for being a part of the Focus-IN journey!</p>
+    `,
+    author: 'The Focus-IN Team',
+    tags: ['announcement', 'meta'],
+  },
+];
+
+export const getUpdatesData = (): UpdatePost[] => {
+  return UPDATES_DATA.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+};
+
+export const getUpdateBySlug = (slug: string): UpdatePost | undefined => {
+  return UPDATES_DATA.find(post => post.slug === slug);
 };
