@@ -1,6 +1,6 @@
 
 import type { NavItem, ProjectNavItem, ProjectDetails, UpdatePost } from '@/types';
-import { Home, Info, Layers, Mail, Bot, MousePointerClick as LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, Calculator as LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, FileQuestion as LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, UserCheck as LucideUserCheck, Link as LinkIcon, Activity as LucideActivity, Library as LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock } from 'lucide-react';
+import { Home, Info, Layers, Mail, Bot, LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, LucideUserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: NavItem[] = [
@@ -58,7 +58,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     title: 'Focus CaseX',
     tagline: 'Interactive Clinical Learning & Case Logging',
     description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
-    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students. You can log your real cases, ask questions about them, get summaries and interpretations, and practice viva sessions — all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
+    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students. You can log your real cases, ask specific questions about them, get summaries and interpretations, and practice viva sessions — all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
     iconName: 'FilePenLine',
     features: [
       { title: 'Real Case Logging', description: 'Log your clinical cases with detailed information.', iconName: 'FilePenLine' },
@@ -145,9 +145,47 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
 // UPDATES DATA
 export const UPDATES_DATA: UpdatePost[] = [
   {
+    slug: 'focus-ai-launch',
+    title: 'Focus.AI: Your Smart Optometry Companion is Here!',
+    date: '2023-04-16',
+    excerpt: 'We are thrilled to announce the official launch of Focus.AI, your dedicated AI-powered assistant for optometry studies. Simplify complex theories, get help interpreting clinical cases, and prepare for exams with confidence.',
+    content: `
+<p>The wait is over! We're incredibly excited to announce the official launch of <strong>Focus.AI</strong>, your smart, AI-powered assistant designed specifically for optometry students.</p>
+<p>Focus.AI is built to help you navigate the complexities of optometry education. Whether you're grappling with challenging theories, learning to interpret clinical findings, or preparing for crucial exams, Focus.AI is here to support your learning journey and boost your confidence.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">What Can Focus.AI Do For You?</h3>
+<p>Focus.AI is more than just a tool; it's a learning partner. Here's a glimpse of its capabilities:</p>
+<ul class="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+  <li><strong>AI Chat for Optometry:</strong> Have a question? Get instant, knowledgeable answers from an AI trained extensively on optometry topics.</li>
+  <li><strong>Simplify Complex Concepts:</strong> Break down difficult theories into understandable explanations and summaries.</li>
+  <li><strong>Clinical Case Interpretation Support:</strong> Learn to analyze various clinical findings, including OCT reports and other ophthalmological data. Focus.AI helps you understand how to approach these interpretations as a student.</li>
+  <li><strong>Practice Quiz Section:</strong> Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.</li>
+  <li><strong>Case Study Generator:</strong> Create realistic virtual case studies to practice your diagnostic and management skills.</li>
+</ul>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">A Note on Usage: Your Learning Companion</h3>
+<p>It's important to remember that Focus.AI serves as an advanced <strong>learning aid</strong>. It's designed to help students understand how to interpret complex clinical information and to support the educational process. It is <em>not</em> intended to provide definitive diagnoses or replace professional clinical judgment. The interpretations and information offered are for learning purposes, and accuracy may vary based on individual case conditions and complexities. Always use Focus.AI as a supplementary study tool alongside your curriculum and clinical training.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Get Started with Focus.AI Today!</h3>
+<p>Ready to enhance your study experience? You can access Focus.AI and explore its features now. We believe it will be an invaluable resource in your journey to becoming a skilled optometry professional.</p>
+<p class="mt-4">
+  <a href="https://focusai.netlify.app" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold shadow-md transition-colors">
+    Access Focus.AI
+  </a>
+  <a href="/projects/focus-ai" class="ml-4 inline-block text-primary hover:underline">
+    Learn more about Focus.AI
+  </a>
+</p>
+<p class="mt-4">We're excited for you to try Focus.AI and look forward to your feedback as we continue to develop and improve our tools for the optometry community!</p>
+    `,
+    author: 'The Focus-IN Team',
+    tags: ['launch', 'focus-ai', 'ai', 'optometry', 'students'],
+    projectSlug: 'focus-ai',
+  },
+  {
     slug: 'focus-cast-launch',
     title: 'Focus Cast is Now Live!',
-    date: '2024-07-28', // Use a relevant date
+    date: '2024-07-28', 
     excerpt: 'We are thrilled to announce the launch of Focus Cast, your new go-to audio learning platform for optometry. Listen to bite-sized episodes on the go!',
     content: `
 <p>We are incredibly excited to officially launch <strong>Focus Cast</strong>, a dedicated audio learning platform designed specifically for optometry students, interns, and professionals.</p>
@@ -168,7 +206,7 @@ export const UPDATES_DATA: UpdatePost[] = [
   {
     slug: 'welcome-to-updates',
     title: 'Welcome to Our New Updates Section!',
-    date: '2024-07-27', // Use a relevant date
+    date: '2024-07-27', 
     excerpt: 'This is the first post in our new Updates section. We\'ll be sharing news about our projects, upcoming features, and insights from the Focus-IN team.',
     content: `
 <p>Hello everyone, and welcome to the official Updates section of Focus-IN!</p>
@@ -194,3 +232,4 @@ export const getUpdatesData = (): UpdatePost[] => {
 export const getUpdateBySlug = (slug: string): UpdatePost | undefined => {
   return UPDATES_DATA.find(post => post.slug === slug);
 };
+
