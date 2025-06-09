@@ -240,13 +240,13 @@ export default function HomePage() {
 
         <AnimatedSection animationType="slide-up" delay={400}>
             <section className="py-16 md:py-24">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="max-w-2xl mx-auto text-center">
                 <div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
                   <p className="text-lg text-muted-foreground mb-6">
                     Focus-IN is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us on our social platforms.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
                         <a href="https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu" target="_blank" rel="noopener noreferrer">
                             <Instagram className="mr-2 h-5 w-5" /> Follow on Instagram
@@ -258,9 +258,6 @@ export default function HomePage() {
                         </a>
                     </Button>
                   </div>
-                </div>
-                <div className="relative h-80 w-full rounded-2xl shadow-xl bg-gradient-to-br from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]">
-                   {/* The Eye icon background was removed here */}
                 </div>
               </div>
             </section>
