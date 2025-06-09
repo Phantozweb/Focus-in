@@ -63,27 +63,30 @@ const topDonors = [
 ];
 
 const otherDonors = [
-  { rank: 4, name: "Manoj Kumar", amount: 500 },
-  { rank: 5, name: "Manovarama", amount: 500 },
-  { rank: 6, name: "M. Priya", amount: 450 },
-  { rank: 7, name: "Fazil Mohd", amount: 400 },
-  { rank: 8, name: "Deepak", amount: 250 },
-  { rank: 9, name: "K Anusha Mohan", amount: 250 },
-  { rank: 10, name: "Mohammad Khan", amount: 250 }, 
-  { rank: 11, name: "Mohd Harsad", amount: 250 },
-  { rank: 12, name: "Shreya", amount: 222 },
-  { rank: 13, name: "Aishwarya Suresh", amount: 200 },
-  { rank: 14, name: "Joshua", amount: 200 },
-  { rank: 15, name: "Ashok Raj", amount: 150 },
-  { rank: 16, name: "Kamlesh", amount: 150 },
-  { rank: 17, name: "P. Joshi", amount: 150 },
-  { rank: 18, name: "Preeti", amount: 150 },
-  { rank: 19, name: "Rajesh Kumar", amount: 150 },
-  { rank: 20, name: "S. Das", amount: 150 },
-  { rank: 21, name: "Sethu", amount: 150 },
-  { rank: 22, name: "Chandhru", amount: 100 },
-  { rank: 23, name: "Mehtab", amount: 100 },
-  { rank: 24, name: "Punitha", amount: 100 },
+  { rank: 4, name: "Mohd Basukhan", amount: 600 },
+  { rank: 5, name: "Manoj Kumar", amount: 500 },
+  { rank: 6, name: "Manovarama", amount: 500 },
+  { rank: 7, name: "M. Priya", amount: 450 },
+  { rank: 8, name: "Fazil Mohd", amount: 400 },
+  { rank: 9, name: "Meera Krishnan", amount: 300 },
+  { rank: 10, name: "Deepak", amount: 250 },
+  { rank: 11, name: "K Anusha Mohan", amount: 250 },
+  { rank: 12, name: "Mohammad Khan", amount: 250 },
+  { rank: 13, name: "Mohd Harsad", amount: 250 },
+  { rank: 14, name: "Shreya", amount: 222 },
+  { rank: 15, name: "Aishwarya Suresh", amount: 200 },
+  { rank: 16, name: "Jansitha K", amount: 200 },
+  { rank: 17, name: "Joshua", amount: 200 },
+  { rank: 18, name: "Ashok Raj", amount: 150 },
+  { rank: 19, name: "Kamlesh", amount: 150 },
+  { rank: 20, name: "P. Joshi", amount: 150 },
+  { rank: 21, name: "Preeti", amount: 150 },
+  { rank: 22, name: "Rajesh Kumar", amount: 150 },
+  { rank: 23, name: "S. Das", amount: 150 },
+  { rank: 24, name: "Sethu", amount: 150 },
+  { rank: 25, name: "Chandhru", amount: 100 },
+  { rank: 26, name: "Mehtab", amount: 100 },
+  { rank: 27, name: "Punitha", amount: 100 },
 ];
 
 
@@ -239,28 +242,28 @@ export default function HomePage() {
         <Separator className="my-8 md:my-12" />
 
         <AnimatedSection animationType="slide-up" delay={400}>
-            <section className="py-16 md:py-24">
-              <div className="max-w-2xl mx-auto text-center">
-                <div>
-                  <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    Focus-IN is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us on our social platforms.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
-                        <a href="https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu" target="_blank" rel="noopener noreferrer">
-                            <Instagram className="mr-2 h-5 w-5" /> Follow on Instagram
-                        </a>
-                    </Button>
-                    <Button asChild size="lg" variant="secondary" className="shadow-md hover:shadow-lg transition-shadow bg-[#0077B5] hover:bg-[#005E8E] text-white">
-                        <a href="https://www.linkedin.com/company/focusprojects/" target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="mr-2 h-5 w-5" /> Connect on LinkedIn
-                        </a>
-                    </Button>
-                  </div>
+          <section className="py-16 md:py-24">
+            <div className="max-w-2xl mx-auto text-center">
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Focus-IN is more than just a resource hub; it's a growing community of passionate optometry students and professionals. Connect, learn, and innovate with us on our social platforms.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
+                      <a href="https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu" target="_blank" rel="noopener noreferrer">
+                          <Instagram className="mr-2 h-5 w-5" /> Follow on Instagram
+                      </a>
+                  </Button>
+                  <Button asChild size="lg" variant="secondary" className="shadow-md hover:shadow-lg transition-shadow bg-[#0077B5] hover:bg-[#005E8E] text-white">
+                      <a href="https://www.linkedin.com/company/focusprojects/" target="_blank" rel="noopener noreferrer">
+                          <Linkedin className="mr-2 h-5 w-5" /> Connect on LinkedIn
+                      </a>
+                  </Button>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
         </AnimatedSection>
       </div>
     </>
