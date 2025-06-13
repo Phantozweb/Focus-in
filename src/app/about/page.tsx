@@ -5,11 +5,11 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Eye, Target, Lightbulb, Users, ShieldCheck, Activity, Briefcase } from 'lucide-react'; // Added Briefcase
+import { Eye, Target, Lightbulb, Users, ShieldCheck, Activity } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Focus-IN | Our Mission, Vision, Values, Team, and Founder',
-  description: 'Learn about Focus-IN: our mission to innovate optometry, our vision for the future of eye care technology, our core values, meet our dedicated team, and our founder, Janarthan Veeramani.',
+  title: 'About Focus-IN | Our Mission, Vision, Values, and Founder Janarthan Veeramani',
+  description: 'Learn about Focus-IN: our mission to innovate optometry, our vision for the future of eye care technology, our core values, and our founder, Janarthan Veeramani.',
 };
 
 const values = [
@@ -18,14 +18,6 @@ const values = [
   { icon: Users, title: 'Community', description: 'We foster a collaborative environment for students and professionals to learn, share, and grow together.' },
   { icon: ShieldCheck, title: 'Impact', description: 'We are committed to making a tangible difference in the quality of vision care and education.' },
 ];
-
-const teamMembers = [
-    { name: 'Vinayakam', role: 'Key Contributor' },
-    { name: 'Priyadarshini', role: 'Key Contributor' },
-    { name: 'Santhosh', role: 'Key Contributor' },
-    { name: 'Ameer', role: 'Key Contributor' },
-];
-
 
 export default function AboutPage() {
   return (
@@ -117,36 +109,6 @@ export default function AboutPage() {
             </div>
           </section>
         </AnimatedSection>
-
-        <Separator className="my-8 md:my-12" />
-
-        <AnimatedSection animationType="slide-up" delay={500}>
-          <section className="py-12 md:py-16">
-            <SectionTitle title="Our Team" />
-            <div className="max-w-3xl mx-auto text-center">
-                <Users className="h-16 w-16 text-primary mx-auto mb-6" />
-                <p className="text-xl text-muted-foreground md:text-2xl mb-8">
-                Behind Focus-IN is a dedicated team passionate about making a difference in the optometry field. We are grateful for the contributions of:
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-center">
-                    {teamMembers.map((member, index) => (
-                        <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow border hover:border-primary/30">
-                            <CardHeader className="items-center pb-2">
-                                 <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                                    <Briefcase className="h-8 w-8 text-primary" />
-                                 </div>
-                            </CardHeader>
-                            <CardContent>
-                                <h4 className="text-lg font-semibold text-foreground">{member.name}</h4>
-                                <p className="text-sm text-muted-foreground">{member.role}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
       </div>
     </div>
   );

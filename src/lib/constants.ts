@@ -17,7 +17,7 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: LucideMousePointerClick, description: "JCC Simulator & Gamified Training." },
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
-  { href: '/projects/focuscast', label: 'Focuscast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
+  { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
   { href: '/projects/focus-clinic', label: 'Focus Clinic', icon: Monitor, description: "Clinical Management System (Beta)." },
 ];
 
@@ -116,28 +116,49 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
 
 // UPDATES DATA
 export const UPDATES_DATA: UpdatePost[] = [
+ {
+    slug: 'welcome-to-updates',
+    title: 'Welcome to Our New Updates Section!',
+    date: '2025-12-31', 
+    excerpt: 'This is the first post in our new Updates section. We\'ll be sharing news about our projects, upcoming features, and insights from the Focus-IN team.',
+    content: `
+<p>Hello everyone, and welcome to the official Updates section of Focus-IN!</p>
+<p>We're excited to have this new space to share all the latest happenings with our projects, announce new features, and provide insights into what we're working on behind the scenes. Our goal is to keep you informed and engaged with the continuous development and improvement of our tools for the optometry community.</p>
+<p>Here’s what you can expect to find in this section:</p>
+<ul class="list-disc list-inside space-y-1 text-muted-foreground">
+  <li><strong>Project Milestones:</strong> Updates on major developments and releases for tools like Focus.Ai, Focus Axis, Focus Gen, and more.</li>
+  <li><strong>New Features:</strong> Detailed explanations of new functionalities added to our platforms.</li>
+  <li><strong>Community News:</strong> Highlights from our user community and ways to get involved.</li>
+  <li><strong>Behind-the-Scenes:</strong> Occasional posts about our development process and the vision driving Focus-IN.</li>
+</ul>
+<p class="mt-4">Stay tuned for more updates, and thank you for being a part of the Focus-IN journey!</p>
+    `,
+    author: 'The Focus-IN Team',
+    tags: ['announcement', 'meta'],
+  },
   {
     slug: 'focus-emr-to-focus-clinic-rename',
     title: 'Project Update: Focus EMR is now Focus Clinic!',
-    date: '2024-06-07',
-    excerpt: "We're excited to announce a name change for one of our key projects. Focus EMR has been renamed to Focus Clinic to better reflect its mission of serving smaller optometry practices.",
+    date: '2025-06-07',
+    excerpt: "We're excited to announce a name change for one of our key projects. Focus EMR has been renamed to Focus Clinic to better reflect its mission of serving smaller optometry practices and its affordability.",
     content: `
 <p>We're excited to share an important update regarding one of our ongoing projects. What was formerly known as Focus EMR will now be called <strong>Focus Clinic</strong>.</p>
-<p>This name change reflects a refined vision for the project. We realized that the term "EMR" (Electronic Medical Record) often implies a system designed for larger hospitals and extensive server capabilities. While our goal is to provide robust record-keeping, our primary focus is to empower smaller, independent optometry clinics.</p>
-<p><strong>Focus Clinic</strong> aims to offer an affordable, user-friendly solution tailored to the needs of individual practitioners and smaller clinical setups. We believe this new name better communicates our commitment to providing a powerful tool that is accessible and perfectly suited for managing patient data efficiently in a clinic setting.</p>
+<p>This name change reflects a refined vision for the project. We realized that the term "EMR" (Electronic Medical Record) often implies a system designed for larger hospitals and extensive server capabilities, which can be costly and complex. While our goal is to provide robust record-keeping, our primary focus is to empower smaller, independent optometry clinics with an affordable and user-friendly solution.</p>
+<p>We thought the name 'EMR' didn't quite suit our vision well because EMR systems traditionally have more capability for running on large servers and are often associated with big hospitals. Our focus is on individual practitioners and smaller clinics who need an effective tool that is also budget-friendly.</p>
+<p><strong>Focus Clinic</strong> aims to offer a streamlined, user-friendly system tailored to the needs of individual practitioners and smaller clinical setups. We believe this new name better communicates our commitment to providing a powerful tool that is accessible, affordable, and perfectly suited for managing patient data efficiently in a smaller clinic setting. We want to ensure it's a lot of value for a small clinic.</p>
 <p>We're enthusiastic about this new direction and believe Focus Clinic will be a valuable asset for many optometry professionals. Thank you for your continued support!</p>
     `,
     author: 'The Focus-IN Team',
-    tags: ['project update', 'focus-clinic', 'renaming', 'emr'],
+    tags: ['project update', 'focus-clinic', 'renaming', 'emr', 'affordability'],
     projectSlug: 'focus-clinic',
   },
   {
     slug: 'focus-ai-launch',
     title: 'Focus.AI: Your Smart Optometry Companion is Here!',
-    date: '2023-04-16',
+    date: '2025-03-23', // World Optometry Day
     excerpt: 'We are thrilled to announce the official launch of Focus.AI, your dedicated AI-powered assistant for optometry studies. Simplify complex theories, get help interpreting clinical cases, and prepare for exams with confidence.',
     content: `
-<p>The wait is over! We're incredibly excited to announce the official launch of <strong>Focus.AI</strong>, your smart, AI-powered assistant designed specifically for optometry students.</p>
+<p>The wait is over! We're incredibly excited to announce the official launch of <strong>Focus.AI</strong>, your smart, AI-powered assistant designed specifically for optometry students, which was first conceived from personal need in June 2024 and now publicly available from March 23, 2025, World Optometry Day!</p>
 <p>Focus.AI is built to help you navigate the complexities of optometry education. Whether you're grappling with challenging theories, learning to interpret clinical findings, or preparing for crucial exams, Focus.AI is here to support your learning journey and boost your confidence.</p>
 
 <h3 class="text-xl font-semibold mt-6 mb-3">What Can Focus.AI Do For You?</h3>
@@ -189,26 +210,6 @@ export const UPDATES_DATA: UpdatePost[] = [
     author: 'The Focus-IN Team',
     tags: ['launch', 'focuscast', 'audio learning'],
     projectSlug: 'focuscast',
-  },
-  {
-    slug: 'welcome-to-updates',
-    title: 'Welcome to Our New Updates Section!',
-    date: '2024-07-27', 
-    excerpt: 'This is the first post in our new Updates section. We\'ll be sharing news about our projects, upcoming features, and insights from the Focus-IN team.',
-    content: `
-<p>Hello everyone, and welcome to the official Updates section of Focus-IN!</p>
-<p>We're excited to have this new space to share all the latest happenings with our projects, announce new features, and provide insights into what we're working on behind the scenes. Our goal is to keep you informed and engaged with the continuous development and improvement of our tools for the optometry community.</p>
-<p>Here’s what you can expect to find in this section:</p>
-<ul class="list-disc list-inside space-y-1 text-muted-foreground">
-  <li><strong>Project Milestones:</strong> Updates on major developments and releases for tools like Focus.Ai, Focus Axis, Focus Gen, and more.</li>
-  <li><strong>New Features:</strong> Detailed explanations of new functionalities added to our platforms.</li>
-  <li><strong>Community News:</strong> Highlights from our user community and ways to get involved.</li>
-  <li><strong>Behind-the-Scenes:</strong> Occasional posts about our development process and the vision driving Focus-IN.</li>
-</ul>
-<p class="mt-4">Stay tuned for more updates, and thank you for being a part of the Focus-IN journey!</p>
-    `,
-    author: 'The Focus-IN Team',
-    tags: ['announcement', 'meta'],
   },
 ];
 
