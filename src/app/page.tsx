@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram } from 'lucide-react';
+import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -46,13 +46,13 @@ const whyWeStartedFeatures = [
 
 const projectHighlights = [
     { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
+    { icon: Headphones, title: 'Focus Cast', description: 'Optometry Audio Learning, On the Go. Currently available.', link: '/projects/focuscast', linkText: 'Listen Now' },
     { icon: MousePointerClick, title: 'Focus Axis', description: 'JCC Simulator for virtual, gamified JCC training. Currently available.', link: '/projects/focus-axis', linkText: 'Learn More' },
-    { icon: LucideCalculator, title: 'Focus Gen', description: 'Transposition Sums: Generate & Practice. Currently available.', link: '/projects/focus-gen', linkText: 'Learn More' },
 ];
 
 const impactStats = [
-  { icon: UserCheck, value: "110+", label: "Focus AI Users", hint: "active users" },
-  { icon: LucideCalculator, value: "210+", label: "Focus Gen Uses", hint: "content generations" },
+  { icon: UserCheck, value: "300+", label: "Focus AI Users", hint: "active users" },
+  { icon: Headphones, value: "17+", label: "Focus Cast Listeners", hint: "daily active listeners" },
   { icon: ClipboardList, value: "23+", label: "Beta Testers", hint: "early adopters" },
 ];
 

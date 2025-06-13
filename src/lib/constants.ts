@@ -17,7 +17,7 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: LucideMousePointerClick, description: "JCC Simulator & Gamified Training." },
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
-  { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
+  { href: '/projects/focuscast', label: 'Focuscast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
   { href: '/projects/focus-clinic', label: 'Focus Clinic', icon: Monitor, description: "Clinical Management System (Beta)." },
 ];
 
@@ -44,7 +44,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     tagline: 'JCC Simulator: Master Lens Flipping',
     description: 'Focus Axis offers a JCC (Jackson Cross Cylinder) simulator. Practice lens flipping and other techniques in a virtual, gamified learning experience.',
     longDescription: 'Enhance your clinical skills with interactive exercises that mimic real-world scenarios, providing a safe and engaging way to master JCC techniques and improve your accuracy in refraction.',
-    iconName: 'MousePointerClick',
+    iconName: 'LucideMousePointerClick',
     features: [
       { title: 'JCC Simulation', description: 'Realistic simulation of Jackson Cross Cylinder tests.', iconName: 'MousePointerClick' },
       { title: 'Gamified Learning Modules', description: 'Engaging training exercises with progress tracking.', iconName: 'LucideActivity' },
@@ -54,14 +54,14 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-casex',
     title: 'Focus CaseX',
-    tagline: 'Interactive Clinical Learning & Case Logging',
+    tagline: 'Interactive Clinical Learning and Case Logging',
     description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
     longDescription: "It is not just a case logger it is an AI-powered learning assistant for optometry students. You can log your real cases, ask specific questions about them, get summaries and interpretations, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
     iconName: 'FilePenLine',
     features: [
       { title: 'Real Case Logging', description: 'Log your clinical cases with detailed information.', iconName: 'FilePenLine' },
       { title: 'AI-Powered Q&A', description: 'Ask specific questions about your logged cases and get AI assistance.', iconName: 'MessageSquare' },
-      { title: 'Case Summaries & Interpretation', description: 'Receive AI-generated summaries and interpretations of your case data.', iconName: 'Brain' },
+      { title: 'Case Summaries and Interpretation', description: 'Receive AI-generated summaries and interpretations of your case data.', iconName: 'Brain' },
       { title: 'Viva Session Practice', description: 'Practice viva examinations based on your logged cases.', iconName: 'ClipboardList' },
       { title: 'Privacy-Focused Design', description: 'No data is stored; all processing is done temporarily in your browser tab.', iconName: 'ShieldCheck' },
     ],
@@ -75,16 +75,16 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     iconName: 'Headphones',
     features: [
       { title: 'Short, High-Impact Episodes', description: 'Focused audio lessons (5–15 mins) for fast revision and deep understanding.', iconName: 'Timer' },
-      { title: 'Comprehensive Topic Tracks', description: 'Covers Clinical Refraction, Instruments, Segment Disorders, Binocular Vision, Pharmacology, Career Guidance & Innovation.', iconName: 'LucideLibrary' },
+      { title: 'Topic Tracks Include', description: 'Clinical Refraction, Instruments, Segment Disorders, Binocular Vision, Pharmacology, Career Guidance & Innovation.', iconName: 'LucideLibrary' },
       { title: 'Weekly Episode Drops', description: 'Consistent content flow to help you revise smarter and stay on track.', iconName: 'CalendarDays' },
       { title: 'Screen-Free Learning', description: 'Learn on the go, whether walking, traveling, or resting your eyes.', iconName: 'Headphones' },
-      { title: 'Free & Accessible', description: 'No login needed, 100% free. Just plug in and play.', iconName: 'PlayCircle' },
+      { title: 'Free and Accessible', description: 'No login needed, 100% free. Just plug in and play.', iconName: 'PlayCircle' },
     ],
   },
   {
     slug: 'focus-gen',
     title: 'Focus Gen',
-    tagline: 'Transposition Sums: Generate & Practice',
+    tagline: 'Transposition Sums: Generate and Practice',
     description: 'Focus Gen is a transposition sum generator where you can create various types of transposition sums and practice them to sharpen your skills.',
     longDescription: 'This tool helps students master optical transposition by providing unlimited practice problems. Select parameters and generate sums for self-assessment and learning reinforcement. (Currently Available)',
     iconName: 'LucideCalculator',
@@ -116,6 +116,21 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
 
 // UPDATES DATA
 export const UPDATES_DATA: UpdatePost[] = [
+  {
+    slug: 'focus-emr-to-focus-clinic-rename',
+    title: 'Project Update: Focus EMR is now Focus Clinic!',
+    date: '2024-06-07',
+    excerpt: "We're excited to announce a name change for one of our key projects. Focus EMR has been renamed to Focus Clinic to better reflect its mission of serving smaller optometry practices.",
+    content: `
+<p>We're excited to share an important update regarding one of our ongoing projects. What was formerly known as Focus EMR will now be called <strong>Focus Clinic</strong>.</p>
+<p>This name change reflects a refined vision for the project. We realized that the term "EMR" (Electronic Medical Record) often implies a system designed for larger hospitals and extensive server capabilities. While our goal is to provide robust record-keeping, our primary focus is to empower smaller, independent optometry clinics.</p>
+<p><strong>Focus Clinic</strong> aims to offer an affordable, user-friendly solution tailored to the needs of individual practitioners and smaller clinical setups. We believe this new name better communicates our commitment to providing a powerful tool that is accessible and perfectly suited for managing patient data efficiently in a clinic setting.</p>
+<p>We're enthusiastic about this new direction and believe Focus Clinic will be a valuable asset for many optometry professionals. Thank you for your continued support!</p>
+    `,
+    author: 'The Focus-IN Team',
+    tags: ['project update', 'focus-clinic', 'renaming', 'emr'],
+    projectSlug: 'focus-clinic',
+  },
   {
     slug: 'focus-ai-launch',
     title: 'Focus.AI: Your Smart Optometry Companion is Here!',
