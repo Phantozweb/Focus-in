@@ -18,9 +18,7 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
   { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
-  { href: '/projects/focus-emr', label: 'Focus EMR', icon: Monitor, description: "Electronic Medical Records (Beta)." },
-  { href: '/projects/focus-notes', label: 'Focus Notes', icon: StickyNote, description: "Smart note-taking for students (Upcoming)." },
-  { href: '/projects/focus-share', label: 'Focus Share', icon: Users, description: "Collaborative platform (Upcoming)." },
+  { href: '/projects/focus-clinic', label: 'Focus Clinic', icon: Monitor, description: "Clinical Management System (Beta)." },
 ];
 
 
@@ -57,8 +55,8 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     slug: 'focus-casex',
     title: 'Focus CaseX',
     tagline: 'Interactive Clinical Learning & Case Logging',
-    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions—all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
-    longDescription: "It’s not just a case logger — it’s an AI-powered learning assistant for optometry students. You can log your real cases, ask specific questions about them, get summaries and interpretations, and practice viva sessions — all based on your own logs. No data is stored — everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
+    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
+    longDescription: "It is not just a case logger it is an AI-powered learning assistant for optometry students. You can log your real cases, ask specific questions about them, get summaries and interpretations, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
     iconName: 'FilePenLine',
     features: [
       { title: 'Real Case Logging', description: 'Log your clinical cases with detailed information.', iconName: 'FilePenLine' },
@@ -84,19 +82,6 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     ],
   },
   {
-    slug: 'focus-share',
-    title: 'Focus Share',
-    tagline: 'Collaborative Learning and Knowledge Sharing (Upcoming)',
-    description: 'Focus Share is a community platform designed for optometry students and practitioners to connect, share knowledge, discuss challenging cases, and collaborate on projects.',
-    longDescription: 'Create study groups, participate in forums, share resources, and network with peers and mentors from around the world. Focus Share aims to build a supportive and dynamic optometric community. (Upcoming)',
-    iconName: 'Users',
-    features: [
-      { title: 'Discussion Forums', description: 'Engage in specialty-specific discussions and Q&A.', iconName: 'MessageSquare' },
-      { title: 'Resource Sharing', description: 'Upload and access study materials, articles, and presentations.', iconName: 'Share2' },
-      { title: 'Mentorship Connections', description: 'Find mentors or offer guidance to junior members.', iconName: 'LucideUserCheck' },
-    ],
-  },
-  {
     slug: 'focus-gen',
     title: 'Focus Gen',
     tagline: 'Transposition Sums: Generate & Practice',
@@ -110,29 +95,16 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     ],
   },
   {
-    slug: 'focus-emr',
-    title: 'Focus EMR',
-    tagline: 'Streamlined Electronic Medical Records (Beta)',
-    description: 'Focus EMR is designed to simplify patient record management for optometry practices, offering an intuitive interface and essential features for efficient clinical workflows.',
-    longDescription: 'Currently in beta, Focus EMR aims to provide a cost-effective and user-friendly solution for managing patient data, appointments, and prescriptions. (Beta Program Ongoing)',
+    slug: 'focus-clinic',
+    title: 'Focus Clinic',
+    tagline: 'Clinical Management System (Beta)',
+    description: 'Focus Clinic is designed to simplify patient record management for optometry practices, offering an intuitive interface and essential features for efficient clinical workflows.',
+    longDescription: 'Currently in beta, Focus Clinic aims to provide a cost-effective and user-friendly solution for managing patient data, appointments, and prescriptions. (Beta Program Ongoing)',
     iconName: 'Monitor',
     features: [
       { title: 'Patient Records', description: 'Comprehensive and secure patient data management.', iconName: 'Users'},
       { title: 'Appointment Scheduling', description: 'Easy-to-use calendar and booking system.', iconName: 'CalendarDays' },
       { title: 'Prescription Management', description: 'Generate and track patient prescriptions.', iconName: 'FileText' },
-    ],
-  },
-  {
-    slug: 'focus-notes',
-    title: 'Focus Notes',
-    tagline: 'Smart Note-Taking for Optometry Students (Upcoming)',
-    description: 'Focus Notes is an upcoming tool to help optometry students organize their study notes, integrate them with resources, and collaborate effectively.',
-    longDescription: 'More details coming soon! Focus Notes will feature smart organization, linking capabilities to other Focus resources, and collaborative features. (Launching Soon)',
-    iconName: 'StickyNote',
-    features: [
-      { title: 'Organized Note-Taking', description: 'Structured notebooks and tagging.', iconName: 'FilePenLine' },
-      { title: 'Resource Integration', description: 'Link notes to articles, videos, and case studies.', iconName: 'LinkIcon' },
-      { title: 'Collaborative Study', description: 'Share notes and study with peers.', iconName: 'Share2' },
     ],
   },
 ];
@@ -156,7 +128,7 @@ export const UPDATES_DATA: UpdatePost[] = [
 <h3 class="text-xl font-semibold mt-6 mb-3">What Can Focus.AI Do For You?</h3>
 <p>Focus.AI is more than just a tool; it's a learning partner. Here's a glimpse of its capabilities:</p>
 <ul class="list-disc list-inside space-y-2 my-4 text-muted-foreground">
-  <li><strong>AI Chat for Optometry:</strong> Have a question? Get instant, knowledgeable answers from an AI trained extensively on optometry topics.</li>
+  <li><strong>Optometry AI Chat:</strong> Have a question? Get instant, knowledgeable answers from an AI trained extensively on optometry topics.</li>
   <li><strong>Simplify Complex Concepts:</strong> Break down difficult theories into understandable explanations and summaries.</li>
   <li><strong>Clinical Case Interpretation Support:</strong> Learn to analyze various clinical findings, including OCT reports and other ophthalmological data. Focus.AI helps you understand how to approach these interpretations as a student.</li>
   <li><strong>Practice Quiz Section:</strong> Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.</li>
@@ -233,3 +205,4 @@ export const getUpdateBySlug = (slug: string): UpdatePost | undefined => {
   return UPDATES_DATA.find(post => post.slug === slug);
 };
 
+    
