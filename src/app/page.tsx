@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star, BadgePercent } from 'lucide-react';
+import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star, BadgePercent, Ticket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -13,7 +13,6 @@ import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedNumber from '@/components/shared/animated-number';
-import { PreBookForm } from '@/components/home/prebook-form';
 
 
 export const metadata: Metadata = {
@@ -105,33 +104,41 @@ export default function HomePage() {
               title="Pre-Book Focus AI 3.0"
               subtitle="Be the first to experience the next generation of optometry AI. Secure your early access subscription now and lock in an exclusive discount."
             />
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
-              <div className="space-y-6 text-left p-6 bg-card/60 rounded-lg shadow-inner border">
-                <h3 className="text-2xl font-bold text-primary">Unlock Massive Early Access Savings</h3>
-                <p className="text-muted-foreground">
-                  Focus AI 3.0 is coming soon with groundbreaking features. Pre-book your annual subscription today to get an incredible discount. No payment required today.
-                </p>
-                
-                <div className="space-y-2">
-                  <div className="flex items-baseline justify-center md:justify-start gap-2">
-                    <span className="text-4xl font-extrabold text-foreground flex items-center"><IndianRupee className="h-7 w-7" />499</span>
-                     <span className="text-lg text-muted-foreground">/ year</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground text-center md:text-left">(Standard Pre-Book Price)</p>
-                </div>
-
-                <div className="!mt-4 p-4 rounded-lg bg-primary/20 border border-primary/50 text-center">
-                  <h4 className="font-bold text-primary flex items-center justify-center gap-2 text-lg"><Star className="h-5 w-5"/>Exclusive OPTOBHARAT Member Offer!</h4>
-                  <p className="text-foreground mt-2 text-2xl font-extrabold flex items-center justify-center">
-                    Just <IndianRupee className="h-6 w-6 mx-1" />199/year!
-                  </p>
-                  <p className="mt-2 font-semibold flex items-center justify-center gap-2"><BadgePercent className="h-4 w-4"/> That's a total savings of ₹300!</p>
-                </div>
-              </div>
-              <div className="p-2 sm:p-0">
-                <PreBookForm />
-              </div>
-            </div>
+            <Card className="max-w-2xl mx-auto mt-12 shadow-2xl overflow-hidden">
+                <CardContent className="p-6 md:p-8 space-y-6 text-center">
+                    <div>
+                        <p className="text-lg text-muted-foreground">Standard Pre-Book Price</p>
+                        <div className="flex items-baseline justify-center gap-2 mt-1">
+                            <span className="text-5xl font-extrabold text-foreground flex items-center">
+                                <IndianRupee className="h-9 w-9" />499
+                            </span>
+                            <span className="text-xl text-muted-foreground">/ year</span>
+                        </div>
+                    </div>
+                    
+                    <div className="!mt-6 p-6 rounded-lg bg-primary/20 border border-primary/50 text-center">
+                        <h4 className="font-bold text-primary flex items-center justify-center gap-2 text-xl">
+                            <Star className="h-6 w-6"/>Exclusive OPTOBHARAT Member Offer!
+                        </h4>
+                        <p className="text-foreground mt-2 text-4xl font-extrabold flex items-center justify-center">
+                            Just <IndianRupee className="h-8 w-8 mx-1" />199/year!
+                        </p>
+                        <p className="mt-2 font-semibold flex items-center justify-center gap-2 text-lg">
+                            <BadgePercent className="h-5 w-5"/> That's a total savings of ₹300!
+                        </p>
+                         <Button 
+                            size="lg" 
+                            className="mt-6 w-full sm:w-auto shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105"
+                            asChild
+                        >
+                            <a href="upi://pay?pa=iamsirenjeev@oksbi&pn=Focus-IN%20Pre-Book&am=199&cu=INR&tn=Focus%20AI%203.0%20Pre-Book" target="_blank" rel="noopener noreferrer">
+                                <Ticket className="mr-2 h-5 w-5" /> Confirm Pre-Booking
+                            </a>
+                        </Button>
+                    </div>
+                     <p className="text-sm text-muted-foreground mt-4">No payment required today for non-UPI pre-booking. Click to reserve your spot via UPI. For other methods, please contact us.</p>
+                </CardContent>
+            </Card>
           </div>
         </section>
       </AnimatedSection>
