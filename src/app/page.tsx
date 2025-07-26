@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star } from 'lucide-react';
+import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star, BadgePercent } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -143,30 +143,34 @@ export default function HomePage() {
         <Separator className="my-8 md:my-12" />
 
         <AnimatedSection animationType="slide-up" delay={300}>
-          <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-16 md:py-24 rounded-2xl shadow-xl border">
+          <section className="bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24 rounded-2xl shadow-xl border">
             <div className="container mx-auto text-center">
               <SectionTitle
                 title="Pre-Book Focus AI 3.0"
-                subtitle="Be the first to experience the next generation of optometry AI. Secure your early access subscription now."
+                subtitle="Be the first to experience the next generation of optometry AI. Secure your early access subscription now and lock in an exclusive discount."
               />
               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-4 text-left p-6 bg-card/60 rounded-lg shadow-inner">
-                  <h3 className="text-2xl font-bold text-primary">Unlock Exclusive Early Access</h3>
+                <div className="space-y-6 text-left p-6 bg-card/60 rounded-lg shadow-inner border">
+                  <h3 className="text-2xl font-bold text-primary">Unlock Massive Early Access Savings</h3>
                   <p className="text-muted-foreground">
-                    Focus AI 3.0 is coming soon with groundbreaking features. Pre-book your annual subscription today and get a massive discount.
+                    Focus AI 3.0 is coming soon with groundbreaking features. Pre-book your annual subscription today to get an incredible discount. No payment required today.
                   </p>
+                  
                   <div className="space-y-2">
                     <div className="flex items-baseline justify-center md:justify-start gap-2">
+                      <span className="text-xl font-semibold text-muted-foreground line-through flex items-center"><IndianRupee className="h-5 w-5" />499</span>
                       <span className="text-4xl font-extrabold text-foreground flex items-center"><IndianRupee className="h-7 w-7" />299</span>
-                      <span className="text-lg text-muted-foreground">/ year</span>
+                       <span className="text-lg text-muted-foreground">/ year</span>
                     </div>
                     <p className="text-sm text-muted-foreground text-center md:text-left">(Standard Pre-Book Price)</p>
                   </div>
-                  <div className="!mt-4 p-4 rounded-lg bg-primary/20 border border-primary/50">
-                    <h4 className="font-bold text-primary flex items-center gap-2"><Star className="h-5 w-5"/>Special Offer for OPTOBHARAT Members!</h4>
-                    <p className="text-foreground mt-1">
-                      As a valued member of OPTOBHARAT, pre-book your subscription for just <strong className="font-extrabold flex items-center"><IndianRupee className="h-4 w-4" />199/year!</strong>
+
+                  <div className="!mt-4 p-4 rounded-lg bg-primary/20 border border-primary/50 text-center">
+                    <h4 className="font-bold text-primary flex items-center justify-center gap-2 text-lg"><Star className="h-5 w-5"/>Exclusive OPTOBHARAT Member Offer!</h4>
+                    <p className="text-foreground mt-2 text-2xl font-extrabold flex items-center justify-center">
+                      Just <IndianRupee className="h-6 w-6 mx-1" />199/year!
                     </p>
+                    <p className="mt-2 font-semibold flex items-center justify-center gap-2"><BadgePercent className="h-4 w-4"/> That's a total savings of ₹300!</p>
                   </div>
                 </div>
                 <div className="p-6">
@@ -316,3 +320,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    

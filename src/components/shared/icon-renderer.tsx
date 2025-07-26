@@ -14,7 +14,7 @@ import {
   Settings, ZoomIn, Database, GitBranch, CloudUpload, UserCircle, Quote, Rocket, Sparkles, AlertTriangle,
   Monitor, FilePenLine, Home, Mail, Heart, Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle,
   Instagram, Linkedin, Search, ListFilter, Tag,
-  Headphones, Timer, Voicemail, PlayCircle, Clock, Star, Ticket, Send, Loader2
+  Headphones, Timer, Voicemail, PlayCircle, Clock, Star, Ticket, Send, Loader2, BadgePercent
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -92,6 +92,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   Ticket,
   Send,
   Loader2,
+  BadgePercent,
   // Add other icons as needed by their string name
 };
 
@@ -100,9 +101,11 @@ export const IconRenderer: React.FC<IconRendererProps> = ({ iconName, ...props }
   const IconComponent = iconMap[iconName];
 
   if (!IconComponent) {
-    // console.warn(\`Icon "${iconName}" not found in iconMap.\`);
+    // console.warn(`Icon "${iconName}" not found in iconMap.`);
     return <HelpCircle {...props} />; // Fallback icon
   }
 
   return <IconComponent {...props} />;
 };
+
+    
