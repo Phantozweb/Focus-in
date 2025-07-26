@@ -16,9 +16,8 @@ export async function handlePrebookSubmission(formData: z.infer<typeof prebookFo
     return { success: false, error: "Invalid data provided." };
   }
   
-  // WARNING: This webhook URL is for local development and will not work in production.
-  // Replace with a production-ready webhook URL from a service like Zapier, Make.com, or your own API endpoint.
-  const webhookUrl = 'http://localhost:5678/webhook/7dddcd4f-1229-461c-a52f-df135f29fd4b/webhook-test/f850577d-1bf3-4346-8661-23df4258967d';
+  // This webhook URL is for the n8n service.
+  const webhookUrl = 'https://n8n-xkgr.onrender.com/webhook/7bd8cf3f-c960-4f9d-94f1-8689c0bc8168';
 
   try {
     const response = await fetch(webhookUrl, {
