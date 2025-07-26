@@ -10,12 +10,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Ticket, ClipboardCheck, ExternalLink } from "lucide-react";
+import { Ticket, ClipboardCheck, ExternalLink, IndianRupee } from "lucide-react";
 import Link from "next/link";
 
-const GOOGLE_FORM_LINK = "https://forms.gle/your-form-link"; // Replace with your actual Google Form link
+const GOOGLE_FORM_LINK = "https://forms.gle/491n3B93fGvYvT9E6"; 
 
 export function PrebookInstructionsDialog() {
+  const upiLink = "upi://pay?pa=iamsirenjeev@oksbi&pn=Focus-IN&cu=INR&tn=Pre-book%20Focus%20AI%203.0";
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -43,13 +45,19 @@ export function PrebookInstructionsDialog() {
               Pay via UPI
             </h3>
             <p className="text-muted-foreground pl-9">
-              Pay the pre-booking amount to the UPI ID below.
+              Click the button below to pay the pre-booking amount.
             </p>
             <div className="pl-9">
-                <div className="flex items-center gap-2 p-3 rounded-md bg-muted border">
-                    <span className="font-mono text-primary font-bold text-base">iamsirenjeev@oksbi</span>
-                </div>
-                 <p className="text-xs text-muted-foreground mt-2">
+                <Button asChild variant="outline" className="w-full justify-start text-left h-auto py-2">
+                    <a href={upiLink} target="_blank" rel="noopener noreferrer">
+                        <IndianRupee className="h-5 w-5 mr-2 text-primary"/>
+                        <div>
+                            <span className="font-mono text-primary font-bold text-base">iamsirenjeev@oksbi</span>
+                            <p className="text-xs text-muted-foreground">Click to pay</p>
+                        </div>
+                    </a>
+                </Button>
+                 <p className="text-xs text-muted-foreground mt-2 pl-2">
                     Amount: ₹199 for OPTOBHARAT members, ₹499 for others.
                  </p>
             </div>
