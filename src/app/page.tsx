@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedNumber from '@/components/shared/animated-number';
+import { PrebookInstructionsDialog } from '@/components/home/prebook-instructions-dialog';
 
 
 export const metadata: Metadata = {
@@ -126,17 +127,9 @@ export default function HomePage() {
                         <p className="mt-2 font-semibold flex items-center justify-center gap-2 text-lg">
                             <BadgePercent className="h-5 w-5"/> That's a total savings of ₹300!
                         </p>
-                         <Button 
-                            size="lg" 
-                            className="mt-6 w-full sm:w-auto shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105"
-                            asChild
-                        >
-                            <a href="upi://pay?pa=iamsirenjeev@oksbi&pn=Focus-IN%20Pre-Book&am=199&cu=INR&tn=Focus%20AI%203.0%20Pre-Book" target="_blank" rel="noopener noreferrer">
-                                <Ticket className="mr-2 h-5 w-5" /> Confirm Pre-Booking
-                            </a>
-                        </Button>
+                        <PrebookInstructionsDialog />
                     </div>
-                     <p className="text-sm text-muted-foreground mt-4">No payment required today for non-UPI pre-booking. Click to reserve your spot via UPI. For other methods, please contact us.</p>
+                     <p className="text-sm text-muted-foreground mt-4">Pre-book now to secure your spot before the official launch. Payment confirmation via Google Form is required.</p>
                 </CardContent>
             </Card>
           </div>
