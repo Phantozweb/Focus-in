@@ -15,15 +15,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogFooter,
-  DialogClose,
-} from "@/components/ui/dialog";
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -42,7 +39,6 @@ type PrebookFormValues = z.infer<typeof prebookFormSchema>;
 
 export function PreBookForm() {
   const { toast } = useToast();
-  const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<PrebookFormValues>({
@@ -63,7 +59,6 @@ export function PreBookForm() {
           description: "Thank you! We've received your pre-booking and will notify you upon launch.",
         });
         form.reset();
-        setIsOpen(false);
       } else {
         toast({
           title: "Submission Failed",
@@ -75,22 +70,16 @@ export function PreBookForm() {
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        <Button size="lg" className="w-full shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105">
-            <Ticket className="mr-2 h-5 w-5" />
-            Pre-Book Now & Save
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Pre-Book Focus AI 3.0</DialogTitle>
-          <DialogDescription>
-            Complete the form to secure your early-bird pricing. No payment needed now.
-          </DialogDescription>
-        </DialogHeader>
+    <Card className="shadow-2xl w-full">
+      <CardHeader>
+        <CardTitle>Reserve Your Spot</CardTitle>
+        <CardDescription>
+          Fill the form to pre-book. No payment required today.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 py-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"
@@ -140,27 +129,22 @@ export function PreBookForm() {
                 </FormItem>
               )}
             />
-            <DialogFooter>
-                <DialogClose asChild>
-                    <Button type="button" variant="outline">Cancel</Button>
-                </DialogClose>
-                <Button type="submit" disabled={isPending}>
-                {isPending ? (
-                    <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Submitting...
-                    </>
-                ) : (
-                    <>
-                    <Send className="mr-2 h-4 w-4" />
-                    Confirm Pre-Booking
-                    </>
-                )}
-                </Button>
-            </DialogFooter>
+            <Button type="submit" size="lg" className="w-full shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105" disabled={isPending}>
+              {isPending ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  <Ticket className="mr-2 h-4 w-4" />
+                  Confirm Pre-Booking
+                </>
+              )}
+            </Button>
           </form>
         </Form>
-      </DialogContent>
-    </Dialog>
+      </CardContent>
+    </Card>
   );
 }

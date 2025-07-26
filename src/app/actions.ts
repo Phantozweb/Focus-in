@@ -18,7 +18,7 @@ export async function handlePrebookSubmission(formData: z.infer<typeof prebookFo
   
   // WARNING: This webhook URL is for local development and will not work in production.
   // Replace with a production-ready webhook URL from a service like Zapier, Make.com, or your own API endpoint.
-  const webhookUrl = 'http://localhost:5678/webhook/7dddcd4f-1229-461c-a52f-df135f29fd4b/webhook/a662ebc1-67bb-4e7f-a36d-1275c0099df2';
+  const webhookUrl = 'http://localhost:5678/webhook/7dddcd4f-1229-461c-a52f-df135f29fd4b/webhook-test/f850577d-1bf3-4346-8661-23df4258967d';
 
   try {
     const response = await fetch(webhookUrl, {

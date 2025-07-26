@@ -105,7 +105,7 @@ export default function HomePage() {
               title="Pre-Book Focus AI 3.0"
               subtitle="Be the first to experience the next generation of optometry AI. Secure your early access subscription now and lock in an exclusive discount."
             />
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
               <div className="space-y-6 text-left p-6 bg-card/60 rounded-lg shadow-inner border">
                 <h3 className="text-2xl font-bold text-primary">Unlock Massive Early Access Savings</h3>
                 <p className="text-muted-foreground">
@@ -128,16 +128,8 @@ export default function HomePage() {
                   <p className="mt-2 font-semibold flex items-center justify-center gap-2"><BadgePercent className="h-4 w-4"/> That's a total savings of ₹300!</p>
                 </div>
               </div>
-              <div className="p-6">
-                <Card className="shadow-2xl">
-                  <CardHeader>
-                    <CardTitle>Reserve Your Spot</CardTitle>
-                    <CardDescription>Fill the form to pre-book. No payment required today.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PreBookForm />
-                  </CardContent>
-                </Card>
+              <div className="p-2 sm:p-0">
+                <PreBookForm />
               </div>
             </div>
           </div>
