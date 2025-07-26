@@ -114,8 +114,7 @@ export default function HomePage() {
                 
                 <div className="space-y-2">
                   <div className="flex items-baseline justify-center md:justify-start gap-2">
-                    <span className="text-xl font-semibold text-muted-foreground line-through flex items-center"><IndianRupee className="h-5 w-5" />499</span>
-                    <span className="text-4xl font-extrabold text-foreground flex items-center"><IndianRupee className="h-7 w-7" />299</span>
+                    <span className="text-4xl font-extrabold text-foreground flex items-center"><IndianRupee className="h-7 w-7" />499</span>
                      <span className="text-lg text-muted-foreground">/ year</span>
                   </div>
                   <p className="text-sm text-muted-foreground text-center md:text-left">(Standard Pre-Book Price)</p>
