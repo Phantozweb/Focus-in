@@ -46,7 +46,7 @@ export function HeroSection() {
             </span>
           </h1>
           <h2 className="mb-8 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
-            From AI-Powered Learning to Clinical Simulation, We're Building the Future of Optometry.
+            Innovating for the Future of Eye Care.
           </h2>
         </AnimatedSection>
         
@@ -68,3 +68,4 @@ export function HeroSection() {
     </section>
   );
 }
+
