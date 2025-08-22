@@ -32,7 +32,7 @@ export function FeatureGrid({ features }: FeatureGridProps) {
               <div className="flex-grow">
                 <div className="flex items-center gap-2">
                   <CardTitle className="text-xl mt-1">{feature.title}</CardTitle>
-                  {feature.description.includes("(Paid)") && <Badge variant="destructive" className="mt-1">Paid</Badge>}
+                  {feature.description.includes("(Paid)") && <Badge variant="default" className="mt-1">Paid</Badge>}
                   {feature.description.includes("(Free)") && <Badge variant="default" className="mt-1">Free</Badge>}
                 </div>
               </div>
