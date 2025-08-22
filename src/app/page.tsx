@@ -60,6 +60,14 @@ const teamMembers = [
     description: 'Hariharan drives our community engagement and strategic outreach, connecting Focus-IN\'s innovative tools with the students and professionals who need them most.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
+  },
+  {
+    name: 'Mugunthan Mani',
+    title: 'Chief Creative Officer',
+    imageUrl: 'https://placehold.co/400x400.png',
+    description: 'Mugunthan oversees our content, branding, and design, ensuring that every aspect of Focus-IN is clear, engaging, and reflective of our innovative spirit.',
+    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
   }
 ];
 
@@ -131,7 +139,7 @@ export default function HomePage() {
         <AnimatedSection animationType="slide-up" delay={300}>
           <section className="py-16 md:py-24">
             <SectionTitle title="Meet Our Team" subtitle="The minds behind Focus-IN's mission to innovate vision care." />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
               {teamMembers.map((member) => (
                 <Card key={member.name} className="overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow border hover:border-primary/30">
                   <CardHeader className="p-0">
