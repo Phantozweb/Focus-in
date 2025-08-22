@@ -1,14 +1,19 @@
 
-import type { NavItem, ProjectNavItem, ProjectDetails, UpdatePost } from '@/types';
+import type { NavItem, ProjectNavItem, ProjectDetails, UpdatePost, DropdownNavItem } from '@/types';
 import { Home, Info, Layers, Mail, Bot, LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, LucideUserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock } from 'lucide-react';
 import type React from 'react';
 
-export const NAV_ITEMS: NavItem[] = [
+export const NAV_ITEMS: DropdownNavItem[] = [
   { href: '/', label: 'Home', icon: Home },
-  { href: '/about', label: 'About Us', icon: Info },
-  { href: '/projects', label: 'Our Projects', icon: Layers },
+  { 
+    label: 'About', 
+    icon: Info,
+    children: [
+      { href: '/about', label: 'About Us', icon: Info },
+      { href: '/origin-of-focus-in', label: 'Origin Story', icon: Lightbulb },
+    ]
+  },
   { href: '/updates', label: 'Updates', icon: Megaphone },
-  { href: '/origin-of-focus-in', label: 'Origin Story', icon: Lightbulb },
   { href: '/support', label: 'Support', icon: Mail },
 ];
 

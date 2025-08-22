@@ -8,6 +8,14 @@ export interface NavItem {
   disabled?: boolean;
 }
 
+export interface DropdownNavItem {
+  href?: string;
+  label: string;
+  icon: LucideIcon;
+  disabled?: boolean;
+  children?: NavItem[];
+}
+
 export interface ProjectNavItem extends NavItem {
   description: string;
 }
@@ -20,7 +28,7 @@ export interface ProjectFeature {
 
 export interface ProjectDetails {
   slug: string;
-  title: string;
+  title:string;
   tagline: string;
   description: string;
   longDescription?: string;
