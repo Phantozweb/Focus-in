@@ -98,44 +98,6 @@ export default function HomePage() {
     <>
       <HeroSection />
       
-      <AnimatedSection animationType="slide-up" delay={0}>
-        <section className="bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24 border-y">
-          <div className="container mx-auto text-center">
-            <SectionTitle
-              title="Pre-Book Focus AI 3.0"
-              subtitle="Be the first to experience the next generation of optometry AI. Secure your early access subscription now and lock in an exclusive discount."
-            />
-            <Card className="max-w-2xl mx-auto mt-12 shadow-2xl overflow-hidden">
-                <CardContent className="p-6 md:p-8 space-y-6 text-center">
-                    <div>
-                        <p className="text-lg text-muted-foreground">Standard Pre-Book Price</p>
-                        <div className="flex items-baseline justify-center gap-2 mt-1">
-                            <span className="text-5xl font-extrabold text-foreground flex items-center">
-                                <IndianRupee className="h-9 w-9" />499
-                            </span>
-                            <span className="text-xl text-muted-foreground">/ year</span>
-                        </div>
-                    </div>
-                    
-                    <div className="!mt-6 p-6 rounded-lg bg-primary/20 border border-primary/50 text-center">
-                        <h4 className="font-bold text-primary flex items-center justify-center gap-2 text-xl">
-                            <Star className="h-6 w-6"/>Exclusive OPTOBHARAT Member Offer!
-                        </h4>
-                        <p className="text-foreground mt-2 text-4xl font-extrabold flex items-center justify-center">
-                            Just <IndianRupee className="h-8 w-8 mx-1" />199/year!
-                        </p>
-                        <p className="mt-2 font-semibold flex items-center justify-center gap-2 text-lg">
-                            <BadgePercent className="h-5 w-5"/> That's a total savings of ₹300!
-                        </p>
-                        <PrebookInstructionsDialog />
-                    </div>
-                     <p className="text-sm text-muted-foreground mt-4">Pre-book now to secure your spot before the official launch. Payment confirmation via Google Form is required.</p>
-                </CardContent>
-            </Card>
-          </div>
-        </section>
-      </AnimatedSection>
-      
       <div className="container mx-auto container-padding">
         
         <AnimatedSection animationType="slide-up" delay={0}>
