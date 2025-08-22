@@ -14,12 +14,11 @@ import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedNumber from '@/components/shared/animated-number';
-import { PrebookInstructionsDialog } from '@/components/home/prebook-instructions-dialog';
 
 
 export const metadata: Metadata = {
-  title: 'Focus-IN | Innovative Optometry Tools & Learning Resources',
-  description: 'Focus-IN offers cutting-edge AI-powered web tools, learning resources, and innovative projects for optometry students and vision care professionals. Explore tools like Focus.Ai, Focus Axis, and Focus Gen.',
+  title: 'Focus-IN | AI Optometry Tools, JCC Simulator & Learning Resources',
+  description: 'Focus-IN offers cutting-edge AI optometry tools like Focus.Ai, a JCC simulator (Focus Axis), and innovative learning resources for optometry students and vision care professionals.',
 };
 
 const whyWeStartedFeatures = [
@@ -47,8 +46,8 @@ const whyWeStartedFeatures = [
 ];
 
 const projectHighlights = [
-    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available. (Paid)', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
-    { iconName: 'Headphones', title: 'Focus Cast', description: 'Optometry Audio Learning, On the Go. Currently available. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
+    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools for optometry. (Paid)', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
+    { iconName: 'Headphones', title: 'Focus Cast', description: 'Free optometry audio learning for students on the go. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
 ];
 
 const impactStats = [

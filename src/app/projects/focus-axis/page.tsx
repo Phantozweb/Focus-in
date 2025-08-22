@@ -14,11 +14,11 @@ import { Separator } from '@/components/ui/separator';
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focus-axis');
   if (!project) {
-    return { title: 'Project Not Found | Focus-IN' }
+    return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - JCC Simulator & Gamified Training | Focus-IN Projects`,
-    description: project.description,
+    title: `${project.title} - JCC Simulator for Optometry Training`,
+    description: `Master the Jackson Cross Cylinder (JCC) with the ${project.title} simulator. A gamified training tool for optometry students to practice lens flipping and refine refraction skills.`,
   };
 }
 

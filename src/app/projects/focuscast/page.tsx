@@ -13,11 +13,11 @@ import { Separator } from '@/components/ui/separator';
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focuscast');
   if (!project) {
-    return { title: 'Project Not Found | Focus-IN Projects' }
+    return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} | Focus-IN Projects`,
-    description: project.description,
+    title: `${project.title} - Audio Learning for Optometry Students`,
+    description: `Listen and learn with ${project.title}, a free audio platform for optometry students. Covering clinical topics, exam prep, and more in bite-sized, screen-free episodes.`,
   };
 }
 

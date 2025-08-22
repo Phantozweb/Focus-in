@@ -8,8 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Eye, Target, Lightbulb, Users, ShieldCheck, Activity } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Focus-IN | Our Mission, Vision, Values, and Founder Janarthan Veeramani',
-  description: 'Learn about Focus-IN: our mission to innovate optometry, our vision for the future of eye care technology, our core values, and our founder, Janarthan Veeramani.',
+  title: 'About Focus-IN | Our Mission in Optometry Innovation',
+  description: 'Learn about Focus-IN: our mission to innovate optometry with AI and technology, our vision for eye care, and our founder, Janarthan Veeramani. We build tools for students and professionals.',
 };
 
 const values = [

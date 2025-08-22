@@ -13,11 +13,11 @@ import { Separator } from '@/components/ui/separator';
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focus-casex');
   if (!project) {
-    return { title: 'Project Not Found | Focus-IN Projects' }
+    return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - Interactive Case Studies & AI Learning | Focus-IN Projects`,
-    description: project.description,
+    title: `${project.title} - Interactive AI Case Studies for Optometry`,
+    description: `Log clinical cases and practice with an AI learning assistant using ${project.title}. Get case summaries, Q&A, and viva practice, all with a focus on patient privacy.`,
   };
 }
 

@@ -6,8 +6,8 @@ import { Lightbulb, Target, Users, Activity, Brain, Settings, CalendarDays, Book
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 export const metadata: Metadata = {
-  title: 'The Origin of Focus-IN | Janarthan Veeramani\'s Journey & Our Mission',
-  description: 'Discover the story behind Focus-IN, born from Janarthan Veeramani\'s quest for better optometry learning tools. Our founding principles and the mission that drives us to innovate for the optometry community.',
+  title: 'The Origin of Focus-IN | Our Founding Story',
+  description: 'Discover the story behind Focus-IN, born from a personal need for better optometry learning tools. Learn about our mission to close the technology gap in vision care education.',
 };
 
 export default function OriginOfFocusINPage() {

@@ -7,11 +7,11 @@ import type { Metadata } from 'next';
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focus-gen');
   if (!project) {
-    return { title: 'Project Not Found | Focus-IN' }
+    return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - AI Study Material Generator | Focus-IN Projects`,
-    description: project.description,
+    title: `${project.title} - Optical Transposition Sum Generator`,
+    description: `Practice and master optical calculations with ${project.title}. An essential tool for optometry students to generate and solve transposition sums.`,
   };
 }
 

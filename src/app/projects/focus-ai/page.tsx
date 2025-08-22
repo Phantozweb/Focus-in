@@ -15,11 +15,11 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focus-ai');
   if (!project) {
-    return { title: 'Project Not Found | Focus-IN' }
+    return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - AI Tool for Optometry Students & Professionals | Focus-IN Projects`,
-    description: project.description,
+    title: `${project.title} - AI Tool for Optometry Students & Professionals`,
+    description: `Learn about ${project.title}, an AI-powered assistant for optometry studies. It simplifies complex theories, helps interpret clinical cases like OCT reports, and generates practice quizzes.`,
   };
 }
 
