@@ -1,7 +1,6 @@
 
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
-import { CarouselSection } from '@/components/home/carousel-section';
 import { SectionTitle } from '@/components/shared/section-title';
 import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star, BadgePercent, Ticket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import AnimatedNumber from '@/components/shared/animated-number';
+import { IconRenderer } from '@/components/shared/icon-renderer';
 
 
 export const metadata: Metadata = {
@@ -26,22 +26,16 @@ const whyWeStartedFeatures = [
     iconName: 'Users',
     title: 'Empowering Our Community',
     description: 'We saw a crucial need for modern, tech-driven solutions to support optometry students and professionals, aiming to make advanced tools universally accessible.',
-    link: '#', 
-    linkText: '', 
   },
   {
     iconName: 'Brain',
     title: 'Innovating with Technology',
     description: 'Driven by a passion for technological advancement, we leverage AI, data science, and digital simulations to build tools that address real-world challenges in vision care.',
-    link: '#',
-    linkText: '',
   },
   {
     iconName: 'Heart',
     title: 'Commitment to Tangible Impact',
     description: 'Our core motivation is to make a significant difference by enhancing learning experiences and improving the efficiency of eye care practices through our innovative solutions.',
-    link: '#',
-    linkText: '',
   },
 ];
 
@@ -76,11 +70,25 @@ export default function HomePage() {
         
         <AnimatedSection animationType="slide-up" delay={100}>
           <section className="py-12 md:py-16">
-              <SectionTitle
-                title="Why We Started" 
-                subtitle="Our journey began with a vision to transform optometry education and practice."
-              />
-              <CarouselSection features={whyWeStartedFeatures} />
+            <SectionTitle
+              title="Why We Started"
+              subtitle="Our journey began with a vision to transform optometry education and practice."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              {whyWeStartedFeatures.map((feature, index) => (
+                <Card key={index} className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border hover:border-primary/50 bg-card group">
+                  <CardHeader className="flex flex-row items-start gap-4 pb-4">
+                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <IconRenderer iconName={feature.iconName} className="h-8 w-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl mt-1">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </section>
         </AnimatedSection>
 
