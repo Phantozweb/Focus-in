@@ -1,6 +1,7 @@
 
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
+import { CarouselSection } from '@/components/home/carousel-section';
 import { SectionTitle } from '@/components/shared/section-title';
 import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star, BadgePercent, Ticket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -46,8 +47,8 @@ const whyWeStartedFeatures = [
 ];
 
 const projectHighlights = [
-    { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
-    { icon: Headphones, title: 'Focus Cast', description: 'Optometry Audio Learning, On the Go. Currently available.', link: '/projects/focuscast', linkText: 'Listen Now' },
+    { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available. (Paid)', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
+    { icon: Headphones, title: 'Focus Cast', description: 'Optometry Audio Learning, On the Go. Currently available. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
 ];
 
 const impactStats = [
@@ -80,7 +81,7 @@ export default function HomePage() {
                 title="Why We Started" 
                 subtitle="Our journey began with a vision to transform optometry education and practice."
               />
-              <FeatureGrid features={whyWeStartedFeatures} />
+              <CarouselSection features={whyWeStartedFeatures} />
           </section>
         </AnimatedSection>
 
