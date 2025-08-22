@@ -27,19 +27,11 @@ export default function SupportPage() {
                     <CardTitle className="text-xl flex items-center gap-2"><Mail className="h-5 w-5 text-primary" />Email Us Directly</CardTitle>
                 </CardHeader>
                 <CardContent className="text-muted-foreground">
-                    <p>For any inquiries, feedback, or support, you can reach us at:</p>
+                    <p>If you prefer, you can also send us an email directly at:</p>
                     <a href="mailto:focus.in.eco@gmail.com" className="font-semibold text-primary hover:underline">
                         focus.in.eco@gmail.com
                     </a>
                     <p className="mt-2">We typically respond within 24-48 business hours.</p>
-                </CardContent>
-            </Card>
-            <Card className="shadow-lg">
-                <CardHeader>
-                    <CardTitle className="text-xl flex items-center gap-2"><Info className="h-5 w-5 text-primary" />Note on Form Submission</CardTitle>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                    <p>Submitting the form on this page will attempt to open your default email client with a pre-filled message addressed to us. Please ensure your email client is set up correctly.</p>
                 </CardContent>
             </Card>
         </div>

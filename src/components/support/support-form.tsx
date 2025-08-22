@@ -18,8 +18,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Mail, User, MessageSquare, Loader2, Send } from "lucide-react"; // Added Send
+import { Mail, User, MessageSquare, Loader2, Send } from "lucide-react";
 import { useState } from "react";
+import { sendSupportMessage } from "@/ai/flows/send-support-message";
+
 
 const supportFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }).max(50),
@@ -32,7 +34,7 @@ type SupportFormValues = z.infer<typeof supportFormSchema>;
 
 export function SupportForm() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false); // Keep for button state
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<SupportFormValues>({
     resolver: zodResolver(supportFormSchema),
@@ -46,27 +48,26 @@ export function SupportForm() {
 
   async function onSubmit(data: SupportFormValues) {
     setIsSubmitting(true);
-
-    const mailtoSubject = `Support Request: ${data.subject}`;
-    const mailtoBody = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
-    const mailtoLink = `mailto:focus.in.eco@gmail.com?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
-
-    // Attempt to open mail client
-    if (typeof window !== "undefined") {
-      window.location.href = mailtoLink;
-    }
-    
-    toast({
-      title: "Redirecting to Email Client",
-      description: "Please complete sending your message using your email application.",
-      variant: "default", 
-    });
-
-    // Reset form and button state after a short delay to allow redirection
-    setTimeout(() => {
+    try {
+      const result = await sendSupportMessage(data);
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. We'll get back to you soon.",
+        });
         form.reset();
-        setIsSubmitting(false);
-    }, 2000); // Adjust delay as needed
+      } else {
+        throw new Error("Server failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -77,7 +78,7 @@ export function SupportForm() {
           Send Us a Message
         </CardTitle>
         <CardDescription>
-          Fill out the form below. Submitting will open your email client with a pre-filled message to focus.in.eco@gmail.com.
+          Fill out the form below and we'll get back to you as soon as possible.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -146,12 +147,12 @@ export function SupportForm() {
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Preparing Email...
+                  Sending...
                 </>
               ) : (
                 <>
                   <Send className="mr-2 h-4 w-4" />
-                  Open in Email Client
+                  Send Message
                 </>
               )}
             </Button>
