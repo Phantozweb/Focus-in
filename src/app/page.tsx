@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
@@ -44,10 +44,23 @@ const projectHighlights = [
     { iconName: 'Headphones', title: 'Focus Cast', description: 'Free optometry audio learning for students on the go. (Free)', link: '/projects/focuscast', linkText: 'Learn More' },
 ];
 
-const impactStats = [
-  { icon: UserCheck, value: "300+", label: "Focus AI Users", hint: "active users" },
-  { icon: Headphones, value: "17+", label: "Focus Cast Listeners", hint: "daily active listeners" },
-  { icon: ClipboardList, value: "23+", label: "Beta Testers", hint: "early adopters" },
+const teamMembers = [
+  {
+    name: 'Janarthan Veeramani',
+    title: 'Founder & CEO',
+    imageUrl: 'https://cdn.discordapp.com/attachments/1361686038950711516/1366784455011864677/1745925246585.png?ex=6829efb7&is=68289e37&hm=ef70e7c6845b70abb28246545f3c7ed95d3ed0e542409538872940388787fb85&',
+    description: 'The visionary behind Focus-IN, Janarthan leads with a passion for merging technology and optometry to empower the next generation of eye care professionals.',
+    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
+  },
+  {
+    name: 'Hariharan',
+    title: 'Chief Marketing Officer',
+    imageUrl: 'https://placehold.co/400x400.png',
+    description: 'Hariharan drives our community engagement and strategic outreach, connecting Focus-IN\'s innovative tools with the students and professionals who need them most.',
+    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
+  }
 ];
 
 
@@ -115,28 +128,41 @@ export default function HomePage() {
         
         <Separator className="my-8 md:my-12" />
 
-
         <AnimatedSection animationType="slide-up" delay={300}>
-            <section className="py-16 md:py-24 space-y-12">
-              <SectionTitle title="Our Community Impact" subtitle="See how Focus-IN is being used and supported across the optometry community." />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {impactStats.map((stat, index) => (
-                  <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow flex flex-col text-center group bg-card hover:border-primary/30">
-                    <CardHeader className="items-center pb-2">
-                       <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                         <stat.icon className="h-8 w-8 text-primary" />
-                       </div>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="text-4xl font-bold text-primary">{stat.value}</div>
-                      <p className="text-lg font-medium text-foreground mt-1">{stat.label}</p>
-                      <p className="text-sm text-muted-foreground pt-1">{stat.hint}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
+          <section className="py-16 md:py-24">
+            <SectionTitle title="Meet Our Team" subtitle="The minds behind Focus-IN's mission to innovate vision care." />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+              {teamMembers.map((member) => (
+                <Card key={member.name} className="overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow border hover:border-primary/30">
+                  <CardHeader className="p-0">
+                    <Image
+                      src={member.imageUrl}
+                      alt={`Portrait of ${member.name}`}
+                      width={400}
+                      height={400}
+                      className="w-full h-64 object-cover object-center"
+                      data-ai-hint="team member portrait"
+                    />
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <CardTitle className="text-2xl text-primary">{member.name}</CardTitle>
+                    <CardDescription className="text-base font-medium text-foreground mt-1">{member.title}</CardDescription>
+                    <p className="text-muted-foreground mt-4">{member.description}</p>
+                  </CardContent>
+                  <CardFooter className="bg-muted/50 p-4 flex justify-center gap-4">
+                     <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      <Linkedin className="h-6 w-6" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
+                    <a href={member.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      <Instagram className="h-6 w-6" />
+                      <span className="sr-only">Instagram</span>
+                    </a>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </section>
         </AnimatedSection>
           
         <Separator className="my-8 md:my-12" />
