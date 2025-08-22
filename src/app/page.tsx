@@ -40,8 +40,8 @@ const whyWeStartedFeatures = [
 ];
 
 const projectHighlights = [
-    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered learning and practice tools for optometry. (Paid)', link: '/projects/focus-ai', linkText: 'Access AI' },
-    { iconName: 'Headphones', title: 'Focus Cast', description: 'Free optometry audio learning for students on the go. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
+    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered learning and practice tools for optometry. (Paid)', link: '/projects/focus-ai', linkText: 'Learn More' },
+    { iconName: 'Headphones', title: 'Focus Cast', description: 'Free optometry audio learning for students on the go. (Free)', link: '/projects/focuscast', linkText: 'Learn More' },
 ];
 
 const impactStats = [
