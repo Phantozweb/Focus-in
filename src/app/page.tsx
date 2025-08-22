@@ -40,7 +40,7 @@ const whyWeStartedFeatures = [
 ];
 
 const projectHighlights = [
-    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools for optometry. (Paid)', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
+    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered learning and practice tools for optometry. (Paid)', link: '/projects/focus-ai', linkText: 'Access AI' },
     { iconName: 'Headphones', title: 'Focus Cast', description: 'Free optometry audio learning for students on the go. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
 ];
 
