@@ -20,8 +20,15 @@ import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, User, MessageSquare, Loader2, Send } from "lucide-react";
 import { useState } from "react";
-import { sendSupportMessage, SupportMessageInputSchema } from "@/app/support/actions";
+import { sendSupportMessage } from "@/app/support/actions";
 
+// Define the schema in the client component
+const SupportMessageInputSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
 
 type SupportFormValues = z.infer<typeof SupportMessageInputSchema>;
 

@@ -3,17 +3,19 @@
  * @fileOverview Server action to send a support message to a Discord webhook.
  * 
  * - sendSupportMessage - A function that handles sending the support message.
- * - SupportMessageInput - The input type for the sendSupportMessage function.
  */
 
 import { z } from "zod";
 
-export const SupportMessageInputSchema = z.object({
+// The Zod schema is now defined in the client component `support-form.tsx`.
+// We still need it here for server-side validation.
+const SupportMessageInputSchema = z.object({
   name: z.string().describe('The name of the person sending the message.'),
   email: z.string().email().describe('The email address of the sender.'),
   subject: z.string().describe('The subject of the message.'),
   message: z.string().describe('The content of the support message.'),
 });
+
 export type SupportMessageInput = z.infer<typeof SupportMessageInputSchema>;
 
 export async function sendSupportMessage(input: SupportMessageInput): Promise<{ success: boolean }> {
