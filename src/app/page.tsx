@@ -48,7 +48,6 @@ const whyWeStartedFeatures = [
 const projectHighlights = [
     { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available.', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
     { icon: Headphones, title: 'Focus Cast', description: 'Optometry Audio Learning, On the Go. Currently available.', link: '/projects/focuscast', linkText: 'Listen Now' },
-    { icon: MousePointerClick, title: 'Focus Axis', description: 'JCC Simulator for virtual, gamified JCC training. Currently available.', link: '/projects/focus-axis', linkText: 'Learn More' },
 ];
 
 const impactStats = [
