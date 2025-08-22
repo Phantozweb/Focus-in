@@ -24,21 +24,21 @@ export const metadata: Metadata = {
 
 const whyWeStartedFeatures = [
   {
-    icon: Users,
+    iconName: 'Users',
     title: 'Empowering Our Community',
     description: 'We saw a crucial need for modern, tech-driven solutions to support optometry students and professionals, aiming to make advanced tools universally accessible.',
     link: '#', 
     linkText: '', 
   },
   {
-    icon: Brain,
+    iconName: 'Brain',
     title: 'Innovating with Technology',
     description: 'Driven by a passion for technological advancement, we leverage AI, data science, and digital simulations to build tools that address real-world challenges in vision care.',
     link: '#',
     linkText: '',
   },
   {
-    icon: Heart,
+    iconName: 'Heart',
     title: 'Commitment to Tangible Impact',
     description: 'Our core motivation is to make a significant difference by enhancing learning experiences and improving the efficiency of eye care practices through our innovative solutions.',
     link: '#',
@@ -47,8 +47,8 @@ const whyWeStartedFeatures = [
 ];
 
 const projectHighlights = [
-    { icon: Bot, title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available. (Paid)', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
-    { icon: Headphones, title: 'Focus Cast', description: 'Optometry Audio Learning, On the Go. Currently available. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
+    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered diagnostic assistance and learning tools. Currently available. (Paid)', link: 'https://focusai.netlify.app', linkText: 'Access AI' },
+    { iconName: 'Headphones', title: 'Focus Cast', description: 'Optometry Audio Learning, On the Go. Currently available. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
 ];
 
 const impactStats = [
