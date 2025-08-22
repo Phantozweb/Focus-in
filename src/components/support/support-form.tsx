@@ -20,24 +20,17 @@ import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, User, MessageSquare, Loader2, Send } from "lucide-react";
 import { useState } from "react";
-import { sendSupportMessage } from "@/ai/flows/send-support-message";
+import { sendSupportMessage, SupportMessageInputSchema } from "@/app/support/actions";
 
 
-const supportFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }).max(50),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }).max(100),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(1000),
-});
-
-type SupportFormValues = z.infer<typeof supportFormSchema>;
+type SupportFormValues = z.infer<typeof SupportMessageInputSchema>;
 
 export function SupportForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<SupportFormValues>({
-    resolver: zodResolver(supportFormSchema),
+    resolver: zodResolver(SupportMessageInputSchema),
     defaultValues: {
       name: "",
       email: "",
