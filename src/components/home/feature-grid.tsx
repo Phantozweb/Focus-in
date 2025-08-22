@@ -1,9 +1,9 @@
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"; // Added CardFooter
-import { Button } from "@/components/ui/button"; // Added Button
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "../shared/animated-section";
-import Link from "next/link"; // Added Link
-import { ArrowRight } from "lucide-react"; // Added ArrowRight
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { IconRenderer } from "../shared/icon-renderer";
 import { Badge } from "../ui/badge";
 
@@ -29,12 +29,16 @@ export function FeatureGrid({ features }: FeatureGridProps) {
               <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                 <IconRenderer iconName={feature.iconName} className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-xl mt-1">{feature.title}</CardTitle>
+              <div className="flex-grow">
+                <div className="flex items-center gap-2">
+                  <CardTitle className="text-xl mt-1">{feature.title}</CardTitle>
+                  {feature.description.includes("(Paid)") && <Badge variant="destructive" className="mt-1">Paid</Badge>}
+                  {feature.description.includes("(Free)") && <Badge variant="secondary" className="mt-1">Free</Badge>}
+                </div>
+              </div>
             </CardHeader>
             <CardContent className="flex-grow">
               <CardDescription>
-                {feature.description.includes("(Paid)") && <Badge variant="destructive" className="mr-2">Paid</Badge>}
-                {feature.description.includes("(Free)") && <Badge variant="secondary" className="mr-2">Free</Badge>}
                 {feature.description.replace(/\s*\((Paid|Free)\)/, '')}
               </CardDescription>
             </CardContent>
