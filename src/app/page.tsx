@@ -57,41 +57,6 @@ const impactStats = [
   { icon: ClipboardList, value: "23+", label: "Beta Testers", hint: "early adopters" },
 ];
 
-const topDonors = [
-  { name: "K. Barathan", amount: 1500 },
-  { name: "Rishad C J", amount: 1000 },
-  { name: "Atchaya", amount: 750 },
-];
-
-const otherDonors = [
-  { rank: 4, name: "Mohd Basukhan", amount: 600 },
-  { rank: 5, name: "Manoj Kumar", amount: 500 },
-  { rank: 6, name: "Manovarama", amount: 500 },
-  { rank: 7, name: "M. Priya", amount: 450 },
-  { rank: 8, name: "Fazil Mohd", amount: 400 },
-  { rank: 9, name: "Meera Krishnan", amount: 300 },
-  { rank: 10, name: "Deepak", amount: 250 },
-  { rank: 11, name: "K Anusha Mohan", amount: 250 },
-  { rank: 12, name: "Mohammad Khan", amount: 250 },
-  { rank: 13, name: "Mohd Harsad", amount: 250 },
-  { rank: 14, name: "Shreya", amount: 222 },
-  { rank: 15, name: "Aishwarya Suresh", amount: 200 },
-  { rank: 16, name: "Jansitha K", amount: 200 },
-  { rank: 17, name: "Joshua", amount: 200 },
-  { rank: 18, name: "Ashok Raj", amount: 150 },
-  { rank: 19, name: "Kamlesh", amount: 150 },
-  { rank: 20, name: "P. Joshi", amount: 150 },
-  { rank: 21, name: "Preeti", amount: 150 },
-  { rank: 22, name: "Rajesh Kumar", amount: 150 },
-  { rank: 23, name: "S. Das", amount: 150 },
-  { rank: 24, name: "Sethu", amount: 150 },
-  { rank: 25, name: "Chandhru", amount: 100 },
-  { rank: 26, name: "Mehtab", amount: 100 },
-  { rank: 27, name: "Punitha", amount: 100 },
-];
-
-
-const totalFundsCollected = otherDonors.reduce((acc, donor) => acc + donor.amount, topDonors.reduce((acc, donor) => acc + donor.amount, 0));
 
 export default function HomePage() {
   return (
@@ -146,7 +111,7 @@ export default function HomePage() {
 
         <AnimatedSection animationType="slide-up" delay={300}>
             <section className="py-16 md:py-24 space-y-12">
-              <SectionTitle title="Our Impact" subtitle="See how Focus-IN is being used across the optometry community:" />
+              <SectionTitle title="Our Community Impact" subtitle="See how Focus-IN is being used and supported across the optometry community." />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {impactStats.map((stat, index) => (
@@ -163,81 +128,6 @@ export default function HomePage() {
                     </CardContent>
                   </Card>
                 ))}
-              </div>
-
-              <div className="mt-16 md:mt-20 space-y-10 bg-card p-6 md:p-10 rounded-2xl shadow-xl border">
-                <div className="text-center">
-                  <Heart className="h-12 w-12 text-primary mx-auto mb-4 animate-pulse" />
-                  <h3 className="text-3xl font-bold text-foreground mb-2">A Heartfelt Thank You to Our Donors</h3>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    We extend our sincere gratitude to the generous individuals from across India who have supported Focus-IN through their donations. Your contributions are invaluable and help us continue developing innovative tools for the optometry community.
-                  </p>
-                  <Button 
-                    size="lg" 
-                    variant="default" 
-                    className="mt-8 shadow-lg hover:shadow-primary/40 transition-all transform hover:scale-105"
-                    asChild
-                  >
-                    <a href="upi://pay?pa=iamsirenjeev@oksbi&pn=Focus-IN&am=&cu=INR&tn=Support%20Focus-IN" target="_blank" rel="noopener noreferrer">
-                      <Gift className="mr-2 h-5 w-5" /> Donate To Support Focus-IN
-                    </a>
-                  </Button>
-                </div>
-
-                <div className="space-y-8">
-                  <h4 className="text-2xl font-semibold text-primary text-center">Our Top Supporters</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {topDonors.map((donor, index) => (
-                      <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow border hover:border-primary/30">
-                        <CardContent className="pt-6 flex flex-col items-center">
-                          <Crown className="h-16 w-16 mb-4 text-yellow-500" /> 
-                          <p className="text-xl font-semibold text-foreground">{donor.name}</p>
-                          <p className="text-2xl font-bold text-primary flex items-center justify-center">
-                            <IndianRupee className="h-6 w-6 mr-1" />{donor.amount.toLocaleString()}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <h4 className="text-2xl font-semibold text-primary text-center">And Many More Generous Hearts</h4>
-                  <Card className="shadow-lg overflow-hidden border">
-                    <CardContent className="p-0"> 
-                      <Table>
-                        <TableHeader>
-                          <TableRow>
-                            <TableHead className="w-[80px] text-center font-semibold">Rank</TableHead>
-                            <TableHead className="font-semibold">Donor Name</TableHead>
-                            <TableHead className="text-right font-semibold">Amount Donated</TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          {otherDonors.map((donor) => (
-                            <TableRow key={donor.rank} className="hover:bg-muted/50">
-                              <TableCell className="font-medium text-center">#{donor.rank}</TableCell>
-                              <TableCell>{donor.name}</TableCell>
-                              <TableCell className="text-right flex items-center justify-end">
-                                <IndianRupee className="h-4 w-4 mr-1 text-muted-foreground" />{donor.amount.toLocaleString()}
-                              </TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </CardContent> 
-                  </Card> 
-                </div>
-
-                <div className="text-center pt-8">
-                  <p className="text-3xl font-extrabold text-foreground">
-                    Total Funds Collected: 
-                    <span className="text-primary ml-2 flex items-center justify-center text-4xl">
-                      <IndianRupee className="h-8 w-8 mr-1" />
-                      <AnimatedNumber targetValue={totalFundsCollected} duration={1000} />
-                    </span>
-                  </p>
-                </div>
               </div>
             </section>
         </AnimatedSection>
