@@ -20,7 +20,7 @@ export const NAV_ITEMS: DropdownNavItem[] = [
 export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-ai', label: 'Focus.Ai', icon: Bot, description: "AI-powered diagnostic assistance." },
   { href: '/projects/focus-axis', label: 'Focus Axis', icon: LucideMousePointerClick, description: "JCC Simulator & Gamified Training." },
-  { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
+  { href: '/projects/focuscase', label: 'FocusCase', icon: FilePenLine, description: "Interactive case studies platform." },
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
   { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
   { href: '/projects/focus-clinic', label: 'Focus Clinic', icon: Monitor, description: "Clinical Management System (Beta)." },
@@ -57,10 +57,10 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     ],
   },
   {
-    slug: 'focus-casex',
-    title: 'Focus CaseX',
+    slug: 'focuscase',
+    title: 'FocusCase',
     tagline: 'Interactive Clinical Learning and Case Logging',
-    description: 'Focus CaseX is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
+    description: 'FocusCase is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
     longDescription: "It is not just a case logger it is an AI-powered learning assistant for optometry students. You can log your real cases, ask specific questions about them, get summaries and interpretations, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
     iconName: 'FilePenLine',
     features: [

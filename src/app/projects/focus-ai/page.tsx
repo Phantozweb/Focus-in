@@ -9,7 +9,7 @@ import { SectionTitle } from '@/components/shared/section-title';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Quote, Star, AlertTriangle, Rocket, Sparkles } from 'lucide-react';
+import { Quote, Star, AlertTriangle, Rocket, Sparkles, ArrowLeft } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -193,61 +193,69 @@ export default function FocusAiPage() {
 
   return (
     <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
-      <ProjectDetailsDisplay project={project} />
-      <Separator />
-
-      <AnimatedSection animationType="slide-up" delay={100}>
-        <Card className="shadow-lg border-primary/20">
-            <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-2">
-                    <Rocket className="h-7 w-7 text-primary" />
-                    Availability & Future Development
-                </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-muted-foreground">
-                <p>
-                    A free version of Focus AI is currently available, offering core AI assistance features like the chat and basic quizzes. We are actively developing a paid version which will include more advanced capabilities, deeper integration, the case study generator, and expanded analytical tools.
-                </p>
-            </CardContent>
-            <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
-                 <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
-                    <a href="https://focusai.netlify.app" target="_blank" rel="noopener noreferrer">
-                        <Sparkles className="mr-2 h-5 w-5" /> Access AI
-                    </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
-                  <Link href="/support">Support This Project</Link>
-                </Button>
-            </CardFooter>
-        </Card>
-      </AnimatedSection>
-      
-      <Separator />
-      <AnimatedSection animationType="slide-up" delay={200}>
-        <SectionTitle title="What Our Users Say" subtitle="Feedback from optometry students using Focus AI." />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="flex flex-col shadow-lg hover:shadow-xl transition-shadow border hover:border-primary/30">
-              <CardHeader className="pb-3">
-                <Quote className="h-8 w-8 text-primary/70 mb-2" />
-                <CardTitle className="text-lg font-normal italic text-foreground">
-                  "{testimonial.quote}"
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow"></CardContent> {/* Spacer if needed */}
-              <CardFooter className="pt-3 mt-auto border-t">
-                <div className="text-right w-full">
-                  <p className="font-semibold text-primary">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
+        <div className="mb-8">
+            <Button variant="outline" asChild>
+                <Link href="/projects">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Projects
+                </Link>
+            </Button>
         </div>
-      </AnimatedSection>
+        <ProjectDetailsDisplay project={project} />
+        <Separator />
 
-      <Separator />
-      <ChangelogDisplay changelog={focusAiChangelogData} projectName="Focus.AI" />
+        <AnimatedSection animationType="slide-up" delay={100}>
+            <Card className="shadow-lg border-primary/20">
+                <CardHeader>
+                    <CardTitle className="text-2xl flex items-center gap-2">
+                        <Rocket className="h-7 w-7 text-primary" />
+                        Availability & Future Development
+                    </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                    <p>
+                        A free version of Focus AI is currently available, offering core AI assistance features like the chat and basic quizzes. We are actively developing a paid version which will include more advanced capabilities, deeper integration, the case study generator, and expanded analytical tools.
+                    </p>
+                </CardContent>
+                <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
+                        <a href="https://focusai.netlify.app" target="_blank" rel="noopener noreferrer">
+                            <Sparkles className="mr-2 h-5 w-5" /> Access AI
+                        </a>
+                    </Button>
+                    <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
+                    <Link href="/support">Support This Project</Link>
+                    </Button>
+                </CardFooter>
+            </Card>
+        </AnimatedSection>
+      
+        <Separator />
+        <AnimatedSection animationType="slide-up" delay={200}>
+            <SectionTitle title="What Our Users Say" subtitle="Feedback from optometry students using Focus AI." />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+                <Card key={index} className="flex flex-col shadow-lg hover:shadow-xl transition-shadow border hover:border-primary/30">
+                <CardHeader className="pb-3">
+                    <Quote className="h-8 w-8 text-primary/70 mb-2" />
+                    <CardTitle className="text-lg font-normal italic text-foreground">
+                    "{testimonial.quote}"
+                    </CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow"></CardContent> {/* Spacer if needed */}
+                <CardFooter className="pt-3 mt-auto border-t">
+                    <div className="text-right w-full">
+                    <p className="font-semibold text-primary">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                    </div>
+                </CardFooter>
+                </Card>
+            ))}
+            </div>
+        </AnimatedSection>
+
+        <Separator />
+        <ChangelogDisplay changelog={focusAiChangelogData} projectName="Focus.AI" />
     </div>
   );
 }
