@@ -4,28 +4,59 @@ import { PROJECTS_DETAILS_DATA } from '@/lib/constants';
 import { SectionTitle } from '@/components/shared/section-title';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import type { Metadata } from 'next';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
 
 export const metadata: Metadata = {
   title: 'Our Optometry Projects | Focus-IN',
-  description: 'Explore innovative optometry projects by Focus-IN, including AI diagnostic tools like Focus.Ai, measurement tools like Focus Axis, educational platforms like Focus CaseX, and generative AI like Focus Gen.',
+  description: 'Explore innovative optometry projects by Focus-IN, including flagship products like Focus.Ai (Paid) and Focus Cast (Free), plus other community-driven tools.',
 };
 
 export default function ProjectsOverviewPage() {
+  const flagshipProjects = PROJECTS_DETAILS_DATA.filter(p => p.slug === 'focus-ai' || p.slug === 'focuscast');
+  const communityProjects = PROJECTS_DETAILS_DATA.filter(p => p.slug !== 'focus-ai' && p.slug !== 'focuscast');
+
   return (
     <div className="container mx-auto container-padding py-12 md:py-16">
       <SectionTitle
         title="Our Innovative Projects"
-        subtitle="Discover the cutting-edge projects we're developing to advance the field of optometry."
+        subtitle="Discover the cutting-edge tools we're developing to advance the field of optometry."
       />
-      {PROJECTS_DETAILS_DATA.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS_DETAILS_DATA.map((project, index) => (
-            <AnimatedSection key={project.slug} delay={index * 100} animationType="slide-up">
-                <ProjectSummaryCard project={project} />
-            </AnimatedSection>
-          ))}
+
+      {/* Flagship Projects Section */}
+      <AnimatedSection animationType="slide-up" delay={100}>
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-foreground">Flagship Projects</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+            {flagshipProjects.map((project, index) => (
+              <AnimatedSection key={project.slug} delay={index * 150} animationType="slide-up">
+                <ProjectSummaryCard project={project} isFlagship />
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
-      ) : (
+      </AnimatedSection>
+
+      <Separator className="my-12 md:my-16" />
+
+      {/* Community-Driven Projects Section */}
+      <AnimatedSection animationType="slide-up" delay={200}>
+         <div className="mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-foreground">Community-Driven & In-Development</h2>
+             <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-8">
+                These projects are publicly available and continuously evolving based on valuable community feedback. Your insights help us upgrade, refine, and fix our tools to better serve your needs.
+            </p>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {communityProjects.map((project, index) => (
+                <AnimatedSection key={project.slug} delay={index * 100} animationType="slide-up">
+                    <ProjectSummaryCard project={project} />
+                </AnimatedSection>
+                ))}
+            </div>
+         </div>
+      </AnimatedSection>
+
+      {PROJECTS_DETAILS_DATA.length === 0 && (
         <p className="py-12 text-center text-lg text-muted-foreground">
           No projects available at the moment. Please check back later.
         </p>

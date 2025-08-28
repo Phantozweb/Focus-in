@@ -48,7 +48,6 @@ const teamMembers = [
   {
     name: 'Janarthan Veeramani',
     title: 'Founder & CEO',
-    imageUrl: 'https://cdn.discordapp.com/attachments/1361686038950711516/1366784455011864677/1745925246585.png?ex=6829efb7&is=68289e37&hm=ef70e7c6845b70abb28246545f3c7ed95d3ed0e542409538872940388787fb85&',
     description: 'The visionary behind Focus-IN, Janarthan leads with a passion for merging technology and optometry to empower the next generation of eye care professionals.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
@@ -56,7 +55,6 @@ const teamMembers = [
   {
     name: 'Hariharan',
     title: 'Chief Marketing Officer',
-    imageUrl: 'https://placehold.co/400x400.png',
     description: 'Hariharan drives our community engagement and strategic outreach, connecting Focus-IN\'s innovative tools with the students and professionals who need them most.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
@@ -64,7 +62,6 @@ const teamMembers = [
   {
     name: 'Mugunthan Mani',
     title: 'Chief Creative Officer',
-    imageUrl: 'https://placehold.co/400x400.png',
     description: 'Mugunthan oversees our content, branding, and design, ensuring that every aspect of Focus-IN is clear, engaging, and reflective of our innovative spirit.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
@@ -141,21 +138,13 @@ export default function HomePage() {
             <SectionTitle title="Meet Our Team" subtitle="The minds behind Focus-IN's mission to innovate vision care." />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
               {teamMembers.map((member) => (
-                <Card key={member.name} className="overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow border hover:border-primary/30">
-                  <CardHeader className="p-0">
-                    <Image
-                      src={member.imageUrl}
-                      alt={`Portrait of ${member.name}`}
-                      width={400}
-                      height={400}
-                      className="w-full h-64 object-cover object-center"
-                      data-ai-hint="team member portrait"
-                    />
-                  </CardHeader>
-                  <CardContent className="p-6">
+                <Card key={member.name} className="overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow border hover:border-primary/30 flex flex-col">
+                  <CardHeader className="p-6">
                     <CardTitle className="text-2xl text-primary">{member.name}</CardTitle>
                     <CardDescription className="text-base font-medium text-foreground mt-1">{member.title}</CardDescription>
-                    <p className="text-muted-foreground mt-4">{member.description}</p>
+                  </CardHeader>
+                  <CardContent className="p-6 pt-0 flex-grow">
+                    <p className="text-muted-foreground">{member.description}</p>
                   </CardContent>
                   <CardFooter className="bg-muted/50 p-4 flex justify-center gap-4">
                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">

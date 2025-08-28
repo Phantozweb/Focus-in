@@ -3,21 +3,34 @@ import type { ProjectDetails } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { IconRenderer } from '@/components/shared/icon-renderer';
+import { Badge } from '@/components/ui/badge';
 
 interface ProjectSummaryCardProps {
   project: ProjectDetails;
+  isFlagship?: boolean;
 }
 
-export function ProjectSummaryCard({ project }: ProjectSummaryCardProps) {
+export function ProjectSummaryCard({ project, isFlagship = false }: ProjectSummaryCardProps) {
+  const isPaid = project.slug === 'focus-ai';
+  const isFree = project.slug === 'focuscast';
+
   return (
     <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/50">
       <CardHeader>
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-xl">{project.title}</CardTitle>
-          <IconRenderer iconName={project.iconName} className="h-7 w-7 text-primary flex-shrink-0" />
+        <div className="flex items-start justify-between">
+          <CardTitle className="text-xl pr-4">{project.title}</CardTitle>
+          <div className="flex flex-col items-end flex-shrink-0">
+            <IconRenderer iconName={project.iconName} className="h-7 w-7 text-primary" />
+            {isFlagship && <Star className="h-5 w-5 text-yellow-500 mt-1" fill="currentColor" />}
+          </div>
         </div>
+        {(isPaid || isFree) && (
+          <div className="pt-1">
+            <Badge variant={isPaid ? "default" : "default"}>{isPaid ? "Paid" : "Free"}</Badge>
+          </div>
+        )}
       </CardHeader>
       <CardContent className="flex-grow">
         <CardDescription>{project.tagline}</CardDescription>
