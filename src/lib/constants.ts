@@ -1,6 +1,6 @@
 
 import type { NavItem, ProjectNavItem, ProjectDetails, UpdatePost, DropdownNavItem } from '@/types';
-import { Home, Info, Layers, Mail, Bot, LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, LucideUserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock } from 'lucide-react';
+import { Home, Info, Layers, Mail, Bot, LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, LucideUserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock, BookOpen, Wrench, Video } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: DropdownNavItem[] = [
@@ -31,16 +31,19 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
   {
     slug: 'focus-ai',
     title: 'Focus.Ai',
-    tagline: 'AI-Powered Optometry Assistance, Learning, and Practice Tools',
-    description: 'Focus AI is your smart, AI-powered assistant for optometry studies. It simplifies complex theories, helps interpret clinical cases, and aids in preparing for exams, making your learning journey more efficient and confident.',
+    tagline: 'An All-In-One Study Toolkit for Optometry',
+    description: 'Focus AI is your smart, AI-powered assistant for optometry studies. It simplifies complex theories, helps interpret clinical cases, and aids in preparing for exams, making your learning journey more efficient and confident. Everything you need to succeed, from first year to board exams.',
     longDescription: "Focus.Ai serves as an advanced learning aid, helping students understand how to interpret complex clinical information, such as OCT reports and other ophthalmological data. While it utilizes AI to break down cases and highlight potential areas of interest, it is designed to support the educational process, not to provide definitive diagnoses or replace professional clinical judgment. The interpretations offered are for learning purposes and may vary based on individual case conditions and complexities; it is not 100% accurate and should be used as a supplementary study tool.",
     iconName: 'Bot',
     features: [
-      { title: 'Optometry AI Chat', description: 'Ask questions to an AI specially trained on optometry knowledge for instant assistance.', iconName: 'MessageSquare' },
-      { title: 'Learning Aid', description: 'Utilize AI-powered explanations and summaries to deepen understanding of complex optometric concepts.', iconName: 'Lightbulb' },
-      { title: 'Practice Quiz Section', description: 'Test your knowledge with AI-generated quizzes tailored to different topics and skill levels.', iconName: 'LucideFileQuestion' },
-      { title: 'Case Study Generator', description: 'Create realistic case studies for practice, training, and educational purposes.', iconName: 'Briefcase' },
-      { title: 'Clinical Case Interpretation Support', description: 'Assists students in learning to analyze and interpret various clinical findings and reports.', iconName: 'ClipboardList' },
+        { title: 'AI Assistant', description: 'Get instant, detailed answers to complex optometry questions.', iconName: 'MessageSquare' },
+        { title: 'AI Canvas', description: 'Generate comprehensive, editable study guides on any topic.', iconName: 'FilePenLine' },
+        { title: 'Study Notes', description: 'Create, organize, and search your own digital study library.', iconName: 'BookOpen' },
+        { title: 'Guided Study Sessions', description: 'Learn step-by-step with AI-curated notes and integrated quizzes.', iconName: 'LucideActivity' },
+        { title: 'Interactive Case Studies', description: 'Sharpen clinical decision-making with realistic patient scenarios.', iconName: 'Briefcase' },
+        { title: 'Customisable Quizzes', description: 'Generate tailored quizzes with various question types and difficulties.', iconName: 'Wrench' },
+        { title: 'Flow Learning', description: 'A swipe-to-learn interface for continuous, engaging study sessions.', iconName: 'Layers' },
+        { title: 'Case Interpretation Helper', description: 'Assists students in learning to analyze and interpret various clinical findings.', iconName: 'ClipboardList' },
     ],
   },
   {
