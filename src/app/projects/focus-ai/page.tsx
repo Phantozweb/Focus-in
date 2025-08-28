@@ -24,9 +24,47 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const focusAiChangelogData: ChangelogData = {
-  currentVersion: "2.0",
+  currentVersion: "3.0",
   introduction: "Stay informed about the latest improvements, features, and bug fixes to Focus.AI. We're constantly working to enhance your learning experience.",
   versions: [
+    {
+      version: "3.0",
+      releaseDate: "2025-08-09",
+      summary: "Major update introducing Canvas and Flow, a redesigned UI, chat history, and the transition to a paid model.",
+      keyHighlights: [
+        "New 'Canvas' feature: An in-built doc editor with markdown support.",
+        "New 'Flow' feature: A swipe-to-learn interface for continuous learning.",
+        "Major UI redesign for an improved user experience.",
+        "Added persistent chat history.",
+        "Transitioned to a paid plan to support scalability and growth."
+      ],
+      detailedChanges: [
+        {
+          title: "Introducing Canvas & Flow",
+          date: "2025-08-09",
+          type: "New Feature",
+          description: "Added two major new features: Canvas, an in-built doc editor with markdown support for creating and organizing notes, and Flow, a swipe-to-learn interface for an engaging study experience."
+        },
+        {
+          title: "Major UI Redesign",
+          date: "2025-08-09",
+          type: "Improvement",
+          description: "The entire user interface has been overhauled for a more modern, intuitive, and efficient user experience."
+        },
+        {
+          title: "Chat History Implemented",
+          date: "2025-08-09",
+          type: "New Feature",
+          description: "Your conversations with the AI assistant are now saved, allowing you to revisit and continue previous discussions."
+        },
+        {
+          title: "Transition to Paid Model",
+          date: "2025-08-09",
+          type: "Improvement",
+          description: "Due to significant growth in usage and to ensure the sustainability and continuous improvement of the platform, Focus AI has transitioned to a paid subscription model."
+        }
+      ]
+    },
     {
       version: "2.0",
       releaseDate: "2025-05-13",
