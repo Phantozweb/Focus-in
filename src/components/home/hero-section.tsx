@@ -16,7 +16,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden flex items-center justify-center py-20 md:py-28">
+    <section className="relative w-full overflow-hidden flex items-center justify-center py-20 md:py-28 lg:py-36">
       {/* Gradient Background */}
       <div
         className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]"
@@ -29,9 +29,12 @@ export function HeroSection() {
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl leading-tight">
             Smarter Tools for Optometry Students
           </h1>
-          <h2 className="mb-8 text-lg max-w-3xl mx-auto font-medium text-muted-foreground sm:text-xl md:text-2xl">
-            Practice, Learn, and Ace Your Exams. From AI-powered simulators to audio lessons, Focus-IN saves you time, builds confidence, and sharpens clinical skills.
-          </h2>
+          <p className="mb-6 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
+            Practice, Learn, and Ace Your Exams.
+          </p>
+          <p className="mb-8 text-lg max-w-3xl mx-auto font-medium text-muted-foreground sm:text-xl md:text-2xl">
+            From AI-powered simulators to audio lessons, Focus-IN saves you time, builds confidence, and sharpens clinical skills.
+          </p>
         </AnimatedSection>
         
         <AnimatedSection delay={400} animationType="slide-up">
