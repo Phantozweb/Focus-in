@@ -3,13 +3,10 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Layers, Info } from 'lucide-react'; // Changed BookOpen to Info
+import { Layers, Info, ArrowRight } from 'lucide-react'; 
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
-
-const TARGET_TEXT_NORMAL = "IN";
-const TARGET_TEXT_EXPANDED = "INOVATE"; // Or your preferred word
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -19,7 +16,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-14">
+    <section className="relative w-full overflow-hidden flex items-center justify-center py-20 md:py-28">
       {/* Gradient Background */}
       <div
         className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-gradient-to-tr from-[hsl(var(--primary)/0.8)] via-[hsl(var(--accent)/0.7)] to-[hsl(var(--secondary)/0.8)]"
@@ -29,24 +26,11 @@ export function HeroSection() {
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
-           {/* Removed Eye icon and its animation */}
-          <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            FOCUS-
-            <span
-              key={isInExpanded ? 'expanded' : 'normal'}
-              onClick={handleInClick}
-              title={isInExpanded ? "Click to shorten" : "Click to expand"}
-              className={cn(
-                "cursor-pointer text-primary transition-all duration-300 ease-in-out inline-block whitespace-nowrap",
-                isInExpanded ? "animate-popup" : "animate-subtle-bounce hover:underline"
-              )}
-              style={{ minWidth: !isInExpanded ? '3.5rem' : 'auto' }} 
-            >
-              {isInExpanded ? TARGET_TEXT_EXPANDED : TARGET_TEXT_NORMAL}
-            </span>
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl leading-tight">
+            Smarter Tools for Optometry Students — <br className="hidden md:block" /> Practice, Learn, and Ace Your Exams.
           </h1>
-          <h2 className="mb-8 text-2xl font-semibold text-primary sm:text-3xl md:text-4xl">
-            Innovating for the Future of Eye Care.
+          <h2 className="mb-8 text-lg max-w-3xl mx-auto font-medium text-muted-foreground sm:text-xl md:text-2xl">
+            From AI-powered simulators to audio lessons, Focus-IN saves you time, builds confidence, and sharpens clinical skills.
           </h2>
         </AnimatedSection>
         
@@ -54,12 +38,12 @@ export function HeroSection() {
           <div className="flex flex-col gap-4 sm:flex-row justify-center">
             <Button asChild size="lg" variant="default" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary/30">
               <Link href="/projects">
-                <Layers className="mr-2 h-5 w-5" /> Explore Our Projects
+                Start Practicing Now
               </Link>
             </Button>
-            <Button asChild variant="default" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30">
-              <Link href="/about"> {/* Changed link to /about */}
-                <Info className="mr-2 h-5 w-5" /> Learn More About Us {/* Changed text and icon */}
+            <Button asChild variant="outline" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30 bg-background/50 backdrop-blur-sm">
+              <Link href="#our-projects-section"> 
+                See How It Works <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -68,4 +52,3 @@ export function HeroSection() {
     </section>
   );
 }
-
