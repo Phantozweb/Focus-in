@@ -20,10 +20,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://focus-in.netlify.app'), // Replace with your actual domain
   title: {
-    default: 'Focus-IN | Innovative Optometry Tools & Resources for Students',
+    default: 'Focus-IN | AI Optometry Tools, JCC Simulator & Learning Resources',
     template: '%s | Focus-IN',
   },
-  description: 'Focus-IN offers cutting-edge AI-powered web tools, learning resources, and innovative projects for optometry students and vision care professionals. Explore tools like Focus.Ai, Focus Axis, and Focus Gen.',
+  description: 'Focus-IN offers cutting-edge AI optometry tools like Focus.Ai, a JCC simulator (Focus Axis), and innovative learning resources for optometry students and vision care professionals.',
   keywords: ['optometry AI', 'optometry tools', 'JCC simulator', 'Focus.Ai', 'Focus Axis', 'Focus Gen', 'optometry student resources', 'vision care technology', 'eye care practice tools'],
   openGraph: {
     title: 'Focus-IN | Innovative Optometry Tools & Resources',

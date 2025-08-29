@@ -79,7 +79,7 @@ export default function HomePage() {
         <AnimatedSection animationType="slide-up" delay={0}>
           <section className="py-12 md:py-16 text-center">
              <p className="max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-              Welcome to Focus-IN! We're dedicated to advancing optometry through technology. Our mission is to create smart, accessible web tools that simplify complex tasks, enhance learning, and empower students and professionals, especially within India's vibrant optometry community.
+              Welcome to Focus-IN, your hub for advanced optometry tools and learning resources. We're dedicated to advancing vision care through technology, creating smart, accessible web tools like our AI-powered platform and JCC simulator to empower optometry students and professionals across India and beyond.
             </p>
           </section>
         </AnimatedSection>
@@ -90,7 +90,7 @@ export default function HomePage() {
           <section className="py-12 md:py-16">
             <SectionTitle
               title="Why We Started"
-              subtitle="Our journey began with a vision to transform optometry education and practice."
+              subtitle="Our journey began with a vision to transform optometry education and practice with accessible technology."
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               {whyWeStartedFeatures.map((feature, index) => (
@@ -117,7 +117,7 @@ export default function HomePage() {
               <div className="px-4">
                 <SectionTitle
                   title="Our Projects"
-                  subtitle="Explore the suite of tools we are developing at Focus-IN. Each project is designed to address specific needs within optometry, from diagnostics to education and practice management. Focus AI, Focus Gen, and Focus Axis are currently available, while Focus EMR, Notes, and Share are upcoming or in beta."
+                  subtitle="Explore our suite of innovative optometry tools, including the Focus.Ai learning platform, JCC simulator, and other resources designed for students and professionals. Each project is built to enhance clinical skills and knowledge."
                 />
                 <FeatureGrid features={projectHighlights} />
                 <div className="mt-12 text-center">
