@@ -27,7 +27,7 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimatedSection animationType="slide-up">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl leading-tight">
-            Smarter Tools for Optometry Students
+             <span className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-lg">Smarter Tools for Optometry Students</span>
             <br className="hidden md:block" />
             Practice, Learn, and Ace Your Exams.
           </h1>
