@@ -136,7 +136,6 @@ export function Navbar() {
                 <NavLink href="/" icon={Home} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Home</NavLink>
                 <NavLink href="/projects" icon={Layers} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Projects</NavLink>
                 <NavLink href="/about" icon={Info} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">About Us</NavLink>
-                <NavLink href="/origin-of-focus-in" icon={Lightbulb} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Origin Story</NavLink>
                 <NavLink href="/updates" icon={Megaphone} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Updates</NavLink>
                 <NavLink href="/support" icon={Mail} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Support</NavLink>
               </nav>

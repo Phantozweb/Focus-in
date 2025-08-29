@@ -5,14 +5,7 @@ import type React from 'react';
 
 export const NAV_ITEMS: DropdownNavItem[] = [
   { href: '/', label: 'Home', icon: Home },
-  { 
-    label: 'About', 
-    icon: Info,
-    children: [
-      { href: '/about', label: 'About Us', icon: Info },
-      { href: '/origin-of-focus-in', label: 'Origin Story', icon: Lightbulb },
-    ]
-  },
+  { href: '/about', label: 'About', icon: Info },
   { href: '/updates', label: 'Updates', icon: Megaphone },
   { href: '/support', label: 'Support', icon: Mail },
 ];

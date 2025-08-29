@@ -5,11 +5,11 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Eye, Target, Lightbulb, Users, ShieldCheck, Activity } from 'lucide-react';
+import { Eye, Target, Lightbulb, Users, ShieldCheck, Activity, Brain, CalendarDays, Monitor } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Focus-IN | Our Mission in Optometry Innovation',
-  description: 'Learn about Focus-IN: our mission to innovate optometry with AI and technology, our vision for eye care, and our founder, Janarthan Veeramani. We build tools for students and professionals.',
+  title: 'About Focus-IN | Our Mission & Origin in Optometry Innovation',
+  description: 'Learn about Focus-IN: our mission, vision, values, and the origin story of how we started building AI-powered tools for optometry students and professionals.',
 };
 
 const values = [
@@ -87,6 +87,45 @@ export default function AboutPage() {
         <Separator className="my-8 md:my-12" />
 
         <AnimatedSection animationType="slide-up" delay={400}>
+          <section className="py-12 md:py-16">
+            <SectionTitle title="The Origin of Focus-IN" subtitle="A Journey Sparked by Necessity, Driven by Passion"/>
+            <div className="max-w-3xl mx-auto space-y-8">
+                <Card className="shadow-lg border-primary/10">
+                    <CardHeader>
+                        <CardTitle className="text-2xl flex items-center gap-3">
+                            <Lightbulb className="h-8 w-8 text-primary" />
+                            The Initial Spark: A Personal Quest
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-lg text-muted-foreground space-y-4">
+                        <p>
+                            The story of Focus-IN begins with its founder, Janarthan Veeramani. As an optometry student, Janarthan found himself navigating a challenging learning landscape. The material felt vast and raw, concepts were sometimes difficult to grasp from dense textbooks, and the available digital tools often lacked the accuracy or specific focus needed for efficient study.
+                        </p>
+                        <p>
+                            This personal struggle with the existing learning resources planted a seed. What if there was a better way? A more intuitive, accurate, and tailored approach to understanding optometry?
+                        </p>
+                    </CardContent>
+                </Card>
+                <Card className="shadow-lg border-primary/10">
+                    <CardHeader>
+                        <CardTitle className="text-2xl flex items-center gap-3">
+                            <Brain className="h-8 w-8 text-primary" />
+                            From Personal Tool to Public Resource
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-lg text-muted-foreground space-y-4">
+                        <p>
+                          Driven by this need, Janarthan began developing what would become Focus AI. Realizing its potential to help others, it was publicly launched, marking the true beginning of Focus-IN's mission to close the technology gap in vision care education.
+                        </p>
+                    </CardContent>
+                </Card>
+            </div>
+          </section>
+        </AnimatedSection>
+        
+        <Separator className="my-8 md:my-12" />
+
+        <AnimatedSection animationType="slide-up" delay={500}>
           <section className="py-12 md:py-16">
             <SectionTitle title="Meet the Founder" />
             <div className="grid md:grid-cols-3 gap-8 items-center">
