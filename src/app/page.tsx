@@ -25,17 +25,17 @@ const whyChooseUsFeatures = [
   {
     iconName: 'Users',
     title: 'For the Community, By the Community',
-    description: 'We build the tools we wished we had. Our solutions are designed by optometry insiders to solve the real-world challenges students and professionals face every day.',
+    description: 'Tired of outdated study tools? We built the ones we wished we had — made by optometry students, for optometry students.',
   },
   {
     iconName: 'Brain',
     title: 'Cutting-Edge, Simplified',
-    description: 'We harness powerful technology like AI and data science, but make it simple and intuitive. Get advanced capabilities without the steep learning curve.',
+    description: 'No tech headaches — just click, practice, and improve.',
   },
   {
     iconName: 'Heart',
     title: 'Focused on Your Growth',
-    description: 'Your success is our mission. We are committed to creating tools that not only improve your skills but also make your learning journey more engaging and effective.',
+    description: 'Our goal: to help you pass exams faster, practice confidently, and keep learning on the go.',
   },
 ];
 
