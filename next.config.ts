@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.discordapp.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

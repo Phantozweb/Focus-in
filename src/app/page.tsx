@@ -40,31 +40,34 @@ const whyChooseUsFeatures = [
 ];
 
 const projectHighlights = [
-    { iconName: 'Bot', title: 'Focus.Ai', description: 'AI-powered learning and practice tools for optometry. (Paid)', link: '/projects/focus-ai', linkText: 'Learn More' },
-    { iconName: 'Headphones', title: 'Focus Cast', description: 'Free optometry audio learning for students on the go. (Free)', link: '/projects/focuscast', linkText: 'Learn More' },
+    { iconName: 'Bot', title: 'Focus.Ai', description: 'Your AI-powered optometry coach. (Paid)', link: '/projects/focus-ai', linkText: 'Try Free' },
+    { iconName: 'Headphones', title: 'Focus Cast', description: 'Lectures in your pocket. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
 ];
 
 const teamMembers = [
   {
     name: 'Janarthan Veeramani',
     title: 'Founder & CEO',
-    description: 'The visionary behind Focus-IN, Janarthan leads with a passion for merging technology and optometry to empower the next generation of eye care professionals.',
+    description: 'As a student, I struggled with dense textbooks and clunky digital tools. So, I built the resources I wished I had, creating Focus-IN to merge technology with optometry and empower the next generation.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
-    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+    imageUrl: 'https://picsum.photos/400/400'
   },
   {
     name: 'Hariharan',
     title: 'Chief Marketing Officer',
-    description: 'Hariharan drives our community engagement and strategic outreach, connecting Focus-IN\'s innovative tools with the students and professionals who need them most.',
+    description: 'My passion is connecting our innovative tools with the students who need them most. I drive our community outreach, ensuring every student knows there’s a better way to learn and practice.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
-    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+    imageUrl: 'https://picsum.photos/400/400'
   },
   {
     name: 'Mugunthan Mani',
     title: 'Chief Creative Officer',
-    description: 'Mugunthan oversees our content, branding, and design, ensuring that every aspect of Focus-IN is clear, engaging, and reflective of our innovative spirit.',
+    description: 'I shape the look and feel of Focus-IN, making sure our brand is as clear and engaging as our tools. My goal is to design an experience that reflects our innovative and student-first spirit.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
-    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu'
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+    imageUrl: 'https://picsum.photos/400/400'
   }
 ];
 
@@ -139,12 +142,20 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
               {teamMembers.map((member) => (
                 <Card key={member.name} className="overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow border hover:border-primary/30 flex flex-col">
-                  <CardHeader className="p-6">
+                  <CardHeader className="p-6 items-center">
+                    <Image
+                        src={member.imageUrl}
+                        alt={`Portrait of ${member.name}`}
+                        width={120}
+                        height={120}
+                        className="rounded-full shadow-lg mb-4"
+                        data-ai-hint="student portrait"
+                      />
                     <CardTitle className="text-2xl text-primary">{member.name}</CardTitle>
                     <CardDescription className="text-base font-medium text-foreground mt-1">{member.title}</CardDescription>
                   </CardHeader>
                   <CardContent className="p-6 pt-0 flex-grow">
-                    <p className="text-muted-foreground">{member.description}</p>
+                    <p className="text-muted-foreground italic">"{member.description}"</p>
                   </CardContent>
                   <CardFooter className="bg-muted/50 p-4 flex justify-center gap-4">
                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
@@ -192,3 +203,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
