@@ -21,21 +21,21 @@ export const metadata: Metadata = {
   description: 'Focus-IN offers cutting-edge AI optometry tools like Focus.Ai, a JCC simulator (Focus Axis), and innovative learning resources for optometry students and vision care professionals.',
 };
 
-const whyWeStartedFeatures = [
+const whyChooseUsFeatures = [
   {
     iconName: 'Users',
-    title: 'Empowering Our Community',
-    description: 'We saw a crucial need for modern, tech-driven solutions to support optometry students and professionals, aiming to make advanced tools universally accessible.',
+    title: 'For the Community, By the Community',
+    description: 'We build the tools we wished we had. Our solutions are designed by optometry insiders to solve the real-world challenges students and professionals face every day.',
   },
   {
     iconName: 'Brain',
-    title: 'Innovating with Technology',
-    description: 'Driven by a passion for technological advancement, we leverage AI, data science, and digital simulations to build tools that address real-world challenges in vision care.',
+    title: 'Cutting-Edge, Simplified',
+    description: 'We harness powerful technology like AI and data science, but make it simple and intuitive. Get advanced capabilities without the steep learning curve.',
   },
   {
     iconName: 'Heart',
-    title: 'Commitment to Tangible Impact',
-    description: 'Our core motivation is to make a significant difference by enhancing learning experiences and improving the efficiency of eye care practices through our innovative solutions.',
+    title: 'Focused on Your Growth',
+    description: 'Your success is our mission. We are committed to creating tools that not only improve your skills but also make your learning journey more engaging and effective.',
   },
 ];
 
@@ -89,11 +89,11 @@ export default function HomePage() {
         <AnimatedSection animationType="slide-up" delay={100}>
           <section className="py-12 md:py-16">
             <SectionTitle
-              title="Why We Started"
-              subtitle="Our journey began with a vision to transform optometry education and practice with accessible technology."
+              title="Why Choose Us?"
+              subtitle="Discover how our unique approach sets us apart in the world of optometry technology."
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              {whyWeStartedFeatures.map((feature, index) => (
+              {whyChooseUsFeatures.map((feature, index) => (
                 <Card key={index} className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border hover:border-primary/50 bg-card group">
                   <CardHeader className="flex flex-row items-start gap-4 pb-4">
                     <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
