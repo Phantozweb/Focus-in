@@ -24,18 +24,18 @@ export const metadata: Metadata = {
 const whyChooseUsFeatures = [
   {
     iconName: 'Users',
-    title: 'For the Community, By the Community',
-    description: 'Tired of outdated study tools? We built the ones we wished we had — made by optometry students, for optometry students.',
+    title: 'Built by optometry students, for optometry students.',
+    description: 'Tired of outdated study tools? We built the ones we wished we had.',
   },
   {
     iconName: 'Brain',
-    title: 'Cutting-Edge, Simplified',
-    description: 'No tech headaches — just click, practice, and improve.',
+    title: 'No tech headaches, just click, practice, improve.',
+    description: 'Our tools are designed to be intuitive and easy to use from day one.',
   },
   {
     iconName: 'Heart',
-    title: 'Focused on Your Growth',
-    description: 'Our goal: to help you pass exams faster, practice confidently, and keep learning on the go.',
+    title: 'We help you pass exams faster and practice confidently.',
+    description: 'Our goal is to provide the resources you need to succeed.',
   },
 ];
 
