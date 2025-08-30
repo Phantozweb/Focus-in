@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   description: 'Focus-IN offers cutting-edge AI optometry tools like Focus.Ai, a JCC simulator (Focus Axis), and innovative learning resources for optometry students and vision care professionals.',
   keywords: ['optometry AI', 'optometry tools', 'JCC simulator', 'Focus.Ai', 'Focus Axis', 'Focus Gen', 'optometry student resources', 'vision care technology', 'eye care practice tools'],
+  verification: {
+    google: 'RYhFog1Yp3g2Il7DThaudIMk7PJH9NIwwilaA2BzC2s',
+  },
   openGraph: {
     title: 'Focus-IN | Innovative Optometry Tools & Resources',
     description: 'Explore AI-powered tools for optometry students and professionals.',
