@@ -53,6 +53,13 @@ const teamMembers = [
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
   {
+    name: 'Shivashangari M',
+    title: 'Chief Innovation Officer',
+    description: "Innovation in optometry isn’t just about ideas—it’s about building prototypes that solve real problems. During my M.Optom, I created the Optometry Calculations Hub, which quickly expanded from 6 to 20+ tools based on requests from students and faculty. At Focus-IN, my role is to channel this spirit of problem-solving into developing new concepts, testing prototypes, and turning them into tools that make a real difference for students, educators, and researchers.",
+    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+  },
+  {
     name: 'Hariharan',
     title: 'Chief Marketing Officer',
     description: 'My passion is connecting our innovative tools with the students who need them most. I drive our community outreach, ensuring every student knows there’s a better way to learn and practice.',
@@ -66,13 +73,6 @@ const teamMembers = [
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
-  {
-    name: 'Shivashangari M',
-    title: 'Chief Innovation Officer',
-    description: "Innovation in optometry isn’t just about ideas—it’s about building prototypes that solve real problems. During my M.Optom, I created the Optometry Calculations Hub, which quickly expanded from 6 to 20+ tools based on requests from students and faculty. At Focus-IN, my role is to channel this spirit of problem-solving into developing new concepts, testing prototypes, and turning them into tools that make a real difference for students, educators, and researchers.",
-    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
-    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
-  }
 ];
 
 
