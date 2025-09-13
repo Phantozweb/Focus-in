@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -13,8 +12,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, Headphones, Sparkles, Eye } from "lucide-react";
 import Link from "next/link";
 import { PROJECT_NAV_ITEMS } from "@/lib/constants";
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
-import { IconRenderer } from "../shared/icon-renderer";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { IconRenderer } from "@/components/shared/icon-renderer";
 
 const featuredProjects = PROJECT_NAV_ITEMS.filter(p => p.label === 'Focus.Ai' || p.label === 'Focus Cast');
 
@@ -23,17 +22,17 @@ export function ProjectShowcaseDialog() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30 bg-background/50 backdrop-blur-sm">
-            See How It Works <Sparkles className="ml-2 h-5 w-5" />
+            View Our Innovations <Sparkles className="ml-2 h-5 w-5" />
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
           <div className="flex items-center gap-3 mb-2">
             <Eye className="h-8 w-8 text-primary"/>
-            <DialogTitle className="text-2xl">How It Works: Our Flagship Projects</DialogTitle>
+            <DialogTitle className="text-2xl">A Glimpse of Our Innovations</DialogTitle>
           </div>
           <DialogDescription>
-            We build cutting-edge tools to help you practice, learn, and excel. Here’s a look at our most popular innovations.
+            We build cutting-edge tools to help you practice, learn, and excel. Here’s a look at our most popular projects.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4 md:grid-cols-2">
