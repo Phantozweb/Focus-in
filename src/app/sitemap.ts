@@ -1,6 +1,6 @@
 
 import { MetadataRoute } from 'next';
-import { PROJECTS_DETAILS_DATA, UPDATES_DATA } from '@/lib/constants';
+import { PROJECTS_DETAILS_DATA } from '@/lib/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://focus-in.netlify.app'; // Replace with your actual domain
@@ -10,8 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/',
     '/about',
     '/projects',
-    '/updates',
     '/support',
+    '/faq',
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -25,12 +25,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // Update pages
-  const updateRoutes = UPDATES_DATA.map((update) => ({
-    url: `${siteUrl}/updates/${update.slug}`,
-    lastModified: new Date(update.date).toISOString(),
-    priority: 0.7,
-  }));
-
-  return [...staticRoutes, ...projectRoutes, ...updateRoutes];
+  return [...staticRoutes, ...projectRoutes];
 }
