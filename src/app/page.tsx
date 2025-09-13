@@ -49,14 +49,14 @@ const teamMembers = [
   {
     name: 'Janarthan Veeramani',
     title: 'Founder & CEO',
-    description: 'As a student, I struggled with dense textbooks and clunky digital tools. So, I built the resources I wished I had, creating Focus-IN to merge technology with optometry and empower the next generation.',
+    description: 'I founded Focus-IN to solve the problems I faced as a student. My vision is to merge technology with optometry, creating tools that empower the next generation of eye care professionals.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
   {
     name: 'Shivashangari M',
     title: 'Chief Innovation Officer',
-    description: "Innovation in optometry isn’t just about ideas—it’s about building prototypes that solve real problems. During my M.Optom, I created the Optometry Calculations Hub, which quickly expanded from 6 to 20+ tools based on requests from students and faculty. At Focus-IN, my role is to channel this spirit of problem-solving into developing new concepts, testing prototypes, and turning them into tools that make a real difference for students, educators, and researchers.",
+    description: "My role is to turn ideas into reality. I lead the development of our prototypes, ensuring that every tool we build solves real-world problems for students, educators, and researchers.",
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -71,6 +71,13 @@ const teamMembers = [
     name: 'Mugunthan Mani',
     title: 'Chief Creative Officer',
     description: 'I shape the look and feel of Focus-IN, making sure our brand is as clear and engaging as our tools. My goal is to design an experience that reflects our innovative and student-first spirit.',
+    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+  },
+  {
+    name: 'Vimal',
+    title: 'Chief Content Officer',
+    description: 'I oversee the quality and accuracy of all our educational content. From our audio lessons to our AI training, my focus is to ensure our users receive reliable and clinically relevant information.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -245,7 +252,7 @@ export default function HomePage() {
         <AnimatedSection animationType="slide-up" delay={300}>
           <section className="py-16 md:py-24">
             <SectionTitle title="Meet Our Team" subtitle="The minds behind Focus-IN's mission to innovate vision care." />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
               {teamMembers.map((member) => (
                 <Card key={member.name} className="overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow border hover:border-primary/30 flex flex-col">
                   <CardHeader className="p-6 items-center">
