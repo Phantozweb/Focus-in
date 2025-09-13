@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - Optical Transposition Sum Generator`,
-    description: `Practice and master optical calculations with ${project.title}. An essential tool for optometry students to generate and solve transposition sums.`,
+    title: 'Focus Gen | Optical Transposition Sum Generator for Optometry Students',
+    description: `Master optical calculations with Focus Gen. This essential tool for optometry students generates unlimited transposition sums to help you practice and perfect your skills for exams and clinical work.`,
   };
 }
 

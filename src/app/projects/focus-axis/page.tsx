@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - JCC Simulator for Optometry Training`,
-    description: `Master the Jackson Cross Cylinder (JCC) with the ${project.title} simulator. A gamified training tool for optometry students to practice lens flipping and refine refraction skills.`,
+    title: 'Focus Axis | JCC Simulator for Accurate Optometry Refraction Training',
+    description: `Master the Jackson Cross Cylinder (JCC) technique with the Focus Axis simulator. Our gamified training tool helps optometry students practice lens flipping and refine refraction skills in a realistic, risk-free environment.`,
   };
 }
 

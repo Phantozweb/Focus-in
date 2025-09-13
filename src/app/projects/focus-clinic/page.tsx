@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - Affordable Clinical Management for Optometry`,
-    description: `Discover ${project.title}, a user-friendly clinical management system designed for smaller optometry practices. Manage patient records, appointments, and prescriptions efficiently.`,
+    title: 'Focus Clinic | Affordable Clinical Management System for Optometry',
+    description: `Simplify your practice with Focus Clinic, a user-friendly and affordable clinical management system. Designed for smaller optometry practices to efficiently manage patient records, appointments, and prescriptions.`,
   };
 }
 

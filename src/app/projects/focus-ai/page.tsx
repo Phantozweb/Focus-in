@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - AI Tool for Optometry Students & Professionals`,
-    description: `Learn about ${project.title}, an AI-powered assistant for optometry studies. It simplifies complex theories, helps interpret clinical cases like OCT reports, and generates practice quizzes.`,
+    title: 'Focus.Ai | Your AI-Powered Optometry Study Toolkit & Coach',
+    description: `Supercharge your optometry studies with Focus.Ai. Get AI-powered assistance to simplify complex topics, generate practice quizzes, analyze clinical cases like OCT reports, and ace your exams.`,
   };
 }
 

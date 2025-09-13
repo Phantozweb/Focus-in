@@ -8,8 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
 export const metadata: Metadata = {
-  title: 'Our Optometry Projects | Focus-IN',
-  description: 'Explore innovative optometry projects by Focus-IN, including flagship products like Focus.Ai (Paid) and Focus Cast (Free), plus other community-driven tools.',
+  title: 'Our Optometry Projects | AI Tools, Simulators & Learning Platforms',
+  description: 'Explore all innovative optometry projects by Focus-IN. Discover our flagship AI tools like Focus.Ai, the Focus Axis JCC simulator, free audio lessons on Focus Cast, and other community-driven resources.',
 };
 
 export default function ProjectsOverviewPage() {

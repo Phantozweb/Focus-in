@@ -9,7 +9,7 @@ import { Eye, Target, Lightbulb, Users, ShieldCheck, Activity, Brain, CalendarDa
 
 export const metadata: Metadata = {
   title: 'About Focus-IN | Our Mission & Origin in Optometry Innovation',
-  description: 'Learn about Focus-IN: our mission, vision, values, and the origin story of how we started building AI-powered tools for optometry students and professionals.',
+  description: 'Discover the story behind Focus-IN. Learn about our mission to empower optometry students with AI tools, our vision for the future of eye care education, and the values that drive our innovation.',
 };
 
 const values = [

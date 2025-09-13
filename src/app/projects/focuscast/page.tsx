@@ -16,8 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - Audio Learning for Optometry Students`,
-    description: `Listen and learn with ${project.title}, a free audio platform for optometry students. Covering clinical topics, exam prep, and more in bite-sized, screen-free episodes.`,
+    title: 'Focus Cast | Free Optometry Audio Lessons & Exam Prep On-the-Go',
+    description: `Learn optometry on the go with Focus Cast. Access free, bite-sized audio episodes covering clinical topics, exam prep, and more. Perfect for screen-free learning for busy students.`,
   };
 }
 

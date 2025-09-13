@@ -6,8 +6,8 @@ import { Mail, Info } from 'lucide-react'; // Removed Phone, Clock, MapPin
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Support | Focus-IN Optometry Solutions',
-  description: 'Get support for Focus-IN optometry tools and projects. Contact us for inquiries, feedback, or assistance with our innovative vision care solutions via email at focus.in.eco@gmail.com.',
+  title: 'Support | Contact Us for Help with Focus-IN Optometry Tools',
+  description: 'Need help? Contact the Focus-IN support team for assistance with our AI optometry tools, to provide feedback, or to ask a question. We aim to respond within 24-48 business hours.',
 };
 
 export default function SupportPage() {

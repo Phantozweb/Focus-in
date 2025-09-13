@@ -16,8 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return { title: 'Project Not Found' }
   }
   return {
-    title: `${project.title} - Interactive AI Case Studies for Optometry`,
-    description: `Log clinical cases and practice with an AI learning assistant using ${project.title}. Get case summaries, Q&A, and viva practice, all with a focus on patient privacy.`,
+    title: 'Focus CaseX | AI-Powered Interactive Case Studies for Optometry',
+    description: `Practice your clinical skills with Focus CaseX, an interactive AI platform for optometry case studies. Log cases, get AI-driven Q&A, and practice for viva exams while ensuring complete patient privacy.`,
   };
 }
 

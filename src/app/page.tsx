@@ -261,7 +261,7 @@ export default function HomePage() {
                                   {faq.question}
                                   </AccordionTrigger>
                                   <AccordionContent className="text-muted-foreground text-sm md:text-base pt-2">
-                                    <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                     <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
                                   </AccordionContent>
                               </AccordionItem>
                               ))}
