@@ -1,4 +1,3 @@
-
 "use client";
 
 import type { SVGProps } from 'react';
@@ -57,7 +56,7 @@ export function ChangelogDisplay({ changelog, projectName }: ChangelogDisplayPro
           <CardTitle className="text-3xl">What's New in {projectName}?</CardTitle>
         </div>
         <CardDescription className="text-lg">{changelog.introduction}</CardDescription>
-        <p className="text-sm text-muted-foreground">Current Version: <Badge variant="default">{changelog.currentVersion}</Badge></p>
+        <div className="text-sm text-muted-foreground">Current Version: <Badge variant="default">{changelog.currentVersion}</Badge></div>
       </CardHeader>
       <CardContent className="space-y-8">
         <Accordion type="single" collapsible defaultValue={`version-${changelog.currentVersion}`} className="w-full">
