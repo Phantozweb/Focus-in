@@ -55,28 +55,35 @@ const teamMembers = [
   },
   {
     name: 'Shivashangari M',
-    title: 'Chief Innovation Officer',
+    title: 'Head of Product',
     description: "My role is to turn ideas into reality. I lead our prototyping, ensuring every tool we build solves real-world problems for students, educators, and researchers.",
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
   {
+    name: 'Anshi Jha',
+    title: 'Head of Clinical Development',
+    description: 'I lead the development of our clinical tools, including FocusCase. My expertise ensures our products meet the real-world needs of optometry students and practitioners.',
+    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+  },
+  {
     name: 'Hariharan',
-    title: 'Chief Marketing Officer',
+    title: 'Head of Marketing',
     description: 'My passion is connecting our innovative tools with the students who need them most. I drive our community outreach to ensure every student knows there’s a better way to learn.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
   {
     name: 'Mugunthan Mani',
-    title: 'Chief Creative Officer',
+    title: 'Creative Director',
     description: 'I shape the look and feel of Focus-IN, making sure our brand is as clear and engaging as our tools. My goal is to design an experience that reflects our innovative and student-first spirit.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
   {
     name: 'Vimal',
-    title: 'Chief Content Officer',
+    title: 'Focus Cast Lead',
     description: 'I run our audio learning platform, Focus Cast. My mission is to deliver high-quality, screen-free educational content that helps students learn on the go, anytime and anywhere.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
@@ -344,3 +351,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
