@@ -22,6 +22,24 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Focus Cast',
+  operatingSystem: 'WEB',
+  applicationCategory: 'EducationalApplication',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    ratingCount: '42', // Example count
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'INR',
+  },
+};
+
 export default function FocuscastPage() {
   const project = getProjectDetailsBySlug('focuscast');
 
@@ -36,40 +54,46 @@ export default function FocuscastPage() {
   ];
 
   return (
-    <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
-      <div className="mb-8">
-        <Breadcrumb items={breadcrumbItems} />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+      />
+      <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
+        <div className="mb-8">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
+        <ProjectDetailsDisplay project={project} />
+        <Separator />
+        <AnimatedSection animationType="slide-up" delay={100}>
+          <Card className="shadow-lg border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <PlayCircle className="h-7 w-7 text-primary" />
+                Listen Now
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-muted-foreground">
+              <p>
+                Focuscast is live and ready for you to tune in! Access all episodes for free, with no login required.
+              </p>
+              <p>
+                Whether you're commuting, taking a break, or winding down, make Focuscast your go-to audio resource for optometry learning.
+              </p>
+            </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
+                  <a href="https://focuscast.netlify.app" target="_blank" rel="noopener noreferrer">
+                      <Headphones className="mr-2 h-5 w-5" /> Access Platform
+                  </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
+                <Link href="/support">Provide Feedback</Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        </AnimatedSection>
       </div>
-      <ProjectDetailsDisplay project={project} />
-      <Separator />
-      <AnimatedSection animationType="slide-up" delay={100}>
-        <Card className="shadow-lg border-primary/20">
-          <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <PlayCircle className="h-7 w-7 text-primary" />
-              Listen Now
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
-            <p>
-              Focuscast is live and ready for you to tune in! Access all episodes for free, with no login required.
-            </p>
-            <p>
-              Whether you're commuting, taking a break, or winding down, make Focuscast your go-to audio resource for optometry learning.
-            </p>
-          </CardContent>
-          <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
-                <a href="https://focuscast.netlify.app" target="_blank" rel="noopener noreferrer">
-                    <Headphones className="mr-2 h-5 w-5" /> Access Platform
-                </a>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
-              <Link href="/support">Provide Feedback</Link>
-            </Button>
-          </CardFooter>
-        </Card>
-      </AnimatedSection>
-    </div>
+    </>
   );
 }

@@ -143,10 +143,44 @@ const faqData = [
     }
 ];
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Focus-IN',
+  url: 'https://focus-in.netlify.app',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://focus-in.netlify.app/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.flatMap(category => 
+    category.questions.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer.replace(/<[^>]*>?/gm, ''), // Strip HTML for plain text
+      },
+    }))
+  ),
+};
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
       <HeroSection />
       
       <div className="container mx-auto container-padding">

@@ -22,6 +22,19 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'FocusCase',
+  operatingSystem: 'WEB',
+  applicationCategory: 'EducationalApplication',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'INR',
+  },
+};
+
 export default function FocusCasePage() {
   const project = getProjectDetailsBySlug('focuscase');
 
@@ -36,44 +49,50 @@ export default function FocusCasePage() {
   ];
 
   return (
-    <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
-        <div className="mb-8">
-            <Breadcrumb items={breadcrumbItems} />
-        </div>
-      <ProjectDetailsDisplay project={project} />
-      <Separator />
-      <AnimatedSection animationType="slide-up" delay={100}>
-        <Card className="shadow-lg border-primary/20">
-          <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <Rocket className="h-7 w-7 text-primary" />
-              Project Status: In Development
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
-            <p>
-              FocusCase is currently under active development. We are working hard to bring this innovative AI-powered learning and case logging tool to optometry students.
-            </p>
-            <div className="text-sm bg-accent/20 p-4 rounded-md border border-accent/30 flex items-start gap-3">
-              <Info className="h-5 w-5 text-accent-foreground flex-shrink-0 mt-0.5" />
-              <div>
-                <h4 className="font-semibold text-accent-foreground">Stay Tuned:</h4>
-                <p>We're excited about the potential of FocusCase to transform optometric learning. Follow our updates for news on its progress and upcoming beta opportunities!</p>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+      />
+      <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
+          <div className="mb-8">
+              <Breadcrumb items={breadcrumbItems} />
+          </div>
+        <ProjectDetailsDisplay project={project} />
+        <Separator />
+        <AnimatedSection animationType="slide-up" delay={100}>
+          <Card className="shadow-lg border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <Rocket className="h-7 w-7 text-primary" />
+                Project Status: In Development
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-muted-foreground">
+              <p>
+                FocusCase is currently under active development. We are working hard to bring this innovative AI-powered learning and case logging tool to optometry students.
+              </p>
+              <div className="text-sm bg-accent/20 p-4 rounded-md border border-accent/30 flex items-start gap-3">
+                <Info className="h-5 w-5 text-accent-foreground flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-accent-foreground">Stay Tuned:</h4>
+                  <p>We're excited about the potential of FocusCase to transform optometric learning. Follow our updates for news on its progress and upcoming beta opportunities!</p>
+                </div>
               </div>
-            </div>
-            <p className="font-semibold text-foreground">
-              No data is stored with FocusCase — everything stays temporarily in your browser tab to ensure privacy and medical ethics.
-            </p>
-          </CardContent>
-          <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
-                <a href="https://focuscase.netlify.app" target="_blank" rel="noopener noreferrer">
-                    <Sparkles className="mr-2 h-5 w-5" /> Access Platform
-                </a>
-            </Button>
-          </CardFooter>
-        </Card>
-      </AnimatedSection>
-    </div>
+              <p className="font-semibold text-foreground">
+                No data is stored with FocusCase — everything stays temporarily in your browser tab to ensure privacy and medical ethics.
+              </p>
+            </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button size="lg" asChild variant="default" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
+                  <a href="https://focuscase.netlify.app" target="_blank" rel="noopener noreferrer">
+                      <Sparkles className="mr-2 h-5 w-5" /> Access Platform
+                  </a>
+              </Button>
+            </CardFooter>
+          </Card>
+        </AnimatedSection>
+      </div>
+    </>
   );
 }

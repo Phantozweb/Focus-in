@@ -56,6 +56,23 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Focus-IN',
+  url: 'https://focus-in.netlify.app',
+  logo: 'https://focus-in.netlify.app/icon.png', // Create and replace with your actual logo URL
+  sameAs: [
+    'https://www.linkedin.com/company/focusprojects/',
+    'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'focus.in.eco@gmail.com',
+    contactType: 'Customer Support',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +80,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}>
         <AnnouncementBar />
         <Navbar />
