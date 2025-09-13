@@ -83,8 +83,8 @@ const teamMembers = [
   },
   {
     name: 'Vimal',
-    title: 'Focus Cast Lead',
-    description: 'I run our audio learning platform, Focus Cast. My mission is to deliver high-quality, screen-free educational content that helps students learn on the go, anytime and anywhere.',
+    title: 'Head of Educational Products',
+    description: 'I oversee our educational products, including Focus Cast. My focus is on creating high-quality, accessible learning experiences that empower students on their educational journey.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -351,5 +351,7 @@ export default function HomePage() {
     </>
   );
 }
+
+    
 
     
