@@ -123,26 +123,6 @@ export const getProjectDetailsBySlug = (slug: string): ProjectDetails | undefine
 
 // UPDATES DATA
 export const UPDATES_DATA: UpdatePost[] = [
- {
-    slug: 'welcome-to-updates',
-    title: 'Welcome to Our New Updates Section!',
-    date: '2025-12-31', 
-    excerpt: 'This is the first post in our new Updates section. We\'ll be sharing news about our projects, upcoming features, and insights from the Focus-IN team.',
-    content: `
-<p>Hello everyone, and welcome to the official Updates section of Focus-IN!</p>
-<p>We're excited to have this new space to share all the latest happenings with our projects, announce new features, and provide insights into what we're working on behind the scenes. Our goal is to keep you informed and engaged with the continuous development and improvement of our tools for the optometry community.</p>
-<p>Here’s what you can expect to find in this section:</p>
-<ul class="list-disc list-inside space-y-1 text-muted-foreground">
-  <li><strong>Project Milestones:</strong> Updates on major developments and releases for tools like Focus.Ai, Focus Axis, Focus Gen, and more.</li>
-  <li><strong>New Features:</strong> Detailed explanations of new functionalities added to our platforms.</li>
-  <li><strong>Community News:</strong> Highlights from our user community and ways to get involved.</li>
-  <li><strong>Behind-the-Scenes:</strong> Occasional posts about our development process and the vision driving Focus-IN.</li>
-</ul>
-<p class="mt-4">Stay tuned for more updates, and thank you for being a part of the Focus-IN journey!</p>
-    `,
-    author: 'The Focus-IN Team',
-    tags: ['announcement', 'meta'],
-  },
   {
     slug: 'focus-emr-to-focus-clinic-rename',
     title: 'Project Update: Focus EMR is now Focus Clinic!',
@@ -227,4 +207,5 @@ export const getUpdatesData = (): UpdatePost[] => {
 export const getUpdateBySlug = (slug: string): UpdatePost | undefined => {
   return UPDATES_DATA.find(post => post.slug === slug);
 };
+
 
