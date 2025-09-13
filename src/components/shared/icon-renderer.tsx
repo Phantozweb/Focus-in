@@ -101,8 +101,17 @@ const iconMap: { [key: string]: React.ElementType } = {
 };
 
 export const IconRenderer: React.FC<IconRendererProps> = ({ iconName, ...props }) => {
-  if (!iconName) return null;
-  const IconComponent = iconMap[iconName];
+  if (!iconName) {
+    const iconFromDisplayName = Object.entries(iconMap).find(([key, value]) => value.displayName === iconName);
+    if(iconFromDisplayName) {
+        const IconComponent = iconFromDisplayName[1];
+        return <IconComponent {...props} />;
+    }
+    return <HelpCircle {...props} />;
+  }
+  
+  const IconComponent = iconMap[iconName] || Object.values(iconMap).find(icon => (icon as any).displayName === iconName);
+
 
   if (!IconComponent) {
     // console.warn(`Icon "${iconName}" not found in iconMap.`);

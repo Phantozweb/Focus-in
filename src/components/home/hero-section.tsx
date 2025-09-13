@@ -7,6 +7,7 @@ import { Layers, Info, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
+import { ProjectShowcaseDialog } from './project-showcase-dialog';
 
 export function HeroSection() {
   const [isInExpanded, setIsInExpanded] = useState(false);
@@ -44,11 +45,7 @@ export function HeroSection() {
                 Start Practicing Now
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-accent/30 bg-background/50 backdrop-blur-sm">
-              <Link href="#our-projects-section"> 
-                See How It Works <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <ProjectShowcaseDialog />
           </div>
         </AnimatedSection>
       </div>
