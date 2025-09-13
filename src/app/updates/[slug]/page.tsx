@@ -23,6 +23,20 @@ export async function generateMetadata({ params }: UpdatePageProps): Promise<Met
   return {
     title: `${update.title} | Focus-IN Updates`,
     description: update.excerpt,
+    keywords: update.tags,
+    openGraph: {
+      title: `${update.title} | Focus-IN`,
+      description: update.excerpt,
+      type: 'article',
+      publishedTime: new Date(update.date).toISOString(),
+      authors: [update.author || 'The Focus-IN Team'],
+      url: `https://focus-in.netlify.app/updates/${update.slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${update.title} | Focus-IN`,
+      description: update.excerpt,
+    },
   };
 }
 
@@ -45,21 +59,52 @@ export default function UpdatePostPage({ params }: UpdatePageProps) {
     { label: 'Updates', href: '/updates' },
     { label: update.title, href: `/updates/${update.slug}` },
   ];
+  
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://focus-in.netlify.app/updates/${update.slug}`,
+    },
+    headline: update.title,
+    description: update.excerpt,
+    author: {
+      '@type': 'Organization',
+      name: update.author || 'The Focus-IN Team',
+      url: 'https://focus-in.netlify.app'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'Focus-IN',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://focus-in.netlify.app/icon.png', 
+        },
+    },
+    datePublished: new Date(update.date).toISOString(),
+  };
 
   return (
-    <div className="container mx-auto container-padding py-12 md:py-16">
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-8">
-          <Breadcrumb items={breadcrumbItems} />
+    <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        <div className="container mx-auto container-padding py-12 md:py-16">
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-8">
+              <Breadcrumb items={breadcrumbItems} />
+            </div>
+            <UpdatePostDisplay update={update} />
+            <Separator className="my-12" />
+            <div className="text-center">
+              <Button asChild>
+                <Link href="/updates">View All Updates</Link>
+              </Button>
+            </div>
+          </div>
         </div>
-        <UpdatePostDisplay update={update} />
-        <Separator className="my-12" />
-        <div className="text-center">
-          <Button asChild>
-            <Link href="/updates">View All Updates</Link>
-          </Button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }

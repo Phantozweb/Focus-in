@@ -23,15 +23,13 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
             {index > 0 && (
               <ChevronRight className="h-4 w-4 mx-1 flex-shrink-0" />
             )}
-            {index === items.length - 1 ? (
-              <span className="font-semibold text-foreground" aria-current="page">
-                {item.label}
-              </span>
-            ) : (
-              <Link href={item.href} className="hover:text-primary hover:underline">
-                {item.label}
-              </Link>
-            )}
+            <Link 
+              href={item.href} 
+              className={cn("hover:text-primary hover:underline", index === items.length - 1 ? "text-foreground font-semibold pointer-events-none" : "")}
+              aria-current={index === items.length - 1 ? "page" : undefined}
+            >
+              {item.label}
+            </Link>
           </li>
         ))}
       </ol>
