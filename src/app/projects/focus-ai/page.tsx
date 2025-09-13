@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { Quote, Star, AlertTriangle, Rocket, Sparkles, ArrowLeft } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { Breadcrumb } from '@/components/shared/breadcrumb';
+import { SectionTitle } from '@/components/shared/section-title';
 
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focus-ai');
