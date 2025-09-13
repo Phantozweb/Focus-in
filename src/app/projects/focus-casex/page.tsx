@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { AlertTriangle, Rocket, Sparkles, Info } from 'lucide-react';
+import { AlertTriangle, Rocket, Sparkles, Info, ArrowLeft } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { Separator } from '@/components/ui/separator';
 
@@ -30,6 +30,14 @@ export default function FocusCaseXPage() {
 
   return (
     <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
+        <div className="mb-8">
+            <Button variant="outline" asChild>
+                <Link href="/projects">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Projects
+                </Link>
+            </Button>
+        </div>
       <ProjectDetailsDisplay project={project} />
       <Separator />
       <AnimatedSection animationType="slide-up" delay={100}>
@@ -70,3 +78,5 @@ export default function FocusCaseXPage() {
     </div>
   );
 }
+
+    

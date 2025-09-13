@@ -1,3 +1,4 @@
+
 import type { ProjectDetails } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -69,16 +70,11 @@ export function ProjectDetailsDisplay({ project }: ProjectDetailsDisplayProps) {
               </div>
             </>
           )}
-          <Separator />
-          <div className="text-center">
-            <Button size="lg" asChild className="shadow-md hover:shadow-lg transition-shadow">
-                <Link href="/support">
-                    Learn More or Get Involved
-                </Link>
-            </Button>
-          </div>
+          
         </CardContent>
       </Card>
     </div>
   );
 }
+
+    
