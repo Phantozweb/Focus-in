@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { Headphones, PlayCircle, Sparkles, ArrowLeft } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { Separator } from '@/components/ui/separator';
+import { Breadcrumb } from '@/components/shared/breadcrumb';
 
 export async function generateMetadata(): Promise<Metadata> {
   const project = getProjectDetailsBySlug('focuscast');
@@ -28,15 +29,16 @@ export default function FocuscastPage() {
     notFound();
   }
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Projects', href: '/projects' },
+    { label: project.title, href: `/projects/${project.slug}` },
+  ];
+
   return (
     <div className="container mx-auto container-padding py-12 md:py-16 space-y-12">
       <div className="mb-8">
-        <Button variant="outline" asChild>
-          <Link href="/projects">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Projects
-          </Link>
-        </Button>
+        <Breadcrumb items={breadcrumbItems} />
       </div>
       <ProjectDetailsDisplay project={project} />
       <Separator />

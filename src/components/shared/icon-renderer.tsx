@@ -15,7 +15,7 @@ import {
   Monitor, FilePenLine, Home, Mail, Heart, Target, ShieldCheck, Megaphone, Crown, IndianRupee, Gift, CheckCircle,
   Instagram, Linkedin, Search, ListFilter, Tag,
   Headphones, Timer, Voicemail, PlayCircle, Clock, Star, Ticket, Send, Loader2, BadgePercent,
-  ClipboardCheck, ExternalLink
+  ClipboardCheck, ExternalLink, ChevronRight
 } from 'lucide-react';
 
 interface IconRendererProps extends LucideProps {
@@ -96,6 +96,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   BadgePercent,
   ClipboardCheck, 
   ExternalLink,
+  ChevronRight,
   // Add other icons as needed by their string name
 };
 

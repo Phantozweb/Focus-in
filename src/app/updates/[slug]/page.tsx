@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { Breadcrumb } from '@/components/shared/breadcrumb';
 
 interface UpdatePageProps {
   params: {
@@ -39,16 +40,17 @@ export default function UpdatePostPage({ params }: UpdatePageProps) {
     notFound();
   }
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Updates', href: '/updates' },
+    { label: update.title, href: `/updates/${update.slug}` },
+  ];
+
   return (
     <div className="container mx-auto container-padding py-12 md:py-16">
       <div className="max-w-3xl mx-auto">
         <div className="mb-8">
-          <Button variant="outline" asChild>
-            <Link href="/updates">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Updates
-            </Link>
-          </Button>
+          <Breadcrumb items={breadcrumbItems} />
         </div>
         <UpdatePostDisplay update={update} />
         <Separator className="my-12" />
