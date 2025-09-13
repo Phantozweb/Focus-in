@@ -56,14 +56,14 @@ const teamMembers = [
   {
     name: 'Shivashangari M',
     title: 'Chief Innovation Officer',
-    description: "My role is to turn ideas into reality. I lead the development of our prototypes, ensuring that every tool we build solves real-world problems for students, educators, and researchers.",
+    description: "My role is to turn ideas into reality. I lead our prototyping, ensuring every tool we build solves real-world problems for students, educators, and researchers.",
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
   {
     name: 'Hariharan',
     title: 'Chief Marketing Officer',
-    description: 'My passion is connecting our innovative tools with the students who need them most. I drive our community outreach, ensuring every student knows there’s a better way to learn and practice.',
+    description: 'My passion is connecting our innovative tools with the students who need them most. I drive our community outreach to ensure every student knows there’s a better way to learn.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -77,7 +77,7 @@ const teamMembers = [
   {
     name: 'Vimal',
     title: 'Chief Content Officer',
-    description: 'I oversee the quality and accuracy of all our educational content. From our audio lessons to our AI training, my focus is to ensure our users receive reliable and clinically relevant information.',
+    description: 'I run our audio learning platform, Focus Cast. My mission is to deliver high-quality, screen-free educational content that helps students learn on the go, anytime and anywhere.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
