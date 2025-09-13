@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://focus-in.netlify.app'), // Replace with your actual domain
+  metadataBase: new URL('https://focus-in.netlify.app'),
   title: {
     default: 'Focus-IN | AI Optometry Tools, JCC Simulator & Learning Resources',
     template: '%s | Focus-IN',
@@ -29,27 +29,26 @@ export const metadata: Metadata = {
     google: 'RYhFog1Yp3g2Il7DThaudIMk7PJH9NIwwilaA2BzC2s',
   },
   openGraph: {
-    title: 'Focus-IN | Innovative Optometry Tools & Resources',
-    description: 'Explore AI-powered tools for optometry students and professionals.',
+    title: 'Focus-IN | AI Optometry Tools, JCC Simulator & Learning Resources',
+    description: 'Empowering optometry students and professionals with AI-powered simulators, audio lessons, and cutting-edge learning resources to sharpen clinical skills.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://focus-in.netlify.app', // Replace with your actual domain
+    url: 'https://focus-in.netlify.app',
     siteName: 'Focus-IN',
     images: [
       {
-        url: 'https://placehold.co/1200x630.png', // Replace with a real OG image
+        url: 'https://placehold.co/1200x630/2196f3/ffffff?text=Focus-IN',
         width: 1200,
         height: 630,
-        alt: 'Focus-IN Optometry Tools',
+        alt: 'Focus-IN: Smarter Tools for Optometry Students',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Focus-IN | Innovative Optometry Tools & Resources',
-    description: 'Explore AI-powered tools for optometry students and professionals.',
-    // images: ['https://focus-in.netlify.app/og-image.png'], // Replace with a real OG image
-    // creator: '@yourtwitterhandle', // Replace with your Twitter handle
+    title: 'Focus-IN | AI Optometry Tools, JCC Simulator & Learning Resources',
+    description: 'Empowering optometry students and professionals with AI-powered simulators, audio lessons, and cutting-edge learning resources to sharpen clinical skills.',
+    images: ['https://placehold.co/1200x630/2196f3/ffffff?text=Focus-IN'],
   },
   icons: {
     icon: '/favicon.ico', 
