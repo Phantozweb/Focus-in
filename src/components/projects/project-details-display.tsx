@@ -76,5 +76,3 @@ export function ProjectDetailsDisplay({ project }: ProjectDetailsDisplayProps) {
     </div>
   );
 }
-
-    

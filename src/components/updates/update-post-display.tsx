@@ -1,9 +1,9 @@
 
 import type { UpdatePost } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CalendarDays, UserCircle, Tag, Layers } from 'lucide-react'; // Added Layers for project link
+import { CalendarDays, UserCircle, Tag, Layers } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import Link from 'next/link'; // Added Link
+import Link from 'next/link';
 
 interface UpdatePostDisplayProps {
   update: UpdatePost;
