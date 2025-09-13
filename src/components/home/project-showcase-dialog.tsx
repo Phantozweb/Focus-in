@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -14,8 +15,8 @@ import Link from "next/link";
 import { PROJECT_NAV_ITEMS } from "@/lib/constants";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { IconRenderer } from "@/components/shared/icon-renderer";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-const featuredProjects = PROJECT_NAV_ITEMS.filter(p => p.label === 'Focus.Ai' || p.label === 'Focus Cast');
 
 export function ProjectShowcaseDialog() {
   return (
@@ -32,28 +33,30 @@ export function ProjectShowcaseDialog() {
             <DialogTitle className="text-2xl">A Glimpse of Our Innovations</DialogTitle>
           </div>
           <DialogDescription>
-            We build cutting-edge tools to help you practice, learn, and excel. Here’s a look at our most popular projects.
+            We build cutting-edge tools to help you practice, learn, and excel. Here’s a look at all of our projects.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4 md:grid-cols-2">
-            {featuredProjects.map(project => (
-                <Link href={project.href} key={project.label} className="group">
-                    <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
-                        <CardHeader>
-                            <div className="flex items-center gap-3 mb-2">
-                                <IconRenderer iconName={project.icon.displayName} className="h-7 w-7 text-primary" />
-                                <CardTitle>{project.label}</CardTitle>
-                            </div>
-                            <CardDescription>{project.description}</CardDescription>
-                        </CardHeader>
-                    </Card>
-                </Link>
-            ))}
-        </div>
-        <div className="text-center">
+        <ScrollArea className="h-[400px] pr-4">
+            <div className="grid gap-4 py-4 md:grid-cols-2">
+                {PROJECT_NAV_ITEMS.map(project => (
+                    <Link href={project.href} key={project.label} className="group">
+                        <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
+                            <CardHeader>
+                                <div className="flex items-center gap-3 mb-2">
+                                    <IconRenderer iconName={project.icon.displayName} className="h-7 w-7 text-primary" />
+                                    <CardTitle>{project.label}</CardTitle>
+                                </div>
+                                <CardDescription>{project.description}</CardDescription>
+                            </CardHeader>
+                        </Card>
+                    </Link>
+                ))}
+            </div>
+        </ScrollArea>
+        <div className="text-center pt-4 border-t">
             <Button asChild>
                 <Link href="/projects">
-                    Explore All Projects <ArrowRight className="ml-2 h-4 w-4" />
+                    Compare All Projects <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
             </Button>
         </div>

@@ -41,9 +41,9 @@ export function HeroSection() {
         <AnimatedSection delay={400} animationType="slide-up">
           <div className="flex flex-col gap-4 sm:flex-row justify-center">
             <Button asChild size="lg" variant="default" className="shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary/30">
-              <Link href="/projects">
+              <a href="https://focusai.netlify.app" target="_blank" rel="noopener noreferrer">
                 Start Practicing Now
-              </Link>
+              </a>
             </Button>
             <ProjectShowcaseDialog />
           </div>
