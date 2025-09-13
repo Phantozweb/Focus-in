@@ -34,6 +34,7 @@ export interface ProjectDetails {
   longDescription?: string;
   features: ProjectFeature[];
   iconName: string;
+  imageUrl: string;
 }
 
 export interface UpdatePost {
@@ -46,3 +47,4 @@ export interface UpdatePost {
   tags?: string[];
   projectSlug?: string; // Optional: to link update to a specific project
 }
+

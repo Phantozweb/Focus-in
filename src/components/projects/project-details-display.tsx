@@ -6,6 +6,7 @@ import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { IconRenderer } from '@/components/shared/icon-renderer';
+import Image from 'next/image';
 
 interface ProjectDetailsDisplayProps {
   project: ProjectDetails;
@@ -42,9 +43,14 @@ export function ProjectDetailsDisplay({ project }: ProjectDetailsDisplayProps) {
               )}
             </div>
             <div className="lg:col-span-2 flex items-center justify-center">
-               <div
-                className="rounded-lg shadow-md aspect-video w-full max-w-md bg-gradient-to-tl from-[hsl(var(--secondary))] to-[hsl(var(--accent))]"
-              />
+               <Image
+                  src={project.imageUrl}
+                  alt={`${project.title} screenshot`}
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md aspect-video w-full max-w-md object-cover"
+                  data-ai-hint={`${project.slug} interface`}
+                />
             </div>
           </div>
 
@@ -76,3 +82,4 @@ export function ProjectDetailsDisplay({ project }: ProjectDetailsDisplayProps) {
     </div>
   );
 }
+

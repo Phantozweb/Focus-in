@@ -28,6 +28,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     description: 'Focus AI is your smart, AI-powered assistant for optometry studies. It simplifies complex theories, helps interpret clinical cases, and aids in preparing for exams, making your learning journey more efficient and confident. Everything you need to succeed, from first year to board exams.',
     longDescription: "Focus.Ai serves as an advanced learning aid, helping students understand how to interpret complex clinical information, such as OCT reports and other ophthalmological data. While it utilizes AI to break down cases and highlight potential areas of interest, it is designed to support the educational process, not to provide definitive diagnoses or replace professional clinical judgment. The interpretations offered are for learning purposes and may vary based on individual case conditions and complexities; it is not 100% accurate and should be used as a supplementary study tool.",
     iconName: 'Bot',
+    imageUrl: 'https://picsum.photos/seed/focusai/600/400',
     features: [
         { title: 'AI Assistant', description: 'Get instant, detailed answers to complex optometry questions.', iconName: 'MessageSquare' },
         { title: 'AI Canvas', description: 'Generate comprehensive, editable study guides on any topic.', iconName: 'FilePenLine' },
@@ -46,6 +47,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     description: 'Focus Axis offers a JCC (Jackson Cross Cylinder) simulator. Practice lens flipping and other techniques in a virtual, gamified learning experience.',
     longDescription: 'Enhance your clinical skills with interactive exercises that mimic real-world scenarios, providing a safe and engaging way to master JCC techniques and improve your accuracy in refraction.',
     iconName: 'LucideMousePointerClick',
+    imageUrl: 'https://picsum.photos/seed/focusaxis/600/400',
     features: [
       { title: 'JCC Simulation', description: 'Realistic simulation of Jackson Cross Cylinder tests.', iconName: 'MousePointerClick' },
       { title: 'Gamified Learning Modules', description: 'Engaging training exercises with progress tracking.', iconName: 'LucideActivity' },
@@ -59,6 +61,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     description: 'FocusCase is an AI-powered learning assistant for optometry students. Log real cases, ask questions, get summaries, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.',
     longDescription: "It is not just a case logger it is an AI-powered learning assistant for optometry students. You can log your real cases, ask specific questions about them, get summaries and interpretations, and practice viva sessions all based on your own logs. No data is stored everything stays temporarily in your browser tab to ensure privacy and medical ethics.",
     iconName: 'FilePenLine',
+    imageUrl: 'https://picsum.photos/seed/focuscase/600/400',
     features: [
       { title: 'Real Case Logging', description: 'Log your clinical cases with detailed information.', iconName: 'FilePenLine' },
       { title: 'AI-Powered Q&A', description: 'Ask specific questions about your logged cases and get AI assistance.', iconName: 'MessageSquare' },
@@ -74,6 +77,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     description: "Focuscast is your dedicated audio learning platform for optometry. Built for students, interns, and eye care professionals, it delivers bite-sized, high-yield episodes on clinical topics, exam prep, viva questions, interpretation skills, and more — all in a screen-free format. Whether you're walking, traveling, or resting your eyes, Focuscast helps you stay sharp without burning out.",
     longDescription: "Because sometimes, the best way to learn is to listen. No screens. No burnout. Just deep, focused learning — in your ears. Whether you're prepping for an exam, brushing up on a clinical topic, or just want to stay inspired in your optometry journey, Focuscast brings the classroom to your pocket. Start listening now at focuscast.netlify.app. No login needed. 100% free. Just plug in your earphones and press play.",
     iconName: 'Headphones',
+    imageUrl: 'https://picsum.photos/seed/focuscast/600/400',
     features: [
       { title: 'Short, High-Impact Episodes', description: 'Focused audio lessons (5–15 mins) for fast revision and deep understanding.', iconName: 'Timer' },
       { title: 'Topic Tracks Include', description: 'Clinical Refraction, Instruments, Segment Disorders, Binocular Vision, Pharmacology, Career Guidance & Innovation.', iconName: 'LucideLibrary' },
@@ -89,6 +93,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     description: 'Focus Gen is a transposition sum generator where you can create various types of transposition sums and practice them to sharpen your skills.',
     longDescription: 'This tool helps students master optical transposition by providing unlimited practice problems. Select parameters and generate sums for self-assessment and learning reinforcement. (Currently Available)',
     iconName: 'LucideCalculator',
+    imageUrl: 'https://picsum.photos/seed/focusgen/600/400',
     features: [
       { title: 'Custom Sum Generation', description: 'Generate transposition sums based on selected criteria.', iconName: 'Settings' },
       { title: 'Practice Mode', description: 'Work through generated sums and check your answers.', iconName: 'LucideCalculator' },
@@ -102,6 +107,7 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
     description: 'Focus Clinic is designed to simplify patient record management for optometry practices, offering an intuitive interface and essential features for efficient clinical workflows.',
     longDescription: 'Currently in beta, Focus Clinic aims to provide a cost-effective and user-friendly solution for managing patient data, appointments, and prescriptions. (Beta Program Ongoing)',
     iconName: 'Monitor',
+    imageUrl: 'https://picsum.photos/seed/focusclinic/600/400',
     features: [
       { title: 'Patient Records', description: 'Comprehensive and secure patient data management.', iconName: 'Users'},
       { title: 'Appointment Scheduling', description: 'Easy-to-use calendar and booking system.', iconName: 'CalendarDays' },
@@ -221,3 +227,4 @@ export const getUpdatesData = (): UpdatePost[] => {
 export const getUpdateBySlug = (slug: string): UpdatePost | undefined => {
   return UPDATES_DATA.find(post => post.slug === slug);
 };
+
