@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 import { PROJECTS_DETAILS_DATA, UPDATES_DATA } from '@/lib/constants';
 
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/projects',
     '/updates',
+    '/faq',
     '/support',
   ].map((route) => ({
     url: `${siteUrl}${route}`,

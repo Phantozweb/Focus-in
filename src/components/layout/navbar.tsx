@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Layers, Home, Info, Lightbulb, Megaphone, Mail } from 'lucide-react';
+import { Menu, X, ChevronDown, Layers, Home, Info, Lightbulb, Megaphone, Mail, HelpCircle } from 'lucide-react';
 import { NAV_ITEMS, PROJECT_NAV_ITEMS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -137,6 +137,7 @@ export function Navbar() {
                 <NavLink href="/projects" icon={Layers} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Projects</NavLink>
                 <NavLink href="/about" icon={Info} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">About Us</NavLink>
                 <NavLink href="/updates" icon={Megaphone} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Updates</NavLink>
+                <NavLink href="/faq" icon={HelpCircle} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">FAQ</NavLink>
                 <NavLink href="/support" icon={Mail} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Support</NavLink>
               </nav>
             </SheetContent>

@@ -1,12 +1,13 @@
 
 import type { NavItem, ProjectNavItem, ProjectDetails, UpdatePost, DropdownNavItem } from '@/types';
-import { Home, Info, Layers, Mail, Bot, LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, LucideUserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock, BookOpen, Wrench, Video } from 'lucide-react';
+import { Home, Info, Layers, Mail, Bot, LucideMousePointerClick, Users, FilePenLine, Monitor, StickyNote, LucideCalculator, Brain, Heart, MessageSquare, Lightbulb, LucideFileQuestion, Briefcase, ClipboardList, Settings, Share2, LucideUserCheck, Link as LinkIcon, LucideActivity, LucideLibrary, BarChart2 as LucideBarChart, Target, Eye, ShieldCheck, Quote, Rocket, Sparkles, AlertTriangle, Crown, IndianRupee, Gift, CheckCircle, Megaphone, CalendarDays, Headphones, Timer, Voicemail, PlayCircle, Clock, BookOpen, Wrench, Video, HelpCircle } from 'lucide-react';
 import type React from 'react';
 
 export const NAV_ITEMS: DropdownNavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
   { href: '/updates', label: 'Updates', icon: Megaphone },
+  { href: '/faq', label: 'FAQ', icon: HelpCircle },
   { href: '/support', label: 'Support', icon: Mail },
 ];
 
