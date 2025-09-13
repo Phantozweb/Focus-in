@@ -7,7 +7,6 @@ export const NAV_ITEMS: DropdownNavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: Info },
   { href: '/updates', label: 'Updates', icon: Megaphone },
-  { href: '/faq', label: 'FAQ', icon: HelpCircle },
   { href: '/support', label: 'Support', icon: Mail },
 ];
 
@@ -222,7 +221,3 @@ export const getUpdatesData = (): UpdatePost[] => {
 export const getUpdateBySlug = (slug: string): UpdatePost | undefined => {
   return UPDATES_DATA.find(post => post.slug === slug);
 };
-
-    
-
-    
