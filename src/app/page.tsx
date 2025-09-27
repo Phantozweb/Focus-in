@@ -63,7 +63,7 @@ const teamMembers = [
   {
     name: 'Anshi Jha',
     title: 'Head of Clinical Development',
-    description: 'I lead the development of our clinical tools, including FocusCase. My expertise ensures our products meet the real-world needs of optometry students and practitioners.',
+    description: 'I lead the development of our clinical tools, including Focus CaseX. My expertise ensures our products meet the real-world needs of optometry students and practitioners.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -84,7 +84,7 @@ const teamMembers = [
   {
     name: 'Vimal',
     title: 'Head of Educational Products',
-    description: 'I oversee our educational products, including Focus Cast. My focus is on creating high-quality, accessible learning experiences that empower students on their educational journey.',
+    description: 'I oversee our educational products. My focus is on creating high-quality, accessible learning experiences that empower students on their educational journey.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -351,6 +351,8 @@ export default function HomePage() {
     </>
   );
 }
+
+    
 
     
 
