@@ -3,7 +3,7 @@ import type { ProjectDetails } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Flag } from 'lucide-react';
 import { IconRenderer } from '@/components/shared/icon-renderer';
 import { Badge } from '@/components/ui/badge';
 
@@ -22,7 +22,7 @@ export function ProjectSummaryCard({ project, isFlagship = false }: ProjectSumma
           <CardTitle className="text-xl pr-4">{project.title}</CardTitle>
           <div className="flex flex-col items-end flex-shrink-0">
             <IconRenderer iconName={project.iconName} className="h-7 w-7 text-primary" />
-            {isFlagship && <Star className="h-5 w-5 text-yellow-500 mt-1" fill="currentColor" />}
+            {isFlagship && <Flag className="h-5 w-5 text-primary mt-1" fill="currentColor" />}
           </div>
         </div>
         {(isPaid) && (
