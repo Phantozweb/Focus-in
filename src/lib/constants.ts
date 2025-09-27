@@ -17,6 +17,7 @@ export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
   { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
   { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
   { href: '/projects/focus-clinic', label: 'Focus Clinic', icon: Monitor, description: "Clinical Management System (Beta)." },
+  { href: '/projects/focus-links', label: 'Focus Links', icon: LinkIcon, description: "Central hub for optometry resources." },
 ];
 
 
@@ -112,6 +113,20 @@ export const PROJECTS_DETAILS_DATA: ProjectDetails[] = [
       { title: 'Patient Records', description: 'Comprehensive and secure patient data management.', iconName: 'Users'},
       { title: 'Appointment Scheduling', description: 'Easy-to-use calendar and booking system.', iconName: 'CalendarDays' },
       { title: 'Prescription Management', description: 'Generate and track patient prescriptions.', iconName: 'FileText' },
+    ],
+  },
+  {
+    slug: 'focus-links',
+    title: 'Focus Links',
+    tagline: 'Your Central Hub for Optometry Resources',
+    description: 'Focus Links provides a curated and centralized collection of essential links, tools, and resources, saving optometry students and professionals valuable time.',
+    longDescription: 'Tired of bookmarking hundreds of websites? Focus Links organizes all the vital online resources—from academic journals and clinical calculators to professional organizations and study guides—into one easy-to-navigate platform.',
+    iconName: 'LinkIcon',
+    imageUrl: 'https://picsum.photos/seed/focuslinks/600/400',
+    features: [
+      { title: 'Curated Resource Lists', description: 'Access organized collections of top-tier optometry links.', iconName: 'LucideLibrary' },
+      { title: 'Community Contributions', description: 'Suggest and share valuable resources with the community.', iconName: 'Users' },
+      { title: 'Easy Search & Filter', description: 'Quickly find the exact resource you need with powerful search tools.', iconName: 'Search' },
     ],
   },
 ];

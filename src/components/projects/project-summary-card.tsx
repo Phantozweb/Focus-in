@@ -14,7 +14,6 @@ interface ProjectSummaryCardProps {
 
 export function ProjectSummaryCard({ project, isFlagship = false }: ProjectSummaryCardProps) {
   const isPaid = project.slug === 'focus-ai';
-  const isFree = project.slug === 'focuscast';
 
   return (
     <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/50">
@@ -26,9 +25,9 @@ export function ProjectSummaryCard({ project, isFlagship = false }: ProjectSumma
             {isFlagship && <Star className="h-5 w-5 text-yellow-500 mt-1" fill="currentColor" />}
           </div>
         </div>
-        {(isPaid || isFree) && (
+        {(isPaid) && (
           <div className="pt-1">
-            <Badge variant={isPaid ? "default" : "default"}>{isPaid ? "Paid" : "Free"}</Badge>
+            <Badge variant={"default"}>{isPaid ? "Paid" : "Free"}</Badge>
           </div>
         )}
       </CardHeader>

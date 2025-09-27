@@ -13,8 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsOverviewPage() {
-  const flagshipProjects = PROJECTS_DETAILS_DATA.filter(p => p.slug === 'focus-ai' || p.slug === 'focuscast');
-  const communityProjects = PROJECTS_DETAILS_DATA.filter(p => p.slug !== 'focus-ai' && p.slug !== 'focuscast');
+  const flagshipSlugs = ['focus-ai', 'focus-casex', 'focus-links', 'focuscast'];
+  const flagshipProjects = PROJECTS_DETAILS_DATA.filter(p => flagshipSlugs.includes(p.slug));
+  const communityProjects = PROJECTS_DETAILS_DATA.filter(p => !flagshipSlugs.includes(p.slug));
 
   return (
     <div className="container mx-auto container-padding py-12 md:py-16">
