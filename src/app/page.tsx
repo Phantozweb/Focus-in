@@ -16,6 +16,7 @@ import AnimatedNumber from '@/components/shared/animated-number';
 import { IconRenderer } from '@/components/shared/icon-renderer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 
 export const metadata: Metadata = {
@@ -374,21 +375,35 @@ export default function HomePage() {
               title="Frequently Asked Questions"
               subtitle="Have questions? We've got answers. Here are some of the most common inquiries we receive about our optometry tools and platform."
             />
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <Tabs defaultValue={faqData[0].slug} className="w-full">
-                <div className="overflow-x-auto pb-2">
-                  <TabsList className="grid w-full grid-cols-[auto,auto,auto,auto,auto,auto] h-auto sm:w-full sm:grid-cols-6">
-                    {faqData.map((category) => (
-                      <TabsTrigger key={category.slug} value={category.slug} className="py-2.5 flex-shrink-0">
-                        <category.icon className="h-5 w-5 mr-2" />
-                        {category.category}
-                      </TabsTrigger>
-                    ))}
-                  </TabsList>
+                <div className="relative">
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      dragFree: true,
+                    }}
+                    className="w-full"
+                  >
+                    <CarouselContent className="-ml-2">
+                        <TabsList className="inline-flex h-auto bg-transparent border-b-0 p-0">
+                          {faqData.map((category) => (
+                            <CarouselItem key={category.slug} className="pl-2 basis-auto sm:basis-1/3 md:basis-1/4">
+                                <TabsTrigger value={category.slug} className="w-full flex-col h-20 gap-2 rounded-lg data-[state=active]:shadow-lg">
+                                    <category.icon className="h-7 w-7" />
+                                    <span className="text-sm">{category.category}</span>
+                                </TabsTrigger>
+                            </CarouselItem>
+                          ))}
+                        </TabsList>
+                    </CarouselContent>
+                    <CarouselPrevious className="absolute left-[-2rem] top-1/2 -translate-y-1/2 fill-background" />
+                    <CarouselNext className="absolute right-[-2rem] top-1/2 -translate-y-1/2 fill-background" />
+                  </Carousel>
                 </div>
                 {faqData.map((category) => (
-                  <TabsContent key={category.slug} value={category.slug} className="pt-6">
-                      <Accordion type="single" collapsible className="w-full space-y-4">
+                  <TabsContent key={category.slug} value={category.slug} className="pt-8">
+                      <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto space-y-4">
                           {category.questions.map((faq, qIndex) => (
                           <AccordionItem value={`item-${category.slug}-${qIndex}`} key={qIndex} className="bg-muted/30 rounded-lg px-6 border">
                               <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
@@ -437,5 +452,7 @@ export default function HomePage() {
     </>
   );
 }
+
+    
 
     
