@@ -15,6 +15,7 @@ import Image from 'next/image';
 import AnimatedNumber from '@/components/shared/animated-number';
 import { IconRenderer } from '@/components/shared/icon-renderer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 
 export const metadata: Metadata = {
@@ -92,7 +93,8 @@ const teamMembers = [
 
 const faqData = [
     {
-        category: "General Questions",
+        category: "General",
+        slug: "general",
         icon: UsersIcon,
         questions: [
             {
@@ -115,6 +117,7 @@ const faqData = [
     },
     {
         category: "Focus.Ai",
+        slug: "focus-ai",
         icon: Bot,
         questions: [
             {
@@ -128,7 +131,8 @@ const faqData = [
         ]
     },
     {
-        category: "Focus Axis (JCC Simulator)",
+        category: "Focus Axis",
+        slug: "focus-axis",
         icon: LucideMousePointerClick,
         questions: [
             {
@@ -143,6 +147,7 @@ const faqData = [
     },
      {
         category: "Focus Cast",
+        slug: "focus-cast",
         icon: Headphones,
         questions: [
             {
@@ -300,30 +305,33 @@ export default function HomePage() {
               title="Frequently Asked Questions"
               subtitle="Have questions? We've got answers. Here are some of the most common inquiries we receive about our optometry tools and platform."
             />
-            <div className="max-w-4xl mx-auto space-y-12">
-              {faqData.map((category, index) => {
-                  const Icon = category.icon;
-                  return(
-                      <div key={index}>
-                          <h2 className="flex items-center gap-3 text-2xl font-bold text-foreground mb-6">
-                              <Icon className="h-7 w-7 text-primary" />
-                              {category.category}
-                          </h2>
-                          <Accordion type="single" collapsible className="w-full space-y-4">
-                              {category.questions.map((faq, qIndex) => (
-                              <AccordionItem value={`item-${index}-${qIndex}`} key={qIndex} className="bg-muted/30 rounded-lg px-6 border">
-                                  <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
-                                  {faq.question}
-                                  </AccordionTrigger>
-                                  <AccordionContent className="text-muted-foreground text-sm md:text-base pt-2">
-                                     <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                                  </AccordionContent>
-                              </AccordionItem>
-                              ))}
-                          </Accordion>
-                      </div>
-                  )
-              })}
+            <div className="max-w-4xl mx-auto">
+              <Tabs defaultValue={faqData[0].slug} className="w-full">
+                <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 h-auto">
+                  {faqData.map((category) => (
+                    <TabsTrigger key={category.slug} value={category.slug} className="py-2.5">
+                      <category.icon className="h-5 w-5 mr-2" />
+                      {category.category}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+                {faqData.map((category) => (
+                  <TabsContent key={category.slug} value={category.slug} className="pt-6">
+                      <Accordion type="single" collapsible className="w-full space-y-4">
+                          {category.questions.map((faq, qIndex) => (
+                          <AccordionItem value={`item-${category.slug}-${qIndex}`} key={qIndex} className="bg-muted/30 rounded-lg px-6 border">
+                              <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
+                              {faq.question}
+                              </AccordionTrigger>
+                              <AccordionContent className="text-muted-foreground text-sm md:text-base pt-2">
+                                 <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                              </AccordionContent>
+                          </AccordionItem>
+                          ))}
+                      </Accordion>
+                  </TabsContent>
+                ))}
+              </Tabs>
             </div>
           </section>
         </AnimatedSection>
@@ -358,11 +366,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    
-
-    
-
-    
-
-    
