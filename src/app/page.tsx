@@ -215,7 +215,7 @@ export default function HomePage() {
               title="Why Choose Us?"
               subtitle="Discover how our unique approach sets us apart in the world of optometry technology."
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12">
+            <div className="max-w-4xl mx-auto mt-12">
               <div className="space-y-8">
                 {whyChooseUsFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -228,23 +228,13 @@ export default function HomePage() {
                     </div>
                   </div>
                 ))}
-                 <div className="pt-4">
+                 <div className="pt-4 text-center">
                     <Button asChild size="lg">
                         <Link href="/projects">
                             Explore Our Tools <ArrowRight className="ml-2 h-5 w-5" /> 
                         </Link>
                     </Button>
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <Image
-                  src="https://picsum.photos/seed/why-choose-us/600/500"
-                  alt="A group of optometry students collaborating and using digital tools."
-                  width={600}
-                  height={500}
-                  className="rounded-xl shadow-2xl aspect-[6/5] object-cover"
-                  data-ai-hint="students collaborating"
-                />
               </div>
             </div>
           </section>
