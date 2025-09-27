@@ -25,18 +25,18 @@ export const metadata: Metadata = {
 const whyChooseUsFeatures = [
   {
     iconName: 'Users',
-    title: 'Built by optometry students, for optometry students.',
-    description: 'Tired of outdated study tools? We built the ones we wished we had.',
+    title: 'For Students, By Students',
+    description: 'We build the tools we wished we had. Our solutions are born from real student needs and designed to solve the challenges you face every day.',
   },
   {
     iconName: 'Brain',
-    title: 'No tech headaches, just click, practice, improve.',
-    description: 'Our tools are designed to be intuitive and easy to use from day one.',
+    title: 'Intuitive & Easy to Use',
+    description: 'No steep learning curves here. Our tools are designed to be intuitive from day one, so you can focus on learning, not on figuring out software.',
   },
   {
     iconName: 'Heart',
-    title: 'We help you pass exams faster and practice confidently.',
-    description: 'Our goal is to provide the resources you need to succeed.',
+    title: 'Focused on Your Success',
+    description: 'Our ultimate goal is your success. We provide the resources you need to pass exams, practice confidently, and excel in your career.',
   },
 ];
 
@@ -215,20 +215,37 @@ export default function HomePage() {
               title="Why Choose Us?"
               subtitle="Discover how our unique approach sets us apart in the world of optometry technology."
             />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              {whyChooseUsFeatures.map((feature, index) => (
-                <Card key={index} className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border hover:border-primary/50 bg-card group">
-                  <CardHeader className="flex flex-row items-start gap-4 pb-4">
-                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12">
+              <div className="space-y-8">
+                {whyChooseUsFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10">
                       <IconRenderer iconName={feature.iconName} className="h-8 w-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl mt-1">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
+                      <p className="text-muted-foreground mt-1">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+                 <div className="pt-4">
+                    <Button asChild size="lg">
+                        <Link href="/projects">
+                            Explore Our Tools <ArrowRight className="ml-2 h-5 w-5" /> 
+                        </Link>
+                    </Button>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <Image
+                  src="https://picsum.photos/seed/why-choose-us/600/500"
+                  alt="A group of optometry students collaborating and using digital tools."
+                  width={600}
+                  height={500}
+                  className="rounded-xl shadow-2xl aspect-[6/5] object-cover"
+                  data-ai-hint="students collaborating"
+                />
+              </div>
             </div>
           </section>
         </AnimatedSection>
@@ -351,6 +368,8 @@ export default function HomePage() {
     </>
   );
 }
+
+    
 
     
 
