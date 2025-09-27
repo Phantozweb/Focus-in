@@ -19,14 +19,14 @@ export function ProjectSummaryCard({ project, isFlagship = false }: ProjectSumma
     <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/50">
       <CardHeader>
         <div className="flex items-start justify-between">
-          <CardTitle className="text-xl pr-4">{project.title}</CardTitle>
-          <div className="flex flex-col items-end flex-shrink-0">
-            <IconRenderer iconName={project.iconName} className="h-7 w-7 text-primary" />
-            {isFlagship && <Flag className="h-5 w-5 text-primary mt-1" fill="currentColor" />}
-          </div>
+            <div className="flex items-center gap-3">
+                <IconRenderer iconName={project.iconName} className="h-7 w-7 text-primary" />
+                <CardTitle className="text-xl">{project.title}</CardTitle>
+            </div>
+          {isFlagship && <Flag className="h-5 w-5 text-primary flex-shrink-0" fill="currentColor" />}
         </div>
         {(isPaid) && (
-          <div className="pt-1">
+          <div className="pt-2">
             <Badge variant={"default"}>{isPaid ? "Paid" : "Free"}</Badge>
           </div>
         )}
