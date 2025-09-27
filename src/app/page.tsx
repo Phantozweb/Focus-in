@@ -2,7 +2,7 @@
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
-import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star, BadgePercent, Ticket, LucideMousePointerClick, Users as UsersIcon } from 'lucide-react';
+import { Layers, Brain, Users, ArrowRight, Heart, Gift, Crown, IndianRupee, UserCheck, ClipboardList, Activity, CheckCircle, Eye, FileText, BookOpen, Bot, Scaling, Megaphone, Info, MousePointerClick, LucideCalculator, Linkedin, Instagram, Headphones, Star, BadgePercent, Ticket, LucideMousePointerClick, Users as UsersIcon, Link as LinkIcon, FilePenLine } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -107,11 +107,15 @@ const faqData = [
             },
             {
                 question: "Are the tools on Focus-IN free?",
-                answer: "Many of our core tools, like Focus Cast and Focus Gen, are completely free to use. Our flagship product, <a href='/projects/focus-ai' class='text-primary hover:underline'>Focus.Ai</a>, operates on a paid model to support its advanced features and continuous development. We strive to keep our resources as accessible as possible."
+                answer: "Many of our core tools are completely free to use. Our flagship product, <a href='/projects/focus-ai' class='text-primary hover:underline'>Focus.Ai</a>, operates on a paid model to support its advanced features. We also offer other free tools like Focus Cast, Focus Gen, and Focus Axis. Our goal is to keep our resources as accessible as possible."
             },
              {
                 question: "How can I provide feedback or suggest a new tool?",
                 answer: "We are community-driven and thrive on user feedback! If you have suggestions, feedback, or an idea for a new tool, please reach out to us through our <a href='/support' class='text-primary hover:underline'>Support page</a>. We'd love to hear from you."
+            },
+            {
+                question: "Is my data safe with Focus-IN tools?",
+                answer: "We prioritize your privacy. For tools that handle potentially sensitive information, like Focus CaseX, all data is processed temporarily in your browser tab and is never stored on our servers, ensuring complete confidentiality and adherence to medical ethics."
             }
         ]
     },
@@ -127,6 +131,10 @@ const faqData = [
             {
                 question: "Is the clinical case interpretation in Focus.Ai accurate?",
                 answer: "Focus.Ai is designed as a learning aid to help students understand how to interpret clinical findings. While it is trained on extensive optometry data, it is not a diagnostic tool and is not 100% accurate. It should be used as a supplementary study resource to develop your clinical reasoning skills, not to make definitive diagnoses."
+            },
+            {
+                question: "What is the 'Canvas' feature in Focus.Ai?",
+                answer: "The Canvas is an in-built doc editor with markdown support. It allows you to generate, edit, and organize comprehensive study guides, lecture notes, and summaries directly within the platform. You can ask the AI to create content on a topic and then refine it to fit your study needs."
             },
         ]
     },
@@ -157,6 +165,67 @@ const faqData = [
             {
                 question: "Is Focus Cast really free?",
                 answer: "Yes, 100%! There is no login required and no subscription fee. You can start listening to all available episodes right away on the <a href='https://focuscast.netlify.app' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Focus Cast platform</a>."
+            },
+            {
+                question: "How often are new episodes released?",
+                answer: "We aim to release new episodes on a weekly basis to provide a consistent flow of fresh content. Follow us on our social media channels to stay updated on new releases!"
+            }
+        ]
+    },
+    {
+        category: "Focus CaseX",
+        slug: "focus-casex",
+        icon: FilePenLine,
+        questions: [
+            {
+                question: "What is Focus CaseX?",
+                answer: "Focus CaseX is an AI-powered platform that lets you log real patient cases and then use AI to interact with that data. You can ask the AI questions about the case, get summaries, and even practice for viva exams, all based on your own logged information."
+            },
+            {
+                question: "Is my patient data stored anywhere?",
+                answer: "Absolutely not. Focus CaseX is designed with privacy as its top priority. All case information you enter is processed temporarily in your browser and is never sent to or stored on our servers. Once you close the tab, the data is gone."
+            },
+             {
+                question: "How does this help me prepare for viva exams?",
+                answer: "After logging a case, you can start a simulated viva session. The AI will ask you relevant questions about the case, from patient history to diagnosis and management, just like a real examiner would. It's a great way to practice your clinical reasoning and communication skills under pressure."
+            }
+        ]
+    },
+    {
+        category: "Focus Gen",
+        slug: "focus-gen",
+        icon: LucideCalculator,
+        questions: [
+            {
+                question: "What is Focus Gen?",
+                answer: "Focus Gen is a simple but powerful tool for optometry students. It's a transposition sum generator that allows you to create an unlimited number of practice problems to master optical calculations."
+            },
+            {
+                question: "Why do I need to practice transposition?",
+                answer: "Transposition is a fundamental skill in optometry used to convert prescriptions between plus and minus cylinder forms. Being fast and accurate is essential for both exams and clinical practice. Focus Gen helps you build that speed and confidence."
+            },
+             {
+                question: "Can I customize the difficulty of the sums?",
+                answer: "Yes, Focus Gen allows you to set certain parameters to generate different types of transposition sums, so you can start with the basics and move on to more complex calculations as you improve."
+            }
+        ]
+    },
+    {
+        category: "Focus Links",
+        slug: "focus-links",
+        icon: LinkIcon,
+        questions: [
+            {
+                question: "What is Focus Links?",
+                answer: "Focus Links is a centralized, curated hub of essential online resources for optometry. Instead of juggling hundreds of bookmarks, you can find links to top-tier academic journals, clinical calculators, professional organizations, and study guides all in one place."
+            },
+            {
+                question: "Is Focus Links a free resource?",
+                answer: "Yes, Focus Links is completely free to use. Our goal is to streamline access to information for the entire optometry community."
+            },
+             {
+                question: "Can I contribute to Focus Links?",
+                answer: "Yes! Focus Links is a community-driven project. We will have a feature allowing users to suggest valuable links and resources. If you have a go-to tool or website you think others would benefit from, you'll be able to share it with us."
             }
         ]
     }
@@ -307,14 +376,16 @@ export default function HomePage() {
             />
             <div className="max-w-4xl mx-auto">
               <Tabs defaultValue={faqData[0].slug} className="w-full">
-                <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 h-auto">
-                  {faqData.map((category) => (
-                    <TabsTrigger key={category.slug} value={category.slug} className="py-2.5">
-                      <category.icon className="h-5 w-5 mr-2" />
-                      {category.category}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+                <div className="overflow-x-auto pb-2">
+                  <TabsList className="grid w-full grid-cols-[auto,auto,auto,auto,auto,auto] h-auto sm:w-full sm:grid-cols-6">
+                    {faqData.map((category) => (
+                      <TabsTrigger key={category.slug} value={category.slug} className="py-2.5 flex-shrink-0">
+                        <category.icon className="h-5 w-5 mr-2" />
+                        {category.category}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                </div>
                 {faqData.map((category) => (
                   <TabsContent key={category.slug} value={category.slug} className="pt-6">
                       <Accordion type="single" collapsible className="w-full space-y-4">
@@ -366,3 +437,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
