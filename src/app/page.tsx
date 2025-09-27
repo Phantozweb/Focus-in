@@ -377,31 +377,31 @@ export default function HomePage() {
             />
             <div className="max-w-5xl mx-auto">
               <Tabs defaultValue={faqData[0].slug} className="w-full">
-                <div className="relative">
-                  <TabsList className="w-full justify-start p-0 bg-transparent overflow-hidden">
-                    <Carousel
-                      opts={{
-                        align: "start",
-                        dragFree: true,
-                      }}
-                      className="w-full"
-                    >
-                      <CarouselContent className="-ml-2">
+                <div className="relative px-12">
+                    <TabsList className="w-full justify-start p-1 bg-background/50 backdrop-blur-sm rounded-lg">
+                      <Carousel
+                        opts={{
+                          align: "start",
+                          dragFree: true,
+                        }}
+                        className="w-full"
+                      >
+                        <CarouselContent>
                           {faqData.map((category) => (
-                            <CarouselItem key={category.slug} className="pl-2 basis-auto md:basis-1/3">
-                                <TabsTrigger value={category.slug} className="w-full flex-col h-24 gap-2 rounded-lg data-[state=active]:shadow-lg text-sm">
-                                    <category.icon className="h-7 w-7" />
-                                    <span>{category.category}</span>
-                                </TabsTrigger>
+                            <CarouselItem key={category.slug} className="basis-auto md:basis-1/3">
+                              <TabsTrigger value={category.slug} className="w-full flex-col h-24 gap-2 rounded-md data-[state=active]:shadow-lg text-sm">
+                                <category.icon className="h-7 w-7" />
+                                <span>{category.category}</span>
+                              </TabsTrigger>
                             </CarouselItem>
                           ))}
-                      </CarouselContent>
-                      <CarouselPrevious className="absolute left-[-1.5rem] top-1/2 -translate-y-1/2" />
-                      <CarouselNext className="absolute right-[-1.5rem] top-1/2 -translate-y-1/2" />
-                    </Carousel>
-                  </TabsList>
+                        </CarouselContent>
+                         <CarouselPrevious className="absolute left-[-1rem] top-1/2 -translate-y-1/2" />
+                         <CarouselNext className="absolute right-[-1rem] top-1/2 -translate-y-1/2" />
+                      </Carousel>
+                    </TabsList>
                 </div>
-
+                
                 {faqData.map((category) => (
                   <TabsContent key={category.slug} value={category.slug} className="pt-8">
                       <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto space-y-4">
@@ -459,3 +459,4 @@ export default function HomePage() {
     
 
     
+
