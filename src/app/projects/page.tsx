@@ -6,6 +6,7 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { Flag } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Optometry Projects | AI Tools, Simulators & Learning Platforms',
@@ -27,11 +28,14 @@ export default function ProjectsOverviewPage() {
       {/* Flagship Projects Section */}
       <AnimatedSection animationType="slide-up" delay={100}>
         <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-foreground">Flagship Projects</h2>
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <Flag className="h-7 w-7 text-primary" />
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Flagship Projects</h2>
+          </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
             {flagshipProjects.map((project, index) => (
               <AnimatedSection key={project.slug} delay={index * 150} animationType="slide-up">
-                <ProjectSummaryCard project={project} isFlagship />
+                <ProjectSummaryCard project={project} />
               </AnimatedSection>
             ))}
           </div>
