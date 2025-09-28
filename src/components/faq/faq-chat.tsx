@@ -9,6 +9,8 @@ import { cn } from '@/lib/utils';
 import { IconRenderer } from '@/components/shared/icon-renderer';
 import Link from 'next/link';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
 
 const faqData = [
     {
@@ -161,15 +163,10 @@ export function FaqChat() {
         setChatHistory([
             {
                 sender: 'bot',
-                type: 'text',
-                content: "Welcome to the Focus-IN Help Center! I'm here to assist you. What can I help you with today?",
-                id: Date.now()
-            },
-            {
-                sender: 'system',
                 type: 'category-selection',
+                content: "Welcome to the Focus-IN Help Center! Please choose a category below to find answers to your questions.",
                 payload: faqData,
-                id: Date.now() + 1
+                id: Date.now()
             }
         ]);
     }, []);
@@ -181,7 +178,10 @@ export function FaqChat() {
         }
     }, [chatHistory]);
 
-    const handleCategorySelect = (category: any) => {
+    const handleCategorySelect = (categoryName: string) => {
+        const category = faqData.find(c => c.category === categoryName);
+        if (!category) return;
+
         setSelectedCategory(category);
         setChatHistory(prev => [
             ...prev.filter(msg => msg.type !== 'category-selection' && msg.type !== 'unanswered-prompt'), // remove old selection
@@ -204,8 +204,13 @@ export function FaqChat() {
         setSelectedCategory(null);
         setChatHistory(prev => [
             ...prev.filter(msg => msg.type !== 'question-selection' && msg.type !== 'unanswered-prompt'),
-            { sender: 'bot', type: 'text', content: "What else can I help you with?", id: Date.now() },
-            { sender: 'system', type: 'category-selection', payload: faqData, id: Date.now() + 1 }
+            {
+                sender: 'bot',
+                type: 'category-selection',
+                content: "What else can I help you with? Please choose a category.",
+                payload: faqData,
+                id: Date.now()
+            }
         ]);
     };
 
@@ -213,19 +218,29 @@ export function FaqChat() {
         switch (msg.type) {
             case 'text':
                 return <div className="prose prose-sm dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: msg.content || '' }} />;
+            
             case 'category-selection':
                 return (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 animate-popup">
-                        {msg.payload.map((cat: any) => (
-                            <Card key={cat.category} onClick={() => handleCategorySelect(cat)} className="cursor-pointer transition-all duration-300 hover:shadow-primary/20 hover:border-primary/50 hover:-translate-y-1">
-                                <CardHeader className="flex flex-row items-center gap-4 p-4">
-                                    <IconRenderer iconName={cat.icon} className="h-7 w-7 text-primary" />
-                                    <CardTitle className="text-base">{cat.category}</CardTitle>
-                                </CardHeader>
-                            </Card>
-                        ))}
+                    <div className="space-y-3 animate-popup">
+                        <p>{msg.content}</p>
+                        <Select onValueChange={handleCategorySelect}>
+                            <SelectTrigger className="w-full max-w-xs text-base">
+                                <SelectValue placeholder="Select a category..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {msg.payload.map((cat: any) => (
+                                    <SelectItem key={cat.category} value={cat.category}>
+                                        <div className="flex items-center gap-3">
+                                            <IconRenderer iconName={cat.icon} className="h-5 w-5 text-primary" />
+                                            <span>{cat.category}</span>
+                                        </div>
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
                     </div>
                 );
+
             case 'question-selection':
                 return (
                      <div className="flex flex-col items-start gap-2 animate-popup">
@@ -293,6 +308,5 @@ export function FaqChat() {
         </Card>
     );
 }
-
 
     
