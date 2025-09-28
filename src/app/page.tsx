@@ -1,4 +1,7 @@
 
+"use client";
+
+import { useRef } from 'react';
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
@@ -17,12 +20,9 @@ import { IconRenderer } from '@/components/shared/icon-renderer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { PROJECT_NAV_ITEMS } from '@/lib/constants';
+import Autoplay from "embla-carousel-autoplay";
 
-
-export const metadata: Metadata = {
-  title: 'Focus-IN | AI Optometry Tools, JCC Simulator & Learning Resources',
-  description: 'Focus-IN offers cutting-edge AI optometry tools like Focus.Ai, a JCC simulator (Focus Axis), and innovative learning resources for optometry students and vision care professionals.',
-};
 
 const whyChooseUsFeatures = [
   {
@@ -40,11 +40,6 @@ const whyChooseUsFeatures = [
     title: 'Focused on Your Success',
     description: 'Our ultimate goal is your success. We provide the resources you need to pass exams, practice confidently, and excel in your career.',
   },
-];
-
-const projectHighlights = [
-    { iconName: 'Bot', title: 'Focus.Ai', description: 'Your AI-powered optometry coach. (Paid)', link: '/projects/focus-ai', linkText: 'Try Free' },
-    { iconName: 'Headphones', title: 'Focus Cast', description: 'Lectures in your pocket. (Free)', link: '/projects/focuscast', linkText: 'Listen Now' },
 ];
 
 const teamMembers = [
@@ -267,6 +262,7 @@ const faqPageSchema = {
 };
 
 export default function HomePage() {
+    const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   return (
     <>
       <script
@@ -331,7 +327,45 @@ export default function HomePage() {
                   title="Our Projects"
                   subtitle="Explore our suite of innovative optometry tools, including the Focus.Ai learning platform, JCC simulator, and other resources designed for students and professionals. Each project is built to enhance clinical skills and knowledge."
                 />
-                <FeatureGrid features={projectHighlights} />
+                 <Carousel
+                    opts={{
+                        align: "start",
+                        loop: true,
+                    }}
+                    plugins={[plugin.current]}
+                    className="w-full max-w-4xl mx-auto"
+                    onMouseEnter={plugin.current.stop}
+                    onMouseLeave={plugin.current.reset}
+                >
+                    <CarouselContent>
+                    {PROJECT_NAV_ITEMS.map((project, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                        <div className="p-1 h-full">
+                            <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border hover:border-primary/50 bg-card group">
+                                <CardHeader className="flex flex-row items-start gap-4 pb-4">
+                                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                                        <IconRenderer iconName={project.icon.displayName} className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <CardTitle className="text-xl mt-1">{project.label}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    <CardDescription>{project.description}</CardDescription>
+                                </CardContent>
+                                <CardFooter>
+                                    <Button asChild variant="default" size="sm" className="shadow-sm hover:shadow-md transition-shadow w-full sm:w-auto">
+                                        <Link href={project.href}>
+                                            Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                                        </Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        </div>
+                        </CarouselItem>
+                    ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
                 <div className="mt-12 text-center">
                     <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
                         <Link href="/projects">
