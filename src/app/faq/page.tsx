@@ -11,7 +11,7 @@ import { Bot, LucideMousePointerClick, Headphones, IndianRupee, Users } from 'lu
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Focus-IN',
+  title: 'Help Center | Focus-IN',
   description: 'Find answers to frequently asked questions about Focus-IN, our AI-powered optometry tools like Focus.Ai, the JCC simulator, and other learning resources for students.',
 };
 
@@ -82,11 +82,11 @@ const faqData = [
     }
 ];
 
-export default function FaqPage() {
+export default function HelpPage() {
   return (
     <div className="container mx-auto container-padding py-12 md:py-16">
       <SectionTitle
-        title="Frequently Asked Questions"
+        title="Help Center"
         subtitle="Have questions? We've got answers. Here are some of the most common inquiries we receive about our optometry tools and platform."
       />
       <div className="max-w-4xl mx-auto space-y-12">
@@ -117,3 +117,5 @@ export default function FaqPage() {
     </div>
   );
 }
+
+    

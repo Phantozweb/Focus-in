@@ -321,7 +321,7 @@ export default function HomePage() {
         <Separator className="my-8 md:my-12" />
 
         <AnimatedSection animationType="slide-up" delay={200}>
-            <section id="our-projects-section" className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            <section id="our-projects-section" className="py-16 md:py-24 rounded-2xl -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
               <div className="container mx-auto">
                 <SectionTitle
                   title="Our Projects"
@@ -426,7 +426,7 @@ export default function HomePage() {
         <AnimatedSection animationType="slide-up" delay={400}>
           <section className="py-16 md:py-24">
             <SectionTitle
-              title="Frequently Asked Questions"
+              title="Help Center"
               subtitle="Have questions? We've got answers. Here are some of the most common inquiries we receive about our optometry tools and platform."
             />
             <div className="max-w-5xl mx-auto">
@@ -510,6 +510,8 @@ export default function HomePage() {
     </>
   );
 }
+
+    
 
     
 

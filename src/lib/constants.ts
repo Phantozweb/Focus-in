@@ -12,7 +12,7 @@ export const NAV_ITEMS: DropdownNavItem[] = [
       { href: '/about', label: 'About', icon: Info },
       { href: '/updates', label: 'Updates', icon: Megaphone },
       { href: '/support', label: 'Support', icon: Mail },
-      { href: '/faq', label: 'FAQ', icon: HelpCircle },
+      { href: '/faq', label: 'Help', icon: HelpCircle },
     ],
   },
 ];
@@ -233,5 +233,7 @@ export const getUpdateBySlug = (slug: string): UpdatePost | undefined => {
 
 
 
+
+    
 
     

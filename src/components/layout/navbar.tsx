@@ -139,7 +139,7 @@ export function Navbar() {
                 <NavLink href="/projects" icon={Layers} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Projects</NavLink>
                 <NavLink href="/about" icon={Info} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">About Us</NavLink>
                 <NavLink href="/updates" icon={Megaphone} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Updates</NavLink>
-                 <NavLink href="/faq" icon={HelpCircle} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">FAQ</NavLink>
+                 <NavLink href="/faq" icon={HelpCircle} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Help</NavLink>
                 <NavLink href="/support" icon={Mail} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Support</NavLink>
               </nav>
             </SheetContent>
@@ -149,3 +149,5 @@ export function Navbar() {
     </header>
   );
 }
+
+    
