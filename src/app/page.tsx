@@ -429,53 +429,26 @@ export default function HomePage() {
               title="Help Center"
               subtitle="Have questions? We've got answers. Here are some of the most common inquiries we receive about our optometry tools and platform."
             />
-            <div className="max-w-5xl mx-auto">
-              <Tabs defaultValue={faqData[0].slug} className="w-full">
-                <div className="relative rounded-lg border bg-muted/50 p-4 backdrop-blur-sm">
-                    <TabsList className="w-full justify-start bg-transparent p-0">
-                      <Carousel
-                        opts={{
-                          align: "start",
-                          loop: true,
-                        }}
-                        className="w-full"
-                      >
-                        <CarouselContent>
-                          {faqData.map((category) => (
-                            <CarouselItem key={category.slug} className="basis-auto pr-2 md:basis-1/3">
-                              <TabsTrigger
-                                value={category.slug}
-                                className="w-full flex-col h-24 gap-2 rounded-lg data-[state=active]:shadow-xl data-[state=active]:border-primary text-sm"
-                              >
-                                <category.icon className="h-7 w-7" />
-                                <span>{category.category}</span>
-                              </TabsTrigger>
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                         <CarouselPrevious className="absolute left-[-1rem] top-1/2 -translate-y-1/2" />
-                         <CarouselNext className="absolute right-[-1rem] top-1/2 -translate-y-1/2" />
-                      </Carousel>
-                    </TabsList>
+            <div className="max-w-4xl mx-auto">
+                <Accordion type="single" collapsible className="w-full space-y-4">
+                    {faqData.slice(0, 5).map((faq, qIndex) => ( // Limiting to first 5 for brevity on homepage
+                    <AccordionItem value={`item-${qIndex}`} key={qIndex} className="bg-muted/30 rounded-lg px-6 border hover:border-primary/50 transition-colors">
+                        <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
+                        {faq.questions[0].question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground text-sm md:text-base pt-2">
+                           <div dangerouslySetInnerHTML={{ __html: faq.questions[0].answer }} />
+                        </AccordionContent>
+                    </AccordionItem>
+                    ))}
+                </Accordion>
+                <div className="mt-8 text-center">
+                    <Button asChild size="lg">
+                        <Link href="/faq">
+                            Visit Help Center <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
                 </div>
-                
-                {faqData.map((category) => (
-                  <TabsContent key={category.slug} value={category.slug} className="pt-8">
-                      <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto space-y-4">
-                          {category.questions.map((faq, qIndex) => (
-                          <AccordionItem value={`item-${category.slug}-${qIndex}`} key={qIndex} className="bg-muted/30 rounded-lg px-6 border">
-                              <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
-                              {faq.question}
-                              </AccordionTrigger>
-                              <AccordionContent className="text-muted-foreground text-sm md:text-base pt-2">
-                                 <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                              </AccordionContent>
-                          </AccordionItem>
-                          ))}
-                      </Accordion>
-                  </TabsContent>
-                ))}
-              </Tabs>
             </div>
           </section>
         </AnimatedSection>
@@ -510,9 +483,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    
-
-    
-
-    

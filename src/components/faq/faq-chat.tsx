@@ -1,13 +1,12 @@
 
 "use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { useState } from 'react';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Bot, FilePenLine, Headphones, IndianRupee, Link as LinkIcon, LucideCalculator, LucideMousePointerClick, User, Users } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { AnimatedSection } from '../shared/animated-section';
+import { Bot, ChevronRight, FilePenLine, Headphones, IndianRupee, Link as LinkIcon, LucideCalculator, LucideMousePointerClick, Send, Users } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Link from 'next/link';
 
 const faqData = [
     {
@@ -122,124 +121,64 @@ const faqData = [
     }
 ];
 
-type Conversation = {
-    type: 'question' | 'answer';
-    content: string;
-    id: string;
-};
-
 export function FaqChat() {
-    const [selectedCategory, setSelectedCategory] = useState(faqData[0]);
-    const [conversation, setConversation] = useState<Conversation[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const scrollAreaRef = useRef<HTMLDivElement>(null);
+    const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-    const handleCategorySelect = (category: typeof faqData[0]) => {
-        setIsLoading(true);
-        setSelectedCategory(category);
-        setConversation([]);
-
-        setTimeout(() => {
-            const newConversation: Conversation[] = [];
-            category.questions.forEach((q, index) => {
-                newConversation.push({ type: 'question', content: q.question, id: `q-${index}` });
-                newConversation.push({ type: 'answer', content: q.answer, id: `a-${index}` });
-            });
-            setConversation(newConversation);
-            setIsLoading(false);
-        }, 300);
+    const handleCategoryClick = (category: string) => {
+        setActiveCategory(prev => prev === category ? null : category);
     };
 
-    useEffect(() => {
-      handleCategorySelect(faqData[0]);
-    }, []);
-
-    useEffect(() => {
-        if (scrollAreaRef.current) {
-            scrollAreaRef.current.scrollTo({
-                top: scrollAreaRef.current.scrollHeight,
-                behavior: 'smooth'
-            });
-        }
-    }, [conversation, isLoading]);
-
-
     return (
-        <Card className="shadow-2xl border-primary/20 w-full h-[70vh] flex flex-col">
-            <CardHeader className="border-b">
-                <div className="flex items-center gap-3">
-                    <div className="relative">
-                        <Bot className="h-9 w-9 text-primary" />
-                        <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 border-2 border-card" />
-                    </div>
-                    <div>
-                        <h2 className="text-xl font-bold text-foreground">Focus-IN Help Assistant</h2>
-                        <p className="text-sm text-muted-foreground">Online and ready to help</p>
-                    </div>
-                </div>
+        <Card className="shadow-2xl border-primary/20 w-full">
+            <CardHeader className="border-b text-center">
+                <h2 className="text-3xl font-bold text-primary">Help Center</h2>
+                <p className="text-muted-foreground">Select a category to find answers to your questions.</p>
             </CardHeader>
-            <CardContent className="p-0 flex-1 flex overflow-hidden">
-                <div className="w-1/3 border-r h-full overflow-y-auto bg-muted/30">
-                    <ScrollArea className="h-full">
-                        <div className="p-4">
-                            <h3 className="font-semibold text-lg mb-4 text-foreground">Topics</h3>
-                            <div className="space-y-2">
-                            {faqData.map(cat => {
-                                const Icon = cat.icon;
-                                return (
-                                <Button
-                                    key={cat.category}
-                                    variant={selectedCategory.category === cat.category ? 'default' : 'ghost'}
-                                    className="w-full justify-start gap-3 h-12 text-base"
-                                    onClick={() => handleCategorySelect(cat)}
-                                >
-                                    <Icon className="h-5 w-5" />
-                                    {cat.category}
-                                </Button>
-                                )
-                            })}
-                            </div>
-                        </div>
-                    </ScrollArea>
+            <CardContent className="p-6 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {faqData.map(cat => {
+                        const Icon = cat.icon;
+                        return (
+                            <Button
+                                key={cat.category}
+                                variant={activeCategory === cat.category ? "default" : "outline"}
+                                className="w-full justify-start gap-3 h-14 text-lg"
+                                onClick={() => handleCategoryClick(cat.category)}
+                            >
+                                <Icon className="h-6 w-6" />
+                                <span>{cat.category}</span>
+                                <ChevronRight className="ml-auto h-5 w-5 transition-transform data-[state=open]:rotate-90" />
+                            </Button>
+                        )
+                    })}
                 </div>
-                <ScrollArea className="w-2/3 h-full" ref={scrollAreaRef}>
-                    <div className="p-6 space-y-6">
-                        {conversation.map((msg, index) => (
-                             <AnimatedSection key={`${msg.id}-${index}`} delay={index * 100} animationType='slide-up'>
-                                <div className={cn("flex items-end gap-3 w-full", msg.type === 'question' ? 'justify-end' : 'justify-start')}>
-                                    {msg.type === 'answer' && (
-                                        <Bot className="h-8 w-8 text-primary flex-shrink-0" />
-                                    )}
-                                    <div className={cn(
-                                        "max-w-[80%] rounded-2xl p-4 shadow-md",
-                                        msg.type === 'question' ? 'bg-primary text-primary-foreground rounded-br-none' : 'bg-muted text-foreground rounded-bl-none'
-                                    )}>
-                                       <div className="prose prose-sm dark:prose-invert" dangerouslySetInnerHTML={{ __html: msg.content }} />
-                                    </div>
-                                     {msg.type === 'question' && (
-                                        <User className="h-8 w-8 text-muted-foreground flex-shrink-0" />
-                                    )}
-                                </div>
-                            </AnimatedSection>
-                        ))}
-                         {isLoading && (
-                            <div className="flex items-end gap-3 justify-start">
-                                <Bot className="h-8 w-8 text-primary flex-shrink-0" />
-                                <div className="bg-muted text-foreground rounded-2xl p-4 shadow-md rounded-bl-none flex items-center gap-2">
-                                   <span className="h-2 w-2 bg-muted-foreground rounded-full animate-pulse delay-0"></span>
-                                   <span className="h-2 w-2 bg-muted-foreground rounded-full animate-pulse delay-150"></span>
-                                   <span className="h-2 w-2 bg-muted-foreground rounded-full animate-pulse delay-300"></span>
-                                </div>
-                            </div>
-                        )}
+
+                {activeCategory && (
+                    <div className="pt-6">
+                        <Accordion type="single" collapsible className="w-full space-y-3">
+                            {faqData.find(c => c.category === activeCategory)?.questions.map((faq, index) => (
+                                <AccordionItem value={`item-${index}`} key={index} className="bg-muted/30 rounded-lg px-6 border hover:border-primary/50 transition-colors">
+                                    <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
+                                        {faq.question}
+                                    </AccordionTrigger>
+                                    <AccordionContent className="text-muted-foreground text-sm md:text-base pt-2">
+                                        <div className="prose prose-sm dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))}
+                        </Accordion>
                     </div>
-                </ScrollArea>
+                )}
+                
+                <div className="text-center pt-8">
+                     <p className="text-muted-foreground mb-4">Can't find the answer you're looking for?</p>
+                     <Button asChild size="lg">
+                        <Link href="/support">
+                            <Send className="mr-2 h-5 w-5" /> Ask a Different Question
+                        </Link>
+                    </Button>
+                </div>
             </CardContent>
-             <CardFooter className="p-4 border-t bg-muted/30">
-                <p className="text-xs text-muted-foreground text-center w-full">
-                    This is a simulated chat for browsing help topics. For direct support, please visit our <a href="/support" className="text-primary hover:underline">Support Page</a>.
-                </p>
-            </CardFooter>
         </Card>
     );
 }
