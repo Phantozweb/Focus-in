@@ -64,8 +64,15 @@ const teamMembers = [
   },
   {
     name: 'Anshi Jha',
-    title: 'Head of Clinical Development',
-    description: 'I lead the development of our clinical tools, including Focus CaseX. My expertise ensures our products meet the real-world needs of optometry students and practitioners.',
+    title: 'Managing Director',
+    description: 'As a Managing Director, I oversee key projects and ensure our products meet the real-world needs of optometry students and practitioners.',
+    linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
+    instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
+  },
+    {
+    name: 'Akukalia Chinenyenwa Helen',
+    title: 'Managing Director, Focus Cast',
+    description: 'I lead our audio learning platform, Focus Cast, and also manage the development of our Focus Links project, ensuring students have access to the best resources.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -86,7 +93,7 @@ const teamMembers = [
   {
     name: 'Vimal',
     title: 'Head of Educational Products',
-    description: 'I oversee our educational products. My focus is on creating high-quality, accessible learning experiences that empower students on their educational journey.',
+    description: 'I oversee our educational products, focusing on creating high-quality, accessible learning experiences for students.',
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
@@ -341,28 +348,44 @@ export default function HomePage() {
         <AnimatedSection animationType="slide-up" delay={300}>
           <section className="py-16 md:py-24">
             <SectionTitle title="Meet Our Team" subtitle="The minds behind Focus-IN's mission to innovate vision care." />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
-              {teamMembers.map((member) => (
-                <Card key={member.name} className="overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow border hover:border-primary/30 flex flex-col">
-                  <CardHeader className="p-6 items-center">
-                    <CardTitle className="text-2xl text-primary">{member.name}</CardTitle>
-                    <CardDescription className="text-base font-medium text-foreground mt-1">{member.title}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-6 pt-0 flex-grow">
-                    <p className="text-muted-foreground italic">"{member.description}"</p>
-                  </CardContent>
-                  <CardFooter className="bg-muted/50 p-4 flex justify-center gap-4">
-                     <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      <Linkedin className="h-6 w-6" />
-                      <span className="sr-only">LinkedIn</span>
-                    </a>
-                    <a href={member.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      <Instagram className="h-6 w-6" />
-                      <span className="sr-only">Instagram</span>
-                    </a>
-                  </CardFooter>
-                </Card>
-              ))}
+            <div className="relative max-w-7xl mx-auto">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {teamMembers.map((member) => (
+                    <CarouselItem key={member.name} className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-2">
+                        <Card className="h-full overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow duration-300 border hover:border-primary/30 flex flex-col">
+                          <CardHeader className="p-6 items-center">
+                            <CardTitle className="text-2xl text-primary">{member.name}</CardTitle>
+                            <CardDescription className="text-base font-medium text-foreground mt-1">{member.title}</CardDescription>
+                          </CardHeader>
+                          <CardContent className="p-6 pt-0 flex-grow">
+                            <p className="text-muted-foreground italic">"{member.description}"</p>
+                          </CardContent>
+                          <CardFooter className="bg-muted/50 p-4 flex justify-center gap-4">
+                            <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                              <Linkedin className="h-6 w-6" />
+                              <span className="sr-only">LinkedIn</span>
+                            </a>
+                            <a href={member.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                              <Instagram className="h-6 w-6" />
+                              <span className="sr-only">Instagram</span>
+                            </a>
+                          </CardFooter>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-[-2rem] top-1/2 -translate-y-1/2 z-10" />
+                <CarouselNext className="absolute right-[-2rem] top-1/2 -translate-y-1/2 z-10" />
+              </Carousel>
             </div>
           </section>
         </AnimatedSection>
@@ -377,8 +400,8 @@ export default function HomePage() {
             />
             <div className="max-w-5xl mx-auto">
               <Tabs defaultValue={faqData[0].slug} className="w-full">
-                <div className="relative px-12">
-                    <TabsList className="w-full justify-start p-1 bg-background/50 backdrop-blur-sm rounded-lg">
+                <div className="relative rounded-lg border bg-muted/30 backdrop-blur-sm p-2">
+                    <TabsList className="w-full justify-start p-1 bg-transparent rounded-lg">
                       <Carousel
                         opts={{
                           align: "start",
@@ -459,4 +482,5 @@ export default function HomePage() {
     
 
     
+
 
