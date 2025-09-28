@@ -11,13 +11,13 @@ export const NAV_ITEMS: DropdownNavItem[] = [
 ];
 
 export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
-  { href: '/projects/focus-ai', label: 'Focus.Ai', icon: Bot, description: "AI-powered diagnostic assistance." },
-  { href: '/projects/focus-axis', label: 'Focus Axis', icon: LucideMousePointerClick, description: "JCC Simulator & Gamified Training." },
-  { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform." },
-  { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice." },
-  { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go." },
-  { href: '/projects/focus-clinic', label: 'Focus Clinic', icon: Monitor, description: "Clinical Management System (Beta)." },
-  { href: '/projects/focus-links', label: 'Focus Links', icon: LinkIcon, description: "Central hub for optometry resources." },
+  { href: '/projects/focus-ai', label: 'Focus.Ai', icon: Bot, description: "AI-powered diagnostic assistance.", status: 'Paid' },
+  { href: '/projects/focus-axis', label: 'Focus Axis', icon: LucideMousePointerClick, description: "JCC Simulator & Gamified Training.", status: 'Free' },
+  { href: '/projects/focus-casex', label: 'Focus CaseX', icon: FilePenLine, description: "Interactive case studies platform.", status: 'Beta' },
+  { href: '/projects/focus-gen', label: 'Focus Gen', icon: LucideCalculator, description: "Transposition Sums: Generate & Practice.", status: 'Free' },
+  { href: '/projects/focuscast', label: 'Focus Cast', icon: Headphones, description: "Optometry Audio Learning, On the Go.", status: 'Free' },
+  { href: '/projects/focus-clinic', label: 'Focus Clinic', icon: Monitor, description: "Clinical Management System (Beta).", status: 'Beta' },
+  { href: '/projects/focus-links', label: 'Focus Links', icon: LinkIcon, description: "Central hub for optometry resources.", status: 'Beta' },
 ];
 
 

@@ -18,6 +18,7 @@ export interface DropdownNavItem {
 
 export interface ProjectNavItem extends NavItem {
   description: string;
+  status?: 'Paid' | 'Free' | 'Beta';
 }
 
 export interface ProjectFeature {
@@ -47,4 +48,3 @@ export interface UpdatePost {
   tags?: string[];
   projectSlug?: string; // Optional: to link update to a specific project
 }
-

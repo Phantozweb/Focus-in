@@ -346,12 +346,19 @@ export default function HomePage() {
                                     <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                                         <IconRenderer iconName={project.icon.displayName} className="h-8 w-8 text-primary" />
                                     </div>
-                                    <CardTitle className="text-xl mt-1">{project.label}</CardTitle>
+                                    <div className="flex-grow">
+                                        <CardTitle className="text-xl mt-1">{project.label}</CardTitle>
+                                        {project.status && (
+                                            <Badge variant={project.status === 'Paid' ? 'default' : 'secondary'} className="mt-2 text-xs">
+                                                {project.status}
+                                            </Badge>
+                                        )}
+                                    </div>
                                 </CardHeader>
                                 <CardContent className="flex-grow">
                                     <CardDescription>{project.description}</CardDescription>
                                 </CardContent>
-                                <CardFooter>
+                                <CardFooter className="justify-center">
                                     <Button asChild variant="default" size="sm" className="shadow-sm hover:shadow-md transition-shadow w-full sm:w-auto">
                                         <Link href={project.href}>
                                             Learn More <ArrowRight className="ml-1 h-4 w-4" />
