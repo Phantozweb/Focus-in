@@ -359,7 +359,7 @@ export default function HomePage() {
                 <CarouselContent>
                   {teamMembers.map((member) => (
                     <CarouselItem key={member.name} className="md:basis-1/2 lg:basis-1/3">
-                      <div className="p-2">
+                      <div className="p-2 h-full">
                         <Card className="h-full overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow duration-300 border hover:border-primary/30 flex flex-col">
                           <CardHeader className="p-6 items-center">
                             <CardTitle className="text-2xl text-primary">{member.name}</CardTitle>
@@ -400,8 +400,8 @@ export default function HomePage() {
             />
             <div className="max-w-5xl mx-auto">
               <Tabs defaultValue={faqData[0].slug} className="w-full">
-                <div className="relative rounded-lg border bg-muted/30 backdrop-blur-sm p-2">
-                    <TabsList className="w-full justify-start p-1 bg-transparent rounded-lg">
+                <div className="relative rounded-lg border bg-muted/30 p-4 backdrop-blur-sm">
+                    <TabsList className="w-full justify-start bg-transparent p-0">
                       <Carousel
                         opts={{
                           align: "start",
