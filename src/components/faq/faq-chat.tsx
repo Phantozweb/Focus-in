@@ -246,7 +246,7 @@ export function FaqChat() {
                     </div>
                     <div>
                         <CardTitle className="text-xl">Focus-IN Help Center</CardTitle>
-                        <CardDescription>Your friendly AI assistant</CardDescription>
+                        <CardDescription>Get help with our products and services.</CardDescription>
                     </div>
                 </div>
             </CardHeader>
