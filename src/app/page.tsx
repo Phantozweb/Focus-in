@@ -321,8 +321,8 @@ export default function HomePage() {
         <Separator className="my-8 md:my-12" />
 
         <AnimatedSection animationType="slide-up" delay={200}>
-            <section id="our-projects-section" className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border">
-              <div className="px-4">
+            <section id="our-projects-section" className="bg-card/50 dark:bg-muted/30 py-16 md:py-24 rounded-2xl shadow-xl border -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+              <div className="container mx-auto">
                 <SectionTitle
                   title="Our Projects"
                   subtitle="Explore our suite of innovative optometry tools, including the Focus.Ai learning platform, JCC simulator, and other resources designed for students and professionals. Each project is built to enhance clinical skills and knowledge."
@@ -333,45 +333,35 @@ export default function HomePage() {
                         loop: true,
                     }}
                     plugins={[plugin.current]}
-                    className="w-full max-w-4xl mx-auto"
+                    className="w-full"
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
                 >
-                    <CarouselContent>
+                    <CarouselContent className="-ml-4">
                     {PROJECT_NAV_ITEMS.map((project, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                        <div className="p-1 h-full">
-                            <Card className="flex h-full flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border hover:border-primary/50 bg-card group">
-                                <CardHeader className="flex flex-row items-start gap-4 pb-4">
-                                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                                        <IconRenderer iconName={project.icon.displayName} className="h-8 w-8 text-primary" />
-                                    </div>
-                                    <div className="flex-grow">
-                                        <CardTitle className="text-xl mt-1">{project.label}</CardTitle>
-                                        {project.status && (
-                                            <Badge variant={project.status === 'Paid' ? 'default' : 'secondary'} className="mt-2 text-xs">
-                                                {project.status}
-                                            </Badge>
-                                        )}
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="flex-grow">
-                                    <CardDescription>{project.description}</CardDescription>
-                                </CardContent>
-                                <CardFooter className="justify-center">
-                                    <Button asChild variant="default" size="sm" className="shadow-sm hover:shadow-md transition-shadow w-full sm:w-auto">
-                                        <Link href={project.href}>
-                                            Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        </div>
+                        <CarouselItem key={index} className="pl-4">
+                            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background/50 h-full">
+                                <div className="p-3 rounded-lg bg-primary/10 transition-colors mb-4">
+                                    <IconRenderer iconName={project.icon.displayName} className="h-10 w-10 text-primary" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-foreground">{project.label}</h3>
+                                {project.status && (
+                                    <Badge variant={project.status === 'Paid' ? 'default' : 'secondary'} className="mt-2 text-xs">
+                                        {project.status}
+                                    </Badge>
+                                )}
+                                <p className="text-muted-foreground mt-3 flex-grow">{project.description}</p>
+                                <Button asChild variant="default" size="sm" className="mt-6 shadow-sm hover:shadow-md transition-shadow">
+                                    <Link href={project.href}>
+                                        Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                                    </Link>
+                                </Button>
+                            </div>
                         </CarouselItem>
                     ))}
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    <CarouselPrevious className="absolute left-[-1rem] top-1/2 -translate-y-1/2 z-10" />
+                    <CarouselNext className="absolute right-[-1rem] top-1/2 -translate-y-1/2 z-10" />
                 </Carousel>
                 <div className="mt-12 text-center">
                     <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
@@ -402,11 +392,11 @@ export default function HomePage() {
                     <CarouselItem key={member.name} className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-2 h-full">
                         <Card className="h-full overflow-hidden text-center shadow-lg hover:shadow-2xl transition-shadow duration-300 border hover:border-primary/30 flex flex-col">
-                          <CardHeader className="p-6 items-center">
+                          <CardHeader className="p-6 items-center bg-gradient-to-br from-primary/10 via-background to-background">
                             <CardTitle className="text-2xl text-primary">{member.name}</CardTitle>
                             <CardDescription className="text-base font-medium text-foreground mt-1">{member.title}</CardDescription>
                           </CardHeader>
-                          <CardContent className="p-6 pt-0 flex-grow">
+                          <CardContent className="p-6 pt-4 flex-grow">
                             <p className="text-muted-foreground italic">"{member.description}"</p>
                           </CardContent>
                           <CardFooter className="bg-muted/50 p-4 flex justify-center gap-4">
@@ -441,7 +431,7 @@ export default function HomePage() {
             />
             <div className="max-w-5xl mx-auto">
               <Tabs defaultValue={faqData[0].slug} className="w-full">
-                <div className="relative rounded-lg border bg-muted/30 p-4 backdrop-blur-sm">
+                <div className="relative rounded-lg border bg-muted/50 p-4 backdrop-blur-sm">
                     <TabsList className="w-full justify-start bg-transparent p-0">
                       <Carousel
                         opts={{
@@ -520,5 +510,7 @@ export default function HomePage() {
     </>
   );
 }
+
+    
 
     
