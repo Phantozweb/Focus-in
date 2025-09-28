@@ -1,17 +1,19 @@
 
 "use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { useState, useEffect, useRef } from 'react';
+import { Card, CardContent, CardHeader, CardDescription, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Bot, ChevronRight, FilePenLine, Headphones, IndianRupee, Link as LinkIcon, LucideCalculator, LucideMousePointerClick, Send, Users } from 'lucide-react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Bot, User, ArrowLeft, Send } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { IconRenderer } from '@/components/shared/icon-renderer';
 import Link from 'next/link';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const faqData = [
     {
         category: "General",
-        icon: Users,
+        icon: 'Users',
         questions: [
             {
                 question: "What is Focus-IN?",
@@ -33,7 +35,7 @@ const faqData = [
     },
     {
         category: "Focus.Ai",
-        icon: Bot,
+        icon: 'Bot',
         questions: [
             {
                 question: "How does Focus.Ai help with studying for optometry exams?",
@@ -47,7 +49,7 @@ const faqData = [
     },
     {
         category: "Focus Axis",
-        icon: LucideMousePointerClick,
+        icon: 'MousePointerClick',
         questions: [
             {
                 question: "How realistic is the JCC simulator in Focus Axis?",
@@ -61,7 +63,7 @@ const faqData = [
     },
      {
         category: "Focus Cast",
-        icon: Headphones,
+        icon: 'Headphones',
         questions: [
             {
                 question: "What kind of topics does Focus Cast cover?",
@@ -75,7 +77,7 @@ const faqData = [
     },
     {
         category: "Focus CaseX",
-        icon: FilePenLine,
+        icon: 'FilePenLine',
         questions: [
             {
                 question: "What is Focus CaseX?",
@@ -93,7 +95,7 @@ const faqData = [
     },
     {
         category: "Focus Gen",
-        icon: LucideCalculator,
+        icon: 'LucideCalculator',
         questions: [
             {
                 question: "What is Focus Gen?",
@@ -107,7 +109,7 @@ const faqData = [
     },
     {
         category: "Focus Links",
-        icon: LinkIcon,
+        icon: 'LinkIcon',
         questions: [
             {
                 question: "What is Focus Links?",
@@ -121,64 +123,153 @@ const faqData = [
     }
 ];
 
-export function FaqChat() {
-    const [activeCategory, setActiveCategory] = useState<string | null>(null);
+type ChatMessage = {
+    sender: 'bot' | 'user' | 'system';
+    type: 'text' | 'category-selection' | 'question-selection' | 'unanswered-prompt';
+    content?: string;
+    payload?: any;
+    id: number;
+}
 
-    const handleCategoryClick = (category: string) => {
-        setActiveCategory(prev => prev === category ? null : category);
+export function FaqChat() {
+    const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<any | null>(null);
+    const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        // Initial greeting from the bot
+        setChatHistory([
+            {
+                sender: 'bot',
+                type: 'text',
+                content: "Welcome to the Focus-IN Help Center! I'm here to assist you. What can I help you with today?",
+                id: Date.now()
+            },
+            {
+                sender: 'system',
+                type: 'category-selection',
+                payload: faqData,
+                id: Date.now() + 1
+            }
+        ]);
+    }, []);
+
+    useEffect(() => {
+        // Auto-scroll to the bottom of the chat
+        if (scrollAreaRef.current) {
+            scrollAreaRef.current.scrollTo({ top: scrollAreaRef.current.scrollHeight, behavior: 'smooth' });
+        }
+    }, [chatHistory]);
+
+    const handleCategorySelect = (category: any) => {
+        setSelectedCategory(category);
+        setChatHistory(prev => [
+            ...prev.filter(msg => msg.type !== 'category-selection' && msg.type !== 'unanswered-prompt'), // remove old selection
+            { sender: 'user', type: 'text', content: `I have a question about ${category.category}.`, id: Date.now() },
+            { sender: 'bot', type: 'text', content: `Great! Here are some common questions about ${category.category}.`, id: Date.now() + 1 },
+            { sender: 'system', type: 'question-selection', payload: category.questions, id: Date.now() + 2 }
+        ]);
+    };
+
+    const handleQuestionSelect = (question: any) => {
+        setChatHistory(prev => [
+            ...prev.filter(msg => msg.type !== 'question-selection' && msg.type !== 'unanswered-prompt'),
+            { sender: 'user', type: 'text', content: question.question, id: Date.now() },
+            { sender: 'bot', type: 'text', content: question.answer, id: Date.now() + 1 },
+            { sender: 'system', type: 'unanswered-prompt', id: Date.now() + 2 }
+        ]);
+    };
+    
+    const handleGoBack = () => {
+        setSelectedCategory(null);
+        setChatHistory(prev => [
+            ...prev.filter(msg => msg.type !== 'question-selection' && msg.type !== 'unanswered-prompt'),
+            { sender: 'bot', type: 'text', content: "What else can I help you with?", id: Date.now() },
+            { sender: 'system', type: 'category-selection', payload: faqData, id: Date.now() + 1 }
+        ]);
+    };
+
+    const renderMessageContent = (msg: ChatMessage) => {
+        switch (msg.type) {
+            case 'text':
+                return <div className="prose prose-sm dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: msg.content || '' }} />;
+            case 'category-selection':
+                return (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 animate-popup">
+                        {msg.payload.map((cat: any) => (
+                            <Card key={cat.category} onClick={() => handleCategorySelect(cat)} className="cursor-pointer transition-all duration-300 hover:shadow-primary/20 hover:border-primary/50 hover:-translate-y-1">
+                                <CardHeader className="flex flex-row items-center gap-4 p-4">
+                                    <IconRenderer iconName={cat.icon} className="h-7 w-7 text-primary" />
+                                    <CardTitle className="text-base">{cat.category}</CardTitle>
+                                </CardHeader>
+                            </Card>
+                        ))}
+                    </div>
+                );
+            case 'question-selection':
+                return (
+                     <div className="flex flex-col items-start gap-2 animate-popup">
+                        {msg.payload.map((q: any, index: number) => (
+                            <Button key={index} variant="outline" size="sm" className="h-auto text-left py-2" onClick={() => handleQuestionSelect(q)}>
+                                {q.question}
+                            </Button>
+                        ))}
+                        <Button variant="ghost" size="sm" onClick={handleGoBack} className="mt-2 text-primary">
+                            <ArrowLeft className="mr-2 h-4 w-4" /> Go Back
+                        </Button>
+                    </div>
+                );
+            case 'unanswered-prompt':
+                return (
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 animate-popup">
+                        <p className="text-sm text-muted-foreground">Still have questions?</p>
+                        <div className="flex gap-2">
+                             <Button size="sm" onClick={handleGoBack}>Ask another question</Button>
+                             <Button size="sm" variant="outline" asChild>
+                                <Link href="/support"><Send className="mr-2 h-4 w-4"/>Contact Support</Link>
+                             </Button>
+                        </div>
+                    </div>
+                )
+            default:
+                return null;
+        }
     };
 
     return (
-        <Card className="shadow-2xl border-primary/20 w-full">
-            <CardHeader className="border-b text-center">
-                <h2 className="text-3xl font-bold text-primary">Help Center</h2>
-                <p className="text-muted-foreground">Select a category to find answers to your questions.</p>
-            </CardHeader>
-            <CardContent className="p-6 space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {faqData.map(cat => {
-                        const Icon = cat.icon;
-                        return (
-                            <Button
-                                key={cat.category}
-                                variant={activeCategory === cat.category ? "default" : "outline"}
-                                className="w-full justify-start gap-3 h-14 text-lg"
-                                onClick={() => handleCategoryClick(cat.category)}
-                            >
-                                <Icon className="h-6 w-6" />
-                                <span>{cat.category}</span>
-                                <ChevronRight className="ml-auto h-5 w-5 transition-transform data-[state=open]:rotate-90" />
-                            </Button>
-                        )
-                    })}
-                </div>
-
-                {activeCategory && (
-                    <div className="pt-6">
-                        <Accordion type="single" collapsible className="w-full space-y-3">
-                            {faqData.find(c => c.category === activeCategory)?.questions.map((faq, index) => (
-                                <AccordionItem value={`item-${index}`} key={index} className="bg-muted/30 rounded-lg px-6 border hover:border-primary/50 transition-colors">
-                                    <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
-                                        {faq.question}
-                                    </AccordionTrigger>
-                                    <AccordionContent className="text-muted-foreground text-sm md:text-base pt-2">
-                                        <div className="prose prose-sm dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
+        <Card className="w-full shadow-2xl border-primary/20">
+            <CardHeader className="border-b">
+                <div className="flex items-center gap-3">
+                    <div className="relative">
+                        <Bot className="h-8 w-8 text-primary" />
+                        <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-500 border-2 border-card" />
                     </div>
-                )}
-                
-                <div className="text-center pt-8">
-                     <p className="text-muted-foreground mb-4">Can't find the answer you're looking for?</p>
-                     <Button asChild size="lg">
-                        <Link href="/support">
-                            <Send className="mr-2 h-5 w-5" /> Ask a Different Question
-                        </Link>
-                    </Button>
+                    <div>
+                        <CardTitle className="text-xl">Focus-IN Help Center</CardTitle>
+                        <CardDescription>Your friendly AI assistant</CardDescription>
+                    </div>
                 </div>
-            </CardContent>
+            </CardHeader>
+            <ScrollArea className="h-[60vh]" ref={scrollAreaRef}>
+                 <CardContent className="p-4 sm:p-6 space-y-6">
+                    {chatHistory.map((msg) => (
+                        <div key={msg.id} className={cn("flex items-start gap-3", msg.sender === 'user' ? 'justify-end' : 'justify-start')}>
+                            {msg.sender === 'bot' && <Bot className="h-7 w-7 text-primary flex-shrink-0" />}
+                            
+                            <div className={cn(
+                                "max-w-md rounded-lg px-4 py-3 text-sm",
+                                msg.sender === 'bot' && 'bg-muted',
+                                msg.sender === 'user' && 'bg-primary text-primary-foreground',
+                                msg.sender === 'system' && 'w-full max-w-full bg-transparent p-0'
+                            )}>
+                                {renderMessageContent(msg)}
+                            </div>
+
+                            {msg.sender === 'user' && <User className="h-7 w-7 text-muted-foreground flex-shrink-0" />}
+                        </div>
+                    ))}
+                </CardContent>
+            </ScrollArea>
         </Card>
     );
 }
