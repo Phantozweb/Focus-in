@@ -4,14 +4,11 @@
 import { useState, useMemo } from 'react';
 import { SectionTitle } from '@/components/shared/section-title';
 import { getUpdatesData } from '@/lib/constants';
-import type { Metadata } from 'next';
 import { UpdateSummaryCard } from '@/components/updates/update-summary-card';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Search, Tag } from 'lucide-react';
-import type { UpdatePost } from '@/types';
-
 
 export default function UpdatesPage() {
   const allUpdates = useMemo(() => getUpdatesData(), []);
@@ -20,7 +17,7 @@ export default function UpdatesPage() {
     allUpdates.forEach(update => {
       update.tags?.forEach(tag => tags.add(tag));
     });
-    return Array.from(tags);
+    return Array.from(tags).sort();
   }, [allUpdates]);
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -46,19 +43,19 @@ export default function UpdatesPage() {
         subtitle="Stay informed about our projects, new features, and community news."
       />
       
-      <div className="mb-10 max-w-2xl mx-auto space-y-6">
+      <div className="mb-12 max-w-3xl mx-auto space-y-6">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
             type="text"
-            placeholder="Search updates..."
+            placeholder="Search by title, content, or tag..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10 h-12 text-base"
+            className="pl-12 h-12 text-base rounded-full shadow-sm"
           />
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">
-            <Tag className="h-5 w-5 text-muted-foreground mr-2" />
+            <Tag className="h-5 w-5 text-muted-foreground mr-1" />
             <Badge
                 variant={selectedTag === null ? 'default' : 'secondary'}
                 onClick={() => setSelectedTag(null)}
@@ -71,7 +68,7 @@ export default function UpdatesPage() {
                     key={tag}
                     variant={selectedTag === tag ? 'default' : 'secondary'}
                     onClick={() => setSelectedTag(tag)}
-                    className="cursor-pointer transition-transform transform hover:scale-105"
+                    className="cursor-pointer transition-transform transform hover:scale-105 capitalize"
                 >
                     {tag}
                 </Badge>
@@ -79,23 +76,24 @@ export default function UpdatesPage() {
         </div>
       </div>
 
-      {filteredUpdates.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredUpdates.map((update, index) => (
-            <AnimatedSection key={update.slug} delay={index * 100} animationType="slide-up">
-              <UpdateSummaryCard update={update} />
-            </AnimatedSection>
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-16">
-          <p className="text-xl font-semibold text-foreground">No updates found.</p>
-          <p className="text-muted-foreground mt-2">
-            Try adjusting your search or filter criteria.
-          </p>
-        </div>
-      )}
+      <div className="max-w-3xl mx-auto">
+        {filteredUpdates.length > 0 ? (
+          <div className="space-y-8">
+            {filteredUpdates.map((update, index) => (
+              <AnimatedSection key={update.slug} delay={index * 100} animationType="slide-up">
+                <UpdateSummaryCard update={update} />
+              </AnimatedSection>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-xl font-semibold text-foreground">No updates found.</p>
+            <p className="text-muted-foreground mt-2">
+              Try adjusting your search or filter criteria.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
-
