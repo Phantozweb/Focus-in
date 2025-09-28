@@ -1,7 +1,8 @@
 
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { HeroSection } from '@/components/home/hero-section';
 import { FeatureGrid } from '@/components/home/feature-grid';
 import { SectionTitle } from '@/components/shared/section-title';
@@ -22,6 +23,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { PROJECT_NAV_ITEMS } from '@/lib/constants';
 import Autoplay from "embla-carousel-autoplay";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 
 const whyChooseUsFeatures = [
@@ -262,7 +270,13 @@ const faqPageSchema = {
 };
 
 export default function HomePage() {
-    const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+    const router = useRouter();
+    const handleProjectSelect = (slug: string) => {
+        if (slug) {
+        router.push(slug);
+        }
+    };
+    
   return (
     <>
       <script
@@ -321,56 +335,46 @@ export default function HomePage() {
         <Separator className="my-8 md:my-12" />
 
         <AnimatedSection animationType="slide-up" delay={200}>
-            <section id="our-projects-section" className="py-16 md:py-24 rounded-2xl -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-              <div className="container mx-auto">
-                <SectionTitle
+            <section id="our-projects-section" className="py-16 md:py-24">
+                 <SectionTitle
                   title="Our Projects"
-                  subtitle="Explore our suite of innovative optometry tools, including the Focus.Ai learning platform, JCC simulator, and other resources designed for students and professionals. Each project is built to enhance clinical skills and knowledge."
+                  subtitle="Explore our suite of innovative optometry tools designed to enhance clinical skills and knowledge."
                 />
-                 <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    plugins={[plugin.current]}
-                    className="w-full"
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
-                >
-                    <CarouselContent className="-ml-4">
-                    {PROJECT_NAV_ITEMS.map((project, index) => (
-                        <CarouselItem key={index} className="pl-4">
-                            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background/50 h-full">
-                                <div className="p-3 rounded-lg bg-primary/10 transition-colors mb-4">
-                                    <IconRenderer iconName={project.icon.displayName} className="h-10 w-10 text-primary" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-foreground">{project.label}</h3>
-                                {project.status && (
-                                    <Badge variant={project.status === 'Paid' ? 'default' : 'secondary'} className="mt-2 text-xs">
-                                        {project.status}
-                                    </Badge>
-                                )}
-                                <p className="text-muted-foreground mt-3 flex-grow">{project.description}</p>
-                                <Button asChild variant="default" size="sm" className="mt-6 shadow-sm hover:shadow-md transition-shadow">
-                                    <Link href={project.href}>
-                                        Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                                    </Link>
-                                </Button>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="absolute left-[-1rem] top-1/2 -translate-y-1/2 z-10" />
-                    <CarouselNext className="absolute right-[-1rem] top-1/2 -translate-y-1/2 z-10" />
-                </Carousel>
-                <div className="mt-12 text-center">
-                    <Button asChild size="lg" variant="default" className="shadow-md hover:shadow-lg transition-shadow">
-                        <Link href="/projects">
-                            View All Our Projects <ArrowRight className="ml-2 h-5 w-5" /> 
-                        </Link>
-                    </Button>
+                <div className="max-w-2xl mx-auto">
+                    <Card className="shadow-lg border-primary/20">
+                        <CardHeader>
+                            <CardTitle className="text-xl flex items-center gap-3"><Layers className="h-6 w-6 text-primary"/>Explore Our Innovations</CardTitle>
+                            <CardDescription>Select a project from the list below to learn more about how we're shaping the future of optometry education.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <Select onValueChange={handleProjectSelect}>
+                                <SelectTrigger className="w-full h-12 text-base">
+                                    <SelectValue placeholder="Select a project..." />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {PROJECT_NAV_ITEMS.map((project) => (
+                                    <SelectItem key={project.href} value={project.href}>
+                                        <div className="flex items-center gap-3">
+                                            <IconRenderer iconName={project.icon.displayName} className="h-5 w-5 text-primary" />
+                                            <div>
+                                                <span>{project.label}</span>
+                                                <span className="text-xs text-muted-foreground ml-2">({project.status})</span>
+                                            </div>
+                                        </div>
+                                    </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        </CardContent>
+                         <CardFooter className="justify-center">
+                            <Button asChild variant="outline">
+                                <Link href="/projects">
+                                    Compare All Projects <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        </CardFooter>
+                    </Card>
                 </div>
-              </div>
             </section>
         </AnimatedSection>
         
@@ -432,7 +436,7 @@ export default function HomePage() {
             <div className="max-w-4xl mx-auto">
                 <Accordion type="single" collapsible className="w-full space-y-4">
                     {faqData.slice(0, 5).map((faq, qIndex) => ( // Limiting to first 5 for brevity on homepage
-                    <AccordionItem value={`item-${qIndex}`} key={qIndex} className="bg-muted/30 rounded-lg px-6 border hover:border-primary/50 transition-colors">
+                    <AccordionItem value={`item-${qIndex}`} key={qIndex} className="bg-card border hover:border-primary/50 transition-colors shadow-sm rounded-lg px-6">
                         <AccordionTrigger className="text-left hover:no-underline text-base md:text-lg">
                         {faq.questions[0].question}
                         </AccordionTrigger>
@@ -483,3 +487,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
