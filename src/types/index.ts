@@ -11,7 +11,7 @@ export interface NavItem {
 export interface DropdownNavItem {
   href?: string;
   label: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
   disabled?: boolean;
   children?: NavItem[];
 }

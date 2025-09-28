@@ -64,6 +64,7 @@ export function Navbar() {
         <DropdownMenu key={item.label}>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className={cn("flex items-center gap-1 px-3 py-2 text-sm font-medium data-[state=open]:bg-accent/50", isDropdownActive ? "bg-primary/10 text-primary font-semibold" : "text-foreground/80 hover:text-foreground hover:bg-accent/50")}>
+               {item.icon && <item.icon className="h-5 w-5" />}
               {item.label} <ChevronDown className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -98,6 +99,7 @@ export function Navbar() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className={cn("flex items-center gap-1 px-3 py-2 text-sm font-medium data-[state=open]:bg-accent/50", pathname.startsWith('/projects') ? "bg-primary/10 text-primary font-semibold" : "text-foreground/80 hover:text-foreground hover:bg-accent/50")}>
+                <Layers className="h-5 w-5" />
                 Projects <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
@@ -137,6 +139,7 @@ export function Navbar() {
                 <NavLink href="/projects" icon={Layers} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Projects</NavLink>
                 <NavLink href="/about" icon={Info} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">About Us</NavLink>
                 <NavLink href="/updates" icon={Megaphone} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Updates</NavLink>
+                 <NavLink href="/faq" icon={HelpCircle} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">FAQ</NavLink>
                 <NavLink href="/support" icon={Mail} onClick={() => setIsMobileMenuOpen(false)} className="text-base py-3">Support</NavLink>
               </nav>
             </SheetContent>

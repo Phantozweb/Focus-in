@@ -5,9 +5,16 @@ import type React from 'react';
 
 export const NAV_ITEMS: DropdownNavItem[] = [
   { href: '/', label: 'Home', icon: Home },
-  { href: '/about', label: 'About', icon: Info },
-  { href: '/updates', label: 'Updates', icon: Megaphone },
-  { href: '/support', label: 'Support', icon: Mail },
+  {
+    label: 'Resources',
+    icon: Lightbulb,
+    children: [
+      { href: '/about', label: 'About', icon: Info },
+      { href: '/updates', label: 'Updates', icon: Megaphone },
+      { href: '/support', label: 'Support', icon: Mail },
+      { href: '/faq', label: 'FAQ', icon: HelpCircle },
+    ],
+  },
 ];
 
 export const PROJECT_NAV_ITEMS: ProjectNavItem[] = [
