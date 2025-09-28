@@ -69,7 +69,7 @@ const teamMembers = [
     linkedinUrl: 'https://www.linkedin.com/company/focusprojects/',
     instagramUrl: 'https://www.instagram.com/focus_.in?igsh=dTY5MG96cHc5Zmhu',
   },
-    {
+  {
     name: 'Akukalia Chinenyenwa Helen',
     title: 'Managing Director, Focus Cast',
     description: 'I lead our audio learning platform, Focus Cast, and also manage the development of our Focus Links project, ensuring students have access to the best resources.',
@@ -482,5 +482,6 @@ export default function HomePage() {
     
 
     
+
 
 
