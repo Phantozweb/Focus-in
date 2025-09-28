@@ -73,6 +73,52 @@ const faqData = [
                 answer: "Yes, 100%! There is no login required and no subscription fee. You can start listening to all available episodes right away on the <a href='https://focuscast.netlify.app' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Focus Cast platform</a>."
             }
         ]
+    },
+    {
+        category: "Focus CaseX",
+        icon: FilePenLine,
+        questions: [
+            {
+                question: "What is Focus CaseX?",
+                answer: "Focus CaseX is an AI-powered platform that lets you log real patient cases and then use AI to interact with that data. You can ask the AI questions about the case, get summaries, and even practice for viva exams, all based on your own logged information."
+            },
+            {
+                question: "Is my patient data stored anywhere?",
+                answer: "Absolutely not. Focus CaseX is designed with privacy as its top priority. All case information you enter is processed temporarily in your browser and is never sent to or stored on our servers. Once you close the tab, the data is gone."
+            },
+             {
+                question: "How does this help me prepare for viva exams?",
+                answer: "After logging a case, you can start a simulated viva session. The AI will ask you relevant questions about the case, from patient history to diagnosis and management, just like a real examiner would. It's a great way to practice your clinical reasoning and communication skills under pressure."
+            }
+        ]
+    },
+    {
+        category: "Focus Gen",
+        icon: LucideCalculator,
+        questions: [
+            {
+                question: "What is Focus Gen?",
+                answer: "Focus Gen is a simple but powerful tool for optometry students. It's a transposition sum generator that allows you to create an unlimited number of practice problems to master optical calculations."
+            },
+            {
+                question: "Why do I need to practice transposition?",
+                answer: "Transposition is a fundamental skill in optometry used to convert prescriptions between plus and minus cylinder forms. Being fast and accurate is essential for both exams and clinical practice. Focus Gen helps you build that speed and confidence."
+            }
+        ]
+    },
+    {
+        category: "Focus Links",
+        icon: LinkIcon,
+        questions: [
+            {
+                question: "What is Focus Links?",
+                answer: "Focus Links is a centralized, curated hub of essential online resources for optometry. Instead of juggling hundreds of bookmarks, you can find links to top-tier academic journals, clinical calculators, professional organizations, and study guides all in one place."
+            },
+            {
+                question: "Is Focus Links a free resource?",
+                answer: "Yes, Focus Links is completely free to use. Our goal is to streamline access to information for the entire optometry community."
+            }
+        ]
     }
 ];
 
@@ -115,7 +161,7 @@ export function FaqChat() {
                 behavior: 'smooth'
             });
         }
-    }, [conversation]);
+    }, [conversation, isLoading]);
 
 
     return (
@@ -134,25 +180,27 @@ export function FaqChat() {
             </CardHeader>
             <CardContent className="p-0 flex-1 flex overflow-hidden">
                 <div className="w-1/3 border-r h-full overflow-y-auto bg-muted/30">
-                    <div className="p-4">
-                        <h3 className="font-semibold text-lg mb-4 text-foreground">Topics</h3>
-                        <div className="space-y-2">
-                        {faqData.map(cat => {
-                            const Icon = cat.icon;
-                            return (
-                            <Button
-                                key={cat.category}
-                                variant={selectedCategory.category === cat.category ? 'default' : 'ghost'}
-                                className="w-full justify-start gap-3 h-12 text-base"
-                                onClick={() => handleCategorySelect(cat)}
-                            >
-                                <Icon className="h-5 w-5" />
-                                {cat.category}
-                            </Button>
-                            )
-                        })}
+                    <ScrollArea className="h-full">
+                        <div className="p-4">
+                            <h3 className="font-semibold text-lg mb-4 text-foreground">Topics</h3>
+                            <div className="space-y-2">
+                            {faqData.map(cat => {
+                                const Icon = cat.icon;
+                                return (
+                                <Button
+                                    key={cat.category}
+                                    variant={selectedCategory.category === cat.category ? 'default' : 'ghost'}
+                                    className="w-full justify-start gap-3 h-12 text-base"
+                                    onClick={() => handleCategorySelect(cat)}
+                                >
+                                    <Icon className="h-5 w-5" />
+                                    {cat.category}
+                                </Button>
+                                )
+                            })}
+                            </div>
                         </div>
-                    </div>
+                    </ScrollArea>
                 </div>
                 <ScrollArea className="w-2/3 h-full" ref={scrollAreaRef}>
                     <div className="p-6 space-y-6">
