@@ -30,6 +30,10 @@ const faqData = [
              {
                 question: "How can I provide feedback or suggest a new tool?",
                 answer: "We are community-driven and thrive on user feedback! If you have suggestions, feedback, or an idea for a new tool, please reach out to us through our <a href='/support' class='text-primary hover:underline'>Support page</a>. We'd love to hear from you."
+            },
+            {
+                question: "Is my data safe with Focus-IN tools?",
+                answer: "We prioritize your privacy. For tools that handle potentially sensitive information, like Focus CaseX, all data is processed temporarily in your browser tab and is never stored on our servers, ensuring complete confidentiality and adherence to medical ethics."
             }
         ]
     },
@@ -44,6 +48,10 @@ const faqData = [
             {
                 question: "Is the clinical case interpretation in Focus.Ai accurate?",
                 answer: "Focus.Ai is designed as a learning aid to help students understand how to interpret clinical findings. While it is trained on extensive optometry data, it is not a diagnostic tool and is not 100% accurate. It should be used as a supplementary study resource to develop your clinical reasoning skills, not to make definitive diagnoses."
+            },
+            {
+                question: "What is the 'Canvas' feature in Focus.Ai?",
+                answer: "The Canvas is an in-built doc editor with markdown support. It allows you to generate, edit, and organize comprehensive study guides, lecture notes, and summaries directly within the platform. You can ask the AI to create content on a topic and then refine it to fit your study needs."
             },
         ]
     },
@@ -72,6 +80,10 @@ const faqData = [
             {
                 question: "Is Focus Cast really free?",
                 answer: "Yes, 100%! There is no login required and no subscription fee. You can start listening to all available episodes right away on the <a href='https://focuscast.netlify.app' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Focus Cast platform</a>."
+            },
+            {
+                question: "How often are new episodes released?",
+                answer: "We aim to release new episodes on a weekly basis to provide a consistent flow of fresh content. Follow us on our social media channels to stay updated on new releases!"
             }
         ]
     },
@@ -104,6 +116,10 @@ const faqData = [
             {
                 question: "Why do I need to practice transposition?",
                 answer: "Transposition is a fundamental skill in optometry used to convert prescriptions between plus and minus cylinder forms. Being fast and accurate is essential for both exams and clinical practice. Focus Gen helps you build that speed and confidence."
+            },
+             {
+                question: "Can I customize the difficulty of the sums?",
+                answer: "Yes, Focus Gen allows you to set certain parameters to generate different types of transposition sums, so you can start with the basics and move on to more complex calculations as you improve."
             }
         ]
     },
@@ -118,6 +134,10 @@ const faqData = [
             {
                 question: "Is Focus Links a free resource?",
                 answer: "Yes, Focus Links is completely free to use. Our goal is to streamline access to information for the entire optometry community."
+            },
+             {
+                question: "Can I contribute to Focus Links?",
+                answer: "Yes! Focus Links is a community-driven project. We will have a feature allowing users to suggest valuable links and resources. If you have a go-to tool or website you think others would benefit from, you'll be able to share it with us."
             }
         ]
     }
@@ -257,10 +277,10 @@ export function FaqChat() {
                             {msg.sender === 'bot' && <Bot className="h-7 w-7 text-primary flex-shrink-0" />}
                             
                             <div className={cn(
-                                "max-w-md rounded-lg px-4 py-3 text-sm",
-                                msg.sender === 'bot' && 'bg-muted',
-                                msg.sender === 'user' && 'bg-primary text-primary-foreground',
-                                msg.sender === 'system' && 'w-full max-w-full bg-transparent p-0'
+                                "max-w-md rounded-lg px-4 py-3 text-sm shadow-sm",
+                                msg.sender === 'bot' && 'bg-muted border',
+                                msg.sender === 'user' && 'bg-primary text-primary-foreground border border-primary/50',
+                                msg.sender === 'system' && 'w-full max-w-full bg-transparent p-0 shadow-none'
                             )}>
                                 {renderMessageContent(msg)}
                             </div>
@@ -273,3 +293,6 @@ export function FaqChat() {
         </Card>
     );
 }
+
+
+    
