@@ -446,14 +446,17 @@ export default function HomePage() {
                       <Carousel
                         opts={{
                           align: "start",
-                          dragFree: true,
+                          loop: true,
                         }}
                         className="w-full"
                       >
                         <CarouselContent>
                           {faqData.map((category) => (
-                            <CarouselItem key={category.slug} className="basis-auto md:basis-1/3">
-                              <TabsTrigger value={category.slug} className="w-full flex-col h-24 gap-2 rounded-md data-[state=active]:shadow-lg text-sm">
+                            <CarouselItem key={category.slug} className="basis-auto pr-2 md:basis-1/3">
+                              <TabsTrigger
+                                value={category.slug}
+                                className="w-full flex-col h-24 gap-2 rounded-lg data-[state=active]:shadow-xl data-[state=active]:border-primary text-sm"
+                              >
                                 <category.icon className="h-7 w-7" />
                                 <span>{category.category}</span>
                               </TabsTrigger>
@@ -517,3 +520,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
